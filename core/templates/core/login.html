@@ -1,0 +1,25 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="row">
+    <form class="col s12 m6 offset-m3" method="post">
+        <h2 class="center-align">Log In</h2>
+        {% csrf_token %}
+        {% for field in form %}
+        <div class="row">
+            <div class="input-field col s12">
+                {{ field }}
+                <label>{{ field.label }}</label>
+            </div>
+            {% if field.help_text %}
+            <small style="display: none">{{ field.help_text }}</small>
+            {% endif %}
+            {% for error in field.errors %}
+            <p style="color: red">{{ error }}</p>
+            {% endfor %}
+        </div>
+        {% endfor %}
+        <button class="right grey darken-3 waves-effect waves-light btn" type="submit">접속하기</button>
+    </form>
+</div>
+{% endblock %}

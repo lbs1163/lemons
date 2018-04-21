@@ -1,0 +1,16 @@
+{% load static %}
+
+<!DOCTYPE tml>
+<html>
+    {% include 'core/header.html' %}
+    <body>
+        <header>
+            {% include 'core/navbar.html' %}
+        </header>
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+        {% include 'core/footer.html' %}
+    </body>
+</html>

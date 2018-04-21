@@ -57,6 +57,7 @@ class Subject(models.Model):
 		result['semester'] = self.semester.to_dict()
 		return result
 
+
 class Period(models.Model):
 	subject = models.ForeignKey(Subject)
 	place = models.CharField(max_length=70)
