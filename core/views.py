@@ -104,18 +104,12 @@ def copy_timetable(request, pk):
 def search_subject(request):
 	subjects = Subject.objects.all()
 
-	check = "lets check "
-	print(check)
-
 	if request.GET.get('q') :
 		q = request.GET.get('q')
 		aliases = Alias.objects.filter(nickname__contains = q)
 		aliaspks = [alias.original.pk for alias in aliases] 
 
-		print(q)
 		subjects = subjects.filter(Q(professor__contains = q) | Q(name__contains = q) | Q(code__contains = q) | Q(pk__in = aliaspks))
-		
-		check+="q "
 
 	hundreds = ""
 	if request.GET.get('1hundred') :
@@ -147,8 +141,6 @@ def search_subject(request):
 		stime = datetime.datetime.strptime(start_time[4:], "%H:%M").time()
 		end_time = request.GET.get('end_time')
 		etime = datetime.datetime.strptime(end_time[4:], "%H:%M").time()
-		print(stime)
-		print(etime)
 		if dayoftheweek == "MON" :
 			periods = Period.objects.filter(mon=True)
 		elif dayoftheweek == "TUE" :

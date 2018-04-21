@@ -99,7 +99,7 @@ class Alias(models.Model):
 	original = models.ForeignKey(Subject)
 	nickname = models.CharField(max_length=70)
 	def __str__(self):
-		return self.nickname+"="+self.original
+		return self.nickname
 
 class Timetable(models.Model):
 	#user = models.ForeignKey(User)
