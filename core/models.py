@@ -9,6 +9,8 @@ class User(models.Model):
 
 class Category(models.Model):
 	category = models.CharField(max_length=40)
+	def __str__(self):
+		return self.category
 	def to_dict(self):
 		result = {}
 		result['category'] = self.category
@@ -17,6 +19,8 @@ class Category(models.Model):
 class Department(models.Model):
 	name = models.CharField(max_length=40)
 	code = models.CharField(max_length=5)
+	def __str__(self):
+		return self.name
 	def to_dict(self):
 		result = {}
 		result['name'] = self.name
@@ -26,6 +30,8 @@ class Department(models.Model):
 class Semester(models.Model):
 	name = models.CharField(max_length=40)#2018 1st semester
 	code = models.CharField(max_length=40)#2018S
+	def __str__(self):
+		return self.name
 	def to_dict(self):
 		result = {}
 		result['name'] = self.name
@@ -43,6 +49,8 @@ class Subject(models.Model):
 	capacity = models.IntegerField()
 	credit = models.CharField(max_length=40)
 	semester = models.ForeignKey(Semester)
+	def __str__(self):
+		return self.name
 	def to_dict(self):
 		result = {}
 		result['name'] = self.name
@@ -73,6 +81,8 @@ class Period(models.Model):
 	wed = models.BooleanField()
 	thu = models.BooleanField()
 	fri = models.BooleanField()
+	def __str__(self):
+		return self.subject+" "+self.place
 	def to_dict(self):
 		result = {}
 		result['place'] = self.place
@@ -88,11 +98,15 @@ class Period(models.Model):
 class Alias(models.Model):
 	original = models.ForeignKey(Subject)
 	nickname = models.CharField(max_length=70)
+	def __str__(self):
+		return self.nickname+"="+self.original
 
 class Timetable(models.Model):
 	#user = models.ForeignKey(User)
 	semester = models.ForeignKey(Semester)
 	subjects = models.ManyToManyField(Subject)
+	def __str__(self):
+		return self.user+" "+self.semester
 	def to_dict(self):
 		result = {}
 		#result['user'] = self.user
