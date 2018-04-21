@@ -1,7 +1,13 @@
-from django.conf.urls import urls
+from django.conf.urls import url
 from . import views
+from core.views import *
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
+	url(r'^signup/$', Signup.as_view(), name='signup'),
+	url(r'^login/$', auth_views.LoginView.as_view(template_name='core/login.html', redirect_authenticated_user=True), name='login'),
+	url(r'^logout/$', auth_views.LogoutView.as_view(template_name='core/logout.html'), name='logout'),
+	url(r'^activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$', Activate.as_view(), name='activate'),
 	# 이건 내가 할꺼임
 	url(r'^$', views.timetable, name='timetable'),
 	# select semester
