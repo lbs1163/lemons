@@ -55,6 +55,11 @@ class Subject(models.Model):
 		result['capacity'] = self.capacity
 		result['credit'] = self.credit
 		result['semester'] = self.semester.to_dict()
+		period_list = list(self.period_set.all())
+		result_temp = []
+		for item in period_list:
+			result_temp.append(item.to_dict())
+		result['period'] = result_temp
 		return result
 
 
@@ -70,7 +75,6 @@ class Period(models.Model):
 	fri = models.BooleanField()
 	def to_dict(self):
 		result = {}
-		result['subject'] = self.subject.to_dict()
 		result['place'] = self.place
 		result['start'] = self.start
 		result['end'] = self.end
@@ -86,12 +90,12 @@ class Alias(models.Model):
 	nickname = models.CharField(max_length=70)
 
 class Timetable(models.Model):
-	user = models.ForeignKey(User)
+	#user = models.ForeignKey(User)
 	semester = models.ForeignKey(Semester)
 	subjects = models.ManyToManyField(Subject)
 	def to_dict(self):
 		result = {}
-		result['user'] = self.user
+		#result['user'] = self.user
 		result['semester'] = self.semester.to_dict()
 
 		for f in self._meta.many_to_many:
