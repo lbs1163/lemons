@@ -1,0 +1,6 @@
+{% autoescape off %}
+{{ user.username }}님, 안녕하세요!
+아래의 링크를 눌러 레몬스 계정을 활성화해주세요.
+
+http://{{ domain }}{% url 'activate' uidb64=uid token=token %}
+{% endautoescape %}

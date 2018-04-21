@@ -1,5 +1,16 @@
 from django.shortcuts import render
+from django.contrib.sites.shortcuts import get_current_site
+from django.http import HttpResponse, JsonResponse
 from django.views.generic import View
+from django.contrib.auth import login, authenticate
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from .forms import SignupForm
+from django.template.loader import render_to_string
+from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
+from django.utils.encoding import force_bytes, force_text
+from .tokens import account_activation_token
+from django.core.mail import EmailMessage
 
 class Signup(View):
     def get(self, request):
@@ -44,26 +55,34 @@ class Activate(View):
         else:
             return render(request, 'core/auth_failed.html')
 
+@login_required
 def timetable(request):
 	return HttpResponse("timetable")
 
+@login_required
 def select_semester(request):
 	return HttpResponse("select_semester")
 
+@login_required
 def add_timetable(request):
 	return HttpResponse("add_timetable")
 
+@login_required
 def delete_timetable(request):
 	return HttpResponse("delete_timetable")
 
+@login_required
 def copy_timetable(request):
 	return HttpResponse("copy_timetable")
 
+@login_required
 def search_subject(request):
 	return HttpResponse("search_subject")
 
+@login_required
 def add_subject_to_timetable(request):
 	return HttpResponse("add_subject_to_timetable")
 
+@login_required
 def delete_subject_to_timetable(request):
 	return HttpResponse("delete_subject_to_timetable")
