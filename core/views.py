@@ -191,7 +191,7 @@ def search_subject(request):
 
 	subjects.order_by('code')
 
-	returnsubject = [subject.dict() for subject in subjects]
+	returnsubject = [subject.to_dict() for subject in subjects]
 
 	return JsonResponse(returnsubject, safe=False)
 
