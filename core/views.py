@@ -1,5 +1,6 @@
-from django.shortcuts import render
-from django.http import JsonResponse, HttpResponse
+from django.shortcuts import render, get_object_or_404
+from django.contrib.sites.shortcuts import get_current_site
+from django.http import HttpResponse, JsonResponse
 from django.db.models import Q
 import datetime, time
 from django.views.generic import View
@@ -74,23 +75,39 @@ class Activate(View):
 
 @login_required
 def timetable(request):
-	return HttpResponse("timetable")
+	return JsonResponse("timetable")
 
 @login_required
 def select_semester(request):
-	return HttpResponse("select_semester")
+    if request.POST.get(semester) == None
+        raise Http404()
+    dump = Timetable.objects.filter(semester = request.POST.get(semester))
+    return JsonResponse(dump)
 
 @login_required
 def add_timetable(request):
-	return HttpResponse("add_timetable")
+    if request.POST.get(semester) == None
+        raise Http404()
+    dump = json.dumps(Timetable.objects.create(user = request.user, semester = request.POST.get(semester)))
+    return JsonResponse(dump)
 
 @login_required
-def delete_timetable(request):
-	return HttpResponse("delete_timetable")
+def delete_timetable(request, pk):
+    del_table = get_object_or_404(Timetable, pk = pk)
+    if del_table.user == request.user
+        delete(del_table)
+        return JsonResponse("성공적으로 삭제했습니다.", safe = False)
+    else
+        return JsonResponse("다른 유저의 시간표입니다. 삭제하지 못했습니다", safe = False)
 
 @login_required
-def copy_timetable(request):
-	return HttpResponse("copy_timetable")
+def copy_timetable(request, pk):
+    table = get_object_or_404(Timetable, pk = pk)
+    if table.user == request.user
+        cpy_table = Timetable.objects.create(user = request.user, semester = request.POST.get(semester)))
+        cpy_table.subjects = table.subjects
+        return JsonResponse(json.dumps(cpy_table))
+    return JsonResponse("다른 유저의 시간표입니다. 복사하지 못했습니다.", safe = False)
 
 @login_required
 def search_subject(request):
@@ -165,7 +182,7 @@ def search_subject(request):
 		credits+="3"
 	if request.GET.get('4credit') :
 		credits+="4"
-	
+
 	if credits :
 		creditregex = r'^[A-Z]+[' + credits + r'][0-9A-Za-z]*$'
 		subjects.filter(code = creditregex)
@@ -180,9 +197,21 @@ def search_subject(request):
 #	return JsonResponse({'subjects' : subjects})
 
 @login_required
-def add_subject_to_timetable(request):
-	return HttpResponse("add_subject_to_timetable")
+def add_subject_to_timetable(request, pk):
+    table = get_object_or_404(Timetable, pk = pk)
+    for Subject in table.subjects.all()
+        sub = Subject
+        if(request.POST.get(name) == sub)
+            return JsonResponse("이미 시간표에 있는 과목입니다.", , safe = False)
+    table.subjects.add(request.POST.get(self))
+    return JsonResponse(json.dumps(table))
 
 @login_required
-def delete_subject_to_timetable(request):
-	return HttpResponse("delete_subject_to_timetable")
+def delete_subject_to_timetable(request, pk):
+    table = get_object_or_404(Timetable, pk = pk)
+        for Subject in table.subjects.all()
+            sub = Subject
+            if(request.POST.get(name) == sub)
+                table.subjects.remove(sub)
+                return JsonResponse(json.dumps(table))
+        return  JsonResponse("과목을 찾지 못하였습니다. 삭제하지 못했습니다.", safe = False)
