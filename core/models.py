@@ -82,7 +82,7 @@ class Period(models.Model):
 	thu = models.BooleanField()
 	fri = models.BooleanField()
 	def __str__(self):
-		return self.subject+" "+self.place
+		return self.subject.name+" "+self.place
 	def to_dict(self):
 		result = {}
 		result['place'] = self.place
@@ -99,7 +99,7 @@ class Alias(models.Model):
 	original = models.ForeignKey(Subject)
 	nickname = models.CharField(max_length=70)
 	def __str__(self):
-		return self.nickname+"="+self.original
+		return self.nickname
 
 class Timetable(models.Model):
 	#user = models.ForeignKey(User)

@@ -104,18 +104,12 @@ def copy_timetable(request):
 def search_subject(request):
 	subjects = Subject.objects.all()
 
-	check = "lets check "
-	print(check)
-
 	if request.GET.get('q') :
 		q = request.GET.get('q')
 		aliases = Alias.objects.filter(nickname__contains = q)
 		aliaspks = [alias.original.pk for alias in aliases]
 
-		print(q)
 		subjects = subjects.filter(Q(professor__contains = q) | Q(name__contains = q) | Q(code__contains = q) | Q(pk__in = aliaspks))
-
-		check+="q "
 
 	hundreds = ""
 	if request.GET.get('1hundred') :
@@ -130,16 +124,13 @@ def search_subject(request):
 	if hundreds :
 		hundredregex = r'^[A-Z]+[' + hundreds + r'][0-9A-Za-z]*$'
 		subjects.filter(code = hundredregex)
-		check += "hundreds "
 
 	if request.GET.get('department') :
 
 		subjects = subjects.filter(department__name__contains = request.GET.get('department'))
-		check += "department "
 
 	if request.GET.get('category') :
 		subjects = subjects.filter(category__category__contains = request.GET.get('category'))
-		check += "category "
 
 	if request.GET.get('start_time') :
 		start_time = request.GET.get('start_time')
@@ -147,8 +138,6 @@ def search_subject(request):
 		stime = datetime.datetime.strptime(start_time[4:], "%H:%M").time()
 		end_time = request.GET.get('end_time')
 		etime = datetime.datetime.strptime(end_time[4:], "%H:%M").time()
-		print(stime)
-		print(etime)
 		if dayoftheweek == "MON" :
 			periods = Period.objects.filter(mon=True)
 		elif dayoftheweek == "TUE" :
@@ -162,7 +151,6 @@ def search_subject(request):
 		periods = periods.filter(Q(start__gte=stime)&Q(end__lte=etime))
 		periodsubjectpks = [period.subject.pk for period in periods]
 		subjects = subjects.filter(pk__in = periodsubjectpks)
-		check += "time "
 
 	credits = ""
 	if request.GET.get('1credit') :
@@ -177,7 +165,6 @@ def search_subject(request):
 	if credits :
 		creditregex = r'^[A-Z]+[' + credits + r'][0-9A-Za-z]*$'
 		subjects.filter(code = creditregex)
-		check += "credits "
 
 
 	subjects.order_by('code')
