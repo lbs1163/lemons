@@ -79,14 +79,14 @@ def timetable(request):
 
 @login_required
 def select_semester(request):
-    if request.POST.get(semester) == None
+    if request.POST.get(semester) == None:
         raise Http404()
     dump = Timetable.objects.filter(semester = request.POST.get(semester))
     return JsonResponse(dump)
 
 @login_required
 def add_timetable(request):
-    if request.POST.get(semester) == None
+    if request.POST.get(semester) == None:
         raise Http404()
     dump = json.dumps(Timetable.objects.create(user = request.user, semester = request.POST.get(semester)))
     return JsonResponse(dump)
@@ -94,17 +94,17 @@ def add_timetable(request):
 @login_required
 def delete_timetable(request, pk):
     del_table = get_object_or_404(Timetable, pk = pk)
-    if del_table.user == request.user
+    if del_table.user == request.user:
         delete(del_table)
         return JsonResponse("성공적으로 삭제했습니다.", safe = False)
-    else
+    else:
         return JsonResponse("다른 유저의 시간표입니다. 삭제하지 못했습니다", safe = False)
 
 @login_required
 def copy_timetable(request, pk):
     table = get_object_or_404(Timetable, pk = pk)
-    if table.user == request.user
-        cpy_table = Timetable.objects.create(user = request.user, semester = request.POST.get(semester)))
+    if table.user == request.user:
+        cpy_table = Timetable.objects.create(user = request.user, semester = request.POST.get(semester))
         cpy_table.subjects = table.subjects
         return JsonResponse(json.dumps(cpy_table))
     return JsonResponse("다른 유저의 시간표입니다. 복사하지 못했습니다.", safe = False)
@@ -191,27 +191,31 @@ def search_subject(request):
 
 	subjects.order_by('code')
 
-#	for subject in subjects:
-#		subject.period_set.all()
-	return HttpResponse(check)
-#	return JsonResponse({'subjects' : subjects})
+	returnsubject = []
+	for subject in subjects:
+		periods = subject.period_set.all()
+		returnsubject.append({'subject' : subject, 'periods' : periods})
+
+
+#	return HttpResponse(check)
+	return JsonResponse({'subjects' : returnsubject})
 
 @login_required
 def add_subject_to_timetable(request, pk):
     table = get_object_or_404(Timetable, pk = pk)
-    for Subject in table.subjects.all()
+    for Subject in table.subjects.all() :
         sub = Subject
-        if(request.POST.get(name) == sub)
-            return JsonResponse("이미 시간표에 있는 과목입니다.", , safe = False)
+        if(request.POST.get(name) == sub) :
+            return JsonResponse("이미 시간표에 있는 과목입니다.", safe = False)
     table.subjects.add(request.POST.get(self))
     return JsonResponse(json.dumps(table))
 
 @login_required
 def delete_subject_to_timetable(request, pk):
     table = get_object_or_404(Timetable, pk = pk)
-        for Subject in table.subjects.all()
-            sub = Subject
-            if(request.POST.get(name) == sub)
-                table.subjects.remove(sub)
-                return JsonResponse(json.dumps(table))
-        return  JsonResponse("과목을 찾지 못하였습니다. 삭제하지 못했습니다.", safe = False)
+    for Subject in table.subjects.all() :
+        sub = Subject
+        if(request.POST.get(name) == sub) :
+            table.subjects.remove(sub)
+            return JsonResponse(json.dumps(table))
+    return  JsonResponse("과목을 찾지 못하였습니다. 삭제하지 못했습니다.", safe = False)
