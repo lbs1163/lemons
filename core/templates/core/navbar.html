@@ -1,0 +1,37 @@
+<div class="container-fluid">
+    <nav>
+        <div class="nav-wrapper grey darken-1">
+            <a href="/" class="brand-logo"><i class="material-icons">schedule</i>Lemons</a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                {% if user.is_authenticated %}
+                <li><a href="/logout/">로그아웃</a></li>
+                {% else %}
+                <li><a href="/signup/">회원가입</a></li>
+                <li><a href="/login/">로그인</a></li>
+                {% endif %}
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+                {% if user.is_authenticated %}
+                <li><a href="/logout/">로그아웃</a></li>
+                {% else %}
+                <li><a href="/signup/">회원가입</a></li>
+                <li><a href="/login/">로그인</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+    <style>
+    @media screen and (min-width: 600px) {
+        .brand-logo {
+            margin-left: 10px;
+        }
+    }
+    </style>
+    <script>
+    $(document).ready(function(){
+		$('.modal').modal();
+        $(".button-collapse").sideNav();
+    });
+    </script>
+</div>
