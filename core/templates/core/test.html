@@ -1,0 +1,19 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1 class="align-center">API 테스트 페이지</h1>
+    <p>버튼을 눌러보세용</p>
+
+    <h1>Select semester</h1>
+
+    <form action="/select_semester" method="get">
+    	<select name="semester">
+    		{% for semester in semesters %}
+    		<option value={{ semester.pk }}>{{ semester.name }}</option>
+    		{% endfor %}
+    	</select>
+    	<button type="submit">select semester</button>
+    </form>
+</div>
+{% endblock %}

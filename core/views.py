@@ -1,20 +1,23 @@
-from django.shortcuts import render, get_object_or_404
-from django.contrib.sites.shortcuts import get_current_site
-from django.http import HttpResponse, JsonResponse
-from django.db.models import Q
-import datetime, time
-from django.views.generic import View
-from .models import *
 from django.contrib.sites.shortcuts import get_current_site
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from .forms import SignupForm
+
+from django.shortcuts import render, get_object_or_404
+from django.contrib.sites.shortcuts import get_current_site
+from django.http import HttpResponse, JsonResponse
+from django.db.models import Q
+from django.views.generic import View
 from django.template.loader import render_to_string
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.encoding import force_bytes, force_text
-from .tokens import account_activation_token
 from django.core.mail import EmailMessage
+
+from .models import *
+from .forms import SignupForm
+from .tokens import account_activation_token
+
+import datetime, time
 import json
 
 
@@ -22,7 +25,7 @@ import json
 	# get method로 요청이 들어오면 사용자 로그인 체크
 	# URL query: q, hundreds, department, category, start_time, end_time, credit
 	# start_time, end_time = 'WED 15:00'
-	# 검색 조건에 따라 해당 값이 쿼리에 없을 수도 있음
+	# 검색 조건에 따라 해당 값이 쿼리에 없을 수도 l있음
 	# ex) copy_timetable/?q=윤은영&hundreds=1
 	# 검색 조건에 맞는 subject들을 학수번호로 정렬하여 JSON으로 return
 
@@ -76,7 +79,8 @@ class Activate(View):
 
 @login_required
 def timetable(request):
-	return HttpResponse("timetable")
+    semesters = Semester.objects.all()
+    return render(request, "test.html", {'semesters': semesters})
 
 @login_required
 def select_semester(request):
