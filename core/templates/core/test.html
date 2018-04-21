@@ -58,7 +58,7 @@
     	<select name="category">
     		<option value="" disabled selected>선택해주세요</option>
     		{% for category in categories %}
-    		<option value={{ category.pk }}>{{ category.name }}</option>
+    		<option value={{ category.pk }}>{{ category.category }}</option>
     		{% endfor %}
     	</select>
     	<p>시작 시간</p>
