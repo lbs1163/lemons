@@ -129,10 +129,10 @@ def search_subject(request):
 
 	if request.GET.get('department') :
 
-		subjects = subjects.filter(department__name__contains = request.GET.get('department'))
+		subjects = subjects.filter(department__pk = request.GET.get('department'))
 
 	if request.GET.get('category') :
-		subjects = subjects.filter(category__category__contains = request.GET.get('category'))
+		subjects = subjects.filter(category__pk = request.GET.get('category'))
 
 	if request.GET.get('start_time') :
 		start_time = request.GET.get('start_time')
