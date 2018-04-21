@@ -18,6 +18,12 @@ def scrap_from_lms(year_semester):
     days_dict = {'월' :  '1', '화' : '2', '수': '3', '목': '4', '금': '5'}
     
     ## TODO: change department values to use whole departments
+    department_page = requests.get(lms_url + 'Course.do?cmd=viewCourseAllList')
+    department_tree = html.fromstring(department_page.content)
+    department_list = department_tree.xpath('//span[@class="selectForm"]')[1]
+    department_name = department_list.xpath('.//a[@href]/text()')
+    department_code = department_list.xpath('.//a/attribute::href').
+
     departments = ['00031000']
 
     ## current page starts from 1
