@@ -30,6 +30,15 @@ class Subject(models.Model):
 	def dict(self):
 		return {}
 
+	@property
+	def return_credit(self):
+		return credit[4]
+
+	@property
+	def return_hundred(self):
+		return code[4]
+
+
 class Period(models.Model):
 	subject = models.ForeignKey(Subject)
 	place = models.CharField(max_length=70)
