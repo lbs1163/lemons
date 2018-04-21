@@ -7,14 +7,20 @@ from django.contrib.auth.models import User
 
 class Category(models.Model):
 	category = models.CharField(max_length=40)
+	def __str__(self):
+		return self.category
 
 class Department(models.Model):
 	name = models.CharField(max_length=40)
 	code = models.CharField(max_length=5)
+	def __str__(self):
+		return self.name
 
 class Semester(models.Model):
 	name = models.CharField(max_length=40)#2018 1st semester
 	code = models.CharField(max_length=40)#2018S
+	def __str__(self):
+		return self.name
 
 class Subject(models.Model):
 	name = models.CharField(max_length=70)
@@ -27,6 +33,8 @@ class Subject(models.Model):
 	capacity = models.IntegerField()
 	credit = models.CharField(max_length=40)
 	semester = models.ForeignKey(Semester)
+	def __str__(self):
+		return self.name
 	def dict(self):
 		return {}
 
@@ -41,16 +49,22 @@ class Period(models.Model):
 	wed = models.BooleanField()
 	thr = models.BooleanField()
 	fri = models.BooleanField()
+	def __str__(self):
+		return self.subject+" "+self.place
 	def to_dict(self):
 		return {}
 
 class Alias(models.Model):
 	original = models.ForeignKey(Subject)
 	nickname = models.CharField(max_length=70)
+	def __str__(self):
+		return self.nickname+"="+self.original
 
 class Timetable(models.Model):
 	user = models.ForeignKey(User)
 	semester = models.ForeignKey(Semester)
 	subjects = models.ManyToManyField(Subject)
+	def __str__(self):
+		return self.user+" "+self.semester
 	def dict(self):
 		return {}

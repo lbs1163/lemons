@@ -191,14 +191,9 @@ def search_subject(request):
 
 	subjects.order_by('code')
 
-	returnsubject = []
-	for subject in subjects:
-		periods = subject.period_set.all()
-		returnsubject.append({'subject' : subject, 'periods' : periods})
+	returnsubject = [subject.dict() for subject in subjects]
 
-
-#	return HttpResponse(check)
-	return JsonResponse({'subjects' : returnsubject})
+	return JsonResponse(returnsubject, safe=False)
 
 @login_required
 def add_subject_to_timetable(request, pk):
