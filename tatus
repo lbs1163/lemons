@@ -1,0 +1,23 @@
+[33mcommit daff7c14ba3668f99125badb190cf7b1d14e293f[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: mmj4594 <csmmj4594@postech.ac.kr>
+Date:   Sat Apr 21 17:02:50 2018 +0900
+
+    model_ver1
+
+[33mcommit 539e9b86fc4cf4991210c5c6176ac1465eee4356[m
+Author: Beomsu Lim <lbs1163@postech.ac.kr>
+Date:   Sat Apr 21 16:46:38 2018 +0900
+
+    add skeleton code for url
+
+[33mcommit e1095a67831384ff9e8d1d6380a9857e1bd62de6[m
+Author: Beomsu Lim <lbs1163@postech.ac.kr>
+Date:   Sat Apr 21 15:07:25 2018 +0900
+
+    add core app
+
+[33mcommit 9124ab7e583672fcb52d31462a80dcfad889971e[m
+Author: Beomsu Lim <lbs1163@postech.ac.kr>
+Date:   Sat Apr 21 15:04:45 2018 +0900
+
+    initial django project
