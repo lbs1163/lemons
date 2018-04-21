@@ -1,8 +1,9 @@
 from django.shortcuts import render
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from django.db.models import Q
 import datetime, time
 from django.views.generic import View
+from .models import *
 
 
 	# search subject
@@ -79,10 +80,16 @@ def copy_timetable(request):
 def search_subject(request):
 	subjects = Subject.objects.all()
 
+	check = "확인"
+	print(check)
+
 	if request.GET.get('q') :
-		subjects = subjects.filter(Q(professor__contains = q) | Q(name__contains = q) || Q(code__contains = q))
+		q = request.GET.get('q')
+		print(q)
+		subjects = subjects.filter(Q(professor__contains = q) | Q(name__contains = q) | Q(code__contains = q))
 		aliases = Alias.objects.filter(nickname__contains = q)
-		subjects = list(set(subjects + [alias.original for alias in aliases]))
+		subjects = subjects + [alias.original for alias in aliases]
+		check+="q "
 
 	hundreds = []
 	if request.GET.get('1hundred') :
@@ -94,32 +101,36 @@ def search_subject(request):
 	if request.GET.get('4hundred') :
 		credits.append(4)
 	
-	if credits :
+	if hundreds :
 		subjects.filter(return_hundred in hundreds)
+		check += "hundreds "
 
 	if request.GET.get('department') :
-		subjects = subjects.filter(department__name__contains = q)
+		subjects = subjects.filter(department__name__contains = request.GET.get('department'))
+		check += "department "
 
 	if request.GET.get('category') :
-		subjects = subjects.filter(category__category__contains = q)
+		subjects = subjects.filter(category__category__contains = request.GET.get('category'))
+		check += "category "
 
 	if request.GET.get('start_time') :
 		start_time = request.GET.get('start_time')
 		dayoftheweek = stime[:3]
 		stime = datetime.datetime.strptime(stime[4:], "%H:%M").time()
 		etime = datetime.datetime.strptime(request.GET.get('end_time')[4:], "%H:%M").time()
-		if dayoftheweek == 'MON'
+		if dayoftheweek == "MON" :
 			periods = Period.objects.filter(mon=True)
-		elif dayoftheweek == 'TUE'
+		elif dayoftheweek == "TUE" :
 			periods = Period.object.filter(tue=True)
-		elif dayoftheweek == 'WED'
+		elif dayoftheweek == "WED" :
 			periods = Period.object.filter(wed=True)
-		elif dayoftheweek == 'THR'
+		elif dayoftheweek == "THR" :
 			periods = Period.object.filter(thr=True)
-		elif dayoftheweek == 'FRI'
+		elif dayoftheweek == "FRI" :
 			periods = Period.object.filter(fri=True)
 		periods = periods.filter(Q(start__gte=stime)&Q(end__lte=etime))
 		subjects = list(set(subjects).intersection([period.subject for period in periods]))
+		check += "time "
 
 	credits = []
 	if request.GET.get('1credit') :
@@ -133,14 +144,15 @@ def search_subject(request):
 	
 	if credits :
 		subjects.filter(return_credit in credits)
+		check += "creidts "
 
 
 	subjects.order_by('code')
 
 #	for subject in subjects:
 #		subject.period_set.all()
-
-	return JsonResponse({'subjects : subjects'})
+	return HttpResponse(check)
+#	return JsonResponse({'subjects' : subjects})
 
 def add_subject_to_timetable(request):
 	return HttpResponse("add_subject_to_timetable")
