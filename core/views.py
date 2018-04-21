@@ -101,27 +101,31 @@ def search_subject(request):
 
 	if request.GET.get('q') :
 		q = request.GET.get('q')
-		print(q)
-		subjects = subjects.filter(Q(professor__contains = q) | Q(name__contains = q) | Q(code__contains = q))
 		aliases = Alias.objects.filter(nickname__contains = q)
-		subjects = list(subjects) + [alias.original for alias in aliases]
+		aliaspks = [alias.original.pk for alias in aliases] 
+
+		print(q)
+		subjects = subjects.filter(Q(professor__contains = q) | Q(name__contains = q) | Q(code__contains = q) | Q(pk__in = aliaspks))
+		
 		check+="q "
 
-	hundreds = []
+	hundreds = ""
 	if request.GET.get('1hundred') :
-		credits.append(1)
+		hundreds+="1"
 	if request.GET.get('2hundred') :
-		credits.append(2)
+		hundreds+="2"
 	if request.GET.get('3hundred') :
-		credits.append(3)
+		hundreds+="3"
 	if request.GET.get('4hundred') :
-		credits.append(4)
+		hundreds+="4"
 	
 	if hundreds :
-		subjects.filter(return_hundred in hundreds)
+		hundredregex = r'^[A-Z]+[' + hundreds + r'][0-9A-Za-z]*$'
+		subjects.filter(code = hundredregex)
 		check += "hundreds "
 
 	if request.GET.get('department') :
+
 		subjects = subjects.filter(department__name__contains = request.GET.get('department'))
 		check += "department "
 
@@ -131,9 +135,12 @@ def search_subject(request):
 
 	if request.GET.get('start_time') :
 		start_time = request.GET.get('start_time')
-		dayoftheweek = stime[:3]
-		stime = datetime.datetime.strptime(stime[4:], "%H:%M").time()
-		etime = datetime.datetime.strptime(request.GET.get('end_time')[4:], "%H:%M").time()
+		dayoftheweek = start_time[:3]
+		stime = datetime.datetime.strptime(start_time[4:], "%H:%M").time()
+		end_time = request.GET.get('end_time')
+		etime = datetime.datetime.strptime(end_time[4:], "%H:%M").time()
+		print(stime)
+		print(etime)
 		if dayoftheweek == "MON" :
 			periods = Period.objects.filter(mon=True)
 		elif dayoftheweek == "TUE" :
@@ -145,22 +152,24 @@ def search_subject(request):
 		elif dayoftheweek == "FRI" :
 			periods = Period.object.filter(fri=True)
 		periods = periods.filter(Q(start__gte=stime)&Q(end__lte=etime))
-		subjects = list(set(subjects).intersection([period.subject for period in periods]))
+		periodsubjectpks = [period.subject.pk for period in periods]
+		subjects = subjects.filter(pk__in = periodsubjectpks)
 		check += "time "
 
-	credits = []
+	credits = ""
 	if request.GET.get('1credit') :
-		credits.append(1)
+		credits+="1"
 	if request.GET.get('2credit') :
-		credits.append(2)
+		credits+="2"
 	if request.GET.get('3credit') :
-		credits.append(3)
+		credits+="3"
 	if request.GET.get('4credit') :
-		credits.append(4)
+		credits+="4"
 	
 	if credits :
-		subjects.filter(return_credit in credits)
-		check += "creidts "
+		creditregex = r'^[A-Z]+[' + credits + r'][0-9A-Za-z]*$'
+		subjects.filter(code = creditregex)
+		check += "credits "
 
 
 	subjects.order_by('code')
