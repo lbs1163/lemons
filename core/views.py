@@ -70,21 +70,21 @@ def timetable(request):
 
 @login_required
 def select_semester(request):
-    if request.POST.get(semester) == None:
+    if request.GET.get('name') == None:
         raise Http404()
-    dump = Timetable.objects.filter(semester = request.POST.get(semester))
+    dump = Timetable.objects.filter(semester = request.GET.get('Semester'))
     return JsonResponse(dump)
 
 @login_required
 def add_timetable(request):
-    if request.POST.get(semester) == None:
+    if request.POST.get('name') == None:
         raise Http404()
-    dump = json.dumps(Timetable.objects.create(user = request.user, semester = request.POST.get(semester)))
-    return JsonResponse(dump)
+    dump = Timetable.objects.create(user = request.user, semester = request.POST.get('Semester'))
+    return JsonResponse(dump) #수정 필요함
 
 @login_required
-def delete_timetable(request, pk):
-    del_table = get_object_or_404(Timetable, pk = pk)
+def delete_timetable(request):
+    del_table = request.POST.get('Timetable')
     if del_table.user == request.user:
         delete(del_table)
         return JsonResponse("성공적으로 삭제했습니다.", safe = False)
@@ -92,12 +92,12 @@ def delete_timetable(request, pk):
         return JsonResponse("다른 유저의 시간표입니다. 삭제하지 못했습니다", safe = False)
 
 @login_required
-def copy_timetable(request, pk):
-    table = get_object_or_404(Timetable, pk = pk)
-    if table.user == request.user:
-        cpy_table = Timetable.objects.create(user = request.user, semester = request.POST.get(semester))
+def copy_timetable(request):
+    table = request.POST.get('Timetable')
+    if table.user == request.POST.get('user'):
+        cpy_table = Timetable.objects.create(user = request.user, semester = request.POST.get('semester'))
         cpy_table.subjects = table.subjects
-        return JsonResponse(json.dumps(cpy_table))
+        return JsonResponse(cpy_table) #수정 필요함
     return JsonResponse("다른 유저의 시간표입니다. 복사하지 못했습니다.", safe = False)
 
 @login_required
@@ -110,11 +110,11 @@ def search_subject(request):
 	if request.GET.get('q') :
 		q = request.GET.get('q')
 		aliases = Alias.objects.filter(nickname__contains = q)
-		aliaspks = [alias.original.pk for alias in aliases] 
+		aliaspks = [alias.original.pk for alias in aliases]
 
 		print(q)
 		subjects = subjects.filter(Q(professor__contains = q) | Q(name__contains = q) | Q(code__contains = q) | Q(pk__in = aliaspks))
-		
+
 		check+="q "
 
 	hundreds = ""
@@ -126,7 +126,7 @@ def search_subject(request):
 		hundreds+="3"
 	if request.GET.get('4hundred') :
 		hundreds+="4"
-	
+
 	if hundreds :
 		hundredregex = r'^[A-Z]+[' + hundreds + r'][0-9A-Za-z]*$'
 		subjects.filter(code = hundredregex)
@@ -187,21 +187,21 @@ def search_subject(request):
 	return JsonResponse(returnsubject, safe=False)
 
 @login_required
-def add_subject_to_timetable(request, pk):
-    table = get_object_or_404(Timetable, pk = pk)
-    for Subject in table.subjects.all() :
-        sub = Subject
-        if(request.POST.get(name) == sub) :
+def add_subject_to_timetable(request):
+    table = request.POST.get('Timetable')
+    add_subject = request.POST.get('Subject')
+    for i in table.subjects.all() :
+        if(add_subject.name == i) :
             return JsonResponse("이미 시간표에 있는 과목입니다.", safe = False)
-    table.subjects.add(request.POST.get(self))
-    return JsonResponse(json.dumps(table))
+    table.subjects.add(add_subject)
+    return JsonResponse(table) #수정 필요함
 
 @login_required
-def delete_subject_to_timetable(request, pk):
-    table = get_object_or_404(Timetable, pk = pk)
-    for Subject in table.subjects.all() :
-        sub = Subject
-        if(request.POST.get(name) == sub) :
-            table.subjects.remove(sub)
-            return JsonResponse(json.dumps(table))
+def delete_subject_to_timetable(request):
+    table = request.POST.get('Timetable')
+    delete_subject = request.POST.get('Subject')
+    for i in table.subjects.all() :
+        if(delete_subject.name == i) :
+            table.subjects.remove(i)
+            return JsonResponse(table) #수정 필요함
     return  JsonResponse("과목을 찾지 못하였습니다. 삭제하지 못했습니다.", safe = False)
