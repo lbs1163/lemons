@@ -1,5 +1,7 @@
 from django.db import models
 from django.utils import timezone
+from django.http import JsonResponse
+from django.contrib.auth.models import User
 
 #class User(models.Model):
 
@@ -25,8 +27,8 @@ class Subject(models.Model):
 	capacity = models.IntegerField()
 	credit = models.CharField(max_length=40)
 	semester = models.ForeignKey(Semester)
-	def to_dict(self):
-
+	def dict(self):
+		return {}
 
 class Period(models.Model):
 	subject = models.ForeignKey(Subject)
@@ -39,14 +41,15 @@ class Period(models.Model):
 	thr = models.BooleanField()
 	fri = models.BooleanField()
 	def to_dict(self):
-
+		return {}
 
 class Alias(models.Model):
 	original = models.ForeignKey(Subject)
 	nickname = models.CharField(max_length=70)
 
 class Timetable(models.Model):
-	user = models.ForeignKey(User) 
+	user = models.ForeignKey(User)
 	semester = models.ForeignKey(Semester)
 	subjects = models.ManyToManyField(Subject)
-	def to_dict(self):
+	def dict(self):
+		return {}
