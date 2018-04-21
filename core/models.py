@@ -4,14 +4,15 @@ from django.utils import timezone
 #class User(models.Model):
 
 class Category(models.Model):
-	category
+	category = models.Charfield()
 
 class Department(models.Model):
 	name = models.CharField()
 	code = models.CharField(max_length=5)
 
 class Semester(models.Model):
-	string = models.CharField()
+	name = models.CharField()#2018 1st semester
+	code = models.Charfield()#2018S
 
 class Subject(models.Model):
 	name = models.CharField()
@@ -19,7 +20,6 @@ class Subject(models.Model):
 	category = models.ForeignKey(Category)
 	department = models.ForeignKey(Department)
 	plan = models.textField()
-	place = models.CharField()
 	professor = models.CharField()
 	class_number = models.integerField()
 	capacity = models.integerField()
@@ -28,6 +28,7 @@ class Subject(models.Model):
 
 class Period(models.Model):
 	subject = models.ForeignKey(Subject)
+	place = models.CharField()
 	start = models.TimeField()
 	end = models.TimeField()
 	mon = models.BooleanField()
