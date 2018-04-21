@@ -66,7 +66,9 @@ class Activate(View):
 @login_required
 def timetable(request):
     semesters = Semester.objects.all()
-    return render(request, "test.html", {'semesters': semesters})
+    departments = Department.objects.all()
+    categories = Category.objects.all()
+    return render(request, "core/test.html", {'semesters': semesters, 'departments': departments, 'categories': categories})
 
 @login_required
 def select_semester(request):

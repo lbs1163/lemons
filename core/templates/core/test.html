@@ -15,5 +15,85 @@
     	</select>
     	<button type="submit">select semester</button>
     </form>
+
+    <h1>Search subject</h1>
+
+    <form action="/search_subject" method="get">
+    	<p>검색어</p>
+    	<input name="q" type="text">
+    	<p>
+    		<label>
+    			<input name="1hundred" type="checkbox">
+    			<span>100번대</span>
+    		</label>
+    	</p>
+    	<p>
+    		<label>
+    			<input name="2hundred" type="checkbox">
+    			<span>200번대</span>
+    		</label>
+    	</p>
+    	<p>
+    		<label>
+    			<input name="3hundred" type="checkbox">
+    			<span>300번대</span>
+    		</label>
+    	</p>
+    	<p>
+    		<label>
+    			<input name="4hundred" type="checkbox">
+    			<span>400번대</span>
+    		</label>
+    	</p>
+    	<p>학과</p>
+    	<div class="input-field">
+	    	<select name="department">
+	    		{% for department in departments %}
+	    		<option value={{ department.pk }}>{{ department.name }}</option>
+	    		{% endfor %}
+	    	</select>
+	    </div>
+    	<p>종류</p>
+    	<select name="category">
+    		{% for category in categories %}
+    		<option value={{ category.pk }}>{{ category.name }}</option>
+    		{% endfor %}
+    	</select>
+    	<p>시작 시간</p>
+    	<input name="start_time" type="text">
+    	<p>끝 시간</p>
+    	<input name="end_time" type="text">
+    	<p>
+    		<label>
+    			<input name="1credit" type="checkbox">
+    			<span>1학점</span>
+    		</label>
+    	</p>
+    	<p>
+    		<label>
+    			<input name="2credit" type="checkbox">
+    			<span>2학점</span>
+    		</label>
+    	</p>
+    	<p>
+    		<label>
+    			<input name="3credit" type="checkbox">
+    			<span>3학점</span>
+    		</label>
+    	</p>
+    	<p>
+    		<label>
+    			<input name="4credit" type="checkbox">
+    			<span>4학점</span>
+    		</label>
+    	</p>
+
+    	<button type="submit">search subject</button>
+    </form>
+    <script>
+    	$(document).ready(function() {
+    		$('select').formSelect();
+    	});
+    </script>
 </div>
 {% endblock %}
