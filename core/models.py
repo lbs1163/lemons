@@ -1,10 +1,12 @@
 from django.db import models
 from django.utils import timezone
+from django.http import JsonResponse
+from django.contrib.auth.models import User
 
 #class User(models.Model):
 
 class Category(models.Model):
-	category = models.Charfield()
+	category = models.CharField()
 
 class Department(models.Model):
 	name = models.CharField()
@@ -12,19 +14,22 @@ class Department(models.Model):
 
 class Semester(models.Model):
 	name = models.CharField()#2018 1st semester
-	code = models.Charfield()#2018S
+	code = models.CharField()#2018S
 
 class Subject(models.Model):
 	name = models.CharField()
 	code = models.CharField()
 	category = models.ForeignKey(Category)
 	department = models.ForeignKey(Department)
-	plan = models.textField()
+	plan = models.TextField()
 	professor = models.CharField()
-	class_number = models.integerField()
-	capacity = models.integerField()
+	class_number = models.IntegerField()
+	capacity = models.IntegerField()
 	credit = models.CharField()
 	semester = models.ForeignKey(Semester)
+
+	def dict(self):
+		return {}
 
 class Period(models.Model):
 	subject = models.ForeignKey(Subject)
@@ -42,6 +47,10 @@ class Alias(models.Model):
 	nickname = models.CharField()
 
 class Timetable(models.Model):
-	user = models.ForeignKey(User) 
+	user = models.ForeignKey(User)
 	semester = models.ForeignKey(Semester)
 	subjects = models.ManyToManyField(Subject)
+
+	# 시간표를 json으로 바꿈
+	def dict(self):
+		return {}
