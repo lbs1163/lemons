@@ -124,16 +124,13 @@ def search_subject(request):
 	if hundreds :
 		hundredregex = r'^[A-Z]+[' + hundreds + r'][0-9A-Za-z]*$'
 		subjects.filter(code = hundredregex)
-		check += "hundreds "
 
 	if request.GET.get('department') :
 
 		subjects = subjects.filter(department__name__contains = request.GET.get('department'))
-		check += "department "
 
 	if request.GET.get('category') :
 		subjects = subjects.filter(category__category__contains = request.GET.get('category'))
-		check += "category "
 
 	if request.GET.get('start_time') :
 		start_time = request.GET.get('start_time')
@@ -154,7 +151,6 @@ def search_subject(request):
 		periods = periods.filter(Q(start__gte=stime)&Q(end__lte=etime))
 		periodsubjectpks = [period.subject.pk for period in periods]
 		subjects = subjects.filter(pk__in = periodsubjectpks)
-		check += "time "
 
 	credits = ""
 	if request.GET.get('1credit') :
@@ -169,7 +165,6 @@ def search_subject(request):
 	if credits :
 		creditregex = r'^[A-Z]+[' + credits + r'][0-9A-Za-z]*$'
 		subjects.filter(code = creditregex)
-		check += "credits "
 
 
 	subjects.order_by('code')

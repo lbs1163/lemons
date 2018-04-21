@@ -82,7 +82,7 @@ class Period(models.Model):
 	thu = models.BooleanField()
 	fri = models.BooleanField()
 	def __str__(self):
-		return self.subject+" "+self.place
+		return self.subject.name+" "+self.place
 	def to_dict(self):
 		result = {}
 		result['place'] = self.place
