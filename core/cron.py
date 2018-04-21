@@ -1,16 +1,21 @@
+from core.models import Category, Department, Semester, Subject, Period   
 from lxml import html
 import requests
+import re
 
 def scrap_from_lms(year_semester):
     ## parsing input
     year = year_semester[0:4]
     semester_input = year_semester[4:5]
     
-    semester_dic = {'s' : '0', 'f' : '2'}
+    semester_dic = {'s' : '0', 'f' : '2', 'S': '0', 'F' : '2'}
     semester = semester_dic[semester_input]
 
-    ## strings
+    ## TODO: SEMESTER CODE CHECK AND DECIDE MAKE OR NOT
+
+    ## variables
     lms_url = 'http://lms.postech.ac.kr/'
+    days_dict = {'월' :  '1', '화' : '2', '수': '3', '목': '4', '금': '5'}
     
     ## TODO: change department values to use whole departments
     departments = ['00031000']
@@ -36,19 +41,61 @@ def scrap_from_lms(year_semester):
 
         ## get one subject info and plan data from one subject data
         for cur_subject in href_list:
-            subject_info_page = requests.get(lms_url + cur_subject)
-            subject_info_tree = html.fromstring(subject_info_page.content)
+            info_page = requests.get(lms_url + cur_subject)
+            info_tree = html.fromstring(info_page.content)
 
-            info_tr = subject_info_tree.xpath('//table/tr')
+            ## get info table
+            info_tr = info_tree.xpath('//table/tr')
+            ## plan src
+            plan_a = info_tree.xpath('//a/attribute::href')[0]
 
             credit = clear_string(info_tr[8].xpath('td')[3].text)
             code = clear_string(info_tr[4].xpath('td')[1].text)
 
             subject_name = clear_string(info_tr[2].xpath('td')[1].text)
+            subject_category = clear_string(info_tr[6].xpath('td')[3].text)
+            ## TODO: category find
+            ## DO WE NEED? subject_department = ...
+            
+            class_number = int(clear_string(info_tr[4].xpath('td')[3].text))
+            capacity_raw = clear_string(info_tr[10].xpath('td')[1].text)
+            capacity = int(re.search(r'\d+', capacity_raw).group())
 
-            test_str = subject_name + ": " + code + " // " + credit
+            ## load plan only if it needs
+            plan_page = requests.get(lms_url + plan_a)
+            plan_tree = html.fromstring(plan_page.content)
 
-            print(test_str)
+            ## get plan table
+            if len(plan_tree.xpath('//table')) > 0:
+                plan_tr = plan_tree.xpath('//table')
+
+                prof_name = clear_string(plan_tr[2].xpath('.//td')[0].text)
+                time_place_raw = plan_tr[1].xpath('.//td')[5].xpath('.//text()')
+
+                for text in time_place_raw:
+                    time_place_text = clear_string(text)
+                    
+                    if '.' not in time_place_text:
+                        time_place = time_place_text
+                    else:
+                        time_place = time_place_text.split('.')[1]
+
+                    ## Actually... I don't know why I wrote like this.
+                    ## Maybe there is a historical reason. (e.g. there is no time_place text yet.)
+                    if len(time_place) < 8:
+                        break
+
+                    days_time = time_place.split('|')[0]
+                    place = time_place.split('|')[1]
+                    place = place[1:len(place)+1]
+
+                    time = days_time.split('(')[1].split(')')[0]
+                    start = time.split('~')[0]
+                    end = time.split('~')[1]
+
+                    ## TODO: DAY DAY DAY
+                    days = days_time.split('(')[0].split()
+
 
 
 def clear_string(string):
