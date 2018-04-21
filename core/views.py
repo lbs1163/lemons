@@ -96,7 +96,7 @@ def copy_timetable(request):
 def search_subject(request):
 	subjects = Subject.objects.all()
 
-	check = "확인"
+	check = "lets check "
 	print(check)
 
 	if request.GET.get('q') :
@@ -104,7 +104,7 @@ def search_subject(request):
 		print(q)
 		subjects = subjects.filter(Q(professor__contains = q) | Q(name__contains = q) | Q(code__contains = q))
 		aliases = Alias.objects.filter(nickname__contains = q)
-		subjects = subjects + [alias.original for alias in aliases]
+		subjects = list(subjects) + [alias.original for alias in aliases]
 		check+="q "
 
 	hundreds = []
