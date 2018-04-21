@@ -15,7 +15,6 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.encoding import force_bytes, force_text
 from .tokens import account_activation_token
 from django.core.mail import EmailMessage
-import json
 
 
 	# search subject
@@ -76,30 +75,30 @@ class Activate(View):
 
 @login_required
 def timetable(request):
-	return HttpResponse("timetable")
+	return JsonResponse("timetable")
 
 @login_required
 def select_semester(request):
     if request.POST.get(semester) == None
         raise Http404()
     dump = Timetable.objects.filter(semester = request.POST.get(semester))
-    return HttpResponse(dump, content_type='application/json')
+    return JsonResponse(dump)
 
 @login_required
 def add_timetable(request):
     if request.POST.get(semester) == None
         raise Http404()
     dump = json.dumps(Timetable.objects.create(user = request.user, semester = request.POST.get(semester)))
-    return HttpResponse(dump, content_type='application/json')
+    return JsonResponse(dump)
 
 @login_required
 def delete_timetable(request, pk):
     del_table = get_object_or_404(Timetable, pk = pk)
     if del_table.user == request.user
         delete(del_table)
-        return HttpResponse(json.dumps("성공적으로 삭제했습니다."), content_type='application/json')
+        return JsonResponse("성공적으로 삭제했습니다.", safe = False)
     else
-        return HttpResponse(json.dumps("다른 유저의 시간표입니다. 삭제하지 못했습니다"), content_type='application/json')
+        return JsonResponse("다른 유저의 시간표입니다. 삭제하지 못했습니다", safe = False)
 
 @login_required
 def copy_timetable(request, pk):
@@ -107,8 +106,8 @@ def copy_timetable(request, pk):
     if table.user == request.user
         cpy_table = Timetable.objects.create(user = request.user, semester = request.POST.get(semester)))
         cpy_table.subjects = table.subjects
-        return HttpResponse(json.dumps(cpy_table), content_type='application/json')
-    return HttpResponse(json.dumps("다른 유저의 시간표입니다. 복사하지 못했습니다."), content_type='application/json')
+        return JsonResponse(json.dumps(cpy_table))
+    return JsonResponse("다른 유저의 시간표입니다. 복사하지 못했습니다.", safe = False)
 
 @login_required
 def search_subject(request):
@@ -194,9 +193,9 @@ def add_subject_to_timetable(request, pk):
     for Subject in table.subjects.all()
         sub = Subject
         if(request.POST.get(name) == sub)
-            return HttpResponse(json.dumps("이미 시간표에 있는 과목입니다."), content_type='application/json')
+            return JsonResponse("이미 시간표에 있는 과목입니다.", , safe = False)
     table.subjects.add(request.POST.get(self))
-    return HttpResponse(json.dumps(table), content_type='application/json')
+    return JsonResponse(json.dumps(table))
 
 @login_required
 def delete_subject_to_timetable(request, pk):
@@ -205,5 +204,5 @@ def delete_subject_to_timetable(request, pk):
             sub = Subject
             if(request.POST.get(name) == sub)
                 table.subjects.remove(sub)
-                return HttpResponse(json.dumps(table), content_type='application/json')
-        return  HttpResponse(json.dumps("과목을 찾지 못하였습니다. 삭제하지 못했습니다."), content_type='application/json')
+                return JsonResponse(json.dumps(table))
+        return  JsonResponse("과목을 찾지 못하였습니다. 삭제하지 못했습니다.", safe = False)
