@@ -5,11 +5,24 @@ from lxml import html
 import requests
 import re
 
+
 def scrap_from_lms(year_semester, limit = True):
+    ''' Scrap(Parse) subjects data from lms.
+    This function makes a baseline of database.
+    Using parsed information of each subject, 
+    it searches database and update a matched subject or create a new one.
+    If limit is true, this function reads one subject per 0.5 seconds,
+    otherwise it reads the lms data as fast as it can.
+    '''
+
+    ## input example: '2018s', '2019f'
+
     ## parsing input
     year = year_semester[0:4]
     semester_input = year_semester[4:5]
     
+    ## we change semester 's' to '0' and 'f' to '2' for lms query
+    ## semester_code is used for model 'Semester'
     semester_dic = {'s' : '0', 'f' : '2', 'S': '0', 'F' : '2'}
     semester_code = {'0' : 'S', '2': 'F'}
     semester_code_in_Korean = {'0': '년 1학기', '2': '년 2학기'}
@@ -21,22 +34,35 @@ def scrap_from_lms(year_semester, limit = True):
     except ObjectDoesNotExist:
         Semester_object = Semester(name=year+semester_code_in_Korean[semester], code=year+semester_code[semester])
         Semester_object.save()
-        print("* * * * New semester created! WOW! " + year + semeater_code_in_Korean[semester] + " * * * *")
+        try:
+            print("* * * * New semester created! WOW! " + year + semeater_code_in_Korean[semester] + " * * * *")
+        except:
+            print("* * * * New semester created! WOW! " + year + semeater_code[semester] + " * * * *")
 
     ## variables
     lms_url = 'http://lms.postech.ac.kr/'
     
-    ## TODO: change department values to use whole departments
+    ## Change department values to use whole departments' information
     department_page = requests.get(lms_url + 'Course.do?cmd=viewCourseAllList')
     department_tree = html.fromstring(department_page.content)
     department_list = department_tree.xpath('//span[@class="selectForm"]')[1]
     department_name = department_list.xpath('.//a[@href]/text()')
     department_code = department_list.xpath('.//a/attribute::href')
 
+    ## save departments variables
     departments = []
     departments_cleared_name = []
     Department_objects = []
 
+    if limit:
+        limit_str = '0.5 SEC'
+    else:
+        limit_str = 'UNLIMITTED!!!'
+    print("********************************** PARSING MESSAGE ***************************************")
+    print("******* SEMESTER: " + year + " " + semester_code[semester] + "     *************************   SPEED LIMIT: " + limit_str + " *******")
+    print("*********************************** PARSING START ****************************************")
+
+    ## for each parsed department information, get 'Department' model object or create new one
     for i in range(len(department_code)):
         departments.append(department_code[i].split(',')[1].split("'")[1])
         departments_cleared_name.append(clear_string(department_name[i]))
@@ -46,16 +72,24 @@ def scrap_from_lms(year_semester, limit = True):
         except ObjectDoesNotExist:
             Department_object = Department(name=departments_cleared_name[i])
             Department_object.save()
-            print("****** New department " + departments_cleared_name[i] + " created ****** This should be done at the first time")
+            try:
+                print("****** New department " + departments_cleared_name[i] + " created ****** This should be done ONCE at the first time")
+            except:
+                print("****** New department created ****** This should be done ONCE at the first time")
 
         Department_objects.append(Department_object)
     
     ## current page starts from 1
     cur_page = 1
 
+    ## search. open subject lists by department
     for cur_dept in range(len(departments)):
-        ## if there is no subject it breaks
-        print("Parsing department: " + departments_cleared_name[cur_dept])
+        # To let you know where you are
+        try:
+            print("Parsing department: " + departments_cleared_name[cur_dept])
+        except:
+            print("Parsing department #" + str(cur_dept))
+
         while True:
             ## get a subject list of one department
             page = requests.get(lms_url + 'Course.do?cmd=viewCourseAllList&courseTermDTO.courseTermId=' + year + '09' + semester 
@@ -65,6 +99,7 @@ def scrap_from_lms(year_semester, limit = True):
             ## find the href list
             href_list = tree.xpath('//td/a/attribute::href')
 
+            ## if there is no subject it breaks
             if len(href_list) == 0:
                 print("No more subjects in this list!")
                 break;
@@ -81,29 +116,39 @@ def scrap_from_lms(year_semester, limit = True):
                 info_tr = info_tree.xpath('//table/tr')
                 ## plan src
                 plan_a = info_tree.xpath('//a/attribute::href')[0]
-
+                
+                ## EXAMPLE: 1-0-1
                 credit = clear_string(info_tr[8].xpath('td')[3].text)
+                ## EXAMPLE: CSED101
                 code = clear_string(info_tr[4].xpath('td')[1].text)
 
+                ## EXAMPLE: 햅틱스 입문
                 subject_name = clear_string(info_tr[2].xpath('td')[1].text)
+                ## EXAMPLE: 전공선택
                 category = clear_string(info_tr[6].xpath('td')[3].text)
             
+                ## EXAMPLE: 1
                 class_number = int(clear_string(info_tr[4].xpath('td')[3].text))
+                ## EXAMPLE: '200'
                 capacity_raw = clear_string(info_tr[10].xpath('td')[1].text)
+                ## EXAMPLE: 200
                 capacity = int(re.search(r'\d+', capacity_raw).group())
 
-                ## load plan only if it needs
+                ## load plan data
                 plan_page = requests.get(lms_url + plan_a)
                 plan_tree = html.fromstring(plan_page.content)
 
-                ## get plan table
+                ## get plan table. sometimes it does not have any plan table (?)
                 if len(plan_tree.xpath('//table')) > 0:
                     plan_tr = plan_tree.xpath('//table')
 
+                    ## EXAMPLE: 윤은영
                     prof_name = clear_string(plan_tr[2].xpath('.//td')[0].text)
+                    ## EXAMPLE..... is the line below.
                     time_place_raw = plan_tr[1].xpath('.//td')[5].xpath('.//text()')
                     time_place_num = len(time_place_raw)
 
+                    ## time_place lines can be multiple, so we prepare arrays
                     time_place = []
                     place = []
                     start_time = []
@@ -146,6 +191,8 @@ def scrap_from_lms(year_semester, limit = True):
                         ## EXAMPLE: ['월', '수']
                         days.append(days_time.split('(')[0].split())
 
+                ## if there is no table (I don't know why I wrote this code in RoR lemons)
+                ## just pass it. come back later. Don't save anything.
                 else:
                     continue
 
@@ -155,7 +202,10 @@ def scrap_from_lms(year_semester, limit = True):
                 except ObjectDoesNotExist:
                     Category_object = Category(category=category)
                     Category_object.save()
-                    print("***** New category: " + category  + " added *****")
+                    try:
+                        print("***** New category: " + category  + " added *****")
+                    except:
+                        print("***** New category added *****")
 
                 ## Try to find Subject.
                 try:
@@ -171,8 +221,10 @@ def scrap_from_lms(year_semester, limit = True):
                     Subject_object.capacity = capacity
                     Subject_object.credit = credit
                     Subject_object.save()
-                    print("Subject " + subject_name + "(" + code + ") is updated")
-                    #print("Subject " + code + " is updated")
+                    try:
+                        print("Subject " + subject_name + "(" + code + ") is updated")
+                    except:
+                        print("Updated!")
 
                 except ObjectDoesNotExist:
                     ## There is no matching subject. do once more
@@ -188,8 +240,10 @@ def scrap_from_lms(year_semester, limit = True):
                             credit = credit,
                             semester = Semester_object)
                     Subject_object.save()
-                    print("Subject " + subject_name + "(" + code + ") is created")
-                    #print("Subject " + code + " is created")
+                    try:
+                        print("Subject " + subject_name + "(" + code + ") is created")
+                    except:
+                        print("Created!")
                 
                 ## Try to find out Period or make it
                 ## Update period just in case
@@ -235,4 +289,9 @@ def scrap_from_lms(year_semester, limit = True):
 
 
 def clear_string(string):
+    ''' Clear any '\r\n' and '\t' characters.
+    While parsing too many '\r\n' and '\t' characters appear.
+    To wipe out, this function is necessary
+    '''
     return string.replace("\r\n", "").replace("\t","")
+
