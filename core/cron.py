@@ -22,7 +22,7 @@ def scrap_from_lms(year_semester):
     department_tree = html.fromstring(department_page.content)
     department_list = department_tree.xpath('//span[@class="selectForm"]')[1]
     department_name = department_list.xpath('.//a[@href]/text()')
-    department_code = department_list.xpath('.//a/attribute::href').
+    department_code = department_list.xpath('.//a/attribute::href')
 
     departments = ['00031000']
 
