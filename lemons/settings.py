@@ -131,6 +131,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+## min hour everday(* * *), function, [argument] => '2018s', '2019f' or whatever you want
 CRONJOBS = [
-    ('05 00 * * *', 'core.cron.scrap_from_lms')
+    ('05 00 * * *', 'core.cron.scrap_from_lms', ['2018s']),
+    ('05 12 * * *', 'core.cron.scrap_from_lms', ['2018s']),
 ]
