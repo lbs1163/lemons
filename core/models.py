@@ -18,13 +18,11 @@ class Category(models.Model):
 
 class Department(models.Model):
 	name = models.CharField(max_length=40)
-	code = models.CharField(max_length=5)
 	def __str__(self):
 		return self.name
 	def to_dict(self):
 		result = {}
 		result['name'] = self.name
-		result['code'] = self.code
 		return result
 
 class Semester(models.Model):
