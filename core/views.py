@@ -72,10 +72,10 @@ def timetable(request):
 
 @login_required
 def select_semester(request):
-    if request.GET.get('name') == None:
+    if request.GET.get('semester') == None:
         raise Http404()
-    dump = Timetable.objects.filter(semester = request.GET.get('Semester'))
-    return JsonResponse(dump)
+    timetables = Timetable.objects.filter(semester = request.GET.get('semester'))
+    return JsonResponse([timetable.to_dict() for timetable in timetables], safe=False)
 
 @login_required
 def add_timetable(request):
