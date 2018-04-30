@@ -1,0 +1,4 @@
+django==1.11.12
+django_crontab==0.7.1
+lxml==4.2.1
+requests==2.18.4

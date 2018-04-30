@@ -35,9 +35,9 @@ def scrap_from_lms(year_semester, limit = True):
         Semester_object = Semester(name=year+semester_code_in_Korean[semester], code=year+semester_code[semester])
         Semester_object.save()
         try:
-            print("* * * * New semester created! WOW! " + year + semeater_code_in_Korean[semester] + " * * * *")
+            print("* * * * New semester created! WOW! " + year + semester_code_in_Korean[semester] + " * * * *")
         except:
-            print("* * * * New semester created! WOW! " + year + semeater_code[semester] + " * * * *")
+            print("* * * * New semester created! WOW! " + year + semester_code[semester] + " * * * *")
 
     ## variables
     lms_url = 'http://lms.postech.ac.kr/'
