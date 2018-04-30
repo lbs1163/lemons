@@ -7,7 +7,7 @@
 
     <h1>Select semester</h1>
 
-    <form action="/select_semester" method="get">
+    <form action="/select_semester/" method="get">
     	<select name="semester">
     		{% for semester in semesters %}
     		<option value={{ semester.pk }}>{{ semester.name }}</option>
@@ -16,9 +16,42 @@
     	<button type="submit">select semester</button>
     </form>
 
+    <h1>Add Timetable</h1>
+
+    <form action="/add_timetable/" method="post">{% csrf_token %}
+        <select name="semester">
+            {% for semester in semesters %}
+            <option value={{ semester.pk }}>{{ semester.name }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">add timetable</button>
+    </form>
+
+    <h1>Delete Timetable</h1>
+
+    <form action="/delete_timetable/" method="post">{% csrf_token %}
+        <select name="timetable">
+            {% for timetable in timetables %}
+            <option value={{ timetable.pk }}>{{ timetable.user.username }}의 시간표 {{ forloop.counter0 }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">add timetable</button>
+    </form>
+
+    <h1>Copy Timetable</h1>
+
+    <form action="/copy_timetable/" method="post">{% csrf_token %}
+        <select name="timetable">
+            {% for timetable in timetables %}
+            <option value={{ timetable.pk }}>{{ timetable.user.username }}의 시간표 {{ forloop.counter0 }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">copy timetable</button>
+    </form>
+
     <h1>Search subject</h1>
 
-    <form action="/search_subject" method="get">
+    <form action="/search_subject/" method="get">
     	<p>검색어</p>
     	<input name="q" type="text">
     	<p>
@@ -92,6 +125,37 @@
 
     	<button type="submit">search subject</button>
     </form>
+
+    <h1>Add Subject To Timetable</h1>
+
+    <form action="/add_subject_to_timetable/" method="post">{% csrf_token %}
+        <select name="timetable">
+            {% for timetable in timetables %}
+            <option value={{ timetable.pk }}>{{ timetable.user.username }}의 시간표 {{ forloop.counter0 }}</option>
+            {% endfor %}
+        </select>
+        <select name="subject">
+            {% for subject in subjects %}
+            <option value={{ subject.pk }}>{{ subject.name }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">add subject to timetable</button>
+    </form>
+
+    <form action="/delete_subject_to_timetable/" method="post">{% csrf_token %}
+        <select name="timetable">
+            {% for timetable in timetables %}
+            <option value={{ timetable.pk }}>{{ timetable.user.username }}의 시간표 {{ forloop.counter0 }}</option>
+            {% endfor %}
+        </select>
+        <select name="subject">
+            {% for subject in subjects %}
+            <option value={{ subject.pk }}>{{ subject.name }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">delete subject to timetable</button>
+    </form>
+
     <script>
     	$(document).ready(function() {
     		$('select').formSelect();

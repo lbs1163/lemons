@@ -68,7 +68,12 @@ def timetable(request):
     semesters = Semester.objects.all()
     departments = Department.objects.all()
     categories = Category.objects.all()
-    return render(request, "core/test.html", {'semesters': semesters, 'departments': departments, 'categories': categories})
+    subjects = Subject.objects.all()
+    return render(request, "core/test.html",
+        {'semesters': semesters,
+        'departments': departments,
+        'categories': categories,
+        'subjects': subjects})
 
 @login_required
 def select_semester(request):
