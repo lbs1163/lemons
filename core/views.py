@@ -84,14 +84,14 @@ def select_semester(request):
 
 @login_required
 def add_timetable(request):
-    if request.POST.get('name') == None:
+    if request.POST.get('semester') == None:
         raise Http404()
-    dump = Timetable.objects.create(user = request.user, semester = request.POST.get('Semester'))
-    return JsonResponse(dump) #수정 필요함
+    add_table = Timetable.objects.create(user = request.user, semester = get_object_or_404(Semester, pk = request.POST.get('semester')))
+    return JsonResponse(add_table.to_dict(), safe = False)
 
 @login_required
 def delete_timetable(request):
-    del_table = request.POST.get('Timetable')
+    del_table = request.POST.get('timetable')
     if del_table.user == request.user:
         delete(del_table)
         return JsonResponse("성공적으로 삭제했습니다.", safe = False)
@@ -100,11 +100,10 @@ def delete_timetable(request):
 
 @login_required
 def copy_timetable(request):
-    table = request.POST.get('Timetable')
+    table = get_object_or_404(Timetable, pk = request.POST.get('timetable'))
     if table.user == request.POST.get('user'):
-        cpy_table = Timetable.objects.create(user = request.user, semester = request.POST.get('semester'))
-        cpy_table.subjects = table.subjects
-        return JsonResponse(cpy_table) #수정 필요함
+        cpy_table = Timetable.objects.create(user = request.user, semester = table.semester, subjects = table.subjects)
+        return JsonResponse(cpy_table.to_dict(), safe = False)
     return JsonResponse("다른 유저의 시간표입니다. 복사하지 못했습니다.", safe = False)
 
 @login_required
@@ -182,20 +181,20 @@ def search_subject(request):
 
 @login_required
 def add_subject_to_timetable(request):
-    table = request.POST.get('Timetable')
-    add_subject = request.POST.get('Subject')
+    table = get_object_or_404(Timetable, pk = request.POST.get('timetable'))
+    add_subject = get_object_or_404(Subject, pk = request.POST.get('subject'))
     for i in table.subjects.all() :
         if(add_subject.name == i) :
             return JsonResponse("이미 시간표에 있는 과목입니다.", safe = False)
     table.subjects.add(add_subject)
-    return JsonResponse(table) #수정 필요함
+    return JsonResponse(table.to_dict(), safe = False)
 
 @login_required
 def delete_subject_to_timetable(request):
-    table = request.POST.get('Timetable')
-    delete_subject = request.POST.get('Subject')
+    table = get_object_or_404(Timetable, pk = request.POST.get('timetable'))
+    delete_subject = get_object_or_404(Subject, pk = request.POST.get('subject'))
     for i in table.subjects.all() :
         if(delete_subject.name == i) :
             table.subjects.remove(i)
-            return JsonResponse(table) #수정 필요함
+            return JsonResponse(table.to_dict(), safe = False)
     return  JsonResponse("과목을 찾지 못하였습니다. 삭제하지 못했습니다.", safe = False)
