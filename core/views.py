@@ -65,6 +65,15 @@ class Activate(View):
 
 @login_required
 def timetable(request):
+    semesters = Semester.objects.all().order_by('-code')
+    semester = semesters.first()
+    timetables = Timetable.objects.filter(user=request.user, semester=semester)
+    return render(request, "core/index.html",
+        {'semesters': semesters,
+        'timetables': timetables})
+
+@login_required
+def test(request):
     semesters = Semester.objects.all()
     departments = Department.objects.all()
     categories = Category.objects.all()
