@@ -8,8 +8,8 @@ urlpatterns = [
 	url(r'^login/$', auth_views.LoginView.as_view(template_name='core/login.html', redirect_authenticated_user=True), name='login'),
 	url(r'^logout/$', auth_views.LogoutView.as_view(template_name='core/logout.html'), name='logout'),
 	url(r'^activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$', Activate.as_view(), name='activate'),
-	# 이건 내가 할꺼임
 	url(r'^$', views.timetable, name='timetable'),
+	url(r'^test/$', views.test, name='test'),
 	# select semester
 	# get method로 요청이 들어오면 사용자 로그인 체크 (login_required decorator 검색해보셈)
 	# URL query: semester (학기 모델의 pk가 들어있음)

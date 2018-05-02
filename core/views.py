@@ -65,6 +65,15 @@ class Activate(View):
 
 @login_required
 def timetable(request):
+    semesters = Semester.objects.all().order_by('-code')
+    semester = semesters.first()
+    timetables = Timetable.objects.filter(user=request.user, semester=semester)
+    return render(request, "core/index.html",
+        {'semesters': semesters,
+        'timetables': timetables})
+
+@login_required
+def test(request):
     semesters = Semester.objects.all()
     departments = Department.objects.all()
     categories = Category.objects.all()
@@ -86,14 +95,14 @@ def select_semester(request):
 
 @login_required
 def add_timetable(request):
-    if request.POST.get('name') == None:
+    if request.POST.get('semester') == None:
         raise Http404()
-    dump = Timetable.objects.create(user = request.user, semester = request.POST.get('Semester'))
-    return JsonResponse(dump) #수정 필요함
+    add_table = Timetable.objects.create(user = request.user, semester = get_object_or_404(Semester, pk = request.POST.get('semester')))
+    return JsonResponse(add_table.to_dict(), safe = False)
 
 @login_required
 def delete_timetable(request):
-    del_table = request.POST.get('Timetable')
+    del_table = request.POST.get('timetable')
     if del_table.user == request.user:
         delete(del_table)
         return JsonResponse("성공적으로 삭제했습니다.", safe = False)
@@ -102,107 +111,106 @@ def delete_timetable(request):
 
 @login_required
 def copy_timetable(request):
-    table = request.POST.get('Timetable')
+    table = get_object_or_404(Timetable, pk = request.POST.get('timetable'))
     if table.user == request.POST.get('user'):
-        cpy_table = Timetable.objects.create(user = request.user, semester = request.POST.get('semester'))
-        cpy_table.subjects = table.subjects
-        return JsonResponse(cpy_table) #수정 필요함
+        cpy_table = Timetable.objects.create(user = request.user, semester = table.semester, subjects = table.subjects)
+        return JsonResponse(cpy_table.to_dict(), safe = False)
     return JsonResponse("다른 유저의 시간표입니다. 복사하지 못했습니다.", safe = False)
 
 @login_required
 def search_subject(request):
-	subjects = Subject.objects.all()
+    subjects = Subject.objects.all()
 
-	if request.GET.get('q') :
-		q = request.GET.get('q')
-		aliases = Alias.objects.filter(nickname__contains = q)
-		aliaspks = [alias.original.pk for alias in aliases]
+    if request.GET.get('q') :
+        q = request.GET.get('q')
+        aliases = Alias.objects.filter(nickname__contains = q)
+        aliaspks = [alias.original.pk for alias in aliases]
 
-		subjects = subjects.filter(Q(professor__contains = q) | Q(name__contains = q) | Q(code__contains = q) | Q(pk__in = aliaspks))
+        subjects = subjects.filter(Q(professor__contains = q) | Q(name__contains = q) | Q(code__contains = q) | Q(pk__in = aliaspks))
 
-	hundreds = ""
-	if request.GET.get('1hundred') :
-		hundreds+="1"
-	if request.GET.get('2hundred') :
-		hundreds+="2"
-	if request.GET.get('3hundred') :
-		hundreds+="3"
-	if request.GET.get('4hundred') :
-		hundreds+="4"
+    hundreds = ""
+    if request.GET.get('1hundred') :
+        hundreds+="1"
+    if request.GET.get('2hundred') :
+        hundreds+="2"
+    if request.GET.get('3hundred') :
+        hundreds+="3"
+    if request.GET.get('4hundred') :
+        hundreds+="4"
 
-	if hundreds :
-		hundredregex = r'^[A-Z]+[' + hundreds + r'][0-9A-Za-z]*$'
-		subjects.filter(code = hundredregex)
+    if hundreds :
+        hundredregex = r'^[A-Z]+[' + hundreds + r'][0-9A-Za-z]*$'
+        print(hundreds)
+        print(hundredregex)
+        subjects.filter(code__iregex = r'^[A-Z]+[1][0-9A-Za-z]*$')
 
-	if request.GET.get('department') :
+    if request.GET.get('department') :
+        subjects = subjects.filter(department__pk = request.GET.get('department'))
 
-		subjects = subjects.filter(department__pk = request.GET.get('department'))
+    if request.GET.get('category') :
+        subjects = subjects.filter(category__pk = request.GET.get('category'))
 
-	if request.GET.get('category') :
-		subjects = subjects.filter(category__pk = request.GET.get('category'))
+    if request.GET.get('start_time') :
+        start_time = request.GET.get('start_time')
+        dayoftheweek = start_time[:3]
+        stime = datetime.datetime.strptime(start_time[4:], "%H:%M").time()
+        end_time = request.GET.get('end_time')
+        etime = datetime.datetime.strptime(end_time[4:], "%H:%M").time()
+        if dayoftheweek == "MON" :
+            periods = Period.objects.filter(mon=True)
+        elif dayoftheweek == "TUE" :
+            periods = Period.object.filter(tue=True)
+        elif dayoftheweek == "WED" :
+            periods = Period.object.filter(wed=True)
+        elif dayoftheweek == "THR" :
+            periods = Period.object.filter(thr=True)
+        elif dayoftheweek == "FRI" :
+            periods = Period.object.filter(fri=True)
+        periods = periods.filter(Q(start__gte=stime)&Q(end__lte=etime))
+        periodsubjectpks = [period.subject.pk for period in periods]
+        subjects = subjects.filter(pk__in = periodsubjectpks)
 
-	if request.GET.get('start_time') :
-		start_time = request.GET.get('start_time')
-		dayoftheweek = start_time[:3]
-		stime = datetime.datetime.strptime(start_time[4:], "%H:%M").time()
-		end_time = request.GET.get('end_time')
-		etime = datetime.datetime.strptime(end_time[4:], "%H:%M").time()
-		if dayoftheweek == "MON" :
-			periods = Period.objects.filter(mon=True)
-		elif dayoftheweek == "TUE" :
-			periods = Period.object.filter(tue=True)
-		elif dayoftheweek == "WED" :
-			periods = Period.object.filter(wed=True)
-		elif dayoftheweek == "THR" :
-			periods = Period.object.filter(thr=True)
-		elif dayoftheweek == "FRI" :
-			periods = Period.object.filter(fri=True)
-		periods = periods.filter(Q(start__gte=stime)&Q(end__lte=etime))
-		periodsubjectpks = [period.subject.pk for period in periods]
-		subjects = subjects.filter(pk__in = periodsubjectpks)
+    credits = ""
+    if request.GET.get('1credit') :
+        credits+="1"
+    if request.GET.get('2credit') :
+        credits+="2"
+    if request.GET.get('3credit') :
+        credits+="3"
+    if request.GET.get('4credit') :
+        credits+="4"
 
-	credits = ""
-	if request.GET.get('1credit') :
-		credits+="1"
-	if request.GET.get('2credit') :
-		credits+="2"
-	if request.GET.get('3credit') :
-		credits+="3"
-	if request.GET.get('4credit') :
-		credits+="4"
-
-	if credits :
-		creditregex = r'^[A-Z]+[' + credits + r'][0-9A-Za-z]*$'
-		subjects.filter(code = creditregex)
-
-
-	subjects.order_by('code')
-
-	returnsubject = [subject.to_dict() for subject in subjects]
-
-	return JsonResponse(returnsubject, safe=False)
+    if credits :
+        creditregex = r'^[0-9][-][][0-9][-][' + credits + r']$'
+        subjects.filter(code = creditregex)
 
 
-#problem: another user can add and delete his/her subject.
+    subjects.order_by('code')
+
+    returnsubject = [subject.to_dict() for subject in subjects]
+
+    return JsonResponse(returnsubject, safe=False)
+
+
+#problem: 다른 사람이 내 시간표에 과목 추가 가능.
 @login_required
 def add_subject_to_timetable(request):
-    table = request.POST.get('timetable')
-    add_subject = request.POST.get('subject')
-    table = Timetable.objects.all()[int(table)-1]
-    add_subject = Subject.objects.all()[int(add_subject)-1]
+    table = get_object_or_404(Timetable, pk = request.POST.get('timetable'))
+    add_subject = get_object_or_404(Subject, pk = request.POST.get('subject'))
+    print (table)
+    print (add_subject)
+
     for i in table.subjects.all() :
         if(add_subject.pk == i.pk) :
             return JsonResponse("이미 시간표에 있는 과목입니다.", safe = False)
     table.subjects.add(add_subject)
     return JsonResponse(table.to_dict())
 
-#problem: another user can add and delete his/her subject.
+#problem: 다른 사람이 내 시간표에 과목 삭제 가능.
 @login_required
 def delete_subject_to_timetable(request):
-    table = request.POST.get('timetable')
-    delete_subject = request.POST.get('subject')
-    table = Timetable.objects.all()[int(table)-1]
-    delete_subject = Subject.objects.all()[int(delete_subject)-1]
+    table = get_object_or_404(Timetable, pk = request.POST.get('timetable'))
+    delete_subject = get_object_or_404(Subject, pk = request.POST.get('subject'))
 
     for i in table.subjects.all() :
         if(delete_subject.pk == i.pk) :
