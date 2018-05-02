@@ -45,6 +45,21 @@ urlpatterns = [
 	# ex) copy_timetable/?q=윤은영&hundreds=1
 	# 검색 조건에 맞는 subject들을 학수번호로 정렬하여 JSON으로 return
 	url(r'^search_subject/$', views.search_subject, name='search_subject'),
+	# add subject to timetable
+	# post method로 요청이 들어오면 사용자 로그인 체크
+	# POST data: timetable, subject (시간표 모델과 과목 모델의 pk가 들어있음)
+	# 해당 timetable이 user 소유인지 확인
+	# user 소유가 맞으면 해당 subject를 추가
+	# 성공하면 변경된 timetable의 내용을 JSON 형식으로 return
+	# 실패하면 실패 메시지를 JSON으로 return
 	url(r'^add_subject_to_timetable/$', views.add_subject_to_timetable, name='add_subject_to_timetable'),
+	# delete subject to timetable
+	# post method로 요청이 들어오면 사용자 로그인 체크
+	# POST data: timetable, subject (시간표 모델과 과목 모델의 pk가 들어있음)
+	# 해당 timetable이 user 소유인지 확인
+	# 해당 subject가 해당 timetable에 포함되어 있는지 확인
+	# user 소유가 맞고 해당 subject가 있으면 해당 subject를 삭제
+	# 성공하면 변경된 timetable의 내용을 JSON 형식으로 return
+	# 실패하면 실패 메시지를 JSON으로 return
 	url(r'^delete_subject_to_timetable/$', views.delete_subject_to_timetable, name='delete_subject_to_timetable'),
 ]
