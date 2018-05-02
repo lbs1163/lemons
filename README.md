@@ -1,6 +1,11 @@
 # 2018 Lemons Renewal
 ## Developer
 * lbs1163
+* mmj4594
+* posko17
+* anpandapoapper
+* jelee999
+* kimsj0302
 
 ## Development Environment
 ### Basic

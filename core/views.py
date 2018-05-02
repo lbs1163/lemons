@@ -68,14 +68,19 @@ def timetable(request):
     semesters = Semester.objects.all()
     departments = Department.objects.all()
     categories = Category.objects.all()
-    return render(request, "core/test.html", {'semesters': semesters, 'departments': departments, 'categories': categories})
+    subjects = Subject.objects.all()
+    return render(request, "core/test.html",
+        {'semesters': semesters,
+        'departments': departments,
+        'categories': categories,
+        'subjects': subjects})
 
 @login_required
 def select_semester(request):
-    if request.GET.get('name') == None:
+    if request.GET.get('semester') == None:
         raise Http404()
-    dump = Timetable.objects.filter(semester = request.GET.get('Semester'))
-    return JsonResponse(dump)
+    timetables = Timetable.objects.filter(semester = request.GET.get('semester'))
+    return JsonResponse([timetable.to_dict() for timetable in timetables], safe=False)
 
 @login_required
 def add_timetable(request):

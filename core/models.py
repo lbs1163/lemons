@@ -4,9 +4,6 @@ from django.http import JsonResponse
 from django.contrib.auth.models import User
 from django.db.models.fields.related import ManyToManyField, ForeignKey
 
-class User(models.Model):
-	pass
-
 class Category(models.Model):
 	category = models.CharField(max_length=40)
 	def __str__(self):
@@ -100,14 +97,14 @@ class Alias(models.Model):
 		return self.nickname
 
 class Timetable(models.Model):
-	#user = models.ForeignKey(User)
+	user = models.ForeignKey(User, null=True, blank=True)
 	semester = models.ForeignKey(Semester)
 	subjects = models.ManyToManyField(Subject)
 	def __str__(self):
-		return self.user+" "+self.semester
+		return self.user.username+" "+self.semester.name
 	def to_dict(self):
 		result = {}
-		#result['user'] = self.user
+		result['user'] = self.user.username
 		result['semester'] = self.semester.to_dict()
 
 		for f in self._meta.many_to_many:
