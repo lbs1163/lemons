@@ -69,11 +69,13 @@ def timetable(request):
     departments = Department.objects.all()
     categories = Category.objects.all()
     subjects = Subject.objects.all()
+    timetables = Timetable.objects.all()
     return render(request, "core/test.html",
         {'semesters': semesters,
         'departments': departments,
         'categories': categories,
-        'subjects': subjects})
+        'subjects': subjects,
+        'timetables': timetables})
 
 @login_required
 def select_semester(request):
@@ -180,22 +182,30 @@ def search_subject(request):
 
 	return JsonResponse(returnsubject, safe=False)
 
+
+#problem: another user can add and delete his/her subject.
 @login_required
 def add_subject_to_timetable(request):
-    table = request.POST.get('Timetable')
-    add_subject = request.POST.get('Subject')
+    table = request.POST.get('timetable')
+    add_subject = request.POST.get('subject')
+    table = Timetable.objects.all()[int(table)-1]
+    add_subject = Subject.objects.all()[int(add_subject)-1]
     for i in table.subjects.all() :
-        if(add_subject.name == i) :
+        if(add_subject.pk == i.pk) :
             return JsonResponse("이미 시간표에 있는 과목입니다.", safe = False)
     table.subjects.add(add_subject)
-    return JsonResponse(table) #수정 필요함
+    return JsonResponse(table.to_dict())
 
+#problem: another user can add and delete his/her subject.
 @login_required
 def delete_subject_to_timetable(request):
-    table = request.POST.get('Timetable')
-    delete_subject = request.POST.get('Subject')
+    table = request.POST.get('timetable')
+    delete_subject = request.POST.get('subject')
+    table = Timetable.objects.all()[int(table)-1]
+    delete_subject = Subject.objects.all()[int(delete_subject)-1]
+
     for i in table.subjects.all() :
-        if(delete_subject.name == i) :
+        if(delete_subject.pk == i.pk) :
             table.subjects.remove(i)
-            return JsonResponse(table) #수정 필요함
+            return JsonResponse(table.to_dict()) #수정 필요함
     return  JsonResponse("과목을 찾지 못하였습니다. 삭제하지 못했습니다.", safe = False)
