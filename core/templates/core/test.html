@@ -142,6 +142,8 @@
         <button type="submit">add subject to timetable</button>
     </form>
 
+    <h1>Delete Subject To Timetable</h1>
+
     <form action="/delete_subject_to_timetable/" method="post">{% csrf_token %}
         <select name="timetable">
             {% for timetable in timetables %}
