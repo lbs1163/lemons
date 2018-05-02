@@ -21,7 +21,7 @@ class Department(models.Model):
 		result = {}
 		result['name'] = self.name
 		return result
-
+		
 class Semester(models.Model):
 	name = models.CharField(max_length=40)#2018 1st semester
 	code = models.CharField(max_length=40)#2018S
