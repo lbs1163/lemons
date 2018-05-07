@@ -61,5 +61,5 @@ urlpatterns = [
 	# user 소유가 맞고 해당 subject가 있으면 해당 subject를 삭제
 	# 성공하면 변경된 timetable의 내용을 JSON 형식으로 return
 	# 실패하면 실패 메시지를 JSON으로 return
-	url(r'^delete_subject_to_timetable/$', views.delete_subject_to_timetable, name='delete_subject_to_timetable'),
+	url(r'^delete_subject_from_timetable/$', views.delete_subject_from_timetable, name='delete_subject_from_timetable'),
 ]

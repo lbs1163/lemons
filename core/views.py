@@ -68,9 +68,13 @@ def timetable(request):
     semesters = Semester.objects.all().order_by('-code')
     semester = semesters.first()
     timetables = Timetable.objects.filter(user=request.user, semester=semester)
+    hours = range(8, 24)
+    days = ['mon', 'tue', 'wed', 'thu', 'fri']
     return render(request, "core/index.html",
         {'semesters': semesters,
-        'timetables': timetables})
+        'timetables': timetables,
+        'hours': hours,
+        'days': days})
 
 @login_required
 def test(request):
@@ -208,7 +212,7 @@ def add_subject_to_timetable(request):
 
 #problem: 다른 사람이 내 시간표에 과목 삭제 가능.
 @login_required
-def delete_subject_to_timetable(request):
+def delete_subject_from_timetable(request):
     table = get_object_or_404(Timetable, pk = request.POST.get('timetable'))
     delete_subject = get_object_or_404(Subject, pk = request.POST.get('subject'))
 

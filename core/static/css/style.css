@@ -8,3 +8,83 @@ body {
 main {
     flex: 1 0 auto;
 }
+
+#timetable ul.tabs {
+	margin-top: 10px;
+	background-color: transparent;
+}
+
+#timetable ul.tabs .tab a {
+	background-color: #dbdbdb;
+}
+
+#timetable ul.tabs .tab a.active {
+	background-color: white;
+}
+
+#timetable ul.tabs .indicator {
+	top: 0;
+}
+
+.timetable .days {
+	background-color: white;
+	font-size: 5px;
+	text-align: center;
+	padding-left: 15px;
+}
+
+.timetable .days p {
+	position: relative;
+	top: 10px;
+	width: 20%;
+	margin: 0;
+	display: inline-block;
+}
+
+.timetable .time {
+	background-color: white;
+	position: absolute;
+	width: 15px;
+	font-size: 5px;
+	text-align: right;
+}
+
+.timetable .time p {
+	margin: 0;
+	vertical-align: middle;
+	height: 4vh;
+	line-height: 4vh;
+}
+
+.timetable .daybox {
+	background-color: white;
+	padding: 2vh 0;
+	padding-left: 15px;
+}
+
+.timetable .day {
+	width: 20%;
+	display: inline-block;
+	padding: 0 1vw;
+}
+
+.timetable .hour {
+	height: 4vh;
+	box-sizing: border-box;
+	border-top: 1px solid #e5e5e5;
+}
+
+.timetable .hour:last-child {
+	box-sizing: content-box;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+.timetable .thirty-minute:first-child {
+	box-sizing: content-box;
+	border-bottom: 1px dotted #e5e5e5;
+}
+
+.thirty-minute {
+	height: 2vh;
+	box-sizing: border-box;
+}

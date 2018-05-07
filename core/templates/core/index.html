@@ -1,5 +1,7 @@
 {% extends 'core/base.html' %}
 
+{% load static %}
+
 {% block content %}
 <div class="container">
 
@@ -12,13 +14,56 @@
                     {% if forloop.counter0 == 0 %}
                     class="active"
                     {% endif %}
-                    href="#timetable{{timetable.pk}}">시간표 {{ forloop.counter0 }}</a>
+                    href="#timetable{{timetable.pk}}">시간표 {{ forloop.counter0 | add:"1" }}</a>
                 </li>
                 {% endfor %}
             </ul>
         </div>
         {% for timetable in timetables %}
-        <div id="timetable{{timetable.pk}}" class="col s12">시간표 {{ forloop.counter0 }}</div>
+        <div id="timetable{{timetable.pk}}" class="col s12 timetable">
+            <div class="days">
+                <p>월요일</p><p>
+                화요일</p><p>
+                수요일</p><p>
+                목요일</p><p>
+                금요일</p>
+            </div>
+            <div class="time">
+                <p>8</p>
+                <p>9</p>
+                <p>10</p>
+                <p>11</p>
+                <p>12</p>
+                <p>1</p>
+                <p>2</p>
+                <p>3</p>
+                <p>4</p>
+                <p>5</p>
+                <p>6</p>
+                <p>7</p>
+                <p>8</p>
+                <p>9</p>
+                <p>10</p>
+                <p>11</p>
+                <p>12</p>
+            </div>
+            <div class="daybox">
+                <!--
+                {% for day in days %}
+                --><div class="day" day="{{day}}">
+                    {% for hour in hours %}
+                    <div class="hour" hour="{{hour}}">
+                        <div class="thirty-minute" start="0">
+                        </div>
+                        <div class="thirty-minute" start="30">
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div><!--
+                {% endfor %}
+                -->
+            </div>
+        </div>
         {% endfor %}
     </div>
 
@@ -37,10 +82,11 @@
 
 </div>
 <script>
-
 $(document).ready(function(){
     $('.tabs').tabs();
     $('.fixed-action-btn').floatingActionButton();
 });
 </script>
+
+<script src="{% static 'js/timetable.js' %}"></script>
 {% endblock %}
