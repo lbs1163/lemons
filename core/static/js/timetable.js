@@ -45,12 +45,46 @@ function selectSemester(semester) {
 }
 
 function addTimetable(semester) {
+    $.ajax({
+        method: "POST",
+        url: "/add_timetable/",
+        data: {
+            semester: semester
+        },
+    }).done(function(data) {
+          console.log(data);
+        }).fail(function() {
+              alert("오류: 시간표를 추가할 수 없습니다!");
+        });
+
 }
 
 function deleteTimetable(timetable) {
+  $.ajax({
+      method: "POST",
+      url: "/delete_timetable/",
+      data: {
+          timetable: timetable
+      },
+  }).done(function(data) {
+        console.log(data);
+      }).fail(function() {
+            alert("오류: 시간표를 삭제할 수 없습니다!");
+      });
 }
 
 function copyTimetable(timetable) {
+  $.ajax({
+      method: "POST",
+      url: "/copy_timetable/",
+      data: {
+          timetable: timetable
+      },
+  }).done(function(data) {
+        console.log(data);
+      }).fail(function() {
+            alert("오류: 시간표를 복사할 수 없습니다!");
+      });
 }
 
 function searchSubject(q, one_hundred, two_hundred, three_hundred, four_hundred, department, category, start_time, end_time, one_credit, two_credit, three_credit, four_credit) {
