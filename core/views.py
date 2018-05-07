@@ -78,7 +78,7 @@ def test(request):
     departments = Department.objects.all()
     categories = Category.objects.all()
     subjects = Subject.objects.all()
-    timetables = Timetable.objects.all()
+    timetables = Timetable.objects.filter(user=request.user)
     return render(request, "core/test.html",
         {'semesters': semesters,
         'departments': departments,
@@ -192,13 +192,10 @@ def search_subject(request):
     return JsonResponse(returnsubject, safe=False)
 
 
-#problem: 다른 사람이 내 시간표에 과목 추가 가능.
 @login_required
 def add_subject_to_timetable(request):
     table = get_object_or_404(Timetable, pk = request.POST.get('timetable'))
     add_subject = get_object_or_404(Subject, pk = request.POST.get('subject'))
-    print (table)
-    print (add_subject)
 
     for i in table.subjects.all() :
         if(add_subject.pk == i.pk) :
@@ -206,7 +203,6 @@ def add_subject_to_timetable(request):
     table.subjects.add(add_subject)
     return JsonResponse(table.to_dict())
 
-#problem: 다른 사람이 내 시간표에 과목 삭제 가능.
 @login_required
 def delete_subject_to_timetable(request):
     table = get_object_or_404(Timetable, pk = request.POST.get('timetable'))
@@ -215,5 +211,5 @@ def delete_subject_to_timetable(request):
     for i in table.subjects.all() :
         if(delete_subject.pk == i.pk) :
             table.subjects.remove(i)
-            return JsonResponse(table.to_dict()) #수정 필요함
+            return JsonResponse(table.to_dict())
     return  JsonResponse("과목을 찾지 못하였습니다. 삭제하지 못했습니다.", safe = False)
