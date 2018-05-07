@@ -196,7 +196,7 @@ def search_subject(request):
 
 @login_required
 def add_subject_to_timetable(request):
-    table = Timetable.objects.filter(user=request.user)
+    table = get_object_or_404(Timetable, user=request.user, pk = request.POST.get('timetable'))
     add_subject = get_object_or_404(Subject, pk = request.POST.get('subject'))
 
     for i in table.subjects.all() :
@@ -207,7 +207,7 @@ def add_subject_to_timetable(request):
 
 @login_required
 def delete_subject_from_timetable(request):
-    table = Timetable.objects.filter(user=request.user)
+    table = get_object_or_404(Timetable, user=request.user, pk = request.POST.get('timetable'))
     delete_subject = get_object_or_404(Subject, pk = request.POST.get('subject'))
 
     for i in table.subjects.all() :

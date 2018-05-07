@@ -113,7 +113,7 @@ function addSubjectToTimetable(timetable, subject) {
         data: {
             timetable: timetable,
             subject: subject
-        },Timetable.objects.filter(user=request.user)
+        },
     }).done(function(data) {
         console.log(data);
     }).fail(function() {
