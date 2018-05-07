@@ -87,13 +87,13 @@ function copyTimetable(timetable) {
       });
 }
 
-function searchSubject(q, one_hundred, two_hundred, three_hundred, four_hundred, department, category, start_time, end_time, one_credit, two_credit, three_credit, four_credit) {
+function searchSubject(q, one_hundred, two_hundred, three_hundred, four_hundred, higher_hundred, department, category, start_time, end_time, one_credit, two_credit, three_credit, four_credit) {
     $.ajax({
         method: "GET",
         url: "/searchSubject/",
         data: {
             q: q,
-            one_hundred: one_hundred, two_hundred: two_hundred, three_hundred: three_hundred, four_hundred: four_hundred,
+            one_hundred: one_hundred, two_hundred: two_hundred, three_hundred: three_hundred, four_hundred: four_hundred, higher_hundred: higher_hundred,
             department: department,
             category: category,
             start_time: start_time, end_time: end_time,

@@ -134,14 +134,16 @@ def search_subject(request):
         subjects = subjects.filter(Q(professor__contains = q) | Q(name__contains = q) | Q(code__icontains = q) | Q(pk__in = aliaspks))
 
     hundreds = ""
-    if request.GET.get('1hundred') :
+    if request.GET.get('one_hundred') :
         hundreds+="1"
-    if request.GET.get('2hundred') :
+    if request.GET.get('two_hundred') :
         hundreds+="2"
-    if request.GET.get('3hundred') :
+    if request.GET.get('three_hundred') :
         hundreds+="3"
-    if request.GET.get('4hundred') :
+    if request.GET.get('four_hundred') :
         hundreds+="4"
+    if request.GET.get('higher_hundred') :
+        hundreds+="56789"
 
     if hundreds :
         hundredregex = r'^[A-Z]+[' + hundreds + r'][0-9A-Za-z]*$'
@@ -174,13 +176,13 @@ def search_subject(request):
         subjects = subjects.filter(pk__in = periodsubjectpks)
 
     credits = ""
-    if request.GET.get('1credit') :
+    if request.GET.get('one_credit') :
         credits+="1"
-    if request.GET.get('2credit') :
+    if request.GET.get('two_credit') :
         credits+="2"
-    if request.GET.get('3credit') :
+    if request.GET.get('three_credit') :
         credits+="3"
-    if request.GET.get('4credit') :
+    if request.GET.get('four_credit') :
         credits+="4"
 
     if credits :
