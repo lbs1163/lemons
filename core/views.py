@@ -19,6 +19,7 @@ from .tokens import account_activation_token
 
 import datetime, time
 import json
+import re
 
 class Signup(View):
     def get(self, request):
@@ -115,7 +116,7 @@ def search_subject(request):
         aliases = Alias.objects.filter(nickname__contains = q)
         aliaspks = [alias.original.pk for alias in aliases]
 
-        subjects = subjects.filter(Q(professor__contains = q) | Q(name__contains = q) | Q(code__contains = q) | Q(pk__in = aliaspks))
+        subjects = subjects.filter(Q(professor__contains = q) | Q(name__contains = q) | Q(code__icontains = q) | Q(pk__in = aliaspks))
 
     hundreds = ""
     if request.GET.get('1hundred') :
@@ -129,9 +130,7 @@ def search_subject(request):
 
     if hundreds :
         hundredregex = r'^[A-Z]+[' + hundreds + r'][0-9A-Za-z]*$'
-        print(hundreds)
-        print(hundredregex)
-        subjects.filter(code__iregex = r'^[A-Z]+[1][0-9A-Za-z]*$')
+        subjects = subjects.filter(code__regex = hundredregex)
 
     if request.GET.get('department') :
         subjects = subjects.filter(department__pk = request.GET.get('department'))
@@ -170,9 +169,8 @@ def search_subject(request):
         credits+="4"
 
     if credits :
-        creditregex = r'^[0-9][-][][0-9][-][' + credits + r']$'
-        subjects.filter(code = creditregex)
-
+        creditregex = r'^[0-9][-][0-9][-][' + credits + r']$'
+        subjects = subjects.filter(credit__regex = creditregex)
 
     subjects.order_by('code')
 
