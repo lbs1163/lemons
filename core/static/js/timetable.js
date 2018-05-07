@@ -45,21 +45,95 @@ function selectSemester(semester) {
 }
 
 function addTimetable(semester) {
+    $.ajax({
+        method: "POST",
+        url: "/add_timetable/",
+        data: {
+            semester: semester
+        },
+    }).done(function(data) {
+          console.log(data);
+        }).fail(function() {
+              alert("오류: 시간표를 추가할 수 없습니다!");
+        });
+
 }
 
 function deleteTimetable(timetable) {
+  $.ajax({
+      method: "POST",
+      url: "/delete_timetable/",
+      data: {
+          timetable: timetable
+      },
+  }).done(function(data) {
+        console.log(data);
+      }).fail(function() {
+            alert("오류: 시간표를 삭제할 수 없습니다!");
+      });
 }
 
 function copyTimetable(timetable) {
+  $.ajax({
+      method: "POST",
+      url: "/copy_timetable/",
+      data: {
+          timetable: timetable
+      },
+  }).done(function(data) {
+        console.log(data);
+      }).fail(function() {
+            alert("오류: 시간표를 복사할 수 없습니다!");
+      });
 }
 
-function searchSubject(q, one_hundred, two_hundred, three_hundred, four_hundred, department, category, start_time, end_time, one_credit, two_credit, three_credit, four_credit) {
+function searchSubject(q, one_hundred, two_hundred, three_hundred, four_hundred, higher_hundred, department, category, start_time, end_time, one_credit, two_credit, three_credit, four_credit) {
+    $.ajax({
+        method: "GET",
+        url: "/searchSubject/",
+        data: {
+            q: q,
+            one_hundred: one_hundred, two_hundred: two_hundred, three_hundred: three_hundred, four_hundred: four_hundred, higher_hundred: higher_hundred,
+            department: department,
+            category: category,
+            start_time: start_time, end_time: end_time,
+            one_credit: one_credit, two_credit: two_credit, three_credit: three_credit, four_credit: four_credit
+        },
+    }).done(function(data) {
+        console.log(data);
+    }).fail(function() {
+        alert("오류: 검색할 수 없습니다!");
+    });
 }
 
 function addSubjectToTimetable(timetable, subject) {
+    $.ajax({
+        method: "POST",
+        url: "/add_subject_to_timetable/",
+        data: {
+            timetable: timetable,
+            subject: subject
+        },
+    }).done(function(data) {
+        console.log(data);
+    }).fail(function() {
+        alert("오류: addSubjectTotimetable!");
+    });
 }
 
 function deleteSubjectFromTimetable(timetable, subject) {
+    $.ajax({
+        method: "POST",
+        url: "/delete_subject_from_timetable/",
+        data: {
+            timetable: timetable,
+            subject: subject
+        },
+    }).done(function(data) {
+        console.log(data);
+    }).fail(function() {
+        alert("오류: deleteSubjectFromTimetable");
+    });
 }
 
 function redrawPeriod(period) {
