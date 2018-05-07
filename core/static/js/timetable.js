@@ -57,7 +57,31 @@ function searchSubject(q, one_hundred, two_hundred, three_hundred, four_hundred,
 }
 
 function addSubjectToTimetable(timetable, subject) {
+    $.ajax({
+        method: "POST",
+        url: "/add_subject_to_timetable/",
+        data: {
+            timetable: timetable,
+            subject: subject
+        },
+    }).done(function(data) {
+        console.log(data);
+    }).fail(function() {
+        alert("오류: addSubjectTotimetable!");
+    });
 }
 
 function deleteSubjectFromTimetable(timetable, subject) {
+    $.ajax({
+        method: "POST",
+        url: "/delete_subject_from_timetable/",
+        data: {
+            timetable: timetable,
+            subject: subject
+        },
+    }).done(function(data) {
+        console.log(data);
+    }).fail(function() {
+        alert("오류: deleteSubjectFromTimetable");
+    });
 }
