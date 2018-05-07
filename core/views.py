@@ -19,6 +19,7 @@ from .tokens import account_activation_token
 
 import datetime, time
 import json
+import re
 
 class Signup(View):
     def get(self, request):
@@ -82,7 +83,7 @@ def test(request):
     departments = Department.objects.all()
     categories = Category.objects.all()
     subjects = Subject.objects.all()
-    timetables = Timetable.objects.all()
+    timetables = Timetable.objects.filter(user=request.user)
     return render(request, "core/test.html",
         {'semesters': semesters,
         'departments': departments,
@@ -130,7 +131,7 @@ def search_subject(request):
         aliases = Alias.objects.filter(nickname__contains = q)
         aliaspks = [alias.original.pk for alias in aliases]
 
-        subjects = subjects.filter(Q(professor__contains = q) | Q(name__contains = q) | Q(code__contains = q) | Q(pk__in = aliaspks))
+        subjects = subjects.filter(Q(professor__contains = q) | Q(name__contains = q) | Q(code__icontains = q) | Q(pk__in = aliaspks))
 
     hundreds = ""
     if request.GET.get('1hundred') :
@@ -144,9 +145,7 @@ def search_subject(request):
 
     if hundreds :
         hundredregex = r'^[A-Z]+[' + hundreds + r'][0-9A-Za-z]*$'
-        print(hundreds)
-        print(hundredregex)
-        subjects.filter(code__iregex = r'^[A-Z]+[1][0-9A-Za-z]*$')
+        subjects = subjects.filter(code__regex = hundredregex)
 
     if request.GET.get('department') :
         subjects = subjects.filter(department__pk = request.GET.get('department'))
@@ -185,9 +184,8 @@ def search_subject(request):
         credits+="4"
 
     if credits :
-        creditregex = r'^[0-9][-][][0-9][-][' + credits + r']$'
-        subjects.filter(code = creditregex)
-
+        creditregex = r'^[0-9][-][0-9][-][' + credits + r']$'
+        subjects = subjects.filter(credit__regex = creditregex)
 
     subjects.order_by('code')
 
@@ -196,13 +194,10 @@ def search_subject(request):
     return JsonResponse(returnsubject, safe=False)
 
 
-#problem: 다른 사람이 내 시간표에 과목 추가 가능.
 @login_required
 def add_subject_to_timetable(request):
     table = get_object_or_404(Timetable, pk = request.POST.get('timetable'))
     add_subject = get_object_or_404(Subject, pk = request.POST.get('subject'))
-    print (table)
-    print (add_subject)
 
     for i in table.subjects.all() :
         if(add_subject.pk == i.pk) :
@@ -210,7 +205,6 @@ def add_subject_to_timetable(request):
     table.subjects.add(add_subject)
     return JsonResponse(table.to_dict())
 
-#problem: 다른 사람이 내 시간표에 과목 삭제 가능.
 @login_required
 def delete_subject_from_timetable(request):
     table = get_object_or_404(Timetable, pk = request.POST.get('timetable'))
@@ -219,5 +213,5 @@ def delete_subject_from_timetable(request):
     for i in table.subjects.all() :
         if(delete_subject.pk == i.pk) :
             table.subjects.remove(i)
-            return JsonResponse(table.to_dict()) #수정 필요함
+            return JsonResponse(table.to_dict())
     return  JsonResponse("과목을 찾지 못하였습니다. 삭제하지 못했습니다.", safe = False)
