@@ -66,15 +66,26 @@ class Activate(View):
 
 @login_required
 def timetable(request):
+    semesters = Semester.objects.all().order_by('-code')
+    semester = semesters.first()
+    timetables = Timetable.objects.filter(user=request.user, semester=semester)
+    return render(request, "core/index.html",
+        {'semesters': semesters,
+        'timetables': timetables})
+
+@login_required
+def test(request):
     semesters = Semester.objects.all()
     departments = Department.objects.all()
     categories = Category.objects.all()
     subjects = Subject.objects.all()
+    timetables = Timetable.objects.all()
     return render(request, "core/test.html",
         {'semesters': semesters,
         'departments': departments,
         'categories': categories,
-        'subjects': subjects})
+        'subjects': subjects,
+        'timetables': timetables})
 
 @login_required
 def select_semester(request):
@@ -178,22 +189,29 @@ def search_subject(request):
 
     return JsonResponse(returnsubject, safe=False)
 
+
+#problem: 다른 사람이 내 시간표에 과목 추가 가능.
 @login_required
 def add_subject_to_timetable(request):
     table = get_object_or_404(Timetable, pk = request.POST.get('timetable'))
     add_subject = get_object_or_404(Subject, pk = request.POST.get('subject'))
+    print (table)
+    print (add_subject)
+
     for i in table.subjects.all() :
-        if(add_subject.name == i) :
+        if(add_subject.pk == i.pk) :
             return JsonResponse("이미 시간표에 있는 과목입니다.", safe = False)
     table.subjects.add(add_subject)
-    return JsonResponse(table.to_dict(), safe = False)
+    return JsonResponse(table.to_dict())
 
+#problem: 다른 사람이 내 시간표에 과목 삭제 가능.
 @login_required
 def delete_subject_to_timetable(request):
     table = get_object_or_404(Timetable, pk = request.POST.get('timetable'))
     delete_subject = get_object_or_404(Subject, pk = request.POST.get('subject'))
+
     for i in table.subjects.all() :
-        if(delete_subject.name == i) :
+        if(delete_subject.pk == i.pk) :
             table.subjects.remove(i)
-            return JsonResponse(table.to_dict(), safe = False)
+            return JsonResponse(table.to_dict()) #수정 필요함
     return  JsonResponse("과목을 찾지 못하였습니다. 삭제하지 못했습니다.", safe = False)
