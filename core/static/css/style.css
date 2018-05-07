@@ -52,24 +52,25 @@ main {
 .timetable .time p {
 	margin: 0;
 	vertical-align: middle;
-	height: 4vh;
-	line-height: 4vh;
+	height: 5vh;
+	line-height: 5vh;
 }
 
 .timetable .daybox {
 	background-color: white;
-	padding: 2vh 0;
+	padding: 2.5vh 0;
 	padding-left: 15px;
 }
 
 .timetable .day {
 	width: 20%;
 	display: inline-block;
-	padding: 0 1vw;
+	padding: 0 1.25vw;
+	position: relative;
 }
 
 .timetable .hour {
-	height: 4vh;
+	height: 5vh;
 	box-sizing: border-box;
 	border-top: 1px solid #e5e5e5;
 }
@@ -85,6 +86,39 @@ main {
 }
 
 .thirty-minute {
-	height: 2vh;
+	height: 2.5vh;
 	box-sizing: border-box;
+}
+
+.period {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	font-size: 5px;
+	margin: 0 1.25vw;
+	padding: 5px;
+	background-color: rgb(255, 229, 191);
+	opacity: 0.7;
+	overflow-y: hidden;
+}
+
+@media screen and (max-width: 600px) {
+	.period {
+		font-size: 1px;
+	}
+}
+
+.period p {
+	margin: 0;
+}
+
+.period p.name {
+	font-weight: bold;
+	padding-right: 15px;
+}
+
+.period p.delete {
+	right: 5px;
+	position: absolute;
 }

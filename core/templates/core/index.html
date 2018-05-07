@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block content %}
-<div class="container">
+<div class="container-fluid">
 
     <div class="row" id="timetable">
         <div class="col s12">
@@ -51,6 +51,19 @@
                 <!--
                 {% for day in days %}
                 --><div class="day" day="{{day}}">
+                    {% for subject in timetable.subjects.all %}
+                    {% for period in subject.period_set.all %}
+                    {% if period.mon and day == "mon" or period.tue and day == "tue" or period.wed and day == "wed" or period.thu and day == "thu" or period.fri and day == "fri" %}
+                    <div class="period" subject="{{subject.pk}}" 
+                    start="{{period.start|time:'G:i'}}" end="{{period.end|time:'G:i'}}">
+                        <p class="delete"><i class="tiny material-icons">clear</i></p>
+                        <p class="name">{{subject.name}}</p>
+                        <p class="professor">{{subject.professor}}</p>
+                        <p class="place">{{period.place}}</p>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                    {% endfor %}
                     {% for hour in hours %}
                     <div class="hour" hour="{{hour}}">
                         <div class="thirty-minute" start="0">

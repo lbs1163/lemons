@@ -61,3 +61,34 @@ function addSubjectToTimetable(timetable, subject) {
 
 function deleteSubjectFromTimetable(timetable, subject) {
 }
+
+function redrawPeriod(period) {
+    var start = period.attr('start');
+    var end = period.attr('end');
+
+    var starts = start.split(":");
+    var start_hour = parseInt(starts[0]);
+    var start_minute = parseInt(starts[1]);
+
+    var ends = end.split(":");
+    var end_hour = parseInt(ends[0]);
+    var end_minute = parseInt(ends[1]);
+
+    var delta = (end_hour * 60 + end_minute) - (start_hour * 60 + start_minute);
+
+    var height = (delta * 2.5 / 30) + "vh";
+    var top = (((start_hour - 8) * 60 + start_minute) * 2.5 / 30) + "vh";
+
+    period.css("height", height);
+    period.css("top", top);
+}
+
+function redrawTimetable() {
+    $(".period").each(function() {
+        redrawPeriod($(this));
+    });
+}
+
+window.onload = function() {
+    redrawTimetable();
+};
