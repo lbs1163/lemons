@@ -9,17 +9,40 @@ main {
     flex: 1 0 auto;
 }
 
+#semesters {
+	text-align: center;
+}
+
+#semesters i {
+	display: inline-block;
+	color: #757575;
+	margin: 0 10px;
+}
+
+#semesters i.disabled {
+	opacity: 0.3;
+}
+
+#semesters h4 {
+	display: none;
+}
+
+#semesters h4.active {
+	display: inline-block;
+}
+
 #timetable ul.tabs {
-	margin-top: 10px;
 	background-color: transparent;
 }
 
 #timetable ul.tabs .tab a {
-	background-color: #dbdbdb;
+	background-color: #e5e5e5;
+	color: #ee6e73;
 }
 
 #timetable ul.tabs .tab a.active {
 	background-color: white;
+	color: #ee6e73;
 }
 
 #timetable ul.tabs .indicator {
@@ -65,7 +88,7 @@ main {
 .timetable .day {
 	width: 20%;
 	display: inline-block;
-	padding: 0 1.25vw;
+	padding: 0 0.5vh;
 	position: relative;
 }
 
@@ -96,10 +119,10 @@ main {
 	left: 0;
 	right: 0;
 	font-size: 5px;
-	margin: 0 1.25vw;
+	margin: 0 0.5vh;
 	padding: 5px;
 	background-color: rgb(255, 229, 191);
-	opacity: 0.7;
+	opacity: 1;
 	overflow-y: hidden;
 }
 
@@ -122,3 +145,14 @@ main {
 	right: 5px;
 	position: absolute;
 }
+
+.mobile-fab-tip {
+    position: fixed;
+    right: 85px;
+    padding:0px 0.5rem;
+    text-align: right;
+    background-color: #323232;
+    border-radius: 2px;
+    color: #FFF;
+    width:auto;
+} 

@@ -66,7 +66,7 @@ class Activate(View):
 
 @login_required
 def timetable(request):
-    semesters = Semester.objects.all().order_by('-code')
+    semesters = Semester.objects.all().order_by('code')
     semester = semesters.first()
     timetables = Timetable.objects.filter(user=request.user, semester=semester)
     hours = range(8, 24)
@@ -95,7 +95,8 @@ def test(request):
 def select_semester(request):
     if request.GET.get('semester') == None:
         raise Http404()
-    timetables = Timetable.objects.filter(semester = request.GET.get('semester'))
+    semester = get_object_or_404(Semester, pk=request.GET.get('semester'))
+    timetables = Timetable.objects.filter(semester = semester)
     return JsonResponse([timetable.to_dict() for timetable in timetables], safe=False)
 
 @login_required
