@@ -113,12 +113,16 @@ def delete_timetable(request):
 
 @login_required
 def copy_timetable(request):
-    table = get_object_or_404(Timetable, pk = request.POST.get('timetable'))
-    if table.user == request.POST.get('user'):
-        cpy_table = Timetable.objects.create(user = request.user, semester = table.semester, subjects = table.subjects)
-        timetables = Timetable.objects.filter(user=request.user, semester=semester)
+    table = get_object_or_404(Timetable, pk=request.POST.get('timetable'))
+    if table.user == request.user:
+        subjects = table.subjects.all()
+        table.pk = None
+        table.subjects = subjects
+        table.save()
+        timetables = Timetable.objects.filter(user=request.user, semester=table.semester)
         return JsonResponse([timetable.to_dict() for timetable in timetables], safe = False)
-    return JsonResponse("다른 유저의 시간표입니다. 복사하지 못했습니다.", safe = False)
+    else:
+        raise Http404()
 
 @login_required
 def search_subject(request):

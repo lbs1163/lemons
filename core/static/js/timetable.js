@@ -188,6 +188,7 @@ function copyTimetable(timetable) {
           timetable: timetable
       },
   }).done(function(data) {
+    console.log(data);
         drawTimetables(data);
       }).fail(function() {
             alert("오류: 시간표를 복사할 수 없습니다!");
@@ -328,9 +329,9 @@ function addTimetableButtonEventHandler(e) {
 }
 
 function copyTimetableButtonEventHandler(e) {
-    var current = parseInt($("tabs.tab.active").attr("timetable"));
+    var current = $(".tabs .tab .active").attr("timetable");
 
-    var r = confirm("이 시간표를 복사하시겠습니까?")
+    var r = confirm("이 시간표를 복사하시겠습니까?");
 
     if (r) {
         copyTimetable(current);
