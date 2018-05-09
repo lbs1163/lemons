@@ -328,10 +328,13 @@ function addTimetableButtonEventHandler(e) {
 }
 
 function copyTimetableButtonEventHandler(e) {
-    var current = $('tabs.tab.active').first();
-    copyTimetable(parseInt(current.attr('timetable')));
+    var current = $('tabs.tab.active').attr("timetable");
 
-    alert("copy timetable");
+    var r = confirm("이 시간표를 복사하시겠습니까?")
+
+    if (r) {
+        copyTimetable(current);
+    }
 }
 
 function deleteTimetableButtonEventHandler(e) {
