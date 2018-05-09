@@ -104,12 +104,13 @@ def add_timetable(request):
 
 @login_required
 def delete_timetable(request):
-    del_table = request.POST.get('timetable')
+    del_table = get_object_or_404(Timetable, pk=request.POST.get('timetable'))
     if del_table.user == request.user:
-        delete(del_table)
-        return JsonResponse("성공적으로 삭제했습니다.", safe = False)
+        del_table.delete()
+        timetables = Timetable.objects.filter(user=request.user, semester=del_table.semester)
+        return JsonResponse([timetable.to_dict() for timetable in timetables], safe = False)
     else:
-        return JsonResponse("다른 유저의 시간표입니다. 삭제하지 못했습니다", safe = False)
+        raise Http404()
 
 @login_required
 def copy_timetable(request):

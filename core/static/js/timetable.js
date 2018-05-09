@@ -174,7 +174,7 @@ function deleteTimetable(timetable) {
           timetable: timetable
       },
   }).done(function(data) {
-        console.log(data);
+        drawTimetables(data);
       }).fail(function() {
             alert("오류: 시간표를 삭제할 수 없습니다!");
       });
@@ -338,9 +338,16 @@ function copyTimetableButtonEventHandler(e) {
         copyTimetable(current);
     }
 }
-
+// 지금 사용자가 보고있는 시간표를 지우는 기능??
 function deleteTimetableButtonEventHandler(e) {
-    alert("delete timetable");
+  var timetable_name = $("#timetable ul.tabs .tab a.active").html();
+  var timetable = $("#timetable ul.tabs .tab a.active").attr("timetable");
+
+  var r = confirm("현재 선택된 " + timetable_name + "을 정말로 삭제하시겠습니까?");
+
+  if (r) {
+      deleteTimetable(timetable);
+  }
 }
 
 function shareOnFacebookButtonEventHandler(e) {
@@ -349,7 +356,7 @@ function shareOnFacebookButtonEventHandler(e) {
 
 $(document).ready(function() {
     $('.fixed-action-btn').floatingActionButton();
-    
+
     $("#semester-before").bind("click", beforeSemesterButtonEventHandler);
     $("#semester-after").bind("click", afterSemesterButtonEventHandler);
 
