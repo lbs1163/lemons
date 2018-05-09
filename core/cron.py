@@ -94,6 +94,9 @@ def scrap_from_lms(year_semester, limit = True):
             ## get a subject list of one department
             page = requests.get(lms_url + 'Course.do?cmd=viewCourseAllList&courseTermDTO.courseTermId=' + year + '09' + semester 
                     + '&searchCode1=' + departments[cur_dept] + '&curPage=' + str(cur_page))
+            if page.status_code != 200:
+                cur_page += 1
+                continue
             tree = html.fromstring(page.content)
 
             ## find the href list
@@ -110,6 +113,8 @@ def scrap_from_lms(year_semester, limit = True):
             ## get one subject info and plan data from one subject data
             for cur_subject in href_list:
                 info_page = requests.get(lms_url + cur_subject)
+                if info_page.status_code != 200:
+                    continue
                 info_tree = html.fromstring(info_page.content)
 
                 ## get info table
@@ -128,7 +133,10 @@ def scrap_from_lms(year_semester, limit = True):
                 category = clear_string(info_tr[6].xpath('td')[3].text)
             
                 ## EXAMPLE: 1
-                class_number = int(clear_string(info_tr[4].xpath('td')[3].text))
+                try:
+                    class_number = int(clear_string(info_tr[4].xpath('td')[3].text))
+                except ValueError:
+                    class_number = 1
                 ## EXAMPLE: '200'
                 capacity_raw = clear_string(info_tr[10].xpath('td')[1].text)
                 ## EXAMPLE: 200
@@ -136,6 +144,8 @@ def scrap_from_lms(year_semester, limit = True):
 
                 ## load plan data
                 plan_page = requests.get(lms_url + plan_a)
+                if plan_page.status_code != 200:
+                    continue
                 plan_tree = html.fromstring(plan_page.content)
 
                 ## get plan table. sometimes it does not have any plan table (?)
@@ -186,7 +196,10 @@ def scrap_from_lms(year_semester, limit = True):
                         ## EXAMPLE: 09:30
                         start_time.append(time.split('~')[0])
                         ## EXAMPLE: 10:45
-                        end_time.append(time.split('~')[1])
+                        end_time_raw = time.split('~')[1]
+                        if end_time_raw[0:2] == '24':
+                            end_time_raw = '00' + end_time_raw[2:5]
+                        end_time.append(end_time_raw)
 
                         ## EXAMPLE: ['월', '수']
                         days.append(days_time.split('(')[0].split())
@@ -198,8 +211,6 @@ def scrap_from_lms(year_semester, limit = True):
 
                 ## Try to find category of subject. if except occurs, make one.
                 try:
-                    if category==u'0035':
-                        category = u'기초선택'
                     Category_object = Category.objects.get(category=category)
                 except ObjectDoesNotExist:
                     Category_object = Category(category=category)
@@ -219,9 +230,12 @@ def scrap_from_lms(year_semester, limit = True):
                     Subject_object.category = Category_object
                     Subject_object.department = Department_objects[cur_dept]
                     Subject_object.plan = plan_a
-                    Subject_object.professor = prof_name
-                    Subject_object.capacity = capacity
-                    Subject_object.credit = credit
+                    if prof_name != "":
+                        Subject_object.professor = prof_name
+                    if capacity != 0:
+                        Subject_object.capacity = capacity
+                    if credit != "":
+                        Subject_object.credit = credit
                     Subject_object.save()
                     try:
                         print("Subject " + subject_name + "(" + code + ") is updated")
@@ -252,36 +266,37 @@ def scrap_from_lms(year_semester, limit = True):
                 Period_objects = Period.objects.filter(subject=Subject_object)
                     
                 ## update for existing time
-                for period_object_number in range(len(Period_objects)):
-                    Period_object = Period_objects[period_object_number]
-                    Period_object.place = place[period_object_number]
+                if time_place_num - len(Period_objects) >= 0:
+                    for period_object_number in range(len(Period_objects)):
+                        Period_object = Period_objects[period_object_number]
+                        Period_object.place = place[period_object_number]
 
-                    Period_object.start = start_time[period_object_number]
-                    Period_object.end = end_time[period_object_number]
+                        Period_object.start = start_time[period_object_number]
+                        Period_object.end = end_time[period_object_number]
 
-                    Period_object.mon = '월' in days[period_object_number]
-                    Period_object.tue = '화' in days[period_object_number]
-                    Period_object.wed = '수' in days[period_object_number]
-                    Period_object.thu = '목' in days[period_object_number]
-                    Period_object.fri = '금' in days[period_object_number]
-                    Period_object.save()
+                        Period_object.mon = '월' in days[period_object_number]
+                        Period_object.tue = '화' in days[period_object_number]
+                        Period_object.wed = '수' in days[period_object_number]
+                        Period_object.thu = '목' in days[period_object_number]
+                        Period_object.fri = '금' in days[period_object_number]
+                        Period_object.save()
                     
-                ## Create Period objects for not yet created time
-                for number in range(time_place_num - len(Period_objects)):
-                    new_object_number = number + len(Period_objects)
-                    #print("Cur # " + str(new_object_number) + " with " + start_hour[new_object_number] + ":" + start_min[new_object_number])
+                    ## Create Period objects for not yet created time
+                    for number in range(time_place_num - len(Period_objects)):
+                        new_object_number = number + len(Period_objects)
+                        #print("Cur # " + str(new_object_number) + " with " + start_hour[new_object_number] + ":" + start_min[new_object_number])
                     
-                    Period_object = Period(
-                            subject = Subject_object,
-                            place = place[new_object_number],
-                            start = start_time[new_object_number],
-                            end =  end_time[new_object_number],
-                            mon = '월' in days[new_object_number],
-                            tue = '화' in days[new_object_number],
-                            wed = '수' in days[new_object_number],
-                            thu = '목' in days[new_object_number],
-                            fri = '금' in days[new_object_number])
-                    Period_object.save()
+                        Period_object = Period(
+                                subject = Subject_object,
+                                place = place[new_object_number],
+                                start = start_time[new_object_number],
+                                end =  end_time[new_object_number],
+                                mon = '월' in days[new_object_number],
+                                tue = '화' in days[new_object_number],
+                                wed = '수' in days[new_object_number],
+                                thu = '목' in days[new_object_number],
+                                fri = '금' in days[new_object_number])
+                        Period_object.save()
 
                 if limit:
                     sleep(0.5)
