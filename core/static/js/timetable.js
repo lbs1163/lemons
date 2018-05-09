@@ -328,6 +328,7 @@ function addTimetableButtonEventHandler(e) {
 }
 
 function copyTimetableButtonEventHandler(e) {
+<<<<<<< HEAD
     var current = $('tabs.tab.active').attr("timetable");
 
     var r = confirm("이 시간표를 복사하시겠습니까?")
@@ -335,6 +336,9 @@ function copyTimetableButtonEventHandler(e) {
     if (r) {
         copyTimetable(current);
     }
+=======
+    
+>>>>>>> 7ed08f2517b8aa559d903c8c20f89c08fd7ec7ac
 }
 
 function deleteTimetableButtonEventHandler(e) {
