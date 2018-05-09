@@ -321,6 +321,9 @@ function addTimetableButtonEventHandler(e) {
 }
 
 function copyTimetableButtonEventHandler(e) {
+    var current = $('tabs.tab.active').first();
+    copyTimetable(parseInt(current.attr('timetable')));
+
     alert("copy timetable");
 }
 
