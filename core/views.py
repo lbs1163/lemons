@@ -90,15 +90,17 @@ def select_semester(request):
     if request.GET.get('semester') == None:
         raise Http404()
     semester = get_object_or_404(Semester, pk=request.GET.get('semester'))
-    timetables = Timetable.objects.filter(semester = semester)
+    timetables = Timetable.objects.filter(user=request.user, semester=semester)
     return JsonResponse([timetable.to_dict() for timetable in timetables], safe=False)
 
 @login_required
 def add_timetable(request):
     if request.POST.get('semester') == None:
         raise Http404()
-    add_table = Timetable.objects.create(user = request.user, semester = get_object_or_404(Semester, pk = request.POST.get('semester')))
-    return JsonResponse(add_table.to_dict(), safe = False)
+    semester = get_object_or_404(Semester, pk=request.POST.get('semester'))
+    add_table = Timetable.objects.create(user=request.user, semester=semester)
+    timetables = Timetable.objects.filter(user=request.user, semester=semester)
+    return JsonResponse([timetable.to_dict() for timetable in timetables], safe = False)
 
 @login_required
 def delete_timetable(request):

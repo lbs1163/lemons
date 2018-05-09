@@ -32,7 +32,7 @@ function drawTimetables(data) {
     var timetable_box = $("#timetable");
     timetable_box.empty();
 
-    var tabs_outer_div = $('<div class="col s12 m10 offset-m1 l8 offset-l2"></div>');
+    var tabs_outer_div = $('<div class="col s12 xl10 offset-xl1"></div>');
 
     timetable_box.append(tabs_outer_div);
 
@@ -64,7 +64,7 @@ function drawTimetables(data) {
 
     for (var i = 0; i < data.length; i++) {
         var timetable_div = $('<div id="timetable' + data[i].pk
-            + '" class="col s12 m10 offset-m1 l8 offset-l2 timetable"></div>');
+            + '" class="col s12 xl10 offset-xl1 timetable"></div>');
         timetable_box.append(timetable_div);
 
         var days_div = $('<div class="days">'
@@ -106,7 +106,7 @@ function drawTimetables(data) {
                                 + '" end="' + periods[m].end + '"></div>');
                             day_div.append(period_div);
 
-                            period_div.append('<p class="delete"><i class="tiny material-icons">clear</i></p>');
+                            //period_div.append('<p class="delete"><i class="tiny material-icons">clear</i></p>');
                             period_div.append('<p class="name">' + subjects[l].name + '</p>');
                             period_div.append('<p class="professor">' + subjects[l].professor + '</p>');
                             period_div.append('<p class="place">' + periods[m].place + '</p>');
@@ -159,7 +159,7 @@ function addTimetable(semester) {
             semester: semester
         },
     }).done(function(data) {
-          console.log(data);
+          drawTimetables(data);
         }).fail(function() {
               alert("오류: 시간표를 추가할 수 없습니다!");
         });
@@ -257,8 +257,8 @@ function redrawPeriod(period) {
 
     var delta = (end_hour * 60 + end_minute) - (start_hour * 60 + start_minute);
 
-    var height = (delta * 2.5 / 30) + "vh";
-    var top = (((start_hour - 8) * 60 + start_minute) * 2.5 / 30) + "vh";
+    var height = (delta * 3 / 30) + "vh";
+    var top = (((start_hour - 8) * 60 + start_minute) * 3 / 30) + "vh";
 
     period.css("height", height);
     period.css("top", top);
@@ -317,7 +317,14 @@ function searchSubjectButtonEventHandler(e) {
 }
 
 function addTimetableButtonEventHandler(e) {
-    alert("add timetable");
+    var semester_name = $("h4.semester.active").html();
+    var semester = $("h4.semester.active").attr("semester");
+
+    var r = confirm(semester_name + "에 시간표를 추가하시겠습니까?");
+
+    if (r) {
+        addTimetable(semester);
+    }
 }
 
 function copyTimetableButtonEventHandler(e) {
