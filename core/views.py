@@ -66,16 +66,10 @@ class Activate(View):
 
 @login_required
 def timetable(request):
-    semesters = Semester.objects.all().order_by('code')
+    semesters = Semester.objects.all().order_by('-name')
     semester = semesters.first()
-    timetables = Timetable.objects.filter(user=request.user, semester=semester)
-    hours = range(8, 24)
-    days = ['mon', 'tue', 'wed', 'thu', 'fri']
     return render(request, "core/index.html",
-        {'semesters': semesters,
-        'timetables': timetables,
-        'hours': hours,
-        'days': days})
+        {'semesters': semesters})
 
 @login_required
 def test(request):

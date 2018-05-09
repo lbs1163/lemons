@@ -129,7 +129,7 @@ function drawTimetables(data) {
             }
         }
     }
-    
+
     redrawTimetable();
     $('.tabs').tabs();
 }
@@ -279,7 +279,7 @@ function beforeSemesterButtonEventHandler(e) {
     if (before.length == 0) {
         alert("이전 학기가 없습니다");
     } else {
-        var semester = parseInt(current.attr('semester'));
+        var semester = parseInt(before.attr('semester'));
         current.removeClass("active");
         before.addClass("active");
         selectSemester(semester);
@@ -300,7 +300,7 @@ function afterSemesterButtonEventHandler(e) {
     if (after.length == 0) {
         alert("다음 학기가 없습니다");
     } else {
-        var semester = parseInt(current.attr('semester'));
+        var semester = parseInt(after.attr('semester'));
         current.removeClass("active");
         after.addClass("active");
         selectSemester(semester);
