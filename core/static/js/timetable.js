@@ -188,10 +188,11 @@ function copyTimetable(timetable) {
           timetable: timetable
       },
   }).done(function(data) {
-    console.log(data);
         drawTimetables(data);
+
       }).fail(function() {
             alert("오류: 시간표를 복사할 수 없습니다!");
+            window.location.reload();
       });
 }
 

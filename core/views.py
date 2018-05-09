@@ -117,6 +117,7 @@ def copy_timetable(request):
     if table.user == request.user:
         subjects = table.subjects.all()
         table.pk = None
+        table.save()
         table.subjects = subjects
         table.save()
         timetables = Timetable.objects.filter(user=request.user, semester=table.semester)
