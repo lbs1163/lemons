@@ -5,101 +5,52 @@
 {% block content %}
 <div class="container-fluid">
 
-    <div class="row" id="timetable">
-        <div class="col s12">
-            <ul class="tabs">
-                {% for timetable in timetables %}
-                <li class="tab">
-                    <a
-                    {% if forloop.counter0 == 0 %}
-                    class="active"
-                    {% endif %}
-                    href="#timetable{{timetable.pk}}">시간표 {{ forloop.counter0 | add:"1" }}</a>
-                </li>
-                {% endfor %}
-            </ul>
-        </div>
-        {% for timetable in timetables %}
-        <div id="timetable{{timetable.pk}}" class="col s12 timetable">
-            <div class="days">
-                <p>월요일</p><p>
-                화요일</p><p>
-                수요일</p><p>
-                목요일</p><p>
-                금요일</p>
-            </div>
-            <div class="time">
-                <p>8</p>
-                <p>9</p>
-                <p>10</p>
-                <p>11</p>
-                <p>12</p>
-                <p>1</p>
-                <p>2</p>
-                <p>3</p>
-                <p>4</p>
-                <p>5</p>
-                <p>6</p>
-                <p>7</p>
-                <p>8</p>
-                <p>9</p>
-                <p>10</p>
-                <p>11</p>
-                <p>12</p>
-            </div>
-            <div class="daybox">
-                <!--
-                {% for day in days %}
-                --><div class="day" day="{{day}}">
-                    {% for subject in timetable.subjects.all %}
-                    {% for period in subject.period_set.all %}
-                    {% if period.mon and day == "mon" or period.tue and day == "tue" or period.wed and day == "wed" or period.thu and day == "thu" or period.fri and day == "fri" %}
-                    <div class="period" subject="{{subject.pk}}" 
-                    start="{{period.start|time:'G:i'}}" end="{{period.end|time:'G:i'}}">
-                        <p class="delete"><i class="tiny material-icons">clear</i></p>
-                        <p class="name">{{subject.name}}</p>
-                        <p class="professor">{{subject.professor}}</p>
-                        <p class="place">{{period.place}}</p>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                    {% endfor %}
-                    {% for hour in hours %}
-                    <div class="hour" hour="{{hour}}">
-                        <div class="thirty-minute" start="0">
-                        </div>
-                        <div class="thirty-minute" start="30">
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div><!--
-                {% endfor %}
-                -->
-            </div>
-        </div>
+    <div id="semesters" class="row">
+        <i id="semester-before" class="material-icons small">chevron_left</i>
+        {% for semester in semesters %}
+        <h4 semester="{{semester.pk}}" 
+        {% if forloop.counter0 == 0 %}
+        class="semester active"
+        {% else %}
+        class="semester"
+        {% endif %}
+        >{{semester.name}}</h4>
         {% endfor %}
+        <i id="semester-after" class="material-icons small disabled">chevron_right</i>
+    </div>
+
+    <div class="row" id="timetable">
     </div>
 
     <div class="fixed-action-btn">
         <a class="btn-floating btn-large grey">
-            <i class="large material-icons">menu</i>
+            <i class="large material-icons">apps</i>
         </a>
         <ul>
-            <li><a class="btn-floating orange"><i class="material-icons">search</i></a></li>
-            <li><a class="btn-floating yellow"><i class="material-icons">add</i></a></li>
-            <li><a class="btn-floating blue"><i class="material-icons">content_copy</i></a></li>
-            <li><a class="btn-floating red darken-1"><i class="material-icons">delete_forever</i></a></li>
-            <li><a class="btn-floating blue"><i class="material-icons">share</i></a></li>
+            <li>
+                <a id="search-subject" class="btn-floating orange"><i class="material-icons">search</i></a>
+                <a class="btn-floating mobile-fab-tip">과목 검색</a>
+            </li>
+            <li>
+                <a id="add-timetable" class="btn-floating yellow"><i class="material-icons">add</i></a>
+                <a class="btn-floating mobile-fab-tip">시간표 추가</a>
+            </li>
+            <li>
+                <a id="copy-timetable" class="btn-floating blue"><i class="material-icons">content_copy</i></a>
+                <a class="btn-floating mobile-fab-tip">시간표 복사</a>
+            </li>
+            <li>
+                <a id="delete-timetable" class="btn-floating red darken-1"><i class="material-icons">delete_forever</i></a>
+                <a class="btn-floating mobile-fab-tip">시간표 삭제</a>
+            </li>
+            <li>
+                <a id="share-on-facebook" class="btn-floating blue"><i class="material-icons">share</i></a>
+                <a class="btn-floating mobile-fab-tip">페이스북 공유</a>
+            </li>
         </ul>
     </div>
 
 </div>
-<script>
-$(document).ready(function(){
-    $('.tabs').tabs();
-    $('.fixed-action-btn').floatingActionButton();
-});
-</script>
 
 <script src="{% static 'js/timetable.js' %}"></script>
 {% endblock %}

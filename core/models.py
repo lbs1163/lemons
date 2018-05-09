@@ -48,6 +48,7 @@ class Subject(models.Model):
 		return self.name
 	def to_dict(self):
 		result = {}
+		result['pk'] = self.pk
 		result['name'] = self.name
 		result['code'] = self.code
 		result['category'] = self.category.to_dict()
@@ -104,6 +105,7 @@ class Timetable(models.Model):
 		return self.user.username+" "+self.semester.name
 	def to_dict(self):
 		result = {}
+		result['pk'] = self.pk
 		result['user'] = self.user.username
 		result['semester'] = self.semester.to_dict()
 

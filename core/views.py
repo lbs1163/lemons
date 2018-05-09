@@ -66,16 +66,10 @@ class Activate(View):
 
 @login_required
 def timetable(request):
-    semesters = Semester.objects.all().order_by('-code')
+    semesters = Semester.objects.all().order_by('-name')
     semester = semesters.first()
-    timetables = Timetable.objects.filter(user=request.user, semester=semester)
-    hours = range(8, 24)
-    days = ['mon', 'tue', 'wed', 'thu', 'fri']
     return render(request, "core/index.html",
-        {'semesters': semesters,
-        'timetables': timetables,
-        'hours': hours,
-        'days': days})
+        {'semesters': semesters})
 
 @login_required
 def test(request):
@@ -95,32 +89,42 @@ def test(request):
 def select_semester(request):
     if request.GET.get('semester') == None:
         raise Http404()
-    timetables = Timetable.objects.filter(semester = request.GET.get('semester'))
+    semester = get_object_or_404(Semester, pk=request.GET.get('semester'))
+    timetables = Timetable.objects.filter(user=request.user, semester=semester)
     return JsonResponse([timetable.to_dict() for timetable in timetables], safe=False)
 
 @login_required
 def add_timetable(request):
     if request.POST.get('semester') == None:
         raise Http404()
-    add_table = Timetable.objects.create(user = request.user, semester = get_object_or_404(Semester, pk = request.POST.get('semester')))
-    return JsonResponse(add_table.to_dict(), safe = False)
+    semester = get_object_or_404(Semester, pk=request.POST.get('semester'))
+    add_table = Timetable.objects.create(user=request.user, semester=semester)
+    timetables = Timetable.objects.filter(user=request.user, semester=semester)
+    return JsonResponse([timetable.to_dict() for timetable in timetables], safe = False)
 
 @login_required
 def delete_timetable(request):
-    del_table = request.POST.get('timetable')
+    del_table = get_object_or_404(Timetable, pk=request.POST.get('timetable'))
     if del_table.user == request.user:
-        delete(del_table)
-        return JsonResponse("성공적으로 삭제했습니다.", safe = False)
+        del_table.delete()
+        timetables = Timetable.objects.filter(user=request.user, semester=del_table.semester)
+        return JsonResponse([timetable.to_dict() for timetable in timetables], safe = False)
     else:
-        return JsonResponse("다른 유저의 시간표입니다. 삭제하지 못했습니다", safe = False)
+        raise Http404()
 
 @login_required
 def copy_timetable(request):
-    table = get_object_or_404(Timetable, pk = request.POST.get('timetable'))
-    if table.user == request.POST.get('user'):
-        cpy_table = Timetable.objects.create(user = request.user, semester = table.semester, subjects = table.subjects)
-        return JsonResponse(cpy_table.to_dict(), safe = False)
-    return JsonResponse("다른 유저의 시간표입니다. 복사하지 못했습니다.", safe = False)
+    table = get_object_or_404(Timetable, pk=request.POST.get('timetable'))
+    if table.user == request.user:
+        subjects = table.subjects.all()
+        table.pk = None
+        table.save()
+        table.subjects = subjects
+        table.save()
+        timetables = Timetable.objects.filter(user=request.user, semester=table.semester)
+        return JsonResponse([timetable.to_dict() for timetable in timetables], safe = False)
+    else:
+        raise Http404()
 
 @login_required
 def search_subject(request):

@@ -9,17 +9,40 @@ main {
     flex: 1 0 auto;
 }
 
+#semesters {
+	text-align: center;
+}
+
+#semesters i {
+	display: inline-block;
+	color: #757575;
+	margin: 0 10px;
+}
+
+#semesters i.disabled {
+	opacity: 0.3;
+}
+
+#semesters h4 {
+	display: none;
+}
+
+#semesters h4.active {
+	display: inline-block;
+}
+
 #timetable ul.tabs {
-	margin-top: 10px;
 	background-color: transparent;
 }
 
 #timetable ul.tabs .tab a {
-	background-color: #dbdbdb;
+	background-color: #e5e5e5;
+	color: #ee6e73;
 }
 
 #timetable ul.tabs .tab a.active {
 	background-color: white;
+	color: #ee6e73;
 }
 
 #timetable ul.tabs .indicator {
@@ -28,7 +51,6 @@ main {
 
 .timetable .days {
 	background-color: white;
-	font-size: 5px;
 	text-align: center;
 	padding-left: 15px;
 }
@@ -45,32 +67,31 @@ main {
 	background-color: white;
 	position: absolute;
 	width: 15px;
-	font-size: 5px;
 	text-align: right;
 }
 
 .timetable .time p {
 	margin: 0;
 	vertical-align: middle;
-	height: 5vh;
-	line-height: 5vh;
+	height: 6vh;
+	line-height: 6vh;
 }
 
 .timetable .daybox {
 	background-color: white;
-	padding: 2.5vh 0;
+	padding: 3vh 0;
 	padding-left: 15px;
 }
 
 .timetable .day {
 	width: 20%;
 	display: inline-block;
-	padding: 0 1.25vw;
+	padding: 0 0.5vh;
 	position: relative;
 }
 
 .timetable .hour {
-	height: 5vh;
+	height: 6vh;
 	box-sizing: border-box;
 	border-top: 1px solid #e5e5e5;
 }
@@ -86,7 +107,7 @@ main {
 }
 
 .thirty-minute {
-	height: 2.5vh;
+	height: 3vh;
 	box-sizing: border-box;
 }
 
@@ -95,18 +116,59 @@ main {
 	top: 0;
 	left: 0;
 	right: 0;
-	font-size: 5px;
-	margin: 0 1.25vw;
+	margin: 0 0.5vh;
 	padding: 5px;
 	background-color: rgb(255, 229, 191);
-	opacity: 0.7;
+	opacity: 1;
 	overflow-y: hidden;
 }
 
 @media screen and (max-width: 600px) {
 	.period {
-		font-size: 1px;
+		font-size: 10px;
 	}
+
+	.timetable .time, .timetable .days {
+		font-size: 10px;
+	}
+
+	.timetable .time {
+		width: 15px;
+	}
+	.timetable .daybox {
+		padding-left: 15px;
+	}
+}
+
+@media screen and (min-width: 600px) {
+	.period {
+		font-size: 12px;
+	}
+
+	.timetable .time, .timetable .days {
+		font-size: 14px;
+	}
+
+	.timetable .time {
+		width: 21px;
+	}
+	.timetable .daybox {
+		padding-left: 21px;
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.period {
+		font-size: 14px;
+	}
+
+}
+
+@media screen and (min-width: 1200px) {
+	.period {
+		font-size: 14px;
+	}
+
 }
 
 .period p {
@@ -115,10 +177,20 @@ main {
 
 .period p.name {
 	font-weight: bold;
-	padding-right: 15px;
 }
 
 .period p.delete {
 	right: 5px;
 	position: absolute;
 }
+
+.mobile-fab-tip {
+    position: fixed;
+    right: 85px;
+    padding:0px 0.5rem;
+    text-align: right;
+    background-color: #323232;
+    border-radius: 2px;
+    color: #FFF;
+    width:auto;
+} 
