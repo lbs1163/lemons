@@ -348,24 +348,35 @@ function addTimetableButtonEventHandler(e) {
 }
 
 function copyTimetableButtonEventHandler(e) {
-    var current = $(".tabs .tab .active").attr("timetable");
+    var timetable_name = $("#timetable ul.tabs .tab a.active").html();
+    var timetable = $(".tabs .tab .active").attr("timetable");
 
-    var r = confirm("이 시간표를 복사하시겠습니까?");
+    if (timetable == undefined) {
+        alert("오류: 복사할 시간표가 없습니다!")
+        return;
+    }
+
+    var r = confirm("현재 선택된 " + timetable_name + "(을)를 복사하시겠습니까?");
 
     if (r) {
-        copyTimetable(current);
+        copyTimetable(timetable);
     }
 }
 // 지금 사용자가 보고있는 시간표를 지우는 기능??
 function deleteTimetableButtonEventHandler(e) {
-  var timetable_name = $("#timetable ul.tabs .tab a.active").html();
-  var timetable = $("#timetable ul.tabs .tab a.active").attr("timetable");
+    var timetable_name = $("#timetable ul.tabs .tab a.active").html();
+    var timetable = $("#timetable ul.tabs .tab a.active").attr("timetable");
 
-  var r = confirm("현재 선택된 " + timetable_name + "을 정말로 삭제하시겠습니까?");
+    if (timetable == undefined) {
+        alert("오류: 삭제할 시간표가 없습니다!")
+        return;
+    }
 
-  if (r) {
+    var r = confirm("현재 선택된 " + timetable_name + "(을)를 정말로 삭제하시겠습니까?");
+
+    if (r) {
       deleteTimetable(timetable);
-  }
+    }
 }
 
 function shareOnFacebookButtonEventHandler(e) {
