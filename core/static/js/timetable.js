@@ -328,7 +328,7 @@ function addTimetableButtonEventHandler(e) {
 }
 
 function copyTimetableButtonEventHandler(e) {
-    alert("copy timetable");
+    
 }
 
 function deleteTimetableButtonEventHandler(e) {
