@@ -63,6 +63,20 @@ function drawTimetables(data) {
     }
 
     for (var i = 0; i < data.length; i++) {
+        var colors = ["red", "yellow", "orange", "teal", "purple", "indigo", "light-blue", "lime", "brown", "blue-grey"];
+        var color_num = 0;
+        var color_dict = {};
+
+        for (var j = 0; j < data[i].subjects.length; j++) {
+            if (color_dict[data[i].subjects[j].pk] == undefined) {
+                color_dict[data[i].subjects[j].pk] = colors[color_num];
+                color_num = color_num + 1;
+                if (color_num >= colors.length) {
+                    color_num = 0;
+                }
+            }
+        }
+
         var timetable_div = $('<div id="timetable' + data[i].pk
             + '" class="col s12 xl10 offset-xl1 timetable"></div>');
         timetable_box.append(timetable_div);
@@ -100,7 +114,8 @@ function drawTimetables(data) {
                             || periods[m].wed && days[j] == 'wed'
                             || periods[m].thu && days[j] == 'thu'
                             || periods[m].fri && days[j] == 'fri') {
-                            var period_div = $('<div class="period" '
+                            var period_div = $('<div class="period '
+                                + color_dict[subjects[l].pk] + ' lighten-4" '
                                 + 'subject="' + subjects[l].pk
                                 + '" start="' + periods[m].start
                                 + '" end="' + periods[m].end + '"></div>');
@@ -160,10 +175,13 @@ function addTimetable(semester) {
         },
     }).done(function(data) {
           drawTimetables(data);
-        }).fail(function() {
-              alert("오류: 시간표를 추가할 수 없습니다!");
-        });
-
+          $('#timetable .tabs .tab a').removeClass('active');
+          $('#timetable .tabs .tab a').last().addClass('active');
+          $('.tabs').tabs();
+    }).fail(function() {
+          alert("오류: 시간표를 추가할 수 없습니다!");
+          window.location.reload();
+    });
 }
 
 function deleteTimetable(timetable) {
