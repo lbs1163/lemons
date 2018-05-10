@@ -6,7 +6,7 @@
 <div class="container-fluid">
 
     <div id="semesters" class="row">
-        <i id="semester-before" class="material-icons small">chevron_left</i>
+        <a href="#"><i id="semester-before" class="material-icons small">chevron_left</i></a>
         {% for semester in semesters %}
         <h4 semester="{{semester.pk}}" 
         {% if forloop.counter0 == 0 %}
@@ -16,14 +16,14 @@
         {% endif %}
         >{{semester.name}}</h4>
         {% endfor %}
-        <i id="semester-after" class="material-icons small disabled">chevron_right</i>
+        <a href="#"><i id="semester-after" class="material-icons small disabled">chevron_right</i></a>
     </div>
 
     <div class="row" id="timetable">
     </div>
 
     <div class="fixed-action-btn">
-        <a class="btn-floating btn-large grey">
+        <a class="btn-floating btn-large red lighten-2">
             <i class="large material-icons">apps</i>
         </a>
         <ul>
@@ -51,6 +51,12 @@
     </div>
 
 </div>
-
+<script>
+    var categories = [
+    {% for category in categories %}
+    "{{category.category}}",
+    {% endfor %}
+    ];
+</script>
 <script src="{% static 'js/timetable.js' %}"></script>
 {% endblock %}

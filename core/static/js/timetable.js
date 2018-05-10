@@ -81,6 +81,33 @@ function drawTimetables(data) {
             + '" class="col s12 xl10 offset-xl1 timetable"></div>');
         timetable_box.append(timetable_div);
 
+        var credits_div = $('<div class="credit center-align"></div>');
+        credits_div.append('<h5>학점 통계</h5>');
+
+        var sum = 0;
+        var sums = Array.apply(null, Array(10)).map(Number.prototype.valueOf,0);
+        
+        for (var j = 0; j < data[i].subjects.length; j++) {
+            var subject = data[i].subjects[j];
+            var credit = parseInt(subject.credit.split('-')[2]);
+            sum = sum + credit;
+
+            for (var k = 0; k < categories.length; k++) {
+                if (categories[k] == subject.category.category) {
+                    sums[k] = sums[k] + credit;
+                }
+            }
+        }
+
+        credits_div.append('<h6 class="credit-all">총 이수학점: ' + sum + '</h6>');
+        credits_div.append('<div class="divider"></div>')
+        for (var j = 0; j < categories.length; j++) {
+            credits_div.append('<p>' + categories[j] + ': ' + sums[j] + '</p>');
+        }
+        credits_div.append('<div class="divider"></div>')
+
+        timetable_div.append(credits_div);
+
         var days_div = $('<div class="days">'
             + '<p>월요일</p><p>화요일</p><p>수요일</p><p>목요일</p><p>금요일</p>'
             + '</div>');
@@ -102,30 +129,28 @@ function drawTimetables(data) {
             var day_div = $('<div class="day" day="' + days[j] + '"></div>');
             daybox_div.append(day_div);
 
-            for (var k = 0; k < data[i].subjects.length; k++) {
-                var subjects = data[i].subjects;
+            var subjects = data[i].subjects;
 
-                for (var l = 0; l < subjects.length; l++) {
-                    var periods = subjects[l].period;
+            for (var l = 0; l < subjects.length; l++) {
+                var periods = subjects[l].period;
 
-                    for (var m = 0; m < periods.length; m++) {
-                        if (periods[m].mon && days[j] == 'mon'
-                            || periods[m].tue && days[j] == 'tue'
-                            || periods[m].wed && days[j] == 'wed'
-                            || periods[m].thu && days[j] == 'thu'
-                            || periods[m].fri && days[j] == 'fri') {
-                            var period_div = $('<div class="period '
-                                + color_dict[subjects[l].pk] + ' lighten-4" '
-                                + 'subject="' + subjects[l].pk
-                                + '" start="' + periods[m].start
-                                + '" end="' + periods[m].end + '"></div>');
-                            day_div.append(period_div);
+                for (var m = 0; m < periods.length; m++) {
+                    if (periods[m].mon && days[j] == 'mon'
+                        || periods[m].tue && days[j] == 'tue'
+                        || periods[m].wed && days[j] == 'wed'
+                        || periods[m].thu && days[j] == 'thu'
+                        || periods[m].fri && days[j] == 'fri') {
+                        var period_div = $('<div class="period '
+                            + color_dict[subjects[l].pk] + ' lighten-4" '
+                            + 'subject="' + subjects[l].pk
+                            + '" start="' + periods[m].start
+                            + '" end="' + periods[m].end + '"></div>');
+                        day_div.append(period_div);
 
-                            //period_div.append('<p class="delete"><i class="tiny material-icons">clear</i></p>');
-                            period_div.append('<p class="name">' + subjects[l].name + '</p>');
-                            period_div.append('<p class="professor">' + subjects[l].professor + '</p>');
-                            period_div.append('<p class="place">' + periods[m].place + '</p>');
-                        }
+                        //period_div.append('<p class="delete"><i class="tiny material-icons">clear</i></p>');
+                        period_div.append('<p class="name">' + subjects[l].name + '</p>');
+                        period_div.append('<p class="professor">' + subjects[l].professor + '</p>');
+                        period_div.append('<p class="place">' + periods[m].place + '</p>');
                     }
                 }
             }

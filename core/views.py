@@ -67,9 +67,10 @@ class Activate(View):
 @login_required
 def timetable(request):
     semesters = Semester.objects.all().order_by('-name')
-    semester = semesters.first()
+    categories = Category.objects.all().order_by('category')
     return render(request, "core/index.html",
-        {'semesters': semesters})
+        {'semesters': semesters,
+        'categories': categories})
 
 @login_required
 def test(request):

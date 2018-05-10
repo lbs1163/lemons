@@ -1,3 +1,9 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+* {
+	font-family: "Nanum Gothic", sans-serif;
+}
+
 body {
     display: flex;
     min-height: 100vh;
@@ -47,6 +53,46 @@ main {
 
 #timetable ul.tabs .indicator {
 	top: 0;
+}
+
+.timetable .credit {
+	background-color: white;
+	padding: 10px 0;
+}
+
+.timetable .credit .divider {
+	margin: 10px 10px;
+}
+
+.timetable .credit h5 {
+	margin-top: 0;
+}
+
+.timetable .credit p {
+	display: inline-block;
+	margin: 0;
+}
+
+@media screen and (max-width: 600px) {
+	.timetable .credit p {
+		width: 25%;
+		font-size: 10px;
+	}
+}
+
+@media screen and (min-width: 600px) {
+	.timetable .credit p {
+		width: 20%;
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.timetable .credit p {
+		width: 10%;
+	}
+}
+
+@media screen and (min-width: 1200px) {
 }
 
 .timetable .days {
