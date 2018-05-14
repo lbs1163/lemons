@@ -131,7 +131,8 @@ def copy_timetable(request):
 
 @login_required
 def search_subject(request):
-    subjects = Subject.objects.all()
+    semester = get_object_or_404(Semester, pk=request.GET.get('semester'))
+    subjects = Subject.objects.filter(semester=semester)
 
     if request.GET.get('q') :
         q = request.GET.get('q')
@@ -210,11 +211,13 @@ def add_subject_to_timetable(request):
     table = get_object_or_404(Timetable, user=request.user, pk = request.POST.get('timetable'))
     add_subject = get_object_or_404(Subject, pk = request.POST.get('subject'))
 
-    for i in table.subjects.all() :
-        if(add_subject.pk == i.pk) :
-            return JsonResponse("이미 시간표에 있는 과목입니다.", safe = False)
+    for i in table.subjects.all():
+        if(add_subject.pk == i.pk):
+            return JsonResponse({'error': '이미 시간표에 있는 과목입니다!'})
     table.subjects.add(add_subject)
-    return JsonResponse(table.to_dict())
+    table.save()
+    timetables = Timetable.objects.filter(user=request.user, semester=table.semester)
+    return JsonResponse([timetable.to_dict() for timetable in timetables], safe = False)
 
 @login_required
 def delete_subject_from_timetable(request):

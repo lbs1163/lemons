@@ -28,6 +28,34 @@ $.ajaxSetup({
     }
 });
 
+function makeSubjectModal(subject, isSearched) {
+    var asdf;
+}
+
+function drawSearchedSubjects(subjects) {
+    var searched_subjects_div = $("#searched-subjects");
+    searched_subjects_div.empty();
+
+    var collection_div = $('<ul class="collection"></ul>');
+    searched_subjects_div.append(collection_div);
+
+    for (var i = 0; i < subjects.length; i++) {
+        var item_div = $('<li class="collection-item avatar" subject="' + subjects[i].pk + '"></li>');
+        collection_div.append(item_div);
+        item_div.append('<span class="title">' + subjects[i].name + '</span>');
+        item_div.append('<p>' + subjects[i].professor + '<br>' + subjects[i].class_number + '분반</p>');
+        item_div.append('<a href="#" class="subject-add secondary-content"><i class="material-icons">add</i></a>');
+        item_div.append('<a href="#" class="subject-detail secondary-content"><i class="material-icons">search</i></a>');
+    }
+
+    $(".subject-add").bind("click", function(e) {
+        var subject = $(this).parent().attr("subject");
+        var timetable = $(".tabs .tab .active").attr("timetable");
+
+        addSubjectToTimetable(timetable, subject);
+    });
+}
+
 function drawTimetables(data) {
     var timetable_box = $("#timetable");
     timetable_box.empty();
@@ -232,27 +260,22 @@ function copyTimetable(timetable) {
       },
   }).done(function(data) {
         drawTimetables(data);
-
+        $('#timetable .tabs .tab a').removeClass('active');
+        $('#timetable .tabs .tab a').last().addClass('active');
+        $('.tabs').tabs();
       }).fail(function() {
             alert("오류: 시간표를 복사할 수 없습니다!");
             window.location.reload();
       });
 }
 
-function searchSubject(q, one_hundred, two_hundred, three_hundred, four_hundred, higher_hundred, department, category, start_time, end_time, one_credit, two_credit, three_credit, four_credit) {
+function searchSubject(data) {
     $.ajax({
         method: "GET",
-        url: "/searchSubject/",
-        data: {
-            q: q,
-            one_hundred: one_hundred, two_hundred: two_hundred, three_hundred: three_hundred, four_hundred: four_hundred, higher_hundred: higher_hundred,
-            department: department,
-            category: category,
-            start_time: start_time, end_time: end_time,
-            one_credit: one_credit, two_credit: two_credit, three_credit: three_credit, four_credit: four_credit
-        },
+        url: "/search_subject/",
+        data: data,
     }).done(function(data) {
-        console.log(data);
+        drawSearchedSubjects(data);
     }).fail(function() {
         alert("오류: 검색할 수 없습니다!");
     });
@@ -267,9 +290,16 @@ function addSubjectToTimetable(timetable, subject) {
             subject: subject
         },
     }).done(function(data) {
-        console.log(data);
+        if (data['error']) {
+            alert("오류: " + data['error']);
+        } else {
+            drawTimetables(data);
+            $('#timetable .tabs .tab a').removeClass('active');
+            $('#timetable .tabs .tab a[href="#timetable' + timetable + '"]').addClass('active');
+            $('.tabs').tabs();
+        }
     }).fail(function() {
-        alert("오류: addSubjectTotimetable!");
+        alert("오류: 시간표에 과목을 추가할 수 없습니다!");
     });
 }
 
@@ -404,6 +434,63 @@ function shareOnFacebookButtonEventHandler(e) {
     alert("share on facebook");
 }
 
+function searchButtonEventHandler(e) {
+    e.preventDefault();
+
+    var semester = $("h4.semester.active").attr("semester");
+    var data = {};
+
+    data["semester"] = semester;
+
+    if ($("#search select#category").val()) {
+        data["category"] = $("#search select#category").val();
+    }
+
+    if ($("#search select#department").val()) {
+        data["department"] = $("#search select#department").val();
+    }
+
+    if ($('#search input[name="one_hundred"]:checked').val()) {
+        data["one_hundred"] = $('#search input[name="one_hundred"]:checked').val();
+    }
+    if ($('#search input[name="two_hundred"]:checked').val()) {
+        data["two_hundred"] = $('#search input[name="two_hundred"]:checked').val();
+    }
+    if ($('#search input[name="three_hundred"]:checked').val()) {
+        data["three_hundred"] = $('#search input[name="three_hundred"]:checked').val();
+    }
+    if ($('#search input[name="four_hundred"]:checked').val()) {
+        data["four_hundred"] = $('#search input[name="four_hundred"]:checked').val();
+    }
+    if ($('#search input[name="higher_hundred"]:checked').val()) {
+        data["higher_hundred"] = $('#search input[name="higher_hundred"]:checked').val();
+    }
+
+    if ($('#search input[name="one_credit"]:checked').val()) {
+        data["one_credit"] = $('#search input[name="one_credit"]:checked').val();
+    }
+    if ($('#search input[name="two_credit"]:checked').val()) {
+        data["two_credit"] = $('#search input[name="two_credit"]:checked').val();
+    }
+    if ($('#search input[name="three_credit"]:checked').val()) {
+        data["three_credit"] = $('#search input[name="three_credit"]:checked').val();
+    }
+    if ($('#search input[name="four_credit"]:checked').val()) {
+        data["four_credit"] = $('#search input[name="four_credit"]:checked').val();
+    }
+    if ($('#search input[name="higher_credit"]:checked').val()) {
+        data["higher_credit"] = $('#search input[name="higher_credit"]:checked').val();
+    }
+
+    if ($('#search input#q').val()) {
+        data["q"] = $('#search input#q').val();
+    }
+
+    $('#searched-subjects').empty();
+    $("#searched-subjects").append('<h5>로딩중...</h5>');
+    searchSubject(data);
+}
+
 $(document).ready(function() {
     $('.fixed-action-btn').floatingActionButton();
     $('.modal').modal();
@@ -416,6 +503,8 @@ $(document).ready(function() {
     $("#copy-timetable").bind("click", copyTimetableButtonEventHandler);
     $("#delete-timetable").bind("click", deleteTimetableButtonEventHandler);
     $("#share-on-facebook").bind("click", shareOnFacebookButtonEventHandler);
+
+    $("#search-button").bind("click", searchButtonEventHandler);
 
     var semester = parseInt($('h4.semester.active').attr('semester'));
     selectSemester(semester);

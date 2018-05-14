@@ -4,6 +4,25 @@
 	font-family: "Nanum Gothic", sans-serif;
 }
 
+::-webkit-scrollbar {
+	display: absolute;
+	width: 4px;
+	height: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cccccc; 
+    border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
 body {
     display: flex;
     min-height: 100vh;
@@ -264,4 +283,22 @@ main {
 		width: 50%;
 		margin-right: 0;
 	}
+}
+
+#searched-subjects {
+	max-height: 300px;
+	overflow-y: scroll;
+}
+
+#searched-subjects .collection-item.avatar {
+	padding-left: 20px;
+	padding-right: 44px;
+}
+
+#searched-subjects .collection .collection-item.avatar .secondary-content {
+	top: 10px;
+}
+
+#searched-subjects .collection .collection-item.avatar .secondary-content:last-child {
+	top: 44px;
 }

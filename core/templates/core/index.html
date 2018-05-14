@@ -56,8 +56,8 @@
             <form>
 
                 <div class="input-field">
-                    <select name="category">
-                        <option value="" disabled selected>전체</option>
+                    <select id="category" name="category">
+                        <option value="" selected>전체</option>
                         {% for category in categories %}
                         <option value={{ category.pk }}>{{ category.category }}</option>
                         {% endfor %}
@@ -65,10 +65,10 @@
                     <label>이수구분</label>
                 </div>
 
-                <div class="input-field">
+                <div id="hundreds" class="input-field">
                     <p class="checkbox_p">
                         <label>
-                            <input name="all" type="checkbox" class="filled-in">
+                            <input name="all_hundred" type="checkbox" class="filled-in" checked="checked">
                             <span>전체</span>
                         </label>
                     </p><!--
@@ -105,8 +105,8 @@
                 </div>
 
                 <div class="input-field">
-                    <select name="department">
-                        <option value="" disabled selected>전체</option>
+                    <select id="department" name="department">
+                        <option value="" selected>전체</option>
                         {% for department in departments %}
                         <option value={{ department.pk }}>{{ department.name }}</option>
                         {% endfor %}
@@ -119,52 +119,54 @@
                 <p>끝 시간</p>
                 <input name="end_time" type="text">-->
 
-                <div class="input-field">
+                <div id="credits" class="input-field">
                     <p class="checkbox_p">
                         <label>
-                            <input name="one_hundred" type="checkbox" class="filled-in">
+                            <input name="all_credit" type="checkbox" class="filled-in" checked="checked">
                             <span>전체</span>
                         </label>
                     </p><!--
                     --><p class="checkbox_p">
                         <label>
-                            <input name="one_credit" type="checkbox">
+                            <input name="one_credit" type="checkbox" class="filled-in">
                             <span>1학점</span>
                         </label>
                     </p><!--
                     --><p class="checkbox_p">
                         <label>
-                            <input name="two_credit" type="checkbox">
+                            <input name="two_credit" type="checkbox" class="filled-in">
                             <span>2학점</span>
                         </label>
                     </p><!--
                     --><p class="checkbox_p">
                         <label>
-                            <input name="three_credit" type="checkbox">
+                            <input name="three_credit" type="checkbox" class="filled-in">
                             <span>3학점</span>
                         </label>
                     </p><!--
                     --><p class="checkbox_p">
                         <label>
-                            <input name="four_credit" type="checkbox">
+                            <input name="four_credit" type="checkbox" class="filled-in">
                             <span>4학점</span>
                         </label>
                     </p><!--
                     --><p class="checkbox_p">
                         <label>
-                            <input name="higher_credit" type="checkbox">
+                            <input name="higher_credit" type="checkbox" class="filled-in">
                             <span>5학점 이상</span>
                         </label>
                     </p>
                 </div>
 
                 <div class="input-field">
-                    <input name="q" type="text" placeholder="ex) 윤은영, 프밍, 일화실">
+                    <input id="q" name="q" type="text" placeholder="ex) 윤은영, 프밍, CSED101">
                     <label>검색어</label>
                 </div>
 
-                <button class="waves-effect waves-light btn" type="submit">검색하기</button>
+                <button id="search-button" class="waves-effect waves-light btn" type="submit">검색하기</button>
             </form>
+            <div id="searched-subjects">
+            </div>
         </div>
         <div class="modal-footer">
             <a href="#!" class="modal-close waves-effect waves-green btn-flat">닫기</a>
