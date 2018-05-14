@@ -52,7 +52,11 @@ function drawSearchedSubjects(subjects) {
         var subject = $(this).parent().attr("subject");
         var timetable = $(".tabs .tab .active").attr("timetable");
 
-        addSubjectToTimetable(timetable, subject);
+        if (timetable) {
+            addSubjectToTimetable(timetable, subject);
+        } else {
+            alert("오류: 과목을 추가할 시간표가 없습니다!");
+        }
     });
 }
 
