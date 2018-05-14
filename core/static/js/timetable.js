@@ -179,6 +179,7 @@ function drawTimetables(data) {
                         period_div.append('<p class="name">' + subjects[l].name + '</p>');
                         period_div.append('<p class="professor">' + subjects[l].professor + '</p>');
                         period_div.append('<p class="place">' + periods[m].place + '</p>');
+                        period_div.append('<a class="subject-delete" href="javascript:void(0)"><i class="material-icons">close</i></a>');
                     }
                 }
             }
@@ -197,6 +198,13 @@ function drawTimetables(data) {
             }
         }
     }
+
+    $(".subject-delete").bind("click", function(e) {
+        var subject = $(this).parent().attr('subject');
+        var timetable = $("#timetable ul.tabs .tab a.active").attr("timetable");
+
+        deleteSubjectFromTimetable(timetable, subject);
+    });
 
     redrawTimetable();
     $('.tabs').tabs();
@@ -248,6 +256,7 @@ function deleteTimetable(timetable) {
         drawTimetables(data);
       }).fail(function() {
             alert("오류: 시간표를 삭제할 수 없습니다!");
+            window.location.reload();
       });
 }
 
@@ -278,6 +287,7 @@ function searchSubject(data) {
         drawSearchedSubjects(data);
     }).fail(function() {
         alert("오류: 검색할 수 없습니다!");
+        window.location.reload();
     });
 }
 
@@ -300,6 +310,7 @@ function addSubjectToTimetable(timetable, subject) {
         }
     }).fail(function() {
         alert("오류: 시간표에 과목을 추가할 수 없습니다!");
+        window.location.reload();
     });
 }
 
@@ -312,9 +323,17 @@ function deleteSubjectFromTimetable(timetable, subject) {
             subject: subject
         },
     }).done(function(data) {
-        console.log(data);
+        if (data['error']) {
+            alert("오류: " + data['error']);
+        } else {
+            drawTimetables(data);
+            $('#timetable .tabs .tab a').removeClass('active');
+            $('#timetable .tabs .tab a[href="#timetable' + timetable + '"]').addClass('active');
+            $('.tabs').tabs();
+        }
     }).fail(function() {
-        alert("오류: deleteSubjectFromTimetable");
+        alert("오류: 시간표에서 과목을 삭제할 수 없습니다!");
+        window.location.reload();
     });
 }
 

@@ -189,7 +189,7 @@ main {
 }
 
 @media screen and (max-width: 600px) {
-	.period {
+	.period, .period .subject-delete .material-icons {
 		font-size: 10px;
 	}
 
@@ -200,13 +200,14 @@ main {
 	.timetable .time {
 		width: 15px;
 	}
+	
 	.timetable .daybox {
 		padding-left: 15px;
 	}
 }
 
 @media screen and (min-width: 600px) {
-	.period {
+	.period, .period .subject-delete .material-icons {
 		font-size: 12px;
 	}
 
@@ -223,17 +224,16 @@ main {
 }
 
 @media screen and (min-width: 992px) {
-	.period {
+	.period, .period .subject-delete .material-icons {
 		font-size: 14px;
 	}
 
 }
 
 @media screen and (min-width: 1200px) {
-	.period {
+	.period, .period .subject-delete .material-icons {
 		font-size: 14px;
 	}
-
 }
 
 .period p {
@@ -247,6 +247,13 @@ main {
 .period p.delete {
 	right: 5px;
 	position: absolute;
+}
+
+.period .subject-delete {
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: black;
 }
 
 .mobile-fab-tip {

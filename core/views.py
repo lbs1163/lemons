@@ -227,5 +227,7 @@ def delete_subject_from_timetable(request):
     for i in table.subjects.all() :
         if(delete_subject.pk == i.pk) :
             table.subjects.remove(i)
-            return JsonResponse(table.to_dict())
-    return  JsonResponse("과목을 찾지 못하였습니다. 삭제하지 못했습니다.", safe = False)
+            table.save()
+            timetables = Timetable.objects.filter(user=request.user, semester=table.semester)
+            return JsonResponse([timetable.to_dict() for timetable in timetables], safe = False)
+    return  JsonResponse({'error': '이미 시간표에 없는 과목입니다!'})
