@@ -357,10 +357,6 @@ function afterSemesterButtonEventHandler(e) {
     }
 }
 
-function searchSubjectButtonEventHandler(e) {
-    alert("search subject");
-}
-
 function addTimetableButtonEventHandler(e) {
     var semester_name = $("h4.semester.active").html();
     var semester = $("h4.semester.active").attr("semester");
@@ -410,11 +406,12 @@ function shareOnFacebookButtonEventHandler(e) {
 
 $(document).ready(function() {
     $('.fixed-action-btn').floatingActionButton();
+    $('.modal').modal();
+    $('select').formSelect();
 
     $("#semester-before").bind("click", beforeSemesterButtonEventHandler);
     $("#semester-after").bind("click", afterSemesterButtonEventHandler);
 
-    $("#search-subject").bind("click", searchSubjectButtonEventHandler);
     $("#add-timetable").bind("click", addTimetableButtonEventHandler);
     $("#copy-timetable").bind("click", copyTimetableButtonEventHandler);
     $("#delete-timetable").bind("click", deleteTimetableButtonEventHandler);

@@ -67,9 +67,11 @@ class Activate(View):
 @login_required
 def timetable(request):
     semesters = Semester.objects.all().order_by('-name')
+    departments = Department.objects.all().order_by('pk')
     categories = Category.objects.all().order_by('category')
     return render(request, "core/index.html",
         {'semesters': semesters,
+        'departments': departments,
         'categories': categories})
 
 @login_required
@@ -189,6 +191,8 @@ def search_subject(request):
         credits+="3"
     if request.GET.get('four_credit') :
         credits+="4"
+    if request.GET.get('higher_credit') :
+        credits+="56789"
 
     if credits :
         creditregex = r'^[0-9][-][0-9][-][' + credits + r']$'

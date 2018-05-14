@@ -60,7 +60,7 @@ main {
 	padding: 10px 0;
 }
 
-.timetable .credit .divider {
+.divider {
 	margin: 10px 10px;
 }
 
@@ -240,3 +240,28 @@ main {
     color: #FFF;
     width:auto;
 } 
+
+#search .checkbox_p {
+	display: inline-block;
+	margin: 0;
+	margin-right: 10px;
+	text-align: left;
+}
+
+#search .checkbox_p span {
+	padding-left: 25px;
+	font-size: 15px;
+	line-height: 20px;
+	vertical-align: middle;
+}
+
+#search .input-field {
+	margin: 30px 0;
+}
+
+@media screen and (max-width: 600px) {
+	#search .checkbox_p {
+		width: 50%;
+		margin-right: 0;
+	}
+}
