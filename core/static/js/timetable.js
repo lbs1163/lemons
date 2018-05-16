@@ -460,27 +460,31 @@ function shareOnFacebookButtonEventHandler(e) {
     alert("share on facebook");
 }
 
-function allcheckboxchangeHandler(e){
-    console.log("allcheckboxchangeHandler");
-    if ($('#search input[name="all_hundred"]').is(":checked")){
+function hundredcheckboxchangeHandler(e){
+    console.log("hundredcheckboxchangeHandler");
+    if($(this).attr("name")=="all_hundred"){
+        //전체 체크 -> 나머지 체크 해제
+        if ($('#hundreds input[name="all_hundred"]').is(":checked")){
         console.log("all is now checked");
-        $('#search input[name="one_hundred"]').removeAttr("checked");
+            $('#hundreds input[name="one_hundred"]').removeAttr("checked");
+            $('#hundreds input[name="two_hundred"]').removeAttr("checked");
+            $('#hundreds input[name="three_hundred"]').removeAttr("checked");
+            $('#hundreds input[name="four_hundred"]').removeAttr("checked");
+            $('#hundreds input[name="more_hundred"]').removeAttr("checked");
+        }
     }
     else{
-        console.log("all is not checked");
-        $('#search input[name="one_hundred"]').attr("checked", "checked");
+        //하나라도 체크하면 '전체' 체크해제
+        if(($('#hundreds input[name="one_hundred"]').is(":checked")||$('#hundreds input[name="two_hundred"]').is(":checked")||$('#hundreds input[name="three_hundred"]').is(":checked")||$('#hundreds input[name="four_hundred"]').is(":checked")||$('#hundreds input[name="more_hundred"]').is(":checked"))){
+            console.log("at least one is checked");
+            $('#hundreds input[name="all_hundred"]').removeAttr("checked");
+        }
     }
-}
-function othercheckboxchangeHandler(e){
-    console.log("othercheckboxchangeHandler");
-    if ($('#search input[name="one_hundred"]').is(":checked")){
-        console.log("one is now checked");
-        $('#search input[name="all_hundred"]').removeAttr("checked");
-    }
-    else{
-        console.log("one is not checked");
-        $('#search input[name="all_hundred"]').attr("checked", "checked");
-    }
+            //하나라도 체크가 안되어있으면 전체 해제불가
+    if ((!$('#hundreds input[name="one_hundred"]').is(":checked"))&&(!$('#hundreds input[name="two_hundred"]').is(":checked"))&&(!$('#hundreds input[name="three_hundred"]').is(":checked"))&&(!$('#hundreds input[name="four_hundred"]').is(":checked"))&&(!$('#hundreds input[name="more_hundred"]').is(":checked"))){
+        console.log("nothing is checked");
+            $('#hundreds input[name="all_hundred"]').prop("checked", "checked");
+        }
 }
 
 function searchButtonEventHandler(e) {
@@ -554,6 +558,8 @@ $(document).ready(function() {
     $("#share-on-facebook").bind("click", shareOnFacebookButtonEventHandler);
 
     $("#search-button").bind("click", searchButtonEventHandler);
+
+    $('#hundreds input[type="checkbox"]').bind("click", hundredcheckboxchangeHandler);
 
     var semester = parseInt($('h4.semester.active').attr('semester'));
     selectSemester(semester);
