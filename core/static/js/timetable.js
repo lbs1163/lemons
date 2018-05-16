@@ -537,6 +537,17 @@ function searchButtonEventHandler(e) {
     searchSubject(data);
 }
 
+function timerangeButtonEventHandler(e) {
+    e.preventDefault();
+    $("#search").modal('close');
+    var ypos = $(".timetable.active .daybox").offset().top;
+    window.scrollTo(0, ypos);
+    
+    $(".thirty-minute").bind("click", function(e) {
+        e.preventDefault();
+    });
+}
+
 $(document).ready(function() {
     $('.fixed-action-btn').floatingActionButton();
     $('.modal').modal();
@@ -552,7 +563,8 @@ $(document).ready(function() {
 
     $("#search-button").bind("click", searchButtonEventHandler);
 
+    $("#timerange").bind("click", timerangeButtonEventHandler);
+
     var semester = parseInt($('h4.semester.active').attr('semester'));
     selectSemester(semester);
 });
-
