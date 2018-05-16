@@ -231,3 +231,8 @@ def delete_subject_from_timetable(request):
             timetables = Timetable.objects.filter(user=request.user, semester=table.semester)
             return JsonResponse([timetable.to_dict() for timetable in timetables], safe = False)
     return  JsonResponse({'error': '이미 시간표에 없는 과목입니다!'})
+
+
+def subject_detail(request, subjectPK):
+    subject = get_object_or_404(Subject, pk = subjectPK)
+    return render(request, 'core/subject_detail.html', {'subject': subject})

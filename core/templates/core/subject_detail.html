@@ -1,0 +1,78 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<style type="text/css">
+</style>
+
+<div class="container">
+	<div class="row" id="subjectHeader">
+			<h4>과목 정보</h4>
+			<a class="waves-effect waves-light btn" href="http://lms.postech.ac.kr/{{subject.plan}}" target="_blank">강의계획서</a>
+	</div>
+	<div class="row">
+		<div class="col s12">
+			<table class="highlight striped">
+				<thead>
+				</thead>
+
+				<tbody>
+					<tr>
+						<td>과목명</td>
+						<td>{{subject.name}}</td>
+					</tr>
+					<tr>
+						<td>학수번호</td>
+						<td>{{subject.code}}</td>
+					</tr>
+					<tr>
+						<td>대표교수</td>
+						<td>{{subject.professor}}</td>
+					</tr>
+					<tr>
+						<td>분반코드</td>
+						<td>{{subject.class_number}}</td>
+					</tr>
+					<tr>
+						<td>학수번호+분반코드</td>
+						<td>{{subject.code}} - {{subject.class_number}}</td>
+					</tr>
+					<tr>
+						<td>개설학과</td>
+						<td>{{subject.department}}</td>
+					</tr>
+					<tr>
+						<td>이수구분</td>
+						<td>{{subject.category}}</td>
+					</tr>
+					<tr>
+						<td>이론-실습-학점</td>
+						<td>{{subject.credit}}</td>
+					</tr>
+					<tr>
+						<td>수강정원</td>
+						<td>{{subject.capacity}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+
+	<div id="modal1" class="modal">
+		<div class="modal-content">
+		</div>
+		<div class="modal-footer">
+			<a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+		</div>
+	</div>
+</div>
+
+<script>
+
+</script>
+
+
+{% endblock %}
