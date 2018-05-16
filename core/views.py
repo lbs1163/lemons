@@ -67,9 +67,12 @@ class Activate(View):
 @login_required
 def timetable(request):
     semesters = Semester.objects.all().order_by('-name')
-    semester = semesters.first()
+    departments = Department.objects.all().order_by('pk')
+    categories = Category.objects.all().order_by('category')
     return render(request, "core/index.html",
-        {'semesters': semesters})
+        {'semesters': semesters,
+        'departments': departments,
+        'categories': categories})
 
 @login_required
 def test(request):
@@ -128,7 +131,8 @@ def copy_timetable(request):
 
 @login_required
 def search_subject(request):
-    subjects = Subject.objects.all()
+    semester = get_object_or_404(Semester, pk=request.GET.get('semester'))
+    subjects = Subject.objects.filter(semester=semester)
 
     if request.GET.get('q') :
         q = request.GET.get('q')
@@ -188,6 +192,8 @@ def search_subject(request):
         credits+="3"
     if request.GET.get('four_credit') :
         credits+="4"
+    if request.GET.get('higher_credit') :
+        credits+="56789"
 
     if credits :
         creditregex = r'^[0-9][-][0-9][-][' + credits + r']$'
@@ -205,11 +211,13 @@ def add_subject_to_timetable(request):
     table = get_object_or_404(Timetable, user=request.user, pk = request.POST.get('timetable'))
     add_subject = get_object_or_404(Subject, pk = request.POST.get('subject'))
 
-    for i in table.subjects.all() :
-        if(add_subject.pk == i.pk) :
-            return JsonResponse("이미 시간표에 있는 과목입니다.", safe = False)
+    for i in table.subjects.all():
+        if(add_subject.pk == i.pk):
+            return JsonResponse({'error': '이미 시간표에 있는 과목입니다!'})
     table.subjects.add(add_subject)
-    return JsonResponse(table.to_dict())
+    table.save()
+    timetables = Timetable.objects.filter(user=request.user, semester=table.semester)
+    return JsonResponse([timetable.to_dict() for timetable in timetables], safe = False)
 
 @login_required
 def delete_subject_from_timetable(request):
@@ -219,5 +227,7 @@ def delete_subject_from_timetable(request):
     for i in table.subjects.all() :
         if(delete_subject.pk == i.pk) :
             table.subjects.remove(i)
-            return JsonResponse(table.to_dict())
-    return  JsonResponse("과목을 찾지 못하였습니다. 삭제하지 못했습니다.", safe = False)
+            table.save()
+            timetables = Timetable.objects.filter(user=request.user, semester=table.semester)
+            return JsonResponse([timetable.to_dict() for timetable in timetables], safe = False)
+    return  JsonResponse({'error': '이미 시간표에 없는 과목입니다!'})

@@ -6,7 +6,7 @@
 <div class="container-fluid">
 
     <div id="semesters" class="row">
-        <i id="semester-before" class="material-icons small">chevron_left</i>
+        <a href="#"><i id="semester-before" class="material-icons small">chevron_left</i></a>
         {% for semester in semesters %}
         <h4 semester="{{semester.pk}}" 
         {% if forloop.counter0 == 0 %}
@@ -16,19 +16,19 @@
         {% endif %}
         >{{semester.name}}</h4>
         {% endfor %}
-        <i id="semester-after" class="material-icons small disabled">chevron_right</i>
+        <a href="#"><i id="semester-after" class="material-icons small disabled">chevron_right</i></a>
     </div>
 
     <div class="row" id="timetable">
     </div>
 
     <div class="fixed-action-btn">
-        <a class="btn-floating btn-large grey">
+        <a class="btn-floating btn-large red lighten-2">
             <i class="large material-icons">apps</i>
         </a>
         <ul>
             <li>
-                <a id="search-subject" class="btn-floating orange"><i class="material-icons">search</i></a>
+                <a id="search-subject" class="btn-floating orange modal-trigger" href="#search"><i class="material-icons">search</i></a>
                 <a class="btn-floating mobile-fab-tip">과목 검색</a>
             </li>
             <li>
@@ -44,13 +44,135 @@
                 <a class="btn-floating mobile-fab-tip">시간표 삭제</a>
             </li>
             <li>
-                <a id="share-on-facebook" class="btn-floating blue"><i class="material-icons">share</i></a>
-                <a class="btn-floating mobile-fab-tip">페이스북 공유</a>
+                <a id="share-on-facebook" class="btn-floating green"><i class="material-icons">file_download</i></a>
+                <a class="btn-floating mobile-fab-tip">이미지로 저장</a>
             </li>
         </ul>
     </div>
 
-</div>
+    <div id="search" class="modal">
+        <div class="modal-content center-align">
+            <h4>과목 검색</h4>
+            <form>
+                <div class="input-field">
+                    <select id="category" name="category">
+                        <option value="" selected>전체</option>
+                        {% for category in categories %}
+                        <option value={{ category.pk }}>{{ category.category }}</option>
+                        {% endfor %}
+                    </select>
+                    <label>이수구분</label>
+                </div>
+                <div id="hundreds" class="input-field">
+                    <p class="checkbox_p">
+                        <label>
+                            <input name="all_hundred" type="checkbox" class="filled-in" onchange="allcheckboxHandler(this);" checked="checked">
+                            <span>전체</span>
+                        </label>
+                    </p>
+                    <p class="checkbox_p">
+                        <label>
+                            <input name="one_hundred" type="checkbox" class="filled-in">
+                            <span>100번대</span>
+                        </label>
+                    </p>
+                    <p class="checkbox_p">
+                        <label>
+                            <input name="two_hundred" type="checkbox" class="filled-in">
+                            <span>200번대</span>
+                        </label>
+                    </p>
+                    <p class="checkbox_p">
+                        <label>
+                            <input name="three_hundred" type="checkbox" class="filled-in">
+                            <span>300번대</span>
+                        </label>
+                    </p>
+                    <p class="checkbox_p">
+                        <label>
+                            <input name="four_hundred" type="checkbox" class="filled-in">
+                            <span>400번대</span>
+                        </label>
+                    </p>
+                    <p class="checkbox_p">
+                        <label>
+                            <input name="higher_hundred" type="checkbox" class="filled-in">
+                            <span>500번대 이상</span>
+                        </label>
+                    </p>
+                </div>
 
+                <div class="input-field">
+                    <select id="department" name="department">
+                        <option value="" selected>전체</option>
+                        {% for department in departments %}
+                        <option value={{ department.pk }}>{{ department.name }}</option>
+                        {% endfor %}
+                    </select>
+                    <label>학과</label>
+                </div>
+
+                <div id="credits" class="input-field">
+                    <p class="checkbox_p">
+                        <label>
+                            <input name="all_credit" type="checkbox" class="filled-in" checked="checked">
+                            <span>전체</span>
+                        </label>
+                    </p>
+                    <p class="checkbox_p">
+                        <label>
+                            <input name="one_credit" type="checkbox" class="filled-in">
+                            <span>1학점</span>
+                        </label>
+                    </p>
+                    <p class="checkbox_p">
+                        <label>
+                            <input name="two_credit" type="checkbox" class="filled-in">
+                            <span>2학점</span>
+                        </label>
+                    </p>
+                    <p class="checkbox_p">
+                        <label>
+                            <input name="three_credit" type="checkbox" class="filled-in">
+                            <span>3학점</span>
+                        </label>
+                    </p>
+                    <p class="checkbox_p">
+                        <label>
+                            <input name="four_credit" type="checkbox" class="filled-in">
+                            <span>4학점</span>
+                        </label>
+                    </p>
+                    <p class="checkbox_p">
+                        <label>
+                            <input name="higher_credit" type="checkbox" class="filled-in">
+                            <span>5학점 이상</span>
+                        </label>
+                    </p>
+                </div>
+
+                <div class="input-field">
+                    <input id="q" name="q" type="text" placeholder="ex) 윤은영, 프밍, CSED101">
+                    <label>검색어</label>
+                </div>
+
+                <button id="search-button" class="waves-effect waves-light btn" type="submit">검색하기</button>
+            </form>
+            <div id="searched-subjects">
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">닫기</a>
+        </div>
+    </div>
+
+</div>
+<script>
+    var categories = [
+    {% for category in categories %}
+    "{{category.category}}",
+    {% endfor %}
+    ];
+</script>
 <script src="{% static 'js/timetable.js' %}"></script>
 {% endblock %}

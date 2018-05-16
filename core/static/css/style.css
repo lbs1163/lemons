@@ -1,3 +1,28 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+* {
+	font-family: "Nanum Gothic", sans-serif;
+}
+
+::-webkit-scrollbar {
+	display: absolute;
+	width: 4px;
+	height: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cccccc; 
+    border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
 body {
     display: flex;
     min-height: 100vh;
@@ -47,6 +72,46 @@ main {
 
 #timetable ul.tabs .indicator {
 	top: 0;
+}
+
+.timetable .credit {
+	background-color: white;
+	padding: 10px 0;
+}
+
+.divider {
+	margin: 10px 10px;
+}
+
+.timetable .credit h5 {
+	margin-top: 0;
+}
+
+.timetable .credit p {
+	display: inline-block;
+	margin: 0;
+}
+
+@media screen and (max-width: 600px) {
+	.timetable .credit p {
+		width: 25%;
+		font-size: 10px;
+	}
+}
+
+@media screen and (min-width: 600px) {
+	.timetable .credit p {
+		width: 20%;
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.timetable .credit p {
+		width: 10%;
+	}
+}
+
+@media screen and (min-width: 1200px) {
 }
 
 .timetable .days {
@@ -124,7 +189,7 @@ main {
 }
 
 @media screen and (max-width: 600px) {
-	.period {
+	.period, .period .subject-delete .material-icons {
 		font-size: 10px;
 	}
 
@@ -135,13 +200,14 @@ main {
 	.timetable .time {
 		width: 15px;
 	}
+	
 	.timetable .daybox {
 		padding-left: 15px;
 	}
 }
 
 @media screen and (min-width: 600px) {
-	.period {
+	.period, .period .subject-delete .material-icons {
 		font-size: 12px;
 	}
 
@@ -158,17 +224,16 @@ main {
 }
 
 @media screen and (min-width: 992px) {
-	.period {
+	.period, .period .subject-delete .material-icons {
 		font-size: 14px;
 	}
 
 }
 
 @media screen and (min-width: 1200px) {
-	.period {
+	.period, .period .subject-delete .material-icons {
 		font-size: 14px;
 	}
-
 }
 
 .period p {
@@ -184,6 +249,13 @@ main {
 	position: absolute;
 }
 
+.period .subject-delete {
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: black;
+}
+
 .mobile-fab-tip {
     position: fixed;
     right: 85px;
@@ -194,3 +266,46 @@ main {
     color: #FFF;
     width:auto;
 } 
+
+#search .checkbox_p {
+	display: inline-block;
+	margin: 0;
+	margin-right: 10px;
+	text-align: left;
+}
+
+#search .checkbox_p span {
+	padding-left: 25px;
+	font-size: 15px;
+	line-height: 20px;
+	vertical-align: middle;
+}
+
+#search .input-field {
+	margin: 30px 0;
+}
+
+@media screen and (max-width: 600px) {
+	#search .checkbox_p {
+		width: 50%;
+		margin-right: 0;
+	}
+}
+
+#searched-subjects {
+	max-height: 300px;
+	overflow-y: scroll;
+}
+
+#searched-subjects .collection-item.avatar {
+	padding-left: 20px;
+	padding-right: 44px;
+}
+
+#searched-subjects .collection .collection-item.avatar .secondary-content {
+	top: 10px;
+}
+
+#searched-subjects .collection .collection-item.avatar .secondary-content:last-child {
+	top: 44px;
+}
