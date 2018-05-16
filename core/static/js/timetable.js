@@ -460,6 +460,28 @@ function shareOnFacebookButtonEventHandler(e) {
     alert("share on facebook");
 }
 
+function allcheckboxchangeHandler(e){
+    console.log("allcheckboxchangeHandler");
+    if ($('#search input[name="all_hundred"]').is(":checked")){
+        console.log("all is now checked");
+        $('#search input[name="one_hundred"]').removeAttr("checked");
+    }
+    else{
+        console.log("all is not checked");
+        $('#search input[name="one_hundred"]').attr("checked", "checked");
+    }
+}
+function othercheckboxchangeHandler(e){
+    console.log("othercheckboxchangeHandler");
+    if ($('#search input[name="one_hundred"]').is(":checked")){
+        console.log("one is now checked");
+        $('#search input[name="all_hundred"]').removeAttr("checked");
+    }
+    else{
+        console.log("one is not checked");
+        $('#search input[name="all_hundred"]').attr("checked", "checked");
+    }
+}
 
 function searchButtonEventHandler(e) {
     e.preventDefault();
