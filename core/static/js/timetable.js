@@ -28,10 +28,6 @@ $.ajaxSetup({
     }
 });
 
-function makeSubjectModal(subject, isSearched) {
-    var asdf;
-}
-
 function drawSearchedSubjects(subjects) {
     var searched_subjects_div = $("#searched-subjects");
     searched_subjects_div.empty();
@@ -45,7 +41,7 @@ function drawSearchedSubjects(subjects) {
         item_div.append('<span class="title">' + subjects[i].name + '</span>');
         item_div.append('<p>' + subjects[i].professor + '<br>' + subjects[i].class_number + '분반</p>');
         item_div.append('<a href="#" class="subject-add secondary-content"><i class="material-icons">add</i></a>');
-        item_div.append('<a href="#" class="subject-detail secondary-content"><i class="material-icons">search</i></a>');
+        item_div.append('<a href="/subject/' + subjects[i].pk + '/" target="_blank" class="subject-detail secondary-content"><i class="material-icons">search</i></a>');
     }
 
     $(".subject-add").bind("click", function(e) {
@@ -185,6 +181,7 @@ function drawTimetables(data) {
                         period_div.append('<p class="professor">' + subjects[l].professor + '</p>');
                         period_div.append('<p class="place">' + periods[m].place + '</p>');
                         period_div.append('<a class="subject-delete" href="javascript:void(0)"><i class="material-icons">close</i></a>');
+                        period_div.append('<a class="subject-detail" target="_blank" href="/subject/' + subjects[l].pk + '/"><i class="material-icons">search</i></a>');
                     }
                 }
             }

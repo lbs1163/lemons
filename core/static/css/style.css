@@ -194,9 +194,33 @@ main {
 	overflow-y: hidden;
 }
 
+.period p {
+	margin: 0;
+}
+
+.period p.name {
+	font-weight: bold;
+}
+
+.period p.delete {
+	right: 5px;
+	position: absolute;
+}
+
+.period .subject-delete, .period .subject-detail {
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: black;
+}
+
 @media screen and (max-width: 600px) {
-	.period, .period .subject-delete .material-icons {
+	.period, .period .subject-delete .material-icons, .period .subject-detail .material-icons {
 		font-size: 10px;
+	}
+
+	.period .subject-detail {
+		top: 10px;
 	}
 
 	.timetable .time, .timetable .days {
@@ -213,8 +237,12 @@ main {
 }
 
 @media screen and (min-width: 600px) {
-	.period, .period .subject-delete .material-icons {
+	.period, .period .subject-delete .material-icons, .period .subject-detail .material-icons {
 		font-size: 12px;
+	}
+
+	.period .subject-detail {
+		top: 12px;
 	}
 
 	.timetable .time, .timetable .days {
@@ -230,36 +258,23 @@ main {
 }
 
 @media screen and (min-width: 992px) {
-	.period, .period .subject-delete .material-icons {
+	.period, .period .subject-delete .material-icons, .period .subject-detail .material-icons {
 		font-size: 14px;
 	}
 
+	.period .subject-detail {
+		top: 14px;
+	}
 }
 
 @media screen and (min-width: 1200px) {
-	.period, .period .subject-delete .material-icons {
+	.period, .period .subject-delete .material-icons, .period .subject-detail .material-icons {
 		font-size: 14px;
 	}
-}
 
-.period p {
-	margin: 0;
-}
-
-.period p.name {
-	font-weight: bold;
-}
-
-.period p.delete {
-	right: 5px;
-	position: absolute;
-}
-
-.period .subject-delete {
-	position: absolute;
-	top: 0;
-	right: 0;
-	color: black;
+	.period .subject-detail {
+		top: 14px;
+	}
 }
 
 .mobile-fab-tip {
