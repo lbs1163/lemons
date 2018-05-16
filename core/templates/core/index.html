@@ -50,6 +50,7 @@
         </ul>
     </div>
 
+
     <div id="subject-detail" class="modal modal-fixed-footer">
         <div class="modal-content">
         </div>
@@ -76,13 +77,13 @@
                 <div id="hundreds" class="input-field">
                     <p class="checkbox_p">
                         <label>
-                            <input name="all_hundred" type="checkbox" class="filled-in" checked="checked">
+                            <input name="all_hundred" type="checkbox" class="filled-in" onclick="allcheckboxchangeHandler(this);" checked="checked">
                             <span>전체</span>
                         </label>
                     </p><!--
                     --><p class="checkbox_p">
                         <label>
-                            <input name="one_hundred" type="checkbox" class="filled-in">
+                            <input name="one_hundred" type="checkbox" class="filled-in" onclick="othercheckboxchangeHandler(this);">
                             <span>100번대</span>
                         </label>
                     </p><!--
@@ -170,7 +171,6 @@
                     <input id="q" name="q" type="text" placeholder="ex) 윤은영, 프밍, CSED101">
                     <label>검색어</label>
                 </div>
-
                 <button id="search-button" class="waves-effect waves-light btn" type="submit">검색하기</button>
             </form>
             <div id="searched-subjects">

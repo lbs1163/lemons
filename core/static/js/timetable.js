@@ -132,7 +132,9 @@ function drawTimetables(data) {
         for (var j = 0; j < categories.length; j++) {
             credits_div.append('<p>' + categories[j] + ': ' + sums[j] + '</p>');
         }
+
         credits_div.append('<p class="warning">※주의: lms상의 이수구분으로 각 과별로 다를 수 있습니다.</p>');
+
         credits_div.append('<div class="divider"></div>')
 
         timetable_div.append(credits_div);
@@ -455,6 +457,29 @@ function shareOnFacebookButtonEventHandler(e) {
     alert("share on facebook");
 }
 
+function allcheckboxchangeHandler(e){
+    console.log("allcheckboxchangeHandler");
+    if ($('#search input[name="all_hundred"]').is(":checked")){
+        console.log("all is now checked");
+        $('#search input[name="one_hundred"]').removeAttr("checked");
+    }
+    else{
+        console.log("all is not checked");
+        $('#search input[name="one_hundred"]').attr("checked", "checked");
+    }
+}
+function othercheckboxchangeHandler(e){
+    console.log("othercheckboxchangeHandler");
+    if ($('#search input[name="one_hundred"]').is(":checked")){
+        console.log("one is now checked");
+        $('#search input[name="all_hundred"]').removeAttr("checked");
+    }
+    else{
+        console.log("one is not checked");
+        $('#search input[name="all_hundred"]').attr("checked", "checked");
+    }
+}
+
 function searchButtonEventHandler(e) {
     e.preventDefault();
 
@@ -530,3 +555,4 @@ $(document).ready(function() {
     var semester = parseInt($('h4.semester.active').attr('semester'));
     selectSemester(semester);
 });
+
