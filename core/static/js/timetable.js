@@ -52,7 +52,11 @@ function drawSearchedSubjects(subjects) {
         var subject = $(this).parent().attr("subject");
         var timetable = $(".tabs .tab .active").attr("timetable");
 
-        addSubjectToTimetable(timetable, subject);
+        if (timetable) {
+            addSubjectToTimetable(timetable, subject);
+        } else {
+            alert("오류: 과목을 추가할 시간표가 없습니다!");
+        }
     });
 }
 
@@ -132,6 +136,9 @@ function drawTimetables(data) {
         for (var j = 0; j < categories.length; j++) {
             credits_div.append('<p>' + categories[j] + ': ' + sums[j] + '</p>');
         }
+
+        credits_div.append('<p class="warning">※주의: lms상의 이수구분으로 각 과별로 다를 수 있습니다.</p>');
+
         credits_div.append('<div class="divider"></div>')
 
         timetable_div.append(credits_div);
@@ -453,15 +460,6 @@ function shareOnFacebookButtonEventHandler(e) {
     alert("share on facebook");
 }
 
-
-function allcheckboxHandler(e){
-    if($'#search input[name="all"]:checked').{
-        console.log("twice checked");
-    }
-    else{
-        console.log("well checked")
-    }
-}
 
 function searchButtonEventHandler(e) {
     e.preventDefault();

@@ -92,6 +92,13 @@ main {
 	margin: 0;
 }
 
+
+.timetable .credit p.warning {
+	display: block;
+	width: 100%;
+	margin-top: 10px;
+}
+
 @media screen and (max-width: 600px) {
 	.timetable .credit p {
 		width: 25%;
