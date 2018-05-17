@@ -331,3 +331,7 @@ main {
 #searched-subjects .collection .collection-item.avatar .secondary-content:last-child {
 	top: 44px;
 }
+
+#subject-detail .btn {
+	margin-top: 20px;
+}
