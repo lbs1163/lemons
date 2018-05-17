@@ -28,10 +28,6 @@ $.ajaxSetup({
     }
 });
 
-function makeSubjectModal(subject, isSearched) {
-    var asdf;
-}
-
 function drawSearchedSubjects(subjects) {
     var searched_subjects_div = $("#searched-subjects");
     searched_subjects_div.empty();
@@ -45,7 +41,7 @@ function drawSearchedSubjects(subjects) {
         item_div.append('<span class="title">' + subjects[i].name + '</span>');
         item_div.append('<p>' + subjects[i].professor + '<br>' + subjects[i].class_number + '분반</p>');
         item_div.append('<a href="#" class="subject-add secondary-content"><i class="material-icons">add</i></a>');
-        item_div.append('<a href="#" class="subject-detail secondary-content"><i class="material-icons">search</i></a>');
+        item_div.append('<a href="/subject/' + subjects[i].pk + '/" target="_blank" class="subject-detail secondary-content"><i class="material-icons">search</i></a>');
     }
 
     $(".subject-add").bind("click", function(e) {
@@ -136,7 +132,9 @@ function drawTimetables(data) {
         for (var j = 0; j < categories.length; j++) {
             credits_div.append('<p>' + categories[j] + ': ' + sums[j] + '</p>');
         }
+
         credits_div.append('<p class="warning">※주의: lms상의 이수구분으로 각 과별로 다를 수 있습니다.</p>');
+
         credits_div.append('<div class="divider"></div>')
 
         timetable_div.append(credits_div);
@@ -185,6 +183,7 @@ function drawTimetables(data) {
                         period_div.append('<p class="professor">' + subjects[l].professor + '</p>');
                         period_div.append('<p class="place">' + periods[m].place + '</p>');
                         period_div.append('<a class="subject-delete" href="javascript:void(0)"><i class="material-icons">close</i></a>');
+                        period_div.append('<a class="subject-detail" target="_blank" href="/subject/' + subjects[l].pk + '/"><i class="material-icons">search</i></a>');
                     }
                 }
             }
@@ -459,6 +458,33 @@ function SaveToImageButtonEventHandler(e) {
     alert("save image");
 }
 
+function hundredcheckboxchangeHandler(e){
+    console.log("hundredcheckboxchangeHandler");
+    if($(this).attr("name")=="all_hundred"){
+        //전체 체크 -> 나머지 체크 해제
+        if ($('#hundreds input[name="all_hundred"]').is(":checked")){
+        console.log("all is now checked");
+            $('#hundreds input[name="one_hundred"]').removeAttr("checked");
+            $('#hundreds input[name="two_hundred"]').removeAttr("checked");
+            $('#hundreds input[name="three_hundred"]').removeAttr("checked");
+            $('#hundreds input[name="four_hundred"]').removeAttr("checked");
+            $('#hundreds input[name="more_hundred"]').removeAttr("checked");
+        }
+    }
+    else{
+        //하나라도 체크하면 '전체' 체크해제
+        if(($('#hundreds input[name="one_hundred"]').is(":checked")||$('#hundreds input[name="two_hundred"]').is(":checked")||$('#hundreds input[name="three_hundred"]').is(":checked")||$('#hundreds input[name="four_hundred"]').is(":checked")||$('#hundreds input[name="more_hundred"]').is(":checked"))){
+            console.log("at least one is checked");
+            $('#hundreds input[name="all_hundred"]').removeAttr("checked");
+        }
+    }
+            //하나라도 체크가 안되어있으면 전체 해제불가
+    if ((!$('#hundreds input[name="one_hundred"]').is(":checked"))&&(!$('#hundreds input[name="two_hundred"]').is(":checked"))&&(!$('#hundreds input[name="three_hundred"]').is(":checked"))&&(!$('#hundreds input[name="four_hundred"]').is(":checked"))&&(!$('#hundreds input[name="more_hundred"]').is(":checked"))){
+        console.log("nothing is checked");
+            $('#hundreds input[name="all_hundred"]').prop("checked", "checked");
+        }
+}
+
 function searchButtonEventHandler(e) {
     e.preventDefault();
 
@@ -516,6 +542,17 @@ function searchButtonEventHandler(e) {
     searchSubject(data);
 }
 
+function timerangeButtonEventHandler(e) {
+    e.preventDefault();
+    $("#search").modal('close');
+    var ypos = $(".timetable.active .daybox").offset().top;
+    window.scrollTo(0, ypos);
+    
+    $(".thirty-minute").bind("click", function(e) {
+        e.preventDefault();
+    });
+}
+
 $(document).ready(function() {
     $('.fixed-action-btn').floatingActionButton();
     $('.modal').modal();
@@ -530,6 +567,9 @@ $(document).ready(function() {
     $("#share-on-facebook").bind("click", SaveToImageButtonEventHandler);
 
     $("#search-button").bind("click", searchButtonEventHandler);
+
+    $("#timerange").bind("click", timerangeButtonEventHandler);
+    $('#hundreds input[type="checkbox"]').bind("click", hundredcheckboxchangeHandler);
 
     var semester = parseInt($('h4.semester.active').attr('semester'));
     selectSemester(semester);

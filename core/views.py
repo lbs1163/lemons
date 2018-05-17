@@ -170,15 +170,15 @@ def search_subject(request):
         stime = datetime.datetime.strptime(start_time[4:], "%H:%M").time()
         end_time = request.GET.get('end_time')
         etime = datetime.datetime.strptime(end_time[4:], "%H:%M").time()
-        if dayoftheweek == "MON" :
+        if dayoftheweek == "mon" :
             periods = Period.objects.filter(mon=True)
-        elif dayoftheweek == "TUE" :
+        elif dayoftheweek == "tue" :
             periods = Period.object.filter(tue=True)
-        elif dayoftheweek == "WED" :
+        elif dayoftheweek == "wed" :
             periods = Period.object.filter(wed=True)
-        elif dayoftheweek == "THR" :
+        elif dayoftheweek == "thu" :
             periods = Period.object.filter(thr=True)
-        elif dayoftheweek == "FRI" :
+        elif dayoftheweek == "fri" :
             periods = Period.object.filter(fri=True)
         periods = periods.filter(Q(start__gte=stime)&Q(end__lte=etime))
         periodsubjectpks = [period.subject.pk for period in periods]
@@ -249,3 +249,11 @@ def delete_subject_from_timetable(request):
             timetables = Timetable.objects.filter(user=request.user, semester=table.semester)
             return JsonResponse([timetable.to_dict() for timetable in timetables], safe = False)
     return  JsonResponse({'error': '이미 시간표에 없는 과목입니다!'})
+
+
+def subject_detail(request, subjectPK):
+    subject = get_object_or_404(Subject, pk = subjectPK)
+    #get period
+    period = Period.objects.filter(subject = subject)
+
+    return render(request, 'core/subject_detail.html', {'subject': subject, 'period': period})
