@@ -235,4 +235,7 @@ def delete_subject_from_timetable(request):
 
 def subject_detail(request, subjectPK):
     subject = get_object_or_404(Subject, pk = subjectPK)
-    return render(request, 'core/subject_detail.html', {'subject': subject})
+    #get period
+    period = Period.objects.filter(subject = subject)
+
+    return render(request, 'core/subject_detail.html', {'subject': subject, 'period': period})
