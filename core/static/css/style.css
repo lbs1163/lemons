@@ -183,6 +183,23 @@ main {
 	box-sizing: border-box;
 }
 
+.time-range-selector {
+	position: absolute;
+	text-align: center;
+	left: 0;
+	right: 0;
+	z-index: 999;
+	opacity: 0.7;
+}
+
+.time-range-selector.disabled {
+	display: none;
+}
+
+.time-range-selector p {
+	width: 100%;
+}
+
 .period {
 	position: absolute;
 	top: 0;

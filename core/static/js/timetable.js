@@ -28,6 +28,8 @@ $.ajaxSetup({
     }
 });
 
+var isSelectingTimeRange = false;
+
 function drawSearchedSubjects(subjects) {
     var searched_subjects_div = $("#searched-subjects");
     searched_subjects_div.empty();
@@ -160,6 +162,9 @@ function drawTimetables(data) {
             var day_div = $('<div class="day" day="' + days[j] + '"></div>');
             daybox_div.append(day_div);
 
+            var range_div = $('<div class="red lighten-2 valign-wrapper time-range-selector disabled"><p>시간대 선택</p></div>');
+            day_div.append(range_div);
+
             var subjects = data[i].subjects;
 
             for (var l = 0; l < subjects.length; l++) {
@@ -194,8 +199,8 @@ function drawTimetables(data) {
                 var hour_div = $('<div class="hour" hour="' + hours[k] + '"></div>');
                 day_div.append(hour_div);
 
-                var thirty_minute_div_1 = $('<div class="thirty-minute" start="0"></div>');
-                var thirty_minute_div_2 = $('<div class="thirty-minute" start="30"></div>');
+                var thirty_minute_div_1 = $('<div draggable="true" class="thirty-minute" start="0"></div>');
+                var thirty_minute_div_2 = $('<div draggable="true" class="thirty-minute" start="30"></div>');
 
                 hour_div.append(thirty_minute_div_1);
                 hour_div.append(thirty_minute_div_2);
@@ -546,10 +551,127 @@ function timerangeButtonEventHandler(e) {
     $("#search").modal('close');
     var ypos = $(".timetable.active .daybox").offset().top;
     window.scrollTo(0, ypos);
-    
-    $(".thirty-minute").bind("click", function(e) {
-        e.preventDefault();
-    });
+    isSelectingTimeRange = true;
+}
+
+var day;
+var start_hour;
+var start_minute;
+var end_hour;
+var end_minute;
+var range_div;
+
+function dragStartEventHandler(e) {
+    var img = new Image();
+    img.style.display = "none";
+    e.dataTransfer.setDragImage(img, 0, 0);
+
+    if ($('.timetable.active .day[day="fri"]').offset().left <= e.pageX) {
+        day = "fri";
+    } else if ($('.timetable.active .day[day="thu"]').offset().left <= e.pageX) {
+        day = "thu";
+    } else if ($('.timetable.active .day[day="wed"]').offset().left <= e.pageX) {
+        day = "wed";
+    } else if ($('.timetable.active .day[day="tue"]').offset().left <= e.pageX) {
+        day = "tue";
+    } else if ($('.timetable.active .day[day="mon"]').offset().left <= e.pageX) {
+        day = "mon";
+    } else {
+        day = undefined;
+    }
+
+    var top = $(".timetable.active .thirty-minute").first().offset().top;
+    var bottom = $(".timetable.active .thirty-minute").last();
+    bottom = bottom.offset().top + bottom.height();
+
+    var height = bottom - top;
+    var time = (e.pageY - top) * 32 / height;
+    start_hour = ((time / 2)|0) + 8;
+    start_minute = ((time | 0) % 2) * 30;
+
+    $(".time-range-selector").addClass("disabled");
+
+    range_div = $('.timetable.active .day[day="' + day + '"] .time-range-selector').first();
+
+    var top = (((start_hour - 8) * 60 + start_minute) * 3 / 30) + "vh";
+    range_div.css("top", top);
+
+    range_div.css("height", "3vh");
+
+    console.log(day, start_hour, start_minute);
+}
+
+function dragEventHandler(e) {
+    var top = $(".timetable.active .thirty-minute").first().offset().top;
+    var bottom = $(".timetable.active .thirty-minute").last();
+    bottom = bottom.offset().top + bottom.height();
+
+    var height = bottom - top;
+    var time = (e.pageY - top) * 32 / height;
+    if ((time|0) > 31) {
+        time = 31;
+    }
+    end_hour = ((time / 2)|0) + 8;
+    end_minute = ((time | 0) % 2) * 30;
+
+    if (end_hour < start_hour || end_hour == start_hour && end_minute < start_minute) {
+        end_hour = start_hour;
+        end_minute = start_minute;
+    }
+
+    if (end_minute == 30) {
+        end_hour = end_hour + 1;
+        end_minute = 0;
+    } else if (end_minute == 0) {
+        end_minute = end_minute + 30;
+    }
+
+    var delta = (end_hour * 60 + end_minute) - (start_hour * 60 + start_minute);
+
+    var height = (delta * 3 / 30) + "vh";
+    var top = (((start_hour - 8) * 60 + start_minute) * 3 / 30) + "vh";
+
+    range_div.removeClass("disabled");
+    range_div.css("height", height);
+    range_div.css("top", top);
+
+    console.log(day, end_hour, end_minute);
+}
+
+function dragEndEventHandler(e) {
+    var top = $(".timetable.active .thirty-minute").first().offset().top;
+    var bottom = $(".timetable.active .thirty-minute").last();
+    bottom = bottom.offset().top + bottom.height();
+
+    var height = bottom - top;
+    var time = (e.pageY - top) * 32 / height;
+    if ((time|0) > 31) {
+        time = 31;
+    }
+    end_hour = ((time / 2)|0) + 8;
+    end_minute = ((time | 0) % 2) * 30;
+
+    if (end_hour < start_hour || end_hour == start_hour && end_minute < start_minute) {
+        end_hour = start_hour;
+        end_minute = start_minute;
+    }
+
+    if (end_minute == 30) {
+        end_hour = end_hour + 1;
+        end_minute = 0;
+    } else if (end_minute == 0) {
+        end_minute = end_minute + 30;
+    }
+
+    var delta = (end_hour * 60 + end_minute) - (start_hour * 60 + start_minute);
+
+    var height = (delta * 3 / 30) + "vh";
+    var top = (((start_hour - 8) * 60 + start_minute) * 3 / 30) + "vh";
+
+    range_div.css("height", height);
+    range_div.css("top", top);
+
+    console.log(day, end_hour, end_minute);
 }
 
 $(document).ready(function() {
@@ -567,8 +689,12 @@ $(document).ready(function() {
 
     $("#search-button").bind("click", searchButtonEventHandler);
 
-    $("#timerange").bind("click", timerangeButtonEventHandler);
+    $("#timerange-select").bind("click", timerangeButtonEventHandler);
     $('#hundreds input[type="checkbox"]').bind("click", hundredcheckboxchangeHandler);
+
+    document.addEventListener("dragstart", dragStartEventHandler);
+    document.addEventListener("drag", dragEventHandler);
+    document.addEventListener("dragend", dragEndEventHandler);
 
     var semester = parseInt($('h4.semester.active').attr('semester'));
     selectSemester(semester);
