@@ -32,6 +32,11 @@ function drawSearchedSubjects(subjects) {
     var searched_subjects_div = $("#searched-subjects");
     searched_subjects_div.empty();
 
+    if (subjects.length == 0) {
+        searched_subjects_div.append('<h5>검색 결과가 없습니다!</h5>');
+        return;
+    }
+
     var collection_div = $('<ul class="collection"></ul>');
     searched_subjects_div.append(collection_div);
 
