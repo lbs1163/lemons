@@ -28,8 +28,6 @@ $.ajaxSetup({
     }
 });
 
-var isSelectingTimeRange = false;
-
 function drawSearchedSubjects(subjects) {
     var searched_subjects_div = $("#searched-subjects");
     searched_subjects_div.empty();
@@ -162,7 +160,7 @@ function drawTimetables(data) {
             var day_div = $('<div class="day" day="' + days[j] + '"></div>');
             daybox_div.append(day_div);
 
-            var range_div = $('<div class="red lighten-2 valign-wrapper time-range-selector disabled"><p>시간대 선택</p></div>');
+            var range_div = $('<div class="red lighten-2 valign-wrapper time-range-selector disabled"><p>클릭해서 선택</p></div>');
             day_div.append(range_div);
 
             var subjects = data[i].subjects;
@@ -214,6 +212,8 @@ function drawTimetables(data) {
 
         deleteSubjectFromTimetable(timetable, subject);
     });
+
+    $(".time-range-selector").bind("click", timeRangeSelectorEventHandler);
 
     redrawTimetable();
     $('.tabs').tabs();
@@ -551,7 +551,32 @@ function timerangeButtonEventHandler(e) {
     $("#search").modal('close');
     var ypos = $(".timetable.active .daybox").offset().top;
     window.scrollTo(0, ypos);
-    isSelectingTimeRange = true;
+
+    document.addEventListener("dragstart", dragStartEventHandler);
+    document.addEventListener("drag", dragEventHandler);
+    document.addEventListener("dragend", dragEndEventHandler);
+}
+
+function timerangeDeleteButtonEventHandler(e) {
+    e.preventDefault();
+    $('#search input#time').val("아래 버튼으로 시간대를 입력하세요");
+}
+
+function timeRangeSelectorEventHandler(e) {
+    $("#search").modal('open');
+    if (start_minute == 0) {
+        start_minute = "00";
+    }
+    if (end_minute == 0) {
+        end_minute = "00";
+    }
+    $('#search input#time').val(day + " " + start_hour + ":" + start_minute + " ~ " + end_hour + ":" + end_minute);
+
+    $('.time-range-selector').addClass("disabled");
+
+    document.removeEventListener("dragstart", dragStartEventHandler);
+    document.removeEventListener("drag", dragEventHandler);
+    document.removeEventListener("dragend", dragEndEventHandler);
 }
 
 var day;
@@ -690,11 +715,8 @@ $(document).ready(function() {
     $("#search-button").bind("click", searchButtonEventHandler);
 
     $("#timerange-select").bind("click", timerangeButtonEventHandler);
+    $("#timerange-delete").bind("click", timerangeDeleteButtonEventHandler);
     $('#hundreds input[type="checkbox"]').bind("click", hundredcheckboxchangeHandler);
-
-    document.addEventListener("dragstart", dragStartEventHandler);
-    document.addEventListener("drag", dragEventHandler);
-    document.addEventListener("dragend", dragEndEventHandler);
 
     var semester = parseInt($('h4.semester.active').attr('semester'));
     selectSemester(semester);
