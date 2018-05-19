@@ -114,7 +114,7 @@ function drawTimetables(data) {
 
         var sum = 0;
         var sums = Array.apply(null, Array(10)).map(Number.prototype.valueOf,0);
-        
+
         for (var j = 0; j < data[i].subjects.length; j++) {
             var subject = data[i].subjects[j];
             var credit = parseInt(subject.credit.split('-')[2]);
@@ -458,8 +458,9 @@ function deleteTimetableButtonEventHandler(e) {
     }
 }
 
-function shareOnFacebookButtonEventHandler(e) {
-    alert("share on facebook");
+function SaveToImageButtonEventHandler(e) {
+
+    alert("save image");
 }
 
 function hundredcheckboxchangeHandler(e){
@@ -709,7 +710,7 @@ $(document).ready(function() {
     $("#add-timetable").bind("click", addTimetableButtonEventHandler);
     $("#copy-timetable").bind("click", copyTimetableButtonEventHandler);
     $("#delete-timetable").bind("click", deleteTimetableButtonEventHandler);
-    $("#share-on-facebook").bind("click", shareOnFacebookButtonEventHandler);
+    $("#share-on-facebook").bind("click", SaveToImageButtonEventHandler);
 
     $("#search-button").bind("click", searchButtonEventHandler);
 
