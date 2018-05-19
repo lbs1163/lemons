@@ -541,6 +541,11 @@ function searchButtonEventHandler(e) {
         data["q"] = $('#search input#q').val();
     }
 
+    if ($('#search input#time').val() != "아래 버튼으로 시간대를 입력하세요") {
+        data["start_time"] = day + " " + start_hour + ":" + start_minute;
+        data["end_time"] = day + " " + end_hour + ":" + end_minute;
+    }
+
     $('#searched-subjects').empty();
     $("#searched-subjects").append('<h5>로딩중...</h5>');
     searchSubject(data);
@@ -622,8 +627,6 @@ function dragStartEventHandler(e) {
     range_div.css("top", top);
 
     range_div.css("height", "3vh");
-
-    console.log(day, start_hour, start_minute);
 }
 
 function dragEventHandler(e) {
@@ -659,8 +662,6 @@ function dragEventHandler(e) {
     range_div.removeClass("disabled");
     range_div.css("height", height);
     range_div.css("top", top);
-
-    console.log(day, end_hour, end_minute);
 }
 
 function dragEndEventHandler(e) {
@@ -695,8 +696,6 @@ function dragEndEventHandler(e) {
 
     range_div.css("height", height);
     range_div.css("top", top);
-
-    console.log(day, end_hour, end_minute);
 }
 
 $(document).ready(function() {

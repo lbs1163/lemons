@@ -172,13 +172,13 @@ def search_subject(request):
         if dayoftheweek == "mon" :
             periods = Period.objects.filter(mon=True)
         elif dayoftheweek == "tue" :
-            periods = Period.object.filter(tue=True)
+            periods = Period.objects.filter(tue=True)
         elif dayoftheweek == "wed" :
-            periods = Period.object.filter(wed=True)
+            periods = Period.objects.filter(wed=True)
         elif dayoftheweek == "thu" :
-            periods = Period.object.filter(thr=True)
+            periods = Period.objects.filter(thr=True)
         elif dayoftheweek == "fri" :
-            periods = Period.object.filter(fri=True)
+            periods = Period.objects.filter(fri=True)
         periods = periods.filter(Q(start__gte=stime)&Q(end__lte=etime))
         periodsubjectpks = [period.subject.pk for period in periods]
         subjects = subjects.filter(pk__in = periodsubjectpks)
