@@ -469,30 +469,63 @@ function SaveToImageButtonEventHandler(e) {
 }
 
 function hundredcheckboxchangeHandler(e){
-    console.log("hundredcheckboxchangeHandler");
-    if($(this).attr("name")=="all_hundred"){
-        //전체 체크 -> 나머지 체크 해제
+    if($(this).attr("name")=="all_hundred"){ //'전체'를 클릭했을 때
+        //전체를 체크한 경우 나머지 체크해제
         if ($('#hundreds input[name="all_hundred"]').is(":checked")){
-        console.log("all is now checked");
-            $('#hundreds input[name="one_hundred"]').removeAttr("checked");
-            $('#hundreds input[name="two_hundred"]').removeAttr("checked");
-            $('#hundreds input[name="three_hundred"]').removeAttr("checked");
-            $('#hundreds input[name="four_hundred"]').removeAttr("checked");
-            $('#hundreds input[name="more_hundred"]').removeAttr("checked");
+            $('#hundreds input[name="one_hundred"]').prop("checked", false);
+            $('#hundreds input[name="two_hundred"]').prop("checked", false);
+            $('#hundreds input[name="three_hundred"]').prop("checked", false);
+            $('#hundreds input[name="four_hundred"]').prop("checked", false);
+            $('#hundreds input[name="higher_hundred"]').prop("checked", false);
+        }
+        //나머지가 체크되어있지 않을 때 전체를 체크해제 한 경우 해제되지 않음
+        else{
+            if ((!$('#hundreds input[name="one_hundred"]').is(":checked"))&&(!$('#hundreds input[name="two_hundred"]').is(":checked"))&&(!$('#hundreds input[name="three_hundred"]').is(":checked"))&&(!$('#hundreds input[name="four_hundred"]').is(":checked"))&&(!$('#hundreds input[name="higher_hundred"]').is(":checked"))){
+                $('#hundreds input[name="all_hundred"]').prop("checked", "checked");
+            }
         }
     }
-    else{
+    else{ //나머지를 클릭했을때
         //하나라도 체크하면 '전체' 체크해제
-        if(($('#hundreds input[name="one_hundred"]').is(":checked")||$('#hundreds input[name="two_hundred"]').is(":checked")||$('#hundreds input[name="three_hundred"]').is(":checked")||$('#hundreds input[name="four_hundred"]').is(":checked")||$('#hundreds input[name="more_hundred"]').is(":checked"))){
-            console.log("at least one is checked");
-            $('#hundreds input[name="all_hundred"]').removeAttr("checked");
+        if($('#hundreds input[name="one_hundred"]').is(":checked")||$('#hundreds input[name="two_hundred"]').is(":checked")||$('#hundreds input[name="three_hundred"]').is(":checked")||$('#hundreds input[name="four_hundred"]').is(":checked")||$('#hundreds input[name="higher_hundred"]').is(":checked")){
+            $('#hundreds input[name="all_hundred"]').prop("checked", false);
         }
-    }
-            //하나라도 체크가 안되어있으면 전체 해제불가
-    if ((!$('#hundreds input[name="one_hundred"]').is(":checked"))&&(!$('#hundreds input[name="two_hundred"]').is(":checked"))&&(!$('#hundreds input[name="three_hundred"]').is(":checked"))&&(!$('#hundreds input[name="four_hundred"]').is(":checked"))&&(!$('#hundreds input[name="more_hundred"]').is(":checked"))){
-        console.log("nothing is checked");
+        //모두 체크해제할 시
+        else{
             $('#hundreds input[name="all_hundred"]').prop("checked", "checked");
         }
+        
+    }    
+}
+
+function creditcheckboxchangeHandler(e){
+    if($(this).attr("name")=="all_credit"){ //'전체'를 클릭했을 때
+        //전체를 체크한 경우 나머지 체크해제
+        if ($('#credits input[name="all_credit"]').is(":checked")){
+            $('#credits input[name="one_credit"]').prop("checked", false);
+            $('#credits input[name="two_credit"]').prop("checked", false);
+            $('#credits input[name="three_credit"]').prop("checked", false);
+            $('#credits input[name="four_credit"]').prop("checked", false);
+            $('#credits input[name="higher_credit"]').prop("checked", false);
+        }
+        //나머지가 체크되어있지 않을 때 전체를 체크해제 한 경우 해제되지 않음
+        else{
+            if ((!$('#credits input[name="one_credit"]').is(":checked"))&&(!$('#credits input[name="two_credit"]').is(":checked"))&&(!$('#credits input[name="three_credit"]').is(":checked"))&&(!$('#credits input[name="four_credit"]').is(":checked"))&&(!$('#credits input[name="higher_credit"]').is(":checked"))){
+                $('#credits input[name="all_credit"]').prop("checked", "checked");
+            }
+        }
+    }
+    else{ //나머지를 클릭했을때
+        //하나라도 체크하면 '전체' 체크해제
+        if($('#credits input[name="one_credit"]').is(":checked")||$('#credits input[name="two_credit"]').is(":checked")||$('#credits input[name="three_credit"]').is(":checked")||$('#credits input[name="four_credit"]').is(":checked")||$('#credits input[name="higher_credit"]').is(":checked")){
+            $('#credits input[name="all_credit"]').prop("checked", false);
+        }
+        //모두 체크해제할 시
+        else{
+            $('#credits input[name="all_credit"]').prop("checked", "checked");
+        }
+        
+    }    
 }
 
 function searchButtonEventHandler(e) {
@@ -722,6 +755,7 @@ $(document).ready(function() {
     $("#timerange-select").bind("click", timerangeButtonEventHandler);
     $("#timerange-delete").bind("click", timerangeDeleteButtonEventHandler);
     $('#hundreds input[type="checkbox"]').bind("click", hundredcheckboxchangeHandler);
+    $('#credits input[type="checkbox"]').bind("click", creditcheckboxchangeHandler);
 
     var semester = parseInt($('h4.semester.active').attr('semester'));
     selectSemester(semester);
