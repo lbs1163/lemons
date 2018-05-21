@@ -1,3 +1,4 @@
+
 var csrftoken = getCookie('csrftoken');
 
 function getCookie(name) {
@@ -401,7 +402,17 @@ function deleteTimetableButtonEventHandler(e) {
 }
 
 function shareOnFacebookButtonEventHandler(e) {
-    alert("share on facebook");
+
+    domtoimage.toJpeg(document.getElementById('timetable'), { quality: 0.95 })
+    .then(function (dataUrl) {
+        var link = document.createElement('a');
+        link.download = '시간표.jpeg';
+        link.href = dataUrl;
+        link.click();
+    });
+    
+
+    
 }
 
 $(document).ready(function() {
