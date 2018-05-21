@@ -704,6 +704,15 @@ function timeRangeSelectorEventHandler(e) {
     if (end_minute == 0) {
         end_minute = "00";
     }
+    if (reversed) {
+        var temp;
+        temp = start_hour;
+        start_hour = end_hour;
+        end_hour = temp;
+        temp = start_minute;
+        start_minute = end_minute;
+        end_minute = temp;
+    }
     $('#search input#time').val(day + " " + start_hour + ":" + start_minute + " ~ " + end_hour + ":" + end_minute);
 
     $('.time-range-selector').addClass("disabled");
