@@ -362,6 +362,7 @@ main {
 }
 
 .body-selecting {
-	height: 100vh;
+	min-height: 80vh;
+	height: 80vh !important;
 	overflow-y: hidden;
 }
