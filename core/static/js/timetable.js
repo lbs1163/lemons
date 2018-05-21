@@ -745,8 +745,6 @@ function touchEventHandler(e) {
     e.pageY = e.touches[0].pageY;
     x = e.touches[0].pageX;
     y = e.touches[0].pageY;
-    var ypos = $(".timetable.active .daybox").offset().top;
-    window.scrollTo(0, ypos);
     dragEventHandler(e);
 }
 
