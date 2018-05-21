@@ -722,6 +722,7 @@ var y;
 
 function touchStartEventHandler(e) {
     e.preventDefault();
+    e.stopPropagation();
     e.pageX = e.touches[0].pageX;
     e.pageY = e.touches[0].pageY;
     dragStartEventHandler(e);
@@ -739,6 +740,7 @@ function touchEventHandler(e) {
 
 function touchEndEventHandler(e) {
     e.preventDefault();
+    e.stopPropagation();
     e.pageX = x;
     e.pageY = y;
     dragEndEventHandler(e);
