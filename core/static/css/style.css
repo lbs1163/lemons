@@ -356,3 +356,7 @@ main {
 .no-scroll {
 	touch-action: none;
 }
+
+.invisible {
+	display: none;
+}

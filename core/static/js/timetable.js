@@ -667,14 +667,16 @@ function timerangeButtonEventHandler(e) {
     var ypos = $(".timetable.active .daybox").offset().top;
     window.scrollTo(0, ypos);
 
+    $("header").addClass("invisible");
+    $("#semesters").addClass("invisible");
+    $("#timetable > div:first-child").addClass("invisible");
+    $(".credit").addClass("invisible");
+    $(".fixed-action-btn").addClass("invisible");
+    $("footer").addClass("invisible");
+
     document.body.addEventListener("dragstart", dragStartEventHandler);
     document.body.addEventListener("drag", dragEventHandler);
     document.body.addEventListener("dragend", dragEndEventHandler);
-
-    $('body').on('touchstart touchmove touchcancel touchend', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-    });
 
     $(".timetable").addClass("no-scroll");
     $(".timetable").attr("touch-action", "none");
@@ -704,11 +706,16 @@ function timeRangeSelectorEventHandler(e) {
 
     $('.time-range-selector').addClass("disabled");
 
+    $("header").removeClass("invisible");
+    $("#semesters").removeClass("invisible");
+    $("#timetable > div:first-child").removeClass("invisible");
+    $(".credit").removeClass("invisible");
+    $(".fixed-action-btn").removeClass("invisible");
+    $("footer").removeClass("invisible");
+
     document.body.removeEventListener("dragstart", dragStartEventHandler);
     document.body.removeEventListener("drag", dragEventHandler);
     document.body.removeEventListener("dragend", dragEndEventHandler);
-
-    $('body').off('touchstart touchmove touchcancel touchend');
 
     $(".timetable").removeClass("no-scroll");
     $(".timetable").removeAttr("touch-action");
