@@ -232,8 +232,25 @@ main {
 	color: black;
 }
 
+.timetable .card .card-content {
+	padding: 5px;
+}
+
+.timetable .card .subject-delete, .timetable .card .subject-detail {
+	color: black;
+}
+
+#noperiod {
+	margin: 0;
+	background: white;
+}
+
+#noperiod p {
+	margin-top: 0;
+}
+
 @media screen and (max-width: 600px) {
-	.time-range-selector p, .period, .period .subject-delete .material-icons, .period .subject-detail .material-icons {
+	.timetable .card p, .timetable .card i.material-icons, .time-range-selector p, .period, .period .subject-delete .material-icons, .period .subject-detail .material-icons {
 		font-size: 10px;
 	}
 
@@ -255,7 +272,7 @@ main {
 }
 
 @media screen and (min-width: 600px) {
-	.time-range-selector p, .period, .period .subject-delete .material-icons, .period .subject-detail .material-icons {
+	.timetable .card p, .timetable .card i.material-icons, .time-range-selector p, .period, .period .subject-delete .material-icons, .period .subject-detail .material-icons {
 		font-size: 12px;
 	}
 
@@ -276,7 +293,7 @@ main {
 }
 
 @media screen and (min-width: 992px) {
-	.time-range-selector p, .period, .period .subject-delete .material-icons, .period .subject-detail .material-icons {
+	.timetable .card p, .timetable .card i.material-icons, .time-range-selector p, .period, .period .subject-delete .material-icons, .period .subject-detail .material-icons {
 		font-size: 14px;
 	}
 
@@ -286,7 +303,7 @@ main {
 }
 
 @media screen and (min-width: 1200px) {
-	.time-range-selector p, .period, .period .subject-delete .material-icons, .period .subject-detail .material-icons {
+	.timetable .card p, .timetable .card i.material-icons, .time-range-selector p, .period, .period .subject-delete .material-icons, .period .subject-detail .material-icons {
 		font-size: 14px;
 	}
 
@@ -362,6 +379,11 @@ main {
 }
 
 .body-selecting {
-	height: 100vh;
+	min-height: 80vh;
+	height: 80vh !important;
 	overflow-y: hidden;
+}
+
+.card .card-title {
+	text-shadow: 1px 1px 1px black;
 }
