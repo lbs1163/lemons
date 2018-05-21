@@ -729,6 +729,7 @@ function touchStartEventHandler(e) {
 
 function touchEventHandler(e) {
     e.preventDefault();
+    e.stopPropagation();
     e.pageX = e.touches[0].pageX;
     e.pageY = e.touches[0].pageY;
     x = e.touches[0].pageX;
