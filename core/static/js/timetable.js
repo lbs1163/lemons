@@ -664,8 +664,6 @@ function searchButtonEventHandler(e) {
 function timerangeButtonEventHandler(e) {
     e.preventDefault();
     $("#search").modal('close');
-    var ypos = $(".timetable.active .daybox").offset().top;
-    window.scrollTo(0, ypos);
 
     $("header").addClass("invisible");
     $("#semesters").addClass("invisible");
@@ -674,6 +672,9 @@ function timerangeButtonEventHandler(e) {
     $(".fixed-action-btn").addClass("invisible");
     $("footer").addClass("invisible");
     $("body").addClass("body-selecting");
+
+    var ypos = $(".timetable.active .days").offset().top;
+    window.scrollTo(0, ypos);
 
     document.body.addEventListener("dragstart", dragStartEventHandler);
     document.body.addEventListener("drag", dragEventHandler);
