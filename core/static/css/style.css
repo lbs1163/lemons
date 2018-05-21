@@ -360,3 +360,8 @@ main {
 .invisible {
 	display: none;
 }
+
+.body-selecting {
+	height: 100vh;
+	overflow-y: hidden;
+}
