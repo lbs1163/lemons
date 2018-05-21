@@ -721,12 +721,14 @@ var x;
 var y;
 
 function touchStartEventHandler(e) {
+    e.preventDefault();
     e.pageX = e.touches[0].pageX;
     e.pageY = e.touches[0].pageY;
     dragStartEventHandler(e);
 }
 
 function touchEventHandler(e) {
+    e.preventDefault();
     e.pageX = e.touches[0].pageX;
     e.pageY = e.touches[0].pageY;
     x = e.touches[0].pageX;
@@ -735,6 +737,7 @@ function touchEventHandler(e) {
 }
 
 function touchEndEventHandler(e) {
+    e.preventDefault();
     e.pageX = x;
     e.pageY = y;
     dragEndEventHandler(e);
