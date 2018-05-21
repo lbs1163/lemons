@@ -179,9 +179,7 @@ function drawTimetables(data) {
 
         var daybox_div = $('<div class="daybox"></div>');
         timetable_div.append(daybox_div);
-        var row_div = $('<div class="row" id="noperiod"></div>');
-        timetable_div.append(row_div);
-        row_div.append('<p class="center-align">시간표에 없는 과목</p>');
+        var row_div;
 
         var days = ['mon', 'tue', 'wed', 'thu', 'fri'];
 
@@ -220,6 +218,13 @@ function drawTimetables(data) {
                 }
 
                 if ((j==0)&&(periods.length == 0)){
+
+                    if (row_div == undefined) {
+                        row_div = $('<div class="row" id="noperiod"></div>');
+                        timetable_div.append(row_div);
+                        row_div.append('<p class="center-align">시간표에 없는 과목</p>');
+                    }
+
                     var col_div = $('<div class = "col s3"></div>');
                     row_div.append(col_div);
 
