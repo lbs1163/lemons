@@ -671,9 +671,9 @@ function timerangeButtonEventHandler(e) {
     document.addEventListener("drag", dragEventHandler);
     document.addEventListener("dragend", dragEndEventHandler);
 
-    document.addEventListener("touchstart", dragStartEventHandler);
-    document.addEventListener("touchmove", dragEventHandler);
-    document.addEventListener("touchend", dragEndEventHandler);
+    document.addEventListener("touchstart", touchStartEventHandler);
+    document.addEventListener("touchmove", touchEventHandler);
+    document.addEventListener("touchend", touchEndEventHandler);
 }
 
 function timerangeDeleteButtonEventHandler(e) {
@@ -696,6 +696,10 @@ function timeRangeSelectorEventHandler(e) {
     document.removeEventListener("dragstart", dragStartEventHandler);
     document.removeEventListener("drag", dragEventHandler);
     document.removeEventListener("dragend", dragEndEventHandler);
+
+    document.removeEventListener("touchstart", touchStartEventHandler);
+    document.removeEventListener("touchmove", touchEventHandler);
+    document.removeEventListener("touchend", touchEndEventHandler);
 }
 
 var day;
@@ -704,6 +708,21 @@ var start_minute;
 var end_hour;
 var end_minute;
 var range_div;
+
+function touchStartEventHandler(e) {
+    e.preventDefault();
+    dragStartEventHandler(e);
+}
+
+function touchEventHandler(e) {
+    e.preventDefault();
+    dragEventHandler(e);
+}
+
+function touchEndEventHandler(e) {
+    e.preventDefault();
+    dragEndEventHandler(e);
+}
 
 function dragStartEventHandler(e) {
     var img = new Image();
