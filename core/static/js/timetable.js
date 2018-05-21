@@ -671,6 +671,11 @@ function timerangeButtonEventHandler(e) {
     document.body.addEventListener("drag", dragEventHandler);
     document.body.addEventListener("dragend", dragEndEventHandler);
 
+    $('body').on('touchstart touchmove touchcancel touchend', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+    });
+
     $(".timetable").addClass("no-scroll");
     $(".timetable").attr("touch-action", "none");
 
@@ -703,6 +708,8 @@ function timeRangeSelectorEventHandler(e) {
     document.body.removeEventListener("drag", dragEventHandler);
     document.body.removeEventListener("dragend", dragEndEventHandler);
 
+    $('body').off('touchstart touchmove touchcancel touchend');
+
     $(".timetable").removeClass("no-scroll");
     $(".timetable").removeAttr("touch-action");
 
@@ -721,16 +728,12 @@ var x;
 var y;
 
 function touchStartEventHandler(e) {
-    e.preventDefault();
-    e.stopPropagation();
     e.pageX = e.touches[0].pageX;
     e.pageY = e.touches[0].pageY;
     dragStartEventHandler(e);
 }
 
 function touchEventHandler(e) {
-    e.preventDefault();
-    e.stopPropagation();
     e.pageX = e.touches[0].pageX;
     e.pageY = e.touches[0].pageY;
     x = e.touches[0].pageX;
@@ -739,8 +742,6 @@ function touchEventHandler(e) {
 }
 
 function touchEndEventHandler(e) {
-    e.preventDefault();
-    e.stopPropagation();
     e.pageX = x;
     e.pageY = y;
     dragEndEventHandler(e);
