@@ -667,16 +667,16 @@ function timerangeButtonEventHandler(e) {
     var ypos = $(".timetable.active .daybox").offset().top;
     window.scrollTo(0, ypos);
 
-    document.addEventListener("dragstart", dragStartEventHandler);
-    document.addEventListener("drag", dragEventHandler);
-    document.addEventListener("dragend", dragEndEventHandler);
+    document.body.addEventListener("dragstart", dragStartEventHandler);
+    document.body.addEventListener("drag", dragEventHandler);
+    document.body.addEventListener("dragend", dragEndEventHandler);
 
     $(".timetable").addClass("no-scroll");
     $(".timetable").attr("touch-action", "none");
 
-    document.addEventListener("touchstart", touchStartEventHandler);
-    document.addEventListener("touchmove", touchEventHandler);
-    document.addEventListener("touchend", touchEndEventHandler);
+    document.body.addEventListener("touchstart", touchStartEventHandler);
+    document.body.addEventListener("touchmove", touchEventHandler);
+    document.body.addEventListener("touchend", touchEndEventHandler);
 }
 
 function timerangeDeleteButtonEventHandler(e) {
@@ -699,16 +699,16 @@ function timeRangeSelectorEventHandler(e) {
 
     $('.time-range-selector').addClass("disabled");
 
-    document.removeEventListener("dragstart", dragStartEventHandler);
-    document.removeEventListener("drag", dragEventHandler);
-    document.removeEventListener("dragend", dragEndEventHandler);
+    document.body.removeEventListener("dragstart", dragStartEventHandler);
+    document.body.removeEventListener("drag", dragEventHandler);
+    document.body.removeEventListener("dragend", dragEndEventHandler);
 
     $(".timetable").removeClass("no-scroll");
     $(".timetable").removeAttr("touch-action");
 
-    document.removeEventListener("touchstart", touchStartEventHandler);
-    document.removeEventListener("touchmove", touchEventHandler);
-    document.removeEventListener("touchend", touchEndEventHandler);
+    document.body.removeEventListener("touchstart", touchStartEventHandler);
+    document.body.removeEventListener("touchmove", touchEventHandler);
+    document.body.removeEventListener("touchend", touchEndEventHandler);
 }
 
 var day;
