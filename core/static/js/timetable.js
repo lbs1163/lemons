@@ -521,8 +521,9 @@ function deleteTimetableButtonEventHandler(e) {
 
 function SaveToImageButtonEventHandler(e) {
 
-    $(".period .subject-delete .material-icons, .period .subject-detail .material-icons, .credit").addClass("invisible");
+    $(".subject-delete .material-icons, .subject-detail .material-icons, .credit").addClass("invisible");
     $(".time").css("top", "3.5vh");
+    $(".timetable").addClass("no-margin");
     
     domtoimage.toJpeg($(".timetable.active").get(0), { bgcolor: "white" })
     .then(function (dataUrl) {
@@ -530,8 +531,9 @@ function SaveToImageButtonEventHandler(e) {
         link.download = 'timetable.jpeg';
         link.href = dataUrl;
         link.click();
-        $(".period .subject-delete .material-icons, .period .subject-detail .material-icons, .credit").removeClass("invisible");
+        $(".subject-delete .material-icons, .subject-detail .material-icons, .credit").removeClass("invisible");
         $(".time").removeAttr("style");
+        $(".timetable").removeClass("no-margin");
     });
 }
 

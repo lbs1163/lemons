@@ -387,3 +387,7 @@ main {
 .card .card-title {
 	text-shadow: 1px 1px 1px black;
 }
+
+.no-margin {
+	margin: 0 !important;
+}
