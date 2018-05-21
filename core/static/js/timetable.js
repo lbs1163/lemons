@@ -673,6 +673,7 @@ function timerangeButtonEventHandler(e) {
     $(".credit").addClass("invisible");
     $(".fixed-action-btn").addClass("invisible");
     $("footer").addClass("invisible");
+    $("body").addClass("body-selecting");
 
     document.body.addEventListener("dragstart", dragStartEventHandler);
     document.body.addEventListener("drag", dragEventHandler);
@@ -712,6 +713,7 @@ function timeRangeSelectorEventHandler(e) {
     $(".credit").removeClass("invisible");
     $(".fixed-action-btn").removeClass("invisible");
     $("footer").removeClass("invisible");
+    $("body").removeClass("body-selecting");
 
     document.body.removeEventListener("dragstart", dragStartEventHandler);
     document.body.removeEventListener("drag", dragEventHandler);
