@@ -733,6 +733,7 @@ var start_hour;
 var start_minute;
 var end_hour;
 var end_minute;
+var reversed = false;
 var range_div;
 var x;
 var y;
@@ -811,21 +812,32 @@ function dragEventHandler(e) {
     end_minute = ((time | 0) % 2) * 30;
 
     if (end_hour < start_hour || end_hour == start_hour && end_minute < start_minute) {
-        end_hour = start_hour;
-        end_minute = start_minute;
+        reversed = true;
+    } else {
+        reversed = false;
     }
 
-    if (end_minute == 30) {
-        end_hour = end_hour + 1;
-        end_minute = 0;
-    } else if (end_minute == 0) {
-        end_minute = end_minute + 30;
+    if (!reversed) {
+        if (end_minute == 30) {
+            end_hour = end_hour + 1;
+            end_minute = 0;
+        } else if (end_minute == 0) {
+            end_minute = end_minute + 30;
+        }
     }
 
     var delta = (end_hour * 60 + end_minute) - (start_hour * 60 + start_minute);
+    if (delta < 0) {
+        delta = -delta;
+    }
 
     var height = (delta * 3 / 30) + "vh";
-    var top = (((start_hour - 8) * 60 + start_minute) * 3 / 30) + "vh";
+    var top;
+    if (reversed) {
+        top = (((end_hour - 8) * 60 + end_minute) * 3 / 30) + "vh";
+    } else {
+        top = (((start_hour - 8) * 60 + start_minute) * 3 / 30) + "vh";
+    }
 
     range_div.removeClass("disabled");
     range_div.css("height", height);
@@ -846,21 +858,32 @@ function dragEndEventHandler(e) {
     end_minute = ((time | 0) % 2) * 30;
 
     if (end_hour < start_hour || end_hour == start_hour && end_minute < start_minute) {
-        end_hour = start_hour;
-        end_minute = start_minute;
+        reversed = true;
+    } else {
+        reversed = false;
     }
 
-    if (end_minute == 30) {
-        end_hour = end_hour + 1;
-        end_minute = 0;
-    } else if (end_minute == 0) {
-        end_minute = end_minute + 30;
+    if (!reversed) {
+        if (end_minute == 30) {
+            end_hour = end_hour + 1;
+            end_minute = 0;
+        } else if (end_minute == 0) {
+            end_minute = end_minute + 30;
+        }
     }
 
     var delta = (end_hour * 60 + end_minute) - (start_hour * 60 + start_minute);
+    if (delta < 0) {
+        delta = -delta;
+    }
 
     var height = (delta * 3 / 30) + "vh";
-    var top = (((start_hour - 8) * 60 + start_minute) * 3 / 30) + "vh";
+    var top;
+    if (reversed) {
+        top = (((end_hour - 8) * 60 + end_minute) * 3 / 30) + "vh";
+    } else {
+        top = (((start_hour - 8) * 60 + start_minute) * 3 / 30) + "vh";
+    }
 
     range_div.css("height", height);
     range_div.css("top", top);
