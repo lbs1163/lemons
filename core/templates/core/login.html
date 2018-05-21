@@ -9,7 +9,15 @@
         <div class="row">
             <div class="input-field col s12">
                 {{ field }}
-                <label>{{ field.label }}</label>
+                <label>
+                {% if field.label == "Username" %}
+                아이디
+                {% elif field.label == "Password" %}
+                비밀번호
+                {% else %}
+                {{ field.label }}
+                {% endif %}
+                </label>
             </div>
             {% if field.help_text %}
             <small style="display: none">{{ field.help_text }}</small>

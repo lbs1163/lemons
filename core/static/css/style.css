@@ -4,6 +4,25 @@
 	font-family: "Nanum Gothic", sans-serif;
 }
 
+::-webkit-scrollbar {
+	display: absolute;
+	width: 4px;
+	height: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cccccc; 
+    border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
 body {
     display: flex;
     min-height: 100vh;
@@ -71,6 +90,13 @@ main {
 .timetable .credit p {
 	display: inline-block;
 	margin: 0;
+}
+
+
+.timetable .credit p.warning {
+	display: block;
+	width: 100%;
+	margin-top: 10px;
 }
 
 @media screen and (max-width: 600px) {
@@ -157,6 +183,23 @@ main {
 	box-sizing: border-box;
 }
 
+.time-range-selector {
+	position: absolute;
+	text-align: center;
+	left: 0;
+	right: 0;
+	z-index: 999;
+	opacity: 0.7;
+}
+
+.time-range-selector.disabled {
+	display: none;
+}
+
+.time-range-selector p {
+	width: 100%;
+}
+
 .period {
 	position: absolute;
 	top: 0;
@@ -169,9 +212,33 @@ main {
 	overflow-y: hidden;
 }
 
+.period p {
+	margin: 0;
+}
+
+.period p.name {
+	font-weight: bold;
+}
+
+.period p.delete {
+	right: 5px;
+	position: absolute;
+}
+
+.period .subject-delete, .period .subject-detail {
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: black;
+}
+
 @media screen and (max-width: 600px) {
-	.period {
+	.time-range-selector p, .period, .period .subject-delete .material-icons, .period .subject-detail .material-icons {
 		font-size: 10px;
+	}
+
+	.period .subject-detail {
+		top: 10px;
 	}
 
 	.timetable .time, .timetable .days {
@@ -181,14 +248,19 @@ main {
 	.timetable .time {
 		width: 15px;
 	}
+	
 	.timetable .daybox {
 		padding-left: 15px;
 	}
 }
 
 @media screen and (min-width: 600px) {
-	.period {
+	.time-range-selector p, .period, .period .subject-delete .material-icons, .period .subject-detail .material-icons {
 		font-size: 12px;
+	}
+
+	.period .subject-detail {
+		top: 12px;
 	}
 
 	.timetable .time, .timetable .days {
@@ -204,30 +276,23 @@ main {
 }
 
 @media screen and (min-width: 992px) {
-	.period {
+	.time-range-selector p, .period, .period .subject-delete .material-icons, .period .subject-detail .material-icons {
 		font-size: 14px;
 	}
 
+	.period .subject-detail {
+		top: 14px;
+	}
 }
 
 @media screen and (min-width: 1200px) {
-	.period {
+	.time-range-selector p, .period, .period .subject-delete .material-icons, .period .subject-detail .material-icons {
 		font-size: 14px;
 	}
 
-}
-
-.period p {
-	margin: 0;
-}
-
-.period p.name {
-	font-weight: bold;
-}
-
-.period p.delete {
-	right: 5px;
-	position: absolute;
+	.period .subject-detail {
+		top: 14px;
+	}
 }
 
 .mobile-fab-tip {
@@ -264,4 +329,39 @@ main {
 		width: 50%;
 		margin-right: 0;
 	}
+}
+
+#searched-subjects {
+	max-height: 300px;
+	overflow-y: scroll;
+}
+
+#searched-subjects .collection-item.avatar {
+	padding-left: 20px;
+	padding-right: 44px;
+}
+
+#searched-subjects .collection .collection-item.avatar .secondary-content {
+	top: 10px;
+}
+
+#searched-subjects .collection .collection-item.avatar .secondary-content:last-child {
+	top: 44px;
+}
+
+#subject-detail .btn {
+	margin-top: 20px;
+}
+
+.no-scroll {
+	touch-action: none;
+}
+
+.invisible {
+	display: none;
+}
+
+.body-selecting {
+	height: 100vh;
+	overflow-y: hidden;
 }

@@ -9,6 +9,7 @@ from django.http import HttpResponse, JsonResponse, Http404
 from django.db.models import Q
 from django.views.generic import View
 from django.template.loader import render_to_string
+from django.utils import timezone
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.encoding import force_bytes, force_text
 from django.core.mail import EmailMessage
@@ -131,7 +132,8 @@ def copy_timetable(request):
 
 @login_required
 def search_subject(request):
-    subjects = Subject.objects.all()
+    semester = get_object_or_404(Semester, pk=request.GET.get('semester'))
+    subjects = Subject.objects.filter(semester=semester)
 
     if request.GET.get('q') :
         q = request.GET.get('q')
@@ -168,16 +170,16 @@ def search_subject(request):
         stime = datetime.datetime.strptime(start_time[4:], "%H:%M").time()
         end_time = request.GET.get('end_time')
         etime = datetime.datetime.strptime(end_time[4:], "%H:%M").time()
-        if dayoftheweek == "MON" :
+        if dayoftheweek == "mon" :
             periods = Period.objects.filter(mon=True)
-        elif dayoftheweek == "TUE" :
-            periods = Period.object.filter(tue=True)
-        elif dayoftheweek == "WED" :
-            periods = Period.object.filter(wed=True)
-        elif dayoftheweek == "THR" :
-            periods = Period.object.filter(thr=True)
-        elif dayoftheweek == "FRI" :
-            periods = Period.object.filter(fri=True)
+        elif dayoftheweek == "tue" :
+            periods = Period.objects.filter(tue=True)
+        elif dayoftheweek == "wed" :
+            periods = Period.objects.filter(wed=True)
+        elif dayoftheweek == "thu" :
+            periods = Period.objects.filter(thr=True)
+        elif dayoftheweek == "fri" :
+            periods = Period.objects.filter(fri=True)
         periods = periods.filter(Q(start__gte=stime)&Q(end__lte=etime))
         periodsubjectpks = [period.subject.pk for period in periods]
         subjects = subjects.filter(pk__in = periodsubjectpks)
@@ -210,11 +212,30 @@ def add_subject_to_timetable(request):
     table = get_object_or_404(Timetable, user=request.user, pk = request.POST.get('timetable'))
     add_subject = get_object_or_404(Subject, pk = request.POST.get('subject'))
 
-    for i in table.subjects.all() :
-        if(add_subject.pk == i.pk) :
-            return JsonResponse("이미 시간표에 있는 과목입니다.", safe = False)
+    for i in table.subjects.all():
+        if(add_subject.pk == i.pk):
+            return JsonResponse({'error': '이미 시간표에 있는 과목입니다!'})
+        for j in i.period_set.all():
+            for k in add_subject.period_set.all():
+                if(j.mon == True and k.mon == True):
+                    if(k.start == j.start or k.end == j.end):
+                        return JsonResponse({'error': '다른 과목과 겹칩니다! 겹치는 과목 : ' + i.name})
+                if(j.tue == True and k.tue == True):
+                    if(k.start == j.start or k.end == j.end):
+                        return JsonResponse({'error': '다른 과목과 겹칩니다! 겹치는 과목 : ' + i.name})
+                if(j.wed == True and k.wed == True):
+                    if(k.start == j.start or k.end == j.end):
+                        return JsonResponse({'error': '다른 과목과 겹칩니다! 겹치는 과목 : ' + i.name})
+                if(j.thu == True and k.thu == True):
+                    if(k.start == j.start or k.end == j.end):
+                        return JsonResponse({'error': '다른 과목과 겹칩니다! 겹치는 과목 : ' + i.name})
+                if(j.fri == True and k.fri == True):
+                    if(k.start == j.start or k.end == j.end):
+                        return JsonResponse({'error': '다른 과목과 겹칩니다! 겹치는 과목 : ' + i.name})
     table.subjects.add(add_subject)
-    return JsonResponse(table.to_dict())
+    table.save()
+    timetables = Timetable.objects.filter(user=request.user, semester=table.semester)
+    return JsonResponse([timetable.to_dict() for timetable in timetables], safe = False)
 
 @login_required
 def delete_subject_from_timetable(request):
@@ -224,5 +245,15 @@ def delete_subject_from_timetable(request):
     for i in table.subjects.all() :
         if(delete_subject.pk == i.pk) :
             table.subjects.remove(i)
-            return JsonResponse(table.to_dict())
-    return  JsonResponse("과목을 찾지 못하였습니다. 삭제하지 못했습니다.", safe = False)
+            table.save()
+            timetables = Timetable.objects.filter(user=request.user, semester=table.semester)
+            return JsonResponse([timetable.to_dict() for timetable in timetables], safe = False)
+    return  JsonResponse({'error': '이미 시간표에 없는 과목입니다!'})
+
+
+def subject_detail(request, subjectPK):
+    subject = get_object_or_404(Subject, pk = subjectPK)
+    #get period
+    period = Period.objects.filter(subject = subject)
+
+    return render(request, 'core/subject_detail.html', {'subject': subject, 'period': period})

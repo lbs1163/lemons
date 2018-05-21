@@ -211,6 +211,8 @@ def scrap_from_lms(year_semester, limit = True):
 
                 ## Try to find category of subject. if except occurs, make one.
                 try:
+                    if category==u"0035":
+                        category = u"기초선택"
                     Category_object = Category.objects.get(category=category)
                 except ObjectDoesNotExist:
                     Category_object = Category(category=category)

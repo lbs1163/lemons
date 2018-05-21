@@ -1,0 +1,68 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div id="subject-detail" class="container">
+	<h4 class="left">과목 정보</h4>
+	<a class="waves-effect waves-light btn right" target="_blank" href="http://lms.postech.ac.kr/{{subject.plan}}">강의계획서</a>
+	<table class="highlight striped">
+		<thead>
+		</thead>
+		<tbody>
+			<tr>
+				<td>과목명</td>
+				<td>{{subject.name}}</td>
+			</tr>
+			<tr>
+				<td>대표교수</td>
+				<td>{{subject.professor}}</td>
+			</tr>
+			<tr>
+				<td>학수번호</td>
+				<td>{{subject.code}}</td>
+			</tr>
+			<tr>
+				<td>분반</td>
+				<td>{{subject.class_number}}분반</td>
+			</tr>
+			<tr>
+				<td>개설학과</td>
+				<td>{{subject.department}}</td>
+			</tr>
+			<tr>
+				<td>이수구분</td>
+				<td>{{subject.category}}</td>
+			</tr>
+			<tr>
+				<td>이론-실습-학점</td>
+				<td>{{subject.credit}}</td>
+			</tr>
+			<tr>
+				<td>수강정원</td>
+				<td>{{subject.capacity}}명</td>
+			</tr>
+			<tr>
+				<td>학기</td>
+				<td>{{subject.semester}}</td>
+			</tr>
+			<tr>
+				<td>장소 및 시간</td>
+				<td>
+					{% for period in period %}
+					{% if period.mon == True %}월 {% endif %}
+					{% if period.tue == True %}화 {% endif %}
+					{% if period.wed == True %}수 {% endif %}
+					{% if period.thu == True %}목 {% endif %}
+					{% if period.fri == True %}금 {% endif %}
+					({{period.start}} ~ {{period.end}}) | {{period.place}}
+					<br>
+					{% endfor %}
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+{% endblock %}

@@ -1,0 +1,1924 @@
+[14/May/2018 22:09:32] "GET / HTTP/1.1" 302 0
+[14/May/2018 22:09:32] "GET /login/?next=/ HTTP/1.1" 200 5106
+[14/May/2018 22:09:32] "GET / HTTP/1.1" 302 0
+[14/May/2018 22:09:33] "GET /login/?next=/ HTTP/1.1" 200 5106
+[14/May/2018 22:09:47] "GET / HTTP/1.1" 302 0
+[14/May/2018 22:09:47] "GET /login/?next=/ HTTP/1.1" 200 5106
+[14/May/2018 22:09:47] "GET /static/css/style.css HTTP/1.1" 200 4521
+Not Found: /favicon.ico
+[14/May/2018 22:09:48] "GET /favicon.ico HTTP/1.1" 404 4441
+[14/May/2018 22:09:51] "GET /login/ HTTP/1.1" 200 5106
+[14/May/2018 22:09:59] "POST /login/ HTTP/1.1" 200 5120
+[14/May/2018 22:10:04] "GET /signup/ HTTP/1.1" 200 6965
+[14/May/2018 22:10:13] "GET / HTTP/1.1" 302 0
+[14/May/2018 22:10:13] "GET /login/?next=/ HTTP/1.1" 200 5106
+[14/May/2018 22:10:13] "GET /static/css/style.css HTTP/1.1" 200 4521
+Not Found: /favicon.ico
+[14/May/2018 22:10:14] "GET /favicon.ico HTTP/1.1" 404 4441
+[14/May/2018 22:10:23] "GET / HTTP/1.1" 302 0
+[14/May/2018 22:10:23] "GET /login/?next=/ HTTP/1.1" 200 5106
+[14/May/2018 22:10:24] "GET / HTTP/1.1" 302 0
+[14/May/2018 22:10:24] "GET /login/?next=/ HTTP/1.1" 200 5106
+[14/May/2018 22:10:29] "POST /signup/ HTTP/1.1" 200 4356
+[14/May/2018 22:10:42] "GET /activate/NA/4w6-bd825ed4cdcca16f5bad/ HTTP/1.1" 200 4226
+[14/May/2018 22:10:45] "GET / HTTP/1.1" 200 15701
+[14/May/2018 22:10:45] "GET /static/js/timetable.js HTTP/1.1" 200 18274
+[14/May/2018 22:10:45] "GET /select_semester/?semester=1 HTTP/1.1" 200 2
+[14/May/2018 22:10:47] "GET /select_semester/?semester=2 HTTP/1.1" 200 2
+[14/May/2018 22:10:50] "GET /select_semester/?semester=1 HTTP/1.1" 200 2
+[14/May/2018 22:10:54] "POST /add_timetable/ HTTP/1.1" 200 114
+[14/May/2018 22:11:07] "GET /search_subject/?semester=1&q=%EB%AF%B8%EB%B6%84%EB%B0%A9%EC%A0%95%EC%8B%9D HTTP/1.1" 200 1864
+[14/May/2018 22:11:11] "POST /add_subject_to_timetable/ HTTP/1.1" 200 800
+[14/May/2018 22:11:20] "GET /search_subject/?semester=1&q=%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4 HTTP/1.1" 200 662
+[14/May/2018 22:11:22] "POST /add_subject_to_timetable/ HTTP/1.1" 200 1462
+[14/May/2018 22:11:28] "GET /search_subject/?semester=1&q=%EC%BB%B4%ED%93%A8%ED%84%B0 HTTP/1.1" 200 8323
+[14/May/2018 22:11:31] "POST /add_subject_to_timetable/ HTTP/1.1" 200 2081
+[14/May/2018 22:11:34] "POST /add_subject_to_timetable/ HTTP/1.1" 200 2968
+[14/May/2018 22:13:26] "GET /search_subject/?semester=1&q=%ED%99%95%EB%A5%A0 HTTP/1.1" 200 1338
+[14/May/2018 22:13:28] "POST /add_subject_to_timetable/ HTTP/1.1" 200 3656
+[14/May/2018 22:15:07] "GET / HTTP/1.1" 302 0
+[14/May/2018 22:15:07] "GET /login/?next=/ HTTP/1.1" 200 5106
+[14/May/2018 22:15:07] "GET /static/css/style.css HTTP/1.1" 200 4521
+Not Found: /favicon.ico
+[14/May/2018 22:15:09] "GET /favicon.ico HTTP/1.1" 404 4441
+[14/May/2018 22:15:28] "GET / HTTP/1.1" 302 0
+[14/May/2018 22:15:28] "GET /login/?next=/ HTTP/1.1" 200 5106
+[14/May/2018 22:15:28] "GET /static/css/style.css HTTP/1.1" 200 4521
+Not Found: /favicon.ico
+[14/May/2018 22:15:29] "GET /favicon.ico HTTP/1.1" 404 4441
+[14/May/2018 22:15:38] "GET / HTTP/1.1" 302 0
+[14/May/2018 22:15:38] "GET /login/?next=/ HTTP/1.1" 200 5106
+[14/May/2018 22:15:38] "GET /static/css/style.css HTTP/1.1" 200 4521
+Not Found: /favicon.ico
+[14/May/2018 22:15:40] "GET /favicon.ico HTTP/1.1" 404 4441
+[14/May/2018 22:18:29] "GET / HTTP/1.1" 302 0
+[14/May/2018 22:18:29] "GET /login/?next=/ HTTP/1.1" 200 5106
+[14/May/2018 22:18:29] "GET /static/css/style.css HTTP/1.1" 200 4521
+Not Found: /favicon.ico
+[14/May/2018 22:18:31] "GET /favicon.ico HTTP/1.1" 404 4441
+[14/May/2018 22:18:51] "POST /login/?next=/ HTTP/1.1" 200 5123
+[14/May/2018 22:18:54] "GET /login/?next=/ HTTP/1.1" 200 5106
+[14/May/2018 22:21:55] "GET / HTTP/1.1" 302 0
+[14/May/2018 22:21:55] "GET /login/?next=/ HTTP/1.1" 200 5106
+[14/May/2018 22:21:55] "GET /static/css/style.css HTTP/1.1" 200 4521
+Not Found: /favicon.ico
+[14/May/2018 22:21:58] "GET /favicon.ico HTTP/1.1" 404 4441
+[14/May/2018 22:22:05] "GET /signup/ HTTP/1.1" 200 6965
+[14/May/2018 22:22:13] "GET / HTTP/1.1" 302 0
+[14/May/2018 22:22:13] "GET /login/?next=/ HTTP/1.1" 200 5106
+[14/May/2018 22:22:13] "GET /static/css/style.css HTTP/1.1" 200 4521
+Not Found: /favicon.ico
+[14/May/2018 22:22:16] "GET /favicon.ico HTTP/1.1" 404 4441
+[14/May/2018 22:22:22] "GET /signup/ HTTP/1.1" 200 6965
+[14/May/2018 22:22:47] "GET /login/?next=/ HTTP/1.1" 200 5106
+[14/May/2018 22:22:50] "GET / HTTP/1.1" 302 0
+[14/May/2018 22:22:50] "GET /login/?next=/ HTTP/1.1" 200 5106
+[14/May/2018 22:23:54] "GET /login/?next=/ HTTP/1.1" 200 5106
+[14/May/2018 22:24:02] "GET / HTTP/1.1" 302 0
+[14/May/2018 22:24:02] "GET /login/?next=/ HTTP/1.1" 200 5106
+[14/May/2018 22:24:02] "GET /static/css/style.css HTTP/1.1" 200 4521
+Not Found: /favicon.ico
+[14/May/2018 22:24:05] "GET /favicon.ico HTTP/1.1" 404 4441
+[14/May/2018 22:26:35] "GET /signup/ HTTP/1.1" 200 6965
+[14/May/2018 22:26:38] "GET /signup/ HTTP/1.1" 200 6965
+[14/May/2018 22:26:50] "GET / HTTP/1.1" 302 0
+[14/May/2018 22:26:50] "GET /login/?next=/ HTTP/1.1" 200 5106
+[14/May/2018 22:26:58] "GET /signup/ HTTP/1.1" 200 6965
+[14/May/2018 22:29:47] "GET / HTTP/1.1" 302 0
+[14/May/2018 22:29:47] "GET /login/?next=/ HTTP/1.1" 200 5106
+[14/May/2018 22:29:47] "GET /static/css/style.css HTTP/1.1" 200 4521
+Not Found: /favicon.ico
+[14/May/2018 22:29:49] "GET /favicon.ico HTTP/1.1" 404 4441
+[14/May/2018 22:29:59] "GET /signup/ HTTP/1.1" 200 6965
+[14/May/2018 22:30:01] "GET /login/ HTTP/1.1" 200 5106
+[14/May/2018 22:30:10] "POST /login/ HTTP/1.1" 200 5136
+[14/May/2018 22:30:12] "GET /signup/ HTTP/1.1" 200 6965
+[14/May/2018 22:30:37] "POST /signup/ HTTP/1.1" 200 4356
+[14/May/2018 22:31:00] "GET / HTTP/1.1" 302 0
+[14/May/2018 22:31:00] "GET /login/?next=/ HTTP/1.1" 200 5106
+[14/May/2018 22:31:00] "GET /static/css/style.css HTTP/1.1" 200 4521
+Not Found: /favicon.ico
+[14/May/2018 22:31:02] "GET /favicon.ico HTTP/1.1" 404 4441
+[14/May/2018 22:31:13] "GET / HTTP/1.1" 302 0
+[14/May/2018 22:31:13] "GET /login/?next=/ HTTP/1.1" 200 5106
+[14/May/2018 22:31:21] "GET /activate/NQ/4w6-3ebb787a108092ac05c3/ HTTP/1.1" 200 4226
+[14/May/2018 22:31:24] "GET / HTTP/1.1" 200 15701
+[14/May/2018 22:31:24] "GET /static/js/timetable.js HTTP/1.1" 200 18274
+[14/May/2018 22:31:25] "GET /select_semester/?semester=1 HTTP/1.1" 200 2
+[14/May/2018 22:31:33] "POST /add_timetable/ HTTP/1.1" 200 113
+[14/May/2018 22:32:05] "GET /search_subject/?semester=1&category=2&department=4 HTTP/1.1" 200 2
+[14/May/2018 22:32:10] "GET /search_subject/?semester=1&department=4 HTTP/1.1" 200 42436
+[14/May/2018 22:32:12] "POST /add_subject_to_timetable/ HTTP/1.1" 200 801
+[14/May/2018 22:32:14] "POST /add_subject_to_timetable/ HTTP/1.1" 200 95
+[14/May/2018 22:32:29] "POST /add_subject_to_timetable/ HTTP/1.1" 200 1497
+[14/May/2018 22:34:51] "GET / HTTP/1.1" 302 0
+[14/May/2018 22:34:52] "GET /login/?next=/ HTTP/1.1" 200 5106
+[14/May/2018 22:34:52] "GET /static/css/style.css HTTP/1.1" 200 4521
+[14/May/2018 22:35:10] "GET / HTTP/1.1" 302 0
+[14/May/2018 22:35:10] "GET /login/?next=/ HTTP/1.1" 200 5106
+[14/May/2018 22:35:12] "GET /signup/ HTTP/1.1" 200 6965
+[14/May/2018 22:35:17] "GET / HTTP/1.1" 302 0
+[14/May/2018 22:35:17] "GET /login/?next=/ HTTP/1.1" 200 5106
+[14/May/2018 22:35:18] "GET /static/css/style.css HTTP/1.1" 200 4521
+Not Found: /favicon.ico
+[14/May/2018 22:35:19] "GET /favicon.ico HTTP/1.1" 404 4441
+[14/May/2018 22:35:22] "GET / HTTP/1.1" 302 0
+[14/May/2018 22:35:22] "GET /login/?next=/ HTTP/1.1" 200 5106
+[14/May/2018 22:35:22] "GET /static/css/style.css HTTP/1.1" 200 4521
+Not Found: /favicon.ico
+[14/May/2018 22:35:25] "GET /favicon.ico HTTP/1.1" 404 4441
+[14/May/2018 22:35:32] "POST /login/?next=/ HTTP/1.1" 200 5123
+[14/May/2018 22:35:40] "POST /login/?next=/ HTTP/1.1" 200 5123
+[14/May/2018 22:35:52] "GET /login/ HTTP/1.1" 200 5106
+[14/May/2018 22:35:53] "GET /signup/ HTTP/1.1" 200 6965
+[14/May/2018 22:35:57] "POST /signup/ HTTP/1.1" 200 4356
+[14/May/2018 22:36:19] "POST /signup/ HTTP/1.1" 200 7158
+[14/May/2018 22:36:24] "GET / HTTP/1.1" 302 0
+[14/May/2018 22:36:24] "GET /login/?next=/ HTTP/1.1" 200 5106
+[14/May/2018 22:36:25] "GET /static/css/style.css HTTP/1.1" 200 4521
+Not Found: /favicon.ico
+[14/May/2018 22:36:28] "GET /favicon.ico HTTP/1.1" 404 4441
+[14/May/2018 22:36:31] "POST /signup/ HTTP/1.1" 200 7133
+[14/May/2018 22:36:35] "POST /signup/ HTTP/1.1" 200 4356
+[14/May/2018 22:36:37] "GET /login/ HTTP/1.1" 200 5106
+[14/May/2018 22:36:43] "POST /login/ HTTP/1.1" 200 5123
+[14/May/2018 22:36:46] "POST /login/ HTTP/1.1" 200 5123
+[14/May/2018 22:36:50] "POST /login/ HTTP/1.1" 200 5123
+[14/May/2018 22:36:54] "POST /login/ HTTP/1.1" 200 5123
+[14/May/2018 22:36:54] "GET /activate/Ng/4w6-271f716716e8dc108947/ HTTP/1.1" 200 4226
+[14/May/2018 22:36:55] "GET /static/css/style.css HTTP/1.1" 200 4521
+[14/May/2018 22:36:57] "POST /login/ HTTP/1.1" 200 5123
+[14/May/2018 22:36:59] "POST /login/ HTTP/1.1" 200 5123
+[14/May/2018 22:37:04] "GET / HTTP/1.1" 302 0
+[14/May/2018 22:37:04] "GET /login/?next=/ HTTP/1.1" 200 5106
+[14/May/2018 22:37:04] "GET / HTTP/1.1" 200 15701
+[14/May/2018 22:37:04] "GET /static/js/timetable.js HTTP/1.1" 200 18274
+[14/May/2018 22:37:04] "GET /select_semester/?semester=1 HTTP/1.1" 200 2
+[14/May/2018 22:37:07] "GET /signup/ HTTP/1.1" 200 6965
+[14/May/2018 22:37:13] "GET /login/ HTTP/1.1" 200 5106
+[14/May/2018 22:37:16] "POST /add_timetable/ HTTP/1.1" 200 111
+[14/May/2018 22:38:34] "GET /search_subject/?semester=1&department=14 HTTP/1.1" 200 31654
+[14/May/2018 22:38:55] "GET / HTTP/1.1" 302 0
+[14/May/2018 22:38:55] "GET /login/?next=/ HTTP/1.1" 200 5106
+[14/May/2018 22:38:55] "GET /static/css/style.css HTTP/1.1" 200 4521
+Not Found: /favicon.ico
+[14/May/2018 22:38:59] "GET /favicon.ico HTTP/1.1" 404 4441
+[14/May/2018 22:39:05] "GET / HTTP/1.1" 302 0
+[14/May/2018 22:39:05] "GET /login/?next=/ HTTP/1.1" 200 5106
+[14/May/2018 22:39:06] "GET /static/css/style.css HTTP/1.1" 200 4521
+[14/May/2018 22:39:08] "GET /signup/ HTTP/1.1" 200 6965
+[14/May/2018 22:39:13] "POST /add_subject_to_timetable/ HTTP/1.1" 200 582
+[14/May/2018 22:39:16] "GET / HTTP/1.1" 200 15701
+[14/May/2018 22:39:16] "GET /select_semester/?semester=1 HTTP/1.1" 200 582
+[14/May/2018 22:39:29] "POST /add_subject_to_timetable/ HTTP/1.1" 200 1394
+[14/May/2018 22:39:32] "POST /add_subject_to_timetable/ HTTP/1.1" 200 2056
+[14/May/2018 22:39:43] "POST /add_subject_to_timetable/ HTTP/1.1" 200 2706
+[14/May/2018 22:39:58] "POST /signup/ HTTP/1.1" 200 7138
+[14/May/2018 22:40:24] "GET /search_subject/?semester=1&department=2 HTTP/1.1" 200 66258
+[14/May/2018 22:40:27] "POST /add_subject_to_timetable/ HTTP/1.1" 200 3286
+[14/May/2018 22:40:35] "POST /add_subject_to_timetable/ HTTP/1.1" 200 3918
+[14/May/2018 22:41:02] "POST /signup/ HTTP/1.1" 200 4356
+[14/May/2018 22:41:18] "POST /add_subject_to_timetable/ HTTP/1.1" 200 4523
+[14/May/2018 22:41:21] "POST /add_subject_to_timetable/ HTTP/1.1" 200 95
+[14/May/2018 22:41:42] "POST /add_subject_to_timetable/ HTTP/1.1" 200 5105
+[14/May/2018 22:42:39] "GET /activate/OA/4w6-6514d26ddab43c255546/ HTTP/1.1" 200 4337
+[14/May/2018 22:42:39] "GET /activate/OA/4w6-6514d26ddab43c255546/ HTTP/1.1" 200 4226
+[14/May/2018 22:42:44] "GET / HTTP/1.1" 200 15701
+[14/May/2018 22:42:44] "GET /static/js/timetable.js HTTP/1.1" 200 18274
+[14/May/2018 22:42:45] "GET /select_semester/?semester=1 HTTP/1.1" 200 2
+[14/May/2018 22:43:05] "GET /select_semester/?semester=2 HTTP/1.1" 200 2
+[14/May/2018 22:43:07] "GET /select_semester/?semester=1 HTTP/1.1" 200 2
+[14/May/2018 22:43:25] "POST /add_timetable/ HTTP/1.1" 200 115
+[14/May/2018 22:44:13] "GET /search_subject/?semester=1&category=4&department=14&one_hundred=on HTTP/1.1" 200 1120
+[14/May/2018 22:44:26] "POST /add_subject_to_timetable/ HTTP/1.1" 200 760
+[14/May/2018 22:44:28] "POST /add_subject_to_timetable/ HTTP/1.1" 200 95
+[14/May/2018 22:44:36] "POST /delete_subject_from_timetable/ HTTP/1.1" 200 115
+[14/May/2018 22:45:02] "GET /select_semester/?semester=2 HTTP/1.1" 200 2
+[14/May/2018 22:45:15] "GET /select_semester/?semester=1 HTTP/1.1" 200 115
+[14/May/2018 22:45:17] "GET /select_semester/?semester=2 HTTP/1.1" 200 2
+[14/May/2018 22:45:18] "GET /select_semester/?semester=3 HTTP/1.1" 200 2
+[14/May/2018 22:45:22] "GET /logout/ HTTP/1.1" 200 4279
+[14/May/2018 22:45:26] "POST /delete_subject_from_timetable/ HTTP/1.1" 200 4500
+[14/May/2018 22:51:07] "GET /signup/ HTTP/1.1" 200 6965
+[14/May/2018 22:51:07] "GET /static/css/style.css HTTP/1.1" 304 0
+[14/May/2018 22:51:45] "POST /signup/ HTTP/1.1" 200 4356
+[14/May/2018 22:53:08] "GET / HTTP/1.1" 302 0
+[14/May/2018 22:53:08] "GET /login/?next=/ HTTP/1.1" 200 5106
+[14/May/2018 22:53:08] "GET /static/css/style.css HTTP/1.1" 200 4521
+Not Found: /favicon.ico
+[14/May/2018 22:53:11] "GET /favicon.ico HTTP/1.1" 404 4441
+[14/May/2018 22:53:15] "GET /signup/ HTTP/1.1" 200 6965
+[14/May/2018 22:54:40] "POST /signup/ HTTP/1.1" 200 7136
+[14/May/2018 22:54:52] "GET /activate/OQ/4w6-9282dd8e9121a816c49a/ HTTP/1.1" 200 4226
+[14/May/2018 22:55:19] "POST /signup/ HTTP/1.1" 200 4356
+[14/May/2018 22:55:51] "GET / HTTP/1.1" 200 15701
+[14/May/2018 22:55:51] "GET /static/js/timetable.js HTTP/1.1" 200 18274
+[14/May/2018 22:55:52] "GET /select_semester/?semester=1 HTTP/1.1" 200 2
+[14/May/2018 22:55:52] "GET /activate/MTA/4w6-31196f115d2c31a888a7/ HTTP/1.1" 200 4226
+[14/May/2018 22:55:52] "GET /static/css/style.css HTTP/1.1" 200 4521
+Not Found: /favicon.ico
+[14/May/2018 22:55:55] "GET /favicon.ico HTTP/1.1" 404 4441
+[14/May/2018 22:56:00] "GET / HTTP/1.1" 200 15701
+[14/May/2018 22:56:01] "GET /static/js/timetable.js HTTP/1.1" 200 18274
+[14/May/2018 22:56:01] "GET /select_semester/?semester=1 HTTP/1.1" 200 2
+[14/May/2018 22:56:08] "POST /add_timetable/ HTTP/1.1" 200 114
+[14/May/2018 22:56:28] "GET /search_subject/?semester=1&higher_hundred=on&one_credit=on&two_credit=on&three_credit=on HTTP/1.1" 200 163661
+[14/May/2018 22:56:47] "GET /search_subject/?semester=1&q=%EC%B0%BD%EC%9D%98 HTTP/1.1" 200 8012
+[14/May/2018 22:56:47] "GET /search_subject/?semester=1&department=14&higher_hundred=on&one_credit=on&two_credit=on&three_credit=on HTTP/1.1" 200 6664
+[14/May/2018 22:56:52] "POST /add_subject_to_timetable/ HTTP/1.1" 200 564
+Not Found: /add_subject_to_timetable/
+[14/May/2018 22:56:53] "POST /add_subject_to_timetable/ HTTP/1.1" 404 1778
+[14/May/2018 22:56:55] "GET / HTTP/1.1" 200 15701
+[14/May/2018 22:56:56] "GET /select_semester/?semester=1 HTTP/1.1" 200 2
+[14/May/2018 22:56:57] "POST /add_subject_to_timetable/ HTTP/1.1" 200 95
+[14/May/2018 22:57:00] "POST /add_subject_to_timetable/ HTTP/1.1" 200 1016
+[14/May/2018 22:57:09] "POST /add_timetable/ HTTP/1.1" 200 1130
+[14/May/2018 22:57:17] "POST /add_subject_to_timetable/ HTTP/1.1" 200 1818
+[14/May/2018 22:57:20] "POST /delete_subject_from_timetable/ HTTP/1.1" 200 1130
+[14/May/2018 23:10:27] "GET / HTTP/1.1" 302 0
+[14/May/2018 23:10:27] "GET /login/?next=/ HTTP/1.1" 200 5106
+[14/May/2018 23:10:27] "GET /static/css/style.css HTTP/1.1" 200 4521
+[14/May/2018 23:10:33] "GET /signup/ HTTP/1.1" 200 6965
+[14/May/2018 23:11:11] "GET /login/ HTTP/1.1" 200 5106
+[14/May/2018 23:11:21] "POST /login/ HTTP/1.1" 302 0
+[14/May/2018 23:11:21] "GET / HTTP/1.1" 200 15701
+[14/May/2018 23:11:21] "GET /static/js/timetable.js HTTP/1.1" 200 18274
+[14/May/2018 23:11:21] "GET /select_semester/?semester=1 HTTP/1.1" 200 4289
+[14/May/2018 23:11:28] "GET / HTTP/1.1" 302 0
+[14/May/2018 23:11:28] "GET /login/?next=/ HTTP/1.1" 200 5106
+[14/May/2018 23:11:29] "GET /static/css/style.css HTTP/1.1" 200 4521
+Not Found: /favicon.ico
+[14/May/2018 23:11:31] "GET /favicon.ico HTTP/1.1" 404 4441
+[14/May/2018 23:11:34] "GET / HTTP/1.1" 302 0
+[14/May/2018 23:11:34] "GET /login/?next=/ HTTP/1.1" 200 5106
+[14/May/2018 23:11:34] "GET /static/css/style.css HTTP/1.1" 200 4521
+Not Found: /favicon.ico
+[14/May/2018 23:11:36] "GET /favicon.ico HTTP/1.1" 404 4441
+[14/May/2018 23:12:01] "GET /signup/ HTTP/1.1" 200 6965
+[14/May/2018 23:12:12] "GET / HTTP/1.1" 302 0
+[14/May/2018 23:12:12] "GET /login/?next=/ HTTP/1.1" 200 5106
+[14/May/2018 23:12:12] "GET /static/css/style.css HTTP/1.1" 200 4521
+Not Found: /favicon.ico
+[14/May/2018 23:12:14] "GET /favicon.ico HTTP/1.1" 404 4441
+[14/May/2018 23:12:37] "POST /login/?next=/ HTTP/1.1" 200 5123
+[14/May/2018 23:12:47] "GET /activate/MTA/4w6-31196f115d2c31a888a7/ HTTP/1.1" 200 4231
+[14/May/2018 23:12:49] "POST /add_timetable/ HTTP/1.1" 200 4403
+[14/May/2018 23:12:50] "GET /login/?next=/ HTTP/1.1" 200 5106
+[14/May/2018 23:13:13] "GET /search_subject/?semester=1&three_hundred=on&three_credit=on HTTP/1.1" 200 29409
+[14/May/2018 23:13:24] "POST /add_subject_to_timetable/ HTTP/1.1" 200 5198
+[14/May/2018 23:14:06] "POST /delete_subject_from_timetable/ HTTP/1.1" 200 4403
+[14/May/2018 23:14:42] "POST /copy_timetable/ HTTP/1.1" 200 4517
+[14/May/2018 23:16:48] "GET /search_subject/?semester=1&department=6&three_hundred=on&three_credit=on HTTP/1.1" 200 2626
+[14/May/2018 23:16:51] "POST /add_subject_to_timetable/ HTTP/1.1" 200 5125
+[14/May/2018 23:16:52] "POST /add_subject_to_timetable/ HTTP/1.1" 200 95
+[14/May/2018 23:16:55] "POST /add_subject_to_timetable/ HTTP/1.1" 200 5557
+[14/May/2018 23:16:57] "POST /add_subject_to_timetable/ HTTP/1.1" 200 6344
+[14/May/2018 23:16:58] "POST /add_subject_to_timetable/ HTTP/1.1" 200 7141
+[14/May/2018 23:17:28] "GET / HTTP/1.1" 302 0
+[14/May/2018 23:17:28] "GET /login/?next=/ HTTP/1.1" 200 5106
+[14/May/2018 23:18:56] "GET /select_semester/?semester=2 HTTP/1.1" 200 2
+[14/May/2018 23:18:57] "GET /select_semester/?semester=3 HTTP/1.1" 200 2
+[14/May/2018 23:18:58] "GET /select_semester/?semester=4 HTTP/1.1" 200 2
+[14/May/2018 23:18:59] "GET /select_semester/?semester=3 HTTP/1.1" 200 2
+[14/May/2018 23:19:00] "GET /select_semester/?semester=2 HTTP/1.1" 200 2
+[14/May/2018 23:19:01] "GET /select_semester/?semester=1 HTTP/1.1" 200 7141
+[15/May/2018 00:28:59] "GET /activate/Nw/4w6-6f96927a7075d43702bd/ HTTP/1.1" 200 4226
+[15/May/2018 00:28:59] "GET /static/css/style.css HTTP/1.1" 200 4521
+Not Found: /favicon.ico
+[15/May/2018 00:29:02] "GET /favicon.ico HTTP/1.1" 404 4441
+[15/May/2018 00:29:08] "GET / HTTP/1.1" 200 15701
+[15/May/2018 00:29:08] "GET /static/js/timetable.js HTTP/1.1" 200 18274
+[15/May/2018 00:29:08] "GET /select_semester/?semester=1 HTTP/1.1" 200 2
+[15/May/2018 00:29:12] "GET / HTTP/1.1" 200 15701
+[15/May/2018 00:29:12] "GET /select_semester/?semester=1 HTTP/1.1" 200 2
+[15/May/2018 00:29:16] "GET /select_semester/?semester=2 HTTP/1.1" 200 2
+[15/May/2018 00:29:25] "POST /add_timetable/ HTTP/1.1" 200 115
+[15/May/2018 00:29:53] "GET /search_subject/?semester=2&category=6&department=14 HTTP/1.1" 200 6205
+[15/May/2018 00:30:02] "POST /add_subject_to_timetable/ HTTP/1.1" 200 842
+[15/May/2018 00:30:09] "POST /add_subject_to_timetable/ HTTP/1.1" 200 1714
+[15/May/2018 00:30:14] "POST /add_subject_to_timetable/ HTTP/1.1" 200 95
+[15/May/2018 00:30:17] "POST /add_subject_to_timetable/ HTTP/1.1" 200 2370
+[15/May/2018 00:30:33] "GET /search_subject/?semester=2&department=14&q=%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D HTTP/1.1" 200 6892
+[15/May/2018 00:30:37] "POST /add_subject_to_timetable/ HTTP/1.1" 200 3026
+[15/May/2018 00:30:43] "GET /search_subject/?semester=2&department=14&q=%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC HTTP/1.1" 200 646
+[15/May/2018 00:30:45] "POST /add_subject_to_timetable/ HTTP/1.1" 200 3672
+[15/May/2018 00:31:07] "GET /select_semester/?semester=1 HTTP/1.1" 200 2
+[15/May/2018 00:36:03] "GET / HTTP/1.1" 200 15701
+[15/May/2018 00:36:03] "GET /select_semester/?semester=1 HTTP/1.1" 200 4500
+[15/May/2018 00:36:12] "GET /search_subject/?semester=1&department=2 HTTP/1.1" 200 66258
+[15/May/2018 00:38:55] "GET / HTTP/1.1" 302 0
+[15/May/2018 00:38:55] "GET /login/?next=/ HTTP/1.1" 200 5106
+[15/May/2018 00:38:58] "GET / HTTP/1.1" 302 0
+[15/May/2018 00:38:58] "GET /login/?next=/ HTTP/1.1" 200 5106
+[15/May/2018 00:38:58] "GET /static/css/style.css HTTP/1.1" 200 4521
+[15/May/2018 00:40:19] "POST /login/?next=/ HTTP/1.1" 200 5122
+[15/May/2018 00:40:23] "POST /login/?next=/ HTTP/1.1" 200 5122
+[15/May/2018 00:40:28] "GET /signup/ HTTP/1.1" 200 6965
+[15/May/2018 00:41:09] "POST /signup/ HTTP/1.1" 200 4356
+[15/May/2018 00:41:29] "GET /activate/MTE/4w7-35484c63068227e5a3e8/ HTTP/1.1" 200 4226
+[15/May/2018 00:41:29] "GET /static/css/style.css HTTP/1.1" 200 4521
+[15/May/2018 00:41:41] "GET /logout/ HTTP/1.1" 200 4279
+[15/May/2018 00:41:44] "GET / HTTP/1.1" 302 0
+[15/May/2018 00:41:45] "GET /login/?next=/ HTTP/1.1" 200 5106
+[15/May/2018 00:41:54] "POST /login/?next=/ HTTP/1.1" 302 0
+[15/May/2018 00:41:54] "GET / HTTP/1.1" 200 15701
+[15/May/2018 00:41:54] "GET /static/js/timetable.js HTTP/1.1" 200 18274
+[15/May/2018 00:41:54] "GET /select_semester/?semester=1 HTTP/1.1" 200 2
+[15/May/2018 00:41:58] "POST /add_timetable/ HTTP/1.1" 200 114
+[15/May/2018 00:42:08] "GET /search_subject/?semester=1&category=1 HTTP/1.1" 200 18072
+[15/May/2018 00:43:45] "POST /add_subject_to_timetable/ HTTP/1.1" 200 692
+[15/May/2018 00:43:46] "POST /add_subject_to_timetable/ HTTP/1.1" 200 95
+[15/May/2018 00:44:07] "GET /search_subject/?semester=1&category=7 HTTP/1.1" 200 182099
+[15/May/2018 00:44:15] "GET /search_subject/?semester=1&category=7&department=8 HTTP/1.1" 200 11358
+[15/May/2018 00:45:31] "POST /add_subject_to_timetable/ HTTP/1.1" 200 1280
+[15/May/2018 00:45:44] "POST /delete_subject_from_timetable/ HTTP/1.1" 200 692
+[15/May/2018 00:46:07] "GET /search_subject/?semester=1&category=7&department=8&three_hundred=on HTTP/1.1" 200 4081
+[15/May/2018 00:47:53] "GET /login/?next=/ HTTP/1.1" 200 5106
+[15/May/2018 00:48:19] "GET /search_subject/?semester=1&category=7&department=8&four_hundred=on HTTP/1.1" 200 3000
+[15/May/2018 00:48:28] "POST /add_subject_to_timetable/ HTTP/1.1" 200 1274
+[15/May/2018 00:48:38] "POST /add_subject_to_timetable/ HTTP/1.1" 200 1920
+[15/May/2018 00:49:25] "GET /search_subject/?semester=1&category=2&department=8 HTTP/1.1" 200 2
+[15/May/2018 00:49:32] "GET /search_subject/?semester=1&category=2&department=2 HTTP/1.1" 200 40355
+[15/May/2018 00:56:03] "POST /add_subject_to_timetable/ HTTP/1.1" 200 2481
+[15/May/2018 00:56:04] "POST /add_subject_to_timetable/ HTTP/1.1" 200 3042
+[15/May/2018 00:56:22] "POST /delete_subject_from_timetable/ HTTP/1.1" 200 2481
+[15/May/2018 00:56:24] "POST /delete_subject_from_timetable/ HTTP/1.1" 200 1920
+[15/May/2018 00:56:36] "POST /add_subject_to_timetable/ HTTP/1.1" 200 2481
+[15/May/2018 01:41:03] "GET / HTTP/1.1" 302 0
+[15/May/2018 01:41:03] "GET /login/?next=/ HTTP/1.1" 200 5106
+[15/May/2018 01:41:03] "GET /static/css/style.css HTTP/1.1" 200 4521
+[15/May/2018 01:41:11] "GET /signup/ HTTP/1.1" 200 6965
+[15/May/2018 01:42:11] "POST /signup/ HTTP/1.1" 200 4356
+[15/May/2018 01:42:58] "GET /activate/MTI/4w7-849e6ed68ab314dead34/ HTTP/1.1" 200 4226
+[15/May/2018 01:42:58] "GET /static/css/style.css HTTP/1.1" 200 4521
+[15/May/2018 01:43:02] "GET / HTTP/1.1" 200 15701
+[15/May/2018 01:43:02] "GET /static/js/timetable.js HTTP/1.1" 200 18274
+[15/May/2018 01:43:02] "GET /select_semester/?semester=1 HTTP/1.1" 200 2
+[15/May/2018 01:43:37] "GET /search_subject/?semester=1&department=11 HTTP/1.1" 200 35441
+[15/May/2018 02:00:21] "GET / HTTP/1.1" 302 0
+[15/May/2018 02:05:38] "GET / HTTP/1.1" 302 0
+[15/May/2018 02:05:38] "GET /login/?next=/ HTTP/1.1" 200 5106
+[15/May/2018 02:05:38] "GET /static/css/style.css HTTP/1.1" 200 4521
+[15/May/2018 02:05:43] "POST /login/?next=/ HTTP/1.1" 302 0
+[15/May/2018 02:05:43] "GET / HTTP/1.1" 200 15701
+[15/May/2018 02:05:43] "GET /static/js/timetable.js HTTP/1.1" 200 18274
+[15/May/2018 02:05:43] "GET /select_semester/?semester=1 HTTP/1.1" 200 2481
+Not Found: /favicon.ico
+[15/May/2018 02:05:43] "GET /favicon.ico HTTP/1.1" 404 4441
+[15/May/2018 02:06:20] "GET /search_subject/?semester=1&category=7&department=8 HTTP/1.1" 200 11358
+[15/May/2018 02:07:11] "GET /search_subject/?semester=1&q=%EA%B8%88%EC%86%8D%EC%86%8C%EC%9E%AC HTTP/1.1" 200 588
+Not Found: /favicon.ico
+[15/May/2018 02:07:14] "GET /favicon.ico HTTP/1.1" 404 4441
+[15/May/2018 02:07:15] "POST /add_subject_to_timetable/ HTTP/1.1" 200 3069
+[15/May/2018 02:07:21] "GET /search_subject/?semester=1&q=%EC%A0%84%EC%9E%90%EC%86%8C%EC%9E%AC HTTP/1.1" 200 589
+Not Found: /favicon.ico
+[15/May/2018 02:07:23] "GET /favicon.ico HTTP/1.1" 404 4441
+[15/May/2018 02:07:24] "POST /add_subject_to_timetable/ HTTP/1.1" 200 3658
+Not Found: /favicon.ico
+[15/May/2018 02:07:28] "GET /favicon.ico HTTP/1.1" 404 4441
+[15/May/2018 02:10:09] "POST /delete_subject_from_timetable/ HTTP/1.1" 200 3012
+[15/May/2018 02:10:11] "POST /delete_subject_from_timetable/ HTTP/1.1" 200 2430
+[15/May/2018 02:26:49] "GET /search_subject/?semester=1&q=%EC%9C%A0%EA%B8%B0%20%EB%B0%94%EC%9D%B4%EC%98%A4 HTTP/1.1" 200 2
+[15/May/2018 02:26:51] "GET /search_subject/?semester=1&q=%EC%9C%A0%EA%B8%B0%EB%B0%94%EC%9D%B4%EC%98%A4 HTTP/1.1" 200 2
+[15/May/2018 02:26:54] "GET /search_subject/?semester=1&q=%EC%9C%A0%EA%B8%B0%EB%B0%94%EC%9D%B4%EC%98%A4%20%EC%86%8C%EC%9E%AC HTTP/1.1" 200 2
+[15/May/2018 02:26:56] "GET /search_subject/?semester=1&q=%EB%B0%94%EC%9D%B4%EC%98%A4%20%EC%86%8C%EC%9E%AC HTTP/1.1" 200 2
+[15/May/2018 02:26:58] "GET /search_subject/?semester=1&q=%EB%B0%94%EC%9D%B4%EC%98%A4%EC%86%8C%EC%9E%AC HTTP/1.1" 200 595
+Not Found: /favicon.ico
+[15/May/2018 02:27:07] "GET /favicon.ico HTTP/1.1" 404 4441
+Not Found: /favicon.ico
+[15/May/2018 02:27:09] "GET /favicon.ico HTTP/1.1" 404 4441
+Not Found: /favicon.ico
+[15/May/2018 02:27:11] "GET /favicon.ico HTTP/1.1" 404 4441
+[15/May/2018 02:27:11] "POST /add_subject_to_timetable/ HTTP/1.1" 200 3025
+Not Found: /favicon.ico
+[15/May/2018 02:27:14] "GET /favicon.ico HTTP/1.1" 404 4441
+[15/May/2018 02:29:23] "GET / HTTP/1.1" 200 15701
+[15/May/2018 02:29:23] "GET /select_semester/?semester=1 HTTP/1.1" 200 3025
+[15/May/2018 02:29:39] "GET /search_subject/?semester=1&q=%EA%B3%A0%EB%B6%84%EC%9E%90%EB%AC%BC%EC%84%B1 HTTP/1.1" 200 582
+Not Found: /favicon.ico
+[15/May/2018 02:29:41] "GET /favicon.ico HTTP/1.1" 404 4441
+[15/May/2018 02:29:41] "POST /add_subject_to_timetable/ HTTP/1.1" 200 3607
+Not Found: /favicon.ico
+[15/May/2018 02:29:44] "GET /favicon.ico HTTP/1.1" 404 4441
+[15/May/2018 02:35:23] "GET /search_subject/?semester=1&q=%ED%83%81%EA%B5%AC HTTP/1.1" 200 1178
+Not Found: /favicon.ico
+[15/May/2018 02:35:26] "GET /favicon.ico HTTP/1.1" 404 4441
+[15/May/2018 02:35:26] "POST /add_subject_to_timetable/ HTTP/1.1" 200 4196
+Not Found: /favicon.ico
+[15/May/2018 02:35:28] "GET /favicon.ico HTTP/1.1" 404 4441
+[15/May/2018 02:35:29] "POST /add_subject_to_timetable/ HTTP/1.1" 200 4785
+Not Found: /favicon.ico
+[15/May/2018 02:35:30] "GET /favicon.ico HTTP/1.1" 404 4441
+[15/May/2018 02:35:46] "POST /delete_subject_from_timetable/ HTTP/1.1" 200 4196
+[15/May/2018 02:35:48] "POST /delete_subject_from_timetable/ HTTP/1.1" 200 3607
+[15/May/2018 02:37:27] "GET /search_subject/?semester=1&q=%EB%AC%B8%ED%95%99%EA%B3%BC HTTP/1.1" 200 594
+Not Found: /favicon.ico
+[15/May/2018 02:37:29] "GET /favicon.ico HTTP/1.1" 404 4441
+[15/May/2018 02:37:29] "POST /add_subject_to_timetable/ HTTP/1.1" 200 4201
+Not Found: /favicon.ico
+[15/May/2018 02:37:31] "GET /favicon.ico HTTP/1.1" 404 4441
+[15/May/2018 02:38:01] "POST /delete_subject_from_timetable/ HTTP/1.1" 200 3606
+[15/May/2018 02:38:09] "POST /delete_subject_from_timetable/ HTTP/1.1" 200 3012
+[15/May/2018 02:38:19] "GET /search_subject/?semester=1&q=%EC%9C%A0%EA%B8%B0 HTTP/1.1" 200 5914
+Not Found: /favicon.ico
+[15/May/2018 02:38:22] "GET /favicon.ico HTTP/1.1" 404 4441
+[15/May/2018 02:38:23] "POST /add_subject_to_timetable/ HTTP/1.1" 200 3607
+Not Found: /favicon.ico
+[15/May/2018 02:38:25] "GET /favicon.ico HTTP/1.1" 404 4441
+[15/May/2018 10:01:22] "GET / HTTP/1.1" 302 0
+[15/May/2018 10:01:22] "GET /login/?next=/ HTTP/1.1" 200 5106
+[15/May/2018 10:16:21] "GET / HTTP/1.1" 302 0
+[15/May/2018 10:16:21] "GET /login/?next=/ HTTP/1.1" 200 5106
+[15/May/2018 10:16:21] "GET /static/css/style.css HTTP/1.1" 200 4521
+Not Found: /favicon.ico
+[15/May/2018 10:16:22] "GET /favicon.ico HTTP/1.1" 404 4441
+[15/May/2018 10:16:33] "GET / HTTP/1.1" 302 0
+[15/May/2018 10:16:33] "GET /login/?next=/ HTTP/1.1" 200 5106
+[15/May/2018 10:17:53] "POST /login/?next=/ HTTP/1.1" 302 0
+[15/May/2018 10:17:53] "GET / HTTP/1.1" 200 15701
+[15/May/2018 10:17:53] "GET /static/js/timetable.js HTTP/1.1" 200 18274
+[15/May/2018 10:17:53] "GET /select_semester/?semester=1 HTTP/1.1" 200 2
+[15/May/2018 10:17:57] "GET /select_semester/?semester=2 HTTP/1.1" 200 2
+[15/May/2018 10:17:58] "GET /select_semester/?semester=1 HTTP/1.1" 200 2
+[15/May/2018 10:18:00] "GET /select_semester/?semester=2 HTTP/1.1" 200 2
+[15/May/2018 10:18:03] "GET /select_semester/?semester=1 HTTP/1.1" 200 2
+[15/May/2018 10:18:05] "GET /select_semester/?semester=2 HTTP/1.1" 200 2
+[15/May/2018 10:18:05] "GET /select_semester/?semester=3 HTTP/1.1" 200 2
+[15/May/2018 10:18:56] "GET /logout/ HTTP/1.1" 200 4279
+[15/May/2018 10:19:00] "GET /signup/ HTTP/1.1" 200 6965
+[15/May/2018 10:19:03] "GET / HTTP/1.1" 302 0
+[15/May/2018 10:19:03] "GET /login/?next=/ HTTP/1.1" 200 5106
+[15/May/2018 10:19:05] "POST /login/?next=/ HTTP/1.1" 302 0
+[15/May/2018 10:19:06] "GET / HTTP/1.1" 200 15701
+[15/May/2018 10:19:06] "GET /select_semester/?semester=1 HTTP/1.1" 200 2
+[15/May/2018 10:19:14] "POST /add_timetable/ HTTP/1.1" 200 114
+[15/May/2018 10:22:31] "GET / HTTP/1.1" 302 0
+[15/May/2018 11:27:13] "GET / HTTP/1.1" 302 0
+[15/May/2018 13:04:05] "GET / HTTP/1.1" 302 0
+[15/May/2018 13:22:30] "GET /static/css/style.css HTTP/1.1" 304 0
+[15/May/2018 13:22:30] "GET /static/js/timetable.js HTTP/1.1" 304 0
+[15/May/2018 13:22:32] "GET /select_semester/?semester=1 HTTP/1.1" 200 4500
+[15/May/2018 14:18:55] "GET /static/js/timetable.js HTTP/1.1" 304 0
+[15/May/2018 14:18:55] "GET /static/css/style.css HTTP/1.1" 304 0
+[15/May/2018 14:18:55] "GET /select_semester/?semester=1 HTTP/1.1" 200 3607
+[15/May/2018 14:23:14] "GET /select_semester/?semester=1 HTTP/1.1" 200 4500
+[15/May/2018 14:28:03] "GET / HTTP/1.1" 302 0
+[15/May/2018 16:51:03] "GET / HTTP/1.1" 200 15701
+[15/May/2018 16:51:04] "GET /select_semester/?semester=1 HTTP/1.1" 200 7141
+[15/May/2018 18:46:25] "GET / HTTP/1.1" 302 0
+[15/May/2018 20:48:26] "GET /static/css/style.css HTTP/1.1" 304 0
+[15/May/2018 20:48:26] "GET /static/js/timetable.js HTTP/1.1" 304 0
+[15/May/2018 20:48:26] "GET /select_semester/?semester=1 HTTP/1.1" 200 4500
+[15/May/2018 22:02:04] "GET / HTTP/1.1" 302 0
+[15/May/2018 22:02:04] "GET /login/?next=/ HTTP/1.1" 200 5106
+[15/May/2018 22:02:04] "GET /static/css/style.css HTTP/1.1" 200 4521
+Not Found: /favicon.ico
+[15/May/2018 22:02:07] "GET /favicon.ico HTTP/1.1" 404 4441
+[15/May/2018 23:29:05] "GET / HTTP/1.1" 302 0
+[15/May/2018 23:29:06] "GET /login/?next=/ HTTP/1.1" 200 5106
+[15/May/2018 23:33:30] "POST /delete_subject_from_timetable/ HTTP/1.1" 200 3025
+[15/May/2018 23:33:37] "POST /delete_subject_from_timetable/ HTTP/1.1" 200 2464
+[15/May/2018 23:33:46] "GET /search_subject/?semester=1&q=%EC%98%81%EB%AC%B8%EB%B2%95 HTTP/1.1" 200 1686
+Not Found: /favicon.ico
+[15/May/2018 23:33:49] "GET /favicon.ico HTTP/1.1" 404 4441
+[15/May/2018 23:33:49] "POST /add_subject_to_timetable/ HTTP/1.1" 200 3025
+Not Found: /favicon.ico
+[15/May/2018 23:33:52] "GET /favicon.ico HTTP/1.1" 404 4441
+[15/May/2018 23:33:52] "POST /add_subject_to_timetable/ HTTP/1.1" 200 3586
+Not Found: /favicon.ico
+[15/May/2018 23:33:58] "GET /favicon.ico HTTP/1.1" 404 4441
+[15/May/2018 23:34:03] "POST /delete_subject_from_timetable/ HTTP/1.1" 200 3025
+[15/May/2018 23:34:07] "POST /delete_subject_from_timetable/ HTTP/1.1" 200 2436
+[15/May/2018 23:34:09] "POST /delete_subject_from_timetable/ HTTP/1.1" 200 1875
+Not Found: /favicon.ico
+[15/May/2018 23:34:17] "GET /favicon.ico HTTP/1.1" 404 4441
+[15/May/2018 23:34:17] "POST /add_subject_to_timetable/ HTTP/1.1" 200 2436
+[15/May/2018 23:34:22] "GET /search_subject/?semester=1&q=%EC%A0%84%EC%9E%90%EC%86%8C%EC%9E%AC HTTP/1.1" 200 589
+Not Found: /favicon.ico
+[15/May/2018 23:34:24] "GET /favicon.ico HTTP/1.1" 404 4441
+[15/May/2018 23:34:24] "POST /add_subject_to_timetable/ HTTP/1.1" 200 3025
+Not Found: /favicon.ico
+[15/May/2018 23:34:26] "GET /favicon.ico HTTP/1.1" 404 4441
+[15/May/2018 23:39:02] "GET / HTTP/1.1" 302 0
+[15/May/2018 23:39:02] "GET /login/?next=/ HTTP/1.1" 200 5106
+[15/May/2018 23:39:02] "GET /static/css/style.css HTTP/1.1" 304 0
+Not Found: /favicon.ico
+[15/May/2018 23:39:03] "GET /favicon.ico HTTP/1.1" 404 4441
+[15/May/2018 23:39:07] "POST /login/?next=/ HTTP/1.1" 302 0
+[15/May/2018 23:39:08] "POST /login/?next=/ HTTP/1.1" 302 0
+[15/May/2018 23:39:08] "GET / HTTP/1.1" 200 15701
+[15/May/2018 23:39:08] "GET /static/js/timetable.js HTTP/1.1" 304 0
+[15/May/2018 23:39:08] "GET /select_semester/?semester=1 HTTP/1.1" 200 115
+[15/May/2018 23:39:39] "POST /add_timetable/ HTTP/1.1" 200 231
+[16/May/2018 14:34:32] "GET / HTTP/1.1" 302 0
+[16/May/2018 14:34:32] "GET /login/?next=/ HTTP/1.1" 200 5106
+[16/May/2018 15:13:02] "GET / HTTP/1.1" 200 15701
+[16/May/2018 15:13:02] "GET /static/js/timetable.js HTTP/1.1" 304 0
+[16/May/2018 15:13:02] "GET /static/css/style.css HTTP/1.1" 304 0
+Not Found: /favicon.ico
+[16/May/2018 15:13:05] "GET /favicon.ico HTTP/1.1" 404 4441
+[16/May/2018 15:13:05] "GET /select_semester/?semester=1 HTTP/1.1" 200 2
+[16/May/2018 15:13:08] "GET / HTTP/1.1" 200 15701
+[16/May/2018 15:13:09] "GET /select_semester/?semester=1 HTTP/1.1" 200 2
+[16/May/2018 15:13:17] "POST /add_timetable/ HTTP/1.1" 200 117
+[16/May/2018 15:13:41] "GET /search_subject/?semester=1&q=%EC%B0%BD%EC%84%A4 HTTP/1.1" 200 2
+[16/May/2018 15:13:48] "GET /search_subject/?semester=1&q=%EC%B0%BD%EC%9D%98 HTTP/1.1" 200 8012
+[16/May/2018 15:13:54] "POST /add_subject_to_timetable/ HTTP/1.1" 200 1118
+[16/May/2018 15:14:36] "GET /search_subject/?semester=1&q=%ED%99%94%ED%95%99 HTTP/1.1" 200 31900
+[16/May/2018 15:14:38] "GET /search_subject/?semester=1&q=%ED%99%94%ED%95%99 HTTP/1.1" 200 31900
+[16/May/2018 15:15:25] "POST /add_subject_to_timetable/ HTTP/1.1" 200 1769
+[16/May/2018 15:15:57] "POST /add_subject_to_timetable/ HTTP/1.1" 200 2452
+[16/May/2018 15:16:02] "GET /search_subject/?semester=1&q=%EA%B8%80%EC%93%B0%EA%B8%B0 HTTP/1.1" 200 4548
+[16/May/2018 15:16:06] "POST /add_subject_to_timetable/ HTTP/1.1" 200 3020
+[16/May/2018 15:16:15] "GET /search_subject/?semester=1&q=%EC%9D%B8%ED%84%B0%EB%A0%89%EC%85%98 HTTP/1.1" 200 628
+[16/May/2018 15:16:17] "GET /search_subject/?semester=1&q=%EC%9D%B8%ED%84%B0%EB%A0%89%EC%85%98 HTTP/1.1" 200 628
+[16/May/2018 15:16:40] "POST /add_subject_to_timetable/ HTTP/1.1" 200 3648
+[16/May/2018 15:16:45] "GET /search_subject/?semester=1&q=%EA%B8%B0%EC%97%85%EA%B0%80 HTTP/1.1" 200 5017
+[16/May/2018 15:16:59] "POST /add_subject_to_timetable/ HTTP/1.1" 200 4267
+[16/May/2018 15:17:05] "POST /add_subject_to_timetable/ HTTP/1.1" 200 95
+[16/May/2018 15:17:22] "GET /search_subject/?semester=1&q=%EB%AF%B8%EC%A0%81%EB%B6%84 HTTP/1.1" 200 4104
+[16/May/2018 15:17:27] "POST /add_subject_to_timetable/ HTTP/1.1" 200 4951
+[16/May/2018 15:18:01] "POST /copy_timetable/ HTTP/1.1" 200 9902
+[16/May/2018 15:18:31] "POST /delete_timetable/ HTTP/1.1" 200 4951
+[16/May/2018 16:32:56] "GET / HTTP/1.1" 302 0
+[16/May/2018 16:32:57] "GET /login/?next=/ HTTP/1.1" 200 5106
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 14, 2018 - 22:03:21
+Django version 1.11.12, using settings 'lemons.settings'
+Starting development server at http://0:8889/
+Quit the server with CONTROL-C.
+[16/May/2018 21:59:23] "GET / HTTP/1.1" 200 16286
+[16/May/2018 21:59:23] "GET /static/css/style.css HTTP/1.1" 200 4970
+[16/May/2018 21:59:23] "GET /static/js/timetable.js HTTP/1.1" 200 20869
+Not Found: /favicon.ico
+[16/May/2018 21:59:25] "GET /favicon.ico HTTP/1.1" 404 4441
+[16/May/2018 21:59:25] "GET /select_semester/?semester=1 HTTP/1.1" 200 7141
+Not Found: /subject/585/
+[16/May/2018 21:59:29] "GET /subject/585/ HTTP/1.1" 404 4444
+[16/May/2018 21:59:44] "GET / HTTP/1.1" 302 0
+[16/May/2018 21:59:44] "GET / HTTP/1.1" 302 0
+[16/May/2018 21:59:44] "GET /login/?next=/ HTTP/1.1" 200 5247
+[16/May/2018 21:59:51] "GET / HTTP/1.1" 302 0
+[16/May/2018 21:59:51] "GET / HTTP/1.1" 302 0
+[16/May/2018 21:59:51] "GET /login/?next=/ HTTP/1.1" 200 5247
+[16/May/2018 21:59:51] "GET /login/?next=/ HTTP/1.1" 200 5247
+[16/May/2018 21:59:51] "GET /static/css/style.css HTTP/1.1" 200 4970
+[16/May/2018 21:59:51] "GET /static/css/style.css HTTP/1.1" 200 4970
+[16/May/2018 21:59:52] "GET / HTTP/1.1" 302 0
+[16/May/2018 21:59:52] "GET /login/?next=/ HTTP/1.1" 200 5247
+[16/May/2018 21:59:53] "GET /static/css/style.css HTTP/1.1" 200 4970
+[16/May/2018 21:59:53] "GET / HTTP/1.1" 302 0
+[16/May/2018 21:59:53] "GET /login/?next=/ HTTP/1.1" 200 5247
+[16/May/2018 21:59:53] "GET /static/css/style.css HTTP/1.1" 200 4970
+Not Found: /favicon.ico
+[16/May/2018 21:59:53] "GET /favicon.ico HTTP/1.1" 404 4441
+Not Found: /favicon.ico
+[16/May/2018 21:59:53] "GET /favicon.ico HTTP/1.1" 404 4441
+Not Found: /favicon.ico
+[16/May/2018 21:59:54] "GET /favicon.ico HTTP/1.1" 404 4441
+[16/May/2018 21:59:55] "GET / HTTP/1.1" 302 0
+[16/May/2018 21:59:55] "GET /login/?next=/ HTTP/1.1" 200 5247
+[16/May/2018 21:59:55] "GET /static/css/style.css HTTP/1.1" 200 4970
+Not Found: /favicon.ico
+[16/May/2018 21:59:58] "GET /favicon.ico HTTP/1.1" 404 4441
+[16/May/2018 22:00:02] "POST /login/?next=/ HTTP/1.1" 200 5263
+[16/May/2018 22:00:02] "GET /static/css/style.css HTTP/1.1" 304 0
+Not Found: /favicon.ico
+[16/May/2018 22:00:02] "GET /favicon.ico HTTP/1.1" 404 4441
+[16/May/2018 22:00:04] "POST /login/?next=/ HTTP/1.1" 200 5263
+[16/May/2018 22:00:04] "GET /static/css/style.css HTTP/1.1" 304 0
+[16/May/2018 22:00:07] "POST /login/?next=/ HTTP/1.1" 200 5262
+[16/May/2018 22:00:08] "GET /static/css/style.css HTTP/1.1" 304 0
+[16/May/2018 22:00:09] "GET / HTTP/1.1" 302 0
+[16/May/2018 22:00:09] "GET /login/?next=/ HTTP/1.1" 200 5247
+[16/May/2018 22:00:10] "GET /static/css/style.css HTTP/1.1" 200 4970
+Not Found: /favicon.ico
+[16/May/2018 22:00:12] "GET /favicon.ico HTTP/1.1" 404 4441
+[16/May/2018 22:00:14] "GET /login/?next=/ HTTP/1.1" 200 5247
+[16/May/2018 22:00:15] "GET / HTTP/1.1" 302 0
+[16/May/2018 22:00:15] "GET /login/?next=/ HTTP/1.1" 200 5247
+[16/May/2018 22:00:16] "GET /static/css/style.css HTTP/1.1" 200 4970
+[16/May/2018 22:00:17] "POST /login/?next=/ HTTP/1.1" 200 5265
+[16/May/2018 22:00:18] "GET /static/css/style.css HTTP/1.1" 304 0
+Not Found: /favicon.ico
+[16/May/2018 22:00:18] "GET /favicon.ico HTTP/1.1" 404 4441
+[16/May/2018 22:00:18] "POST /login/?next=/ HTTP/1.1" 200 5262
+[16/May/2018 22:00:18] "GET /static/css/style.css HTTP/1.1" 304 0
+[16/May/2018 22:00:20] "GET /login/?next=/ HTTP/1.1" 200 5247
+[16/May/2018 22:00:24] "GET /signup/ HTTP/1.1" 200 6965
+[16/May/2018 22:00:24] "GET /static/css/style.css HTTP/1.1" 304 0
+[16/May/2018 22:00:33] "POST /login/?next=/ HTTP/1.1" 200 5265
+[16/May/2018 22:00:33] "GET /static/css/style.css HTTP/1.1" 304 0
+[16/May/2018 22:00:57] "POST /login/?next=/ HTTP/1.1" 200 5279
+[16/May/2018 22:00:57] "GET /static/css/style.css HTTP/1.1" 304 0
+[16/May/2018 22:01:13] "POST /login/?next=/ HTTP/1.1" 200 5265
+[16/May/2018 22:01:13] "GET /static/css/style.css HTTP/1.1" 304 0
+[16/May/2018 22:01:26] "POST /signup/ HTTP/1.1" 200 4356
+[16/May/2018 22:01:26] "GET /static/css/style.css HTTP/1.1" 304 0
+[16/May/2018 22:04:16] "GET / HTTP/1.1" 302 0
+[16/May/2018 22:04:17] "GET /login/?next=/ HTTP/1.1" 200 5247
+[16/May/2018 22:04:17] "GET /static/css/style.css HTTP/1.1" 200 4970
+Not Found: /favicon.ico
+[16/May/2018 22:04:20] "GET /favicon.ico HTTP/1.1" 404 4441
+[16/May/2018 22:04:39] "POST /login/?next=/ HTTP/1.1" 200 5265
+[16/May/2018 22:04:49] "GET /login/?next=/ HTTP/1.1" 200 5247
+[16/May/2018 22:09:50] "GET / HTTP/1.1" 200 16286
+[16/May/2018 22:09:50] "GET /static/css/style.css HTTP/1.1" 304 0
+[16/May/2018 22:09:50] "GET /static/js/timetable.js HTTP/1.1" 304 0
+Not Found: /favicon.ico
+[16/May/2018 22:09:51] "GET /favicon.ico HTTP/1.1" 404 4441
+[16/May/2018 22:09:51] "GET /select_semester/?semester=1 HTTP/1.1" 200 7141
+[16/May/2018 22:09:56] "GET / HTTP/1.1" 302 0
+[16/May/2018 22:09:57] "GET /login/?next=/ HTTP/1.1" 200 5247
+[16/May/2018 22:09:57] "GET /static/css/style.css HTTP/1.1" 200 4970
+Not Found: /favicon.ico
+[16/May/2018 22:10:05] "GET /favicon.ico HTTP/1.1" 404 4441
+[16/May/2018 22:10:21] "GET /signup/ HTTP/1.1" 200 6965
+[16/May/2018 22:10:39] "GET /signup/ HTTP/1.1" 200 6965
+[16/May/2018 22:10:39] "GET /static/css/style.css HTTP/1.1" 304 0
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 16, 2018 - 21:59:19
+Django version 1.11.12, using settings 'lemons.settings'
+Starting development server at http://0:8889/
+Quit the server with CONTROL-C.
+[16/May/2018 22:10:54] "GET /subject/576/ HTTP/1.1" 200 5488
+[16/May/2018 22:10:54] "GET /static/css/style.css HTTP/1.1" 304 0
+[16/May/2018 22:11:06] "POST /signup/ HTTP/1.1" 200 4356
+[16/May/2018 22:11:06] "GET /static/css/style.css HTTP/1.1" 304 0
+[16/May/2018 22:11:08] "GET /subject/585/ HTTP/1.1" 200 5470
+[16/May/2018 22:11:15] "GET / HTTP/1.1" 302 0
+[16/May/2018 22:11:15] "GET /login/?next=/ HTTP/1.1" 200 5247
+[16/May/2018 22:11:29] "POST /signup/ HTTP/1.1" 200 4356
+[16/May/2018 22:12:10] "GET /subject/585/ HTTP/1.1" 200 5470
+[16/May/2018 22:12:11] "GET /static/css/style.css HTTP/1.1" 304 0
+[16/May/2018 22:13:01] "GET / HTTP/1.1" 302 0
+[16/May/2018 22:13:01] "GET /login/?next=/ HTTP/1.1" 200 5247
+[16/May/2018 22:13:01] "GET /static/css/style.css HTTP/1.1" 304 0
+[16/May/2018 22:13:09] "GET /signup/ HTTP/1.1" 200 6965
+[16/May/2018 22:13:48] "GET / HTTP/1.1" 302 0
+[16/May/2018 22:13:48] "GET /login/?next=/ HTTP/1.1" 200 5247
+[16/May/2018 22:14:50] "GET /activate/MTU/4w8-fb53d7680c75acfb75f3/ HTTP/1.1" 200 4226
+[16/May/2018 22:14:52] "GET /static/css/style.css HTTP/1.1" 200 4970
+Not Found: /favicon.ico
+[16/May/2018 22:14:54] "GET /favicon.ico HTTP/1.1" 404 4649
+[16/May/2018 22:15:12] "POST /login/?next=/ HTTP/1.1" 302 0
+[16/May/2018 22:15:12] "GET / HTTP/1.1" 200 16372
+[16/May/2018 22:15:12] "GET /static/css/style.css HTTP/1.1" 304 0
+[16/May/2018 22:15:12] "GET /static/js/timetable.js HTTP/1.1" 200 20869
+[16/May/2018 22:15:12] "GET /select_semester/?semester=1 HTTP/1.1" 200 2
+[16/May/2018 22:15:24] "POST /add_timetable/ HTTP/1.1" 200 114
+[16/May/2018 22:16:24] "GET /static/css/style.css HTTP/1.1" 304 0
+[16/May/2018 22:17:31] "GET /search_subject/?semester=1&category=5&department=34 HTTP/1.1" 200 2
+[16/May/2018 22:17:52] "GET /search_subject/?semester=1&category=5&department=4 HTTP/1.1" 200 5812
+[16/May/2018 22:18:22] "GET /subject/167/ HTTP/1.1" 200 5466
+[16/May/2018 22:18:22] "GET /static/css/style.css HTTP/1.1" 304 0
+[16/May/2018 22:19:29] "POST /add_subject_to_timetable/ HTTP/1.1" 200 802
+[16/May/2018 22:20:02] "GET /search_subject/?semester=1&category=5&department=3 HTTP/1.1" 200 4104
+[16/May/2018 22:20:10] "POST /add_subject_to_timetable/ HTTP/1.1" 200 1486
+[16/May/2018 22:20:20] "POST /add_subject_to_timetable/ HTTP/1.1" 200 95
+[16/May/2018 22:20:45] "GET /search_subject/?semester=1&category=5&department=6 HTTP/1.1" 200 2388
+[16/May/2018 22:20:58] "POST /add_subject_to_timetable/ HTTP/1.1" 200 2068
+[16/May/2018 22:22:38] "GET /admin HTTP/1.1" 301 0
+[16/May/2018 22:22:38] "GET /admin/ HTTP/1.1" 200 6417
+[16/May/2018 22:22:38] "GET /static/admin/css/dashboard.css HTTP/1.1" 200 412
+[16/May/2018 22:22:38] "GET /static/admin/css/base.css HTTP/1.1" 200 16066
+[16/May/2018 22:22:39] "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+[16/May/2018 22:22:39] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+[16/May/2018 22:22:39] "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+[16/May/2018 22:22:39] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+[16/May/2018 22:22:39] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 81348
+[16/May/2018 22:22:39] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 82564
+[16/May/2018 22:22:39] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 80304
+[16/May/2018 22:22:54] "GET /activate/MTQ/4w8-4930c842c967a9b2843a HTTP/1.1" 301 0
+[16/May/2018 22:22:55] "GET /activate/MTQ/4w8-4930c842c967a9b2843a/ HTTP/1.1" 200 4226
+[16/May/2018 22:22:55] "GET /static/css/style.css HTTP/1.1" 200 4970
+[16/May/2018 22:22:59] "GET /admin/auth/user/ HTTP/1.1" 200 12541
+[16/May/2018 22:22:59] "GET /static/admin/css/changelists.css HTTP/1.1" 200 6170
+[16/May/2018 22:22:59] "GET /static/admin/js/core.js HTTP/1.1" 200 7976
+[16/May/2018 22:22:59] "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 363
+[16/May/2018 22:22:59] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[16/May/2018 22:22:59] "GET /static/admin/js/actions.js HTTP/1.1" 200 6501
+[16/May/2018 22:22:59] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 6591
+[16/May/2018 22:22:59] "GET /static/admin/js/urlify.js HTTP/1.1" 200 8186
+[16/May/2018 22:22:59] "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1538
+[16/May/2018 22:22:59] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 258648
+[16/May/2018 22:22:59] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[16/May/2018 22:22:59] "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+[16/May/2018 22:22:59] "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+[16/May/2018 22:22:59] "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+[16/May/2018 22:22:59] "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+[16/May/2018 22:22:59] "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+Not Found: /favicon.ico
+[16/May/2018 22:23:02] "GET /favicon.ico HTTP/1.1" 404 4649
+[16/May/2018 22:23:12] "GET / HTTP/1.1" 200 16372
+[16/May/2018 22:23:12] "GET /static/js/timetable.js HTTP/1.1" 200 20869
+[16/May/2018 22:23:13] "GET /select_semester/?semester=1 HTTP/1.1" 200 2
+[16/May/2018 22:24:18] "GET /search_subject/?semester=1&category=1&department=2 HTTP/1.1" 200 18072
+[16/May/2018 22:24:26] "POST /add_timetable/ HTTP/1.1" 200 113
+[16/May/2018 22:25:07] "POST /add_subject_to_timetable/ HTTP/1.1" 200 716
+[16/May/2018 22:25:36] "POST /add_timetable/ HTTP/1.1" 200 829
+[16/May/2018 22:26:07] "GET /admin/auth/user/?is_active__exact=1 HTTP/1.1" 200 12668
+[16/May/2018 22:26:08] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[16/May/2018 22:26:11] "GET /admin/auth/user/?is_active__exact=0 HTTP/1.1" 200 7461
+[16/May/2018 22:26:11] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[16/May/2018 22:26:31] "GET /search_subject/?semester=1&category=7&department=14 HTTP/1.1" 200 12455
+[16/May/2018 22:26:37] "POST /add_subject_to_timetable/ HTTP/1.1" 200 1491
+[16/May/2018 22:26:42] "POST /add_subject_to_timetable/ HTTP/1.1" 200 2143
+[16/May/2018 22:26:45] "POST /add_subject_to_timetable/ HTTP/1.1" 200 2793
+[16/May/2018 22:26:49] "POST /add_subject_to_timetable/ HTTP/1.1" 200 3463
+[16/May/2018 22:27:37] "POST /delete_timetable/ HTTP/1.1" 200 3350
+[16/May/2018 22:30:08] "GET / HTTP/1.1" 302 0
+[16/May/2018 22:30:08] "GET /login/?next=/ HTTP/1.1" 200 5247
+[16/May/2018 22:30:08] "GET /static/css/style.css HTTP/1.1" 200 4970
+Not Found: /favicon.ico
+[16/May/2018 22:30:12] "GET /favicon.ico HTTP/1.1" 404 4649
+[16/May/2018 22:32:13] "GET /select_semester/?semester=2 HTTP/1.1" 200 2
+[16/May/2018 22:32:14] "GET /select_semester/?semester=1 HTTP/1.1" 200 3350
+[16/May/2018 22:34:07] "GET /admin/auth/user/?is_active__exact=1 HTTP/1.1" 200 12668
+[16/May/2018 22:34:07] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[16/May/2018 22:34:08] "GET /admin/auth/user/?is_active__exact=1&is_superuser__exact=1 HTTP/1.1" 200 7414
+[16/May/2018 22:34:08] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[16/May/2018 22:34:10] "GET /admin/auth/user/?is_active__exact=1&is_staff__exact=1&is_superuser__exact=1 HTTP/1.1" 200 7805
+[16/May/2018 22:34:10] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[16/May/2018 22:34:14] "GET /admin/auth/user/?is_staff__exact=1&is_superuser__exact=1 HTTP/1.1" 200 7398
+[16/May/2018 22:34:14] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[16/May/2018 22:34:16] "GET /admin/auth/user/?is_active__exact=0&is_staff__exact=1&is_superuser__exact=1 HTTP/1.1" 200 5488
+[16/May/2018 22:34:16] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[16/May/2018 22:37:04] "GET / HTTP/1.1" 302 0
+[16/May/2018 22:37:04] "GET /login/?next=/ HTTP/1.1" 200 5247
+[16/May/2018 22:37:04] "GET /static/css/style.css HTTP/1.1" 200 4970
+Not Found: /favicon.ico
+[16/May/2018 22:37:10] "GET /favicon.ico HTTP/1.1" 404 4649
+[16/May/2018 22:37:10] "GET /login/?next=/ HTTP/1.1" 200 5247
+Not Found: /favicon.ico
+[16/May/2018 22:37:16] "GET /favicon.ico HTTP/1.1" 404 4649
+[16/May/2018 22:37:21] "POST /login/?next=/ HTTP/1.1" 302 0
+[16/May/2018 22:37:21] "GET / HTTP/1.1" 200 16372
+[16/May/2018 22:37:21] "GET /static/js/timetable.js HTTP/1.1" 200 20869
+[16/May/2018 22:37:21] "GET /select_semester/?semester=1 HTTP/1.1" 200 7141
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/lbs1163/lemons/myvenv/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 140, in handle
+    self.raw_requestline = self.rfile.readline(65537)
+  File "/usr/lib/python3.5/socket.py", line 575, in readinto
+    return self._sock.recv_into(b)
+ConnectionResetError: [Errno 104] Connection reset by peer
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/lbs1163/lemons/myvenv/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 140, in handle
+    self.raw_requestline = self.rfile.readline(65537)
+  File "/usr/lib/python3.5/socket.py", line 575, in readinto
+    return self._sock.recv_into(b)
+ConnectionResetError: [Errno 104] Connection reset by peer
+[16/May/2018 22:45:30] "GET /subject/585/ HTTP/1.1" 200 5470
+[16/May/2018 22:45:30] "GET /static/css/style.css HTTP/1.1" 304 0
+[16/May/2018 23:43:09] "GET / HTTP/1.1" 302 0
+[16/May/2018 23:43:09] "GET /login/?next=/ HTTP/1.1" 200 5247
+[16/May/2018 23:49:40] "GET / HTTP/1.1" 200 16372
+[16/May/2018 23:49:40] "GET /static/css/style.css HTTP/1.1" 200 4970
+[16/May/2018 23:49:40] "GET /static/js/timetable.js HTTP/1.1" 200 20869
+[16/May/2018 23:49:40] "GET /select_semester/?semester=1 HTTP/1.1" 200 4951
+[16/May/2018 23:49:47] "GET /subject/113/ HTTP/1.1" 200 5463
+[16/May/2018 23:50:12] "GET /select_semester/?semester=2 HTTP/1.1" 200 2
+[16/May/2018 23:50:15] "GET /select_semester/?semester=1 HTTP/1.1" 200 4951
+[17/May/2018 00:41:58] "GET / HTTP/1.1" 200 16372
+[17/May/2018 00:41:59] "GET /static/css/style.css HTTP/1.1" 304 0
+[17/May/2018 00:42:00] "GET /static/js/timetable.js HTTP/1.1" 304 0
+[17/May/2018 00:42:01] "GET /select_semester/?semester=1 HTTP/1.1" 200 2068
+[17/May/2018 00:47:00] "GET / HTTP/1.1" 302 0
+[17/May/2018 00:47:00] "GET / HTTP/1.1" 302 0
+[17/May/2018 00:50:23] "GET / HTTP/1.1" 302 0
+[17/May/2018 00:50:23] "GET /login/?next=/ HTTP/1.1" 200 5247
+[17/May/2018 00:50:23] "GET /static/css/style.css HTTP/1.1" 200 4970
+Not Found: /favicon.ico
+[17/May/2018 00:50:25] "GET /favicon.ico HTTP/1.1" 404 4649
+[17/May/2018 00:50:37] "POST /login/?next=/ HTTP/1.1" 302 0
+[17/May/2018 00:50:37] "GET / HTTP/1.1" 200 16372
+[17/May/2018 00:50:37] "GET /static/js/timetable.js HTTP/1.1" 200 20869
+[17/May/2018 00:50:37] "GET /select_semester/?semester=1 HTTP/1.1" 200 3656
+[17/May/2018 01:43:39] "GET / HTTP/1.1" 302 0
+[17/May/2018 01:43:40] "GET /login/?next=/ HTTP/1.1" 200 5247
+[17/May/2018 01:43:40] "GET /static/css/style.css HTTP/1.1" 200 4970
+[17/May/2018 01:43:54] "POST /login/?next=/ HTTP/1.1" 200 5262
+[17/May/2018 01:43:59] "GET / HTTP/1.1" 302 0
+[17/May/2018 01:43:59] "GET /login/?next=/ HTTP/1.1" 200 5247
+[17/May/2018 01:44:01] "GET /signup/ HTTP/1.1" 200 6965
+[17/May/2018 01:44:31] "GET / HTTP/1.1" 302 0
+[17/May/2018 01:44:31] "GET /login/?next=/ HTTP/1.1" 200 5247
+[17/May/2018 01:44:32] "GET / HTTP/1.1" 302 0
+[17/May/2018 01:44:32] "GET /login/?next=/ HTTP/1.1" 200 5247
+[17/May/2018 01:44:40] "GET /signup/ HTTP/1.1" 200 6965
+[17/May/2018 01:45:23] "POST /signup/ HTTP/1.1" 200 4356
+[17/May/2018 01:46:31] "GET /activate/MTY/4w9-a7a280aa704b3e4f61cf/ HTTP/1.1" 200 4226
+[17/May/2018 01:46:31] "GET /static/css/style.css HTTP/1.1" 200 4970
+[17/May/2018 01:46:40] "GET / HTTP/1.1" 200 16372
+[17/May/2018 01:46:40] "GET /static/js/timetable.js HTTP/1.1" 200 20869
+[17/May/2018 01:46:40] "GET /select_semester/?semester=1 HTTP/1.1" 200 2
+[17/May/2018 01:46:49] "POST /add_timetable/ HTTP/1.1" 200 113
+[17/May/2018 09:04:24] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+[17/May/2018 09:04:24] "  /*à     Cookie: mstshash=Administr" 400 -
+[17/May/2018 09:10:09] "GET /signup/ HTTP/1.1" 200 6965
+[17/May/2018 09:10:09] "GET /static/css/style.css HTTP/1.1" 200 4970
+[17/May/2018 10:52:52] "GET / HTTP/1.1" 302 0
+[17/May/2018 10:52:52] "GET /login/?next=/ HTTP/1.1" 200 5247
+[17/May/2018 10:52:52] "GET /static/css/style.css HTTP/1.1" 200 4970
+Not Found: /favicon.ico
+[17/May/2018 10:52:54] "GET /favicon.ico HTTP/1.1" 404 4649
+[17/May/2018 10:53:09] "POST /login/?next=/ HTTP/1.1" 302 0
+[17/May/2018 10:53:10] "GET / HTTP/1.1" 200 16372
+[17/May/2018 10:53:10] "GET /static/js/timetable.js HTTP/1.1" 200 20869
+[17/May/2018 10:53:10] "GET /select_semester/?semester=1 HTTP/1.1" 200 4951
+[17/May/2018 10:54:07] "GET /select_semester/?semester=2 HTTP/1.1" 200 2
+[17/May/2018 10:54:08] "GET /select_semester/?semester=1 HTTP/1.1" 200 4951
+[17/May/2018 11:03:00] "GET / HTTP/1.1" 200 16372
+[17/May/2018 11:03:00] "GET /static/css/style.css HTTP/1.1" 304 0
+[17/May/2018 11:03:01] "GET /static/js/timetable.js HTTP/1.1" 304 0
+Not Found: /favicon.ico
+[17/May/2018 11:03:01] "GET /favicon.ico HTTP/1.1" 404 4649
+[17/May/2018 11:03:01] "GET /select_semester/?semester=1 HTTP/1.1" 200 7141
+[17/May/2018 11:03:04] "GET /subject/576/ HTTP/1.1" 200 5488
+[17/May/2018 11:03:27] "GET / HTTP/1.1" 200 16372
+[17/May/2018 11:03:28] "GET /select_semester/?semester=1 HTTP/1.1" 200 7141
+[17/May/2018 11:03:47] "GET /search_subject/?semester=1&q=%EC%BA%90%EB%93%9C HTTP/1.1" 200 2
+[17/May/2018 11:03:58] "GET /search_subject/?semester=1&q=%EC%BB%B4%ED%93%A8%ED%84%B0%EC%97%90%EC%9D%B4%EB%94%94%EB%93%9C%EB%94%94%EC%9E%90%EC%9D%B8 HTTP/1.1" 200 2
+[17/May/2018 11:04:09] "GET /search_subject/?semester=1&q=computer%20aided%20design HTTP/1.1" 200 2
+[17/May/2018 11:04:14] "GET /search_subject/?semester=1&q=computer HTTP/1.1" 200 2
+[17/May/2018 11:04:30] "GET /search_subject/?semester=1&q=%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D HTTP/1.1" 200 5032
+[17/May/2018 12:36:26] "GET / HTTP/1.1" 200 16372
+[17/May/2018 12:36:26] "GET /static/js/timetable.js HTTP/1.1" 200 20869
+[17/May/2018 12:36:26] "GET /static/css/style.css HTTP/1.1" 200 4970
+[17/May/2018 12:36:27] "GET /select_semester/?semester=1 HTTP/1.1" 200 114
+[17/May/2018 12:38:29] "GET / HTTP/1.1" 200 16372
+[17/May/2018 12:38:29] "GET /select_semester/?semester=1 HTTP/1.1" 200 114
+[17/May/2018 12:40:17] "GET / HTTP/1.1" 200 16372
+[17/May/2018 12:40:17] "GET /select_semester/?semester=1 HTTP/1.1" 200 114
+[17/May/2018 12:40:57] "GET /logout/ HTTP/1.1" 200 4279
+[17/May/2018 12:41:03] "GET / HTTP/1.1" 302 0
+[17/May/2018 12:41:03] "GET /login/?next=/ HTTP/1.1" 200 5247
+[17/May/2018 12:41:11] "GET /admin HTTP/1.1" 301 0
+[17/May/2018 12:41:11] "GET /admin/ HTTP/1.1" 302 0
+[17/May/2018 12:41:12] "GET /admin/login/?next=/admin/ HTTP/1.1" 200 1654
+[17/May/2018 12:41:12] "GET /static/admin/css/login.css HTTP/1.1" 200 1203
+[17/May/2018 12:41:12] "GET /static/admin/css/base.css HTTP/1.1" 200 16066
+[17/May/2018 12:41:12] "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+[17/May/2018 12:41:12] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 80304
+[17/May/2018 12:41:12] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 81348
+[17/May/2018 12:41:16] "POST /admin/login/?next=/admin/ HTTP/1.1" 200 1815
+[17/May/2018 12:41:16] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 82564
+[17/May/2018 12:41:28] "POST /admin/login/?next=/admin/ HTTP/1.1" 200 1819
+[17/May/2018 12:41:49] "GET /admin/login/?next=/admin/ HTTP/1.1" 200 1654
+[17/May/2018 12:41:55] "GET /admin/login/?next=/admin/ HTTP/1.1" 200 1654
+[17/May/2018 12:41:56] "GET /login/?next=/ HTTP/1.1" 200 5247
+[17/May/2018 12:57:33] "GET / HTTP/1.1" 302 0
+[17/May/2018 12:57:33] "GET /login/?next=/ HTTP/1.1" 200 5247
+[17/May/2018 12:57:34] "GET /signup/ HTTP/1.1" 200 6965
+[17/May/2018 13:00:12] "POST /signup/ HTTP/1.1" 200 7591
+[17/May/2018 14:14:05] "GET / HTTP/1.1" 302 0
+[17/May/2018 14:14:05] "GET /login/?next=/ HTTP/1.1" 200 5247
+[17/May/2018 14:14:05] "GET /static/css/style.css HTTP/1.1" 304 0
+[17/May/2018 14:14:20] "GET /signup/ HTTP/1.1" 200 6965
+[17/May/2018 14:15:07] "GET / HTTP/1.1" 302 0
+[17/May/2018 14:15:07] "GET /login/?next=/ HTTP/1.1" 200 5247
+[17/May/2018 14:15:07] "GET /login/?next=/ HTTP/1.1" 200 5247
+[17/May/2018 14:18:23] "GET /login/?next=/ HTTP/1.1" 200 5247
+[17/May/2018 14:40:55] "GET /static/css/style.css HTTP/1.1" 304 0
+[17/May/2018 15:13:42] "GET / HTTP/1.1" 302 0
+[17/May/2018 15:13:42] "GET /login/?next=/ HTTP/1.1" 200 5247
+[17/May/2018 15:28:43] "GET / HTTP/1.1" 200 16372
+[17/May/2018 15:28:43] "GET /static/js/timetable.js HTTP/1.1" 304 0
+[17/May/2018 15:28:43] "GET /static/css/style.css HTTP/1.1" 304 0
+[17/May/2018 15:28:43] "GET / HTTP/1.1" 200 16372
+[17/May/2018 15:28:44] "GET /select_semester/?semester=1 HTTP/1.1" 200 4951
+[17/May/2018 15:28:56] "GET /search_subject/?semester=1&q=%EA%B8%80%EC%93%B0%EA%B8%B0 HTTP/1.1" 200 4548
+[17/May/2018 15:28:59] "POST /add_subject_to_timetable/ HTTP/1.1" 200 95
+[17/May/2018 17:39:05] "GET / HTTP/1.1" 302 0
+[17/May/2018 17:39:06] "GET /login/?next=/ HTTP/1.1" 200 5247
+[17/May/2018 17:39:06] "GET /static/css/style.css HTTP/1.1" 200 4970
+Not Found: /favicon.ico
+[17/May/2018 17:39:06] "GET /favicon.ico HTTP/1.1" 404 4649
+Not Found: /favicon.ico
+[17/May/2018 17:39:06] "GET /favicon.ico HTTP/1.1" 404 4649
+[17/May/2018 17:39:12] "POST /login/?next=/ HTTP/1.1" 200 5262
+[17/May/2018 17:39:17] "POST /login/?next=/ HTTP/1.1" 200 5262
+[17/May/2018 17:39:54] "GET / HTTP/1.1" 302 0
+[17/May/2018 17:39:58] "GET / HTTP/1.1" 302 0
+[17/May/2018 17:39:58] "GET /login/?next=/ HTTP/1.1" 200 5247
+[17/May/2018 17:39:58] "GET /static/css/style.css HTTP/1.1" 200 4970
+Not Found: /favicon.ico
+[17/May/2018 17:39:59] "GET /favicon.ico HTTP/1.1" 404 4649
+[17/May/2018 17:40:04] "POST /login/?next=/ HTTP/1.1" 200 5263
+[17/May/2018 17:40:08] "POST /login/?next=/ HTTP/1.1" 200 5263
+[17/May/2018 17:40:11] "POST /login/?next=/ HTTP/1.1" 200 5263
+[17/May/2018 17:40:17] "POST /login/?next=/ HTTP/1.1" 200 5263
+[17/May/2018 17:40:19] "GET /signup/ HTTP/1.1" 200 6965
+[17/May/2018 17:40:33] "POST /signup/ HTTP/1.1" 200 7238
+[17/May/2018 17:40:46] "POST /signup/ HTTP/1.1" 200 4356
+[17/May/2018 17:40:55] "GET / HTTP/1.1" 302 0
+[17/May/2018 17:40:56] "GET /login/?next=/ HTTP/1.1" 200 5247
+[17/May/2018 17:40:56] "GET /static/css/style.css HTTP/1.1" 200 4970
+Not Found: /favicon.ico
+[17/May/2018 17:40:57] "GET /favicon.ico HTTP/1.1" 404 4649
+[17/May/2018 17:41:05] "GET / HTTP/1.1" 302 0
+[17/May/2018 17:41:05] "GET /login/?next=/ HTTP/1.1" 200 5247
+[17/May/2018 17:41:05] "GET /static/css/style.css HTTP/1.1" 200 4970
+Not Found: /favicon.ico
+[17/May/2018 17:41:07] "GET /favicon.ico HTTP/1.1" 404 4649
+[17/May/2018 17:41:07] "POST /login/?next=/ HTTP/1.1" 200 5264
+[17/May/2018 17:41:13] "GET / HTTP/1.1" 302 0
+[17/May/2018 17:41:13] "GET /login/?next=/ HTTP/1.1" 200 5247
+[17/May/2018 17:41:13] "GET /static/css/style.css HTTP/1.1" 200 4970
+[17/May/2018 17:41:14] "GET / HTTP/1.1" 302 0
+[17/May/2018 17:41:15] "GET /login/?next=/ HTTP/1.1" 200 5247
+[17/May/2018 17:41:15] "GET /static/css/style.css HTTP/1.1" 200 4970
+Not Found: /favicon.ico
+[17/May/2018 17:41:15] "GET /favicon.ico HTTP/1.1" 404 4649
+Not Found: /favicon.ico
+[17/May/2018 17:41:16] "GET /favicon.ico HTTP/1.1" 404 4649
+[17/May/2018 17:41:16] "GET / HTTP/1.1" 302 0
+[17/May/2018 17:41:16] "GET /login/?next=/ HTTP/1.1" 200 5247
+[17/May/2018 17:41:19] "GET /signup/ HTTP/1.1" 200 6965
+[17/May/2018 17:41:23] "GET /signup/ HTTP/1.1" 200 6965
+[17/May/2018 17:41:27] "GET /activate/MTc/4w9-a941c03868b17f016128/ HTTP/1.1" 200 4226
+[17/May/2018 17:41:30] "GET / HTTP/1.1" 200 16372
+[17/May/2018 17:41:30] "GET /static/js/timetable.js HTTP/1.1" 200 20869
+[17/May/2018 17:41:30] "GET /select_semester/?semester=1 HTTP/1.1" 200 2
+[17/May/2018 17:41:38] "GET /login/?next=/ HTTP/1.1" 200 5247
+[17/May/2018 17:41:39] "GET /signup/ HTTP/1.1" 200 6965
+[17/May/2018 17:41:41] "POST /add_timetable/ HTTP/1.1" 200 114
+[17/May/2018 17:41:41] "POST /signup/ HTTP/1.1" 200 4356
+[17/May/2018 17:42:04] "GET /login/ HTTP/1.1" 200 5247
+[17/May/2018 17:42:07] "POST /login/?next=/ HTTP/1.1" 200 5264
+[17/May/2018 17:42:09] "GET /search_subject/?semester=1&category=6&department=14 HTTP/1.1" 200 5584
+[17/May/2018 17:42:13] "POST /login/?next=/ HTTP/1.1" 200 5264
+[17/May/2018 17:42:14] "GET /search_subject/?semester=1&category=6&department=14 HTTP/1.1" 200 5584
+[17/May/2018 17:42:18] "GET / HTTP/1.1" 302 0
+[17/May/2018 17:42:18] "GET /search_subject/?semester=1&category=6&department=14 HTTP/1.1" 200 5584
+[17/May/2018 17:42:18] "GET /login/?next=/ HTTP/1.1" 200 5247
+[17/May/2018 17:42:18] "GET /static/css/style.css HTTP/1.1" 200 4970
+Not Found: /favicon.ico
+[17/May/2018 17:42:19] "GET /favicon.ico HTTP/1.1" 404 4649
+[17/May/2018 17:42:22] "GET /signup/ HTTP/1.1" 200 6965
+Not Found: /favicon.ico
+[17/May/2018 17:42:22] "GET /favicon.ico HTTP/1.1" 404 4649
+[17/May/2018 17:42:29] "POST /add_subject_to_timetable/ HTTP/1.1" 200 924
+[17/May/2018 17:42:38] "POST /signup/ HTTP/1.1" 200 4356
+[17/May/2018 17:42:39] "POST /signup/ HTTP/1.1" 200 4356
+[17/May/2018 17:42:49] "GET /signup/ HTTP/1.1" 200 6965
+[17/May/2018 17:43:18] "GET / HTTP/1.1" 302 0
+[17/May/2018 17:43:18] "GET /login/?next=/ HTTP/1.1" 200 5247
+[17/May/2018 17:43:18] "GET /static/css/style.css HTTP/1.1" 200 4970
+Not Found: /favicon.ico
+[17/May/2018 17:43:19] "GET /favicon.ico HTTP/1.1" 404 4649
+[17/May/2018 17:43:24] "GET /login/ HTTP/1.1" 200 5247
+[17/May/2018 17:43:29] "GET /search_subject/?semester=1&department=14 HTTP/1.1" 200 31654
+[17/May/2018 17:43:32] "POST /login/ HTTP/1.1" 200 5278
+[17/May/2018 17:43:35] "POST /signup/ HTTP/1.1" 200 4356
+[17/May/2018 17:43:40] "POST /login/ HTTP/1.1" 200 5264
+[17/May/2018 17:43:46] "POST /login/ HTTP/1.1" 200 5264
+[17/May/2018 17:43:50] "POST /login/ HTTP/1.1" 200 5264
+[17/May/2018 17:43:50] "POST /add_subject_to_timetable/ HTTP/1.1" 200 1587
+[17/May/2018 17:43:52] "GET /signup/ HTTP/1.1" 200 6965
+[17/May/2018 17:43:55] "POST /add_subject_to_timetable/ HTTP/1.1" 200 2249
+[17/May/2018 17:44:20] "POST /signup/ HTTP/1.1" 200 7135
+[17/May/2018 17:44:21] "POST /signup/ HTTP/1.1" 200 4356
+[17/May/2018 17:44:32] "GET /activate/MjE/4w9-842811beed592564a80c/ HTTP/1.1" 200 4226
+[17/May/2018 17:44:34] "POST /signup/ HTTP/1.1" 200 7135
+[17/May/2018 17:44:35] "GET /activate/MjE/4w9-842811beed592564a80c/ HTTP/1.1" 200 4337
+[17/May/2018 17:44:39] "GET /login/ HTTP/1.1" 200 5247
+[17/May/2018 17:44:45] "POST /login/ HTTP/1.1" 200 5264
+[17/May/2018 17:44:46] "GET /activate/MjE/4w9-842811beed592564a80c/ HTTP/1.1" 200 4337
+[17/May/2018 17:44:49] "POST /login/ HTTP/1.1" 200 5264
+[17/May/2018 17:44:56] "GET /activate/MjE/4w9-842811beed592564a80c/ HTTP/1.1" 200 4337
+[17/May/2018 17:44:57] "POST /signup/ HTTP/1.1" 200 7129
+[17/May/2018 17:45:02] "GET /login/ HTTP/1.1" 200 5247
+[17/May/2018 17:45:03] "POST /login/ HTTP/1.1" 200 5264
+[17/May/2018 17:45:07] "POST /login/ HTTP/1.1" 200 5262
+[17/May/2018 17:45:08] "POST /login/ HTTP/1.1" 200 5264
+[17/May/2018 17:45:21] "GET /activate/MjE/4w9-842811beed592564a80c/ HTTP/1.1" 200 4337
+[17/May/2018 17:45:41] "GET / HTTP/1.1" 302 0
+[17/May/2018 17:45:41] "GET /login/?next=/ HTTP/1.1" 200 5247
+[17/May/2018 17:45:41] "GET /static/css/style.css HTTP/1.1" 200 4970
+Not Found: /favicon.ico
+[17/May/2018 17:45:43] "GET /favicon.ico HTTP/1.1" 404 4649
+[17/May/2018 17:45:45] code 400, message Bad request syntax ('\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03Jb¤¬@\x8d¿\x1b´l\x06\x8diLa³U¾Q2Û¿Û¾¿5©^ÀñÝ\x0e SÆD·I~Èkw\x00]ÏÙÔ$¤wË« \x87\x94¯¯9ÇCE\x1cêëx\x00"\x9a\x9a\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x00')
+[17/May/2018 17:45:45] You're accessing the development server over HTTPS, but it only supports HTTP.
+
+[17/May/2018 17:45:45] code 400, message Bad request version ('Ý¹hVu¢ãóÛÀÅ_äTZ')
+[17/May/2018 17:45:45] You're accessing the development server over HTTPS, but it only supports HTTP.
+
+[17/May/2018 17:45:45] code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x00É\x01\x00\x00Å\x03\x03¥Kn¼aæÛAb>\x050\x8c1úWK\x8b>h#Ø"\x83¦¢Òh\x94¤\x88Ð\x00\x00')
+[17/May/2018 17:45:45] You're accessing the development server over HTTPS, but it only supports HTTP.
+
+[17/May/2018 17:45:45] code 400, message Bad request syntax ('\x16\x03\x01\x00É\x01\x00\x00Å\x03\x03\x94Áñ¥\x8dçMYU¬\x0bæ\x16ªb\x8dö=mö4\x19â\x7fr\tûòSÔT\x01\x00\x00\x1c\x8a\x8aÀ+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x00')
+[17/May/2018 17:45:45] You're accessing the development server over HTTPS, but it only supports HTTP.
+
+[17/May/2018 17:45:47] "GET /subject/586/ HTTP/1.1" 200 5485
+[17/May/2018 17:45:49] "GET / HTTP/1.1" 302 0
+[17/May/2018 17:45:49] "GET /login/?next=/ HTTP/1.1" 200 5247
+[17/May/2018 17:45:49] "GET /static/css/style.css HTTP/1.1" 200 4970
+[17/May/2018 17:45:51] "GET /activate/MjE/4w9-842811beed592564a80c/ HTTP/1.1" 200 4337
+[17/May/2018 17:46:15] "GET /activate/MjE/4w9-842811beed592564a80c/ HTTP/1.1" 200 4337
+[17/May/2018 17:46:16] "GET /static/css/style.css HTTP/1.1" 200 4970
+Not Found: /favicon.ico
+[17/May/2018 17:46:18] "GET /favicon.ico HTTP/1.1" 404 4649
+[17/May/2018 17:46:25] "GET /signup/ HTTP/1.1" 200 6965
+[17/May/2018 17:46:26] "GET /login/ HTTP/1.1" 200 5247
+[17/May/2018 17:46:27] "GET / HTTP/1.1" 302 0
+[17/May/2018 17:46:27] "GET /login/?next=/ HTTP/1.1" 200 5247
+[17/May/2018 17:46:29] "GET /signup/ HTTP/1.1" 200 6965
+[17/May/2018 17:46:33] "GET / HTTP/1.1" 302 0
+[17/May/2018 17:46:33] "GET /login/?next=/ HTTP/1.1" 200 5247
+[17/May/2018 17:48:18] "GET /subject/585/ HTTP/1.1" 200 5470
+[17/May/2018 17:48:38] "POST /copy_timetable/ HTTP/1.1" 200 4498
+[17/May/2018 17:48:43] "POST /copy_timetable/ HTTP/1.1" 200 6747
+[17/May/2018 17:48:44] "POST /login/?next=/ HTTP/1.1" 200 5262
+[17/May/2018 17:48:47] "POST /login/?next=/ HTTP/1.1" 200 5262
+[17/May/2018 17:48:50] "POST /login/?next=/ HTTP/1.1" 200 5262
+[17/May/2018 17:48:50] "GET / HTTP/1.1" 302 0
+[17/May/2018 17:48:50] "GET /login/?next=/ HTTP/1.1" 200 5247
+[17/May/2018 17:48:52] "GET / HTTP/1.1" 302 0
+[17/May/2018 17:48:52] "GET /login/?next=/ HTTP/1.1" 200 5247
+[17/May/2018 17:48:52] "GET /static/css/style.css HTTP/1.1" 200 4970
+Not Found: /favicon.ico
+[17/May/2018 17:48:54] "GET /favicon.ico HTTP/1.1" 404 4649
+[17/May/2018 17:49:08] "POST /login/?next=/ HTTP/1.1" 302 0
+[17/May/2018 17:49:08] "GET / HTTP/1.1" 200 16372
+[17/May/2018 17:49:08] "GET /static/js/timetable.js HTTP/1.1" 200 20869
+[17/May/2018 17:49:08] "GET /select_semester/?semester=1 HTTP/1.1" 200 2
+[17/May/2018 17:50:52] "GET /activate/MTk/4w9-96ccf3ad4c4cd980f32c/ HTTP/1.1" 200 4226
+[17/May/2018 17:50:55] "GET / HTTP/1.1" 200 16372
+[17/May/2018 17:50:55] "GET /static/js/timetable.js HTTP/1.1" 200 20869
+[17/May/2018 17:50:55] "GET /select_semester/?semester=1 HTTP/1.1" 200 2
+[17/May/2018 17:51:30] "GET / HTTP/1.1" 302 0
+[17/May/2018 17:51:30] "POST /add_timetable/ HTTP/1.1" 200 113
+[17/May/2018 17:51:30] "GET /login/?next=/ HTTP/1.1" 200 5247
+[17/May/2018 17:51:31] "GET /static/css/style.css HTTP/1.1" 200 4970
+[17/May/2018 17:52:51] "GET / HTTP/1.1" 200 16372
+[17/May/2018 17:52:51] "GET /static/css/style.css HTTP/1.1" 200 4970
+[17/May/2018 17:52:51] "GET /static/js/timetable.js HTTP/1.1" 200 20869
+[17/May/2018 17:52:52] "GET /select_semester/?semester=1 HTTP/1.1" 200 4951
+Not Found: /favicon.ico
+[17/May/2018 17:52:53] "GET /favicon.ico HTTP/1.1" 404 4649
+[17/May/2018 17:53:12] "POST /add_timetable/ HTTP/1.1" 200 115
+[17/May/2018 17:53:14] "POST /add_timetable/ HTTP/1.1" 200 226
+[17/May/2018 17:53:20] "POST /delete_timetable/ HTTP/1.1" 200 113
+[17/May/2018 17:53:41] "GET /select_semester/?semester=2 HTTP/1.1" 200 2
+[17/May/2018 17:53:43] "GET /select_semester/?semester=3 HTTP/1.1" 200 2
+[17/May/2018 17:53:44] "GET /select_semester/?semester=2 HTTP/1.1" 200 2
+[17/May/2018 17:53:44] "GET /select_semester/?semester=1 HTTP/1.1" 200 115
+[17/May/2018 17:53:53] "POST /delete_timetable/ HTTP/1.1" 200 2
+[17/May/2018 17:53:54] "GET /select_semester/?semester=2 HTTP/1.1" 200 2
+[17/May/2018 17:53:54] "GET /select_semester/?semester=3 HTTP/1.1" 200 2
+[17/May/2018 17:53:55] "GET /select_semester/?semester=4 HTTP/1.1" 200 2
+[17/May/2018 17:54:00] "GET / HTTP/1.1" 200 16372
+[17/May/2018 17:54:00] "GET /static/css/style.css HTTP/1.1" 200 4970
+[17/May/2018 17:54:00] "GET /static/js/timetable.js HTTP/1.1" 200 20869
+[17/May/2018 17:54:01] "GET /select_semester/?semester=1 HTTP/1.1" 200 113
+[17/May/2018 17:54:02] "GET /select_semester/?semester=3 HTTP/1.1" 200 2
+[17/May/2018 17:54:03] "GET /select_semester/?semester=2 HTTP/1.1" 200 2
+[17/May/2018 17:54:03] "GET /select_semester/?semester=1 HTTP/1.1" 200 2
+[17/May/2018 17:54:04] "GET /select_semester/?semester=2 HTTP/1.1" 200 2
+[17/May/2018 17:54:07] "GET /select_semester/?semester=1 HTTP/1.1" 200 2
+[17/May/2018 17:54:39] "GET /search_subject/?semester=1&q=%EC%88%98%ED%95%99 HTTP/1.1" 200 6158
+[17/May/2018 17:54:40] "GET / HTTP/1.1" 200 16372
+[17/May/2018 17:54:40] "GET /static/css/style.css HTTP/1.1" 200 4970
+[17/May/2018 17:54:40] "GET /static/js/timetable.js HTTP/1.1" 200 20869
+[17/May/2018 17:54:41] "GET /select_semester/?semester=1 HTTP/1.1" 200 113
+[17/May/2018 17:54:52] "GET / HTTP/1.1" 200 16372
+[17/May/2018 17:54:52] "GET /static/css/style.css HTTP/1.1" 200 4970
+[17/May/2018 17:54:52] "GET /static/js/timetable.js HTTP/1.1" 200 20869
+[17/May/2018 17:54:53] "GET /select_semester/?semester=1 HTTP/1.1" 200 113
+[17/May/2018 17:55:04] "POST /add_timetable/ HTTP/1.1" 200 115
+[17/May/2018 17:55:10] "POST /add_subject_to_timetable/ HTTP/1.1" 200 667
+[17/May/2018 17:55:30] "POST /add_subject_to_timetable/ HTTP/1.1" 200 1349
+[17/May/2018 17:55:32] "POST /add_subject_to_timetable/ HTTP/1.1" 200 1915
+[17/May/2018 17:55:35] "POST /add_subject_to_timetable/ HTTP/1.1" 200 2485
+[17/May/2018 17:55:37] "POST /add_subject_to_timetable/ HTTP/1.1" 200 3049
+[17/May/2018 17:55:42] "POST /add_subject_to_timetable/ HTTP/1.1" 200 95
+[17/May/2018 17:55:47] "POST /add_subject_to_timetable/ HTTP/1.1" 200 3637
+[17/May/2018 17:55:49] "POST /add_subject_to_timetable/ HTTP/1.1" 200 4271
+[17/May/2018 17:55:57] "POST /delete_subject_from_timetable/ HTTP/1.1" 200 3707
+[17/May/2018 17:55:59] "POST /delete_subject_from_timetable/ HTTP/1.1" 200 3137
+[17/May/2018 17:56:20] "GET / HTTP/1.1" 200 16372
+[17/May/2018 17:56:21] "GET /static/css/style.css HTTP/1.1" 200 4970
+[17/May/2018 17:56:21] "GET /static/js/timetable.js HTTP/1.1" 200 20869
+[17/May/2018 17:56:21] "GET /select_semester/?semester=1 HTTP/1.1" 200 113
+[17/May/2018 17:56:25] "POST /add_subject_to_timetable/ HTTP/1.1" 200 3707
+[17/May/2018 17:56:30] "GET /logout/ HTTP/1.1" 200 4279
+[17/May/2018 17:56:30] "GET /static/css/style.css HTTP/1.1" 200 4970
+[17/May/2018 17:56:30] "POST /add_subject_to_timetable/ HTTP/1.1" 200 4271
+[17/May/2018 17:56:38] "GET /login/ HTTP/1.1" 200 5247
+[17/May/2018 17:56:38] "POST /delete_subject_from_timetable/ HTTP/1.1" 200 3707
+[17/May/2018 17:56:38] "GET /static/css/style.css HTTP/1.1" 200 4970
+[17/May/2018 17:56:44] "POST /login/ HTTP/1.1" 302 0
+[17/May/2018 17:56:44] "GET / HTTP/1.1" 200 16372
+[17/May/2018 17:56:44] "GET /static/css/style.css HTTP/1.1" 200 4970
+[17/May/2018 17:56:44] "GET /static/js/timetable.js HTTP/1.1" 200 20869
+[17/May/2018 17:56:44] "GET /select_semester/?semester=1 HTTP/1.1" 200 113
+[17/May/2018 17:58:23] "GET /activate/MjE/4w9-842811beed592564a80c/ HTTP/1.1" 200 4337
+[17/May/2018 17:58:38] "GET / HTTP/1.1" 302 0
+[17/May/2018 17:58:38] "GET /login/?next=/ HTTP/1.1" 200 5247
+[17/May/2018 17:58:40] "POST /login/?next=/ HTTP/1.1" 302 0
+[17/May/2018 17:58:40] "GET / HTTP/1.1" 200 16372
+[17/May/2018 17:58:40] "GET /static/js/timetable.js HTTP/1.1" 200 20869
+[17/May/2018 17:58:40] "GET /select_semester/?semester=1 HTTP/1.1" 200 3707
+[17/May/2018 17:59:05] "GET / HTTP/1.1" 302 0
+[17/May/2018 17:59:05] "GET /login/?next=/ HTTP/1.1" 200 5247
+[17/May/2018 17:59:06] "GET /static/css/style.css HTTP/1.1" 304 0
+[17/May/2018 17:59:14] "POST /login/?next=/ HTTP/1.1" 200 5263
+[17/May/2018 17:59:17] "GET /login/?next=/ HTTP/1.1" 302 0
+[17/May/2018 17:59:18] "GET /select_semester/?semester=1 HTTP/1.1" 200 3707
+[17/May/2018 17:59:19] "GET /activate/MjE/4w9-842811beed592564a80c/ HTTP/1.1" 200 4231
+[17/May/2018 17:59:27] "POST /login/?next=/ HTTP/1.1" 302 0
+[17/May/2018 17:59:27] "GET / HTTP/1.1" 200 16372
+[17/May/2018 17:59:27] "GET /static/js/timetable.js HTTP/1.1" 200 20869
+[17/May/2018 17:59:27] "GET /select_semester/?semester=1 HTTP/1.1" 200 6747
+[17/May/2018 17:59:36] "GET / HTTP/1.1" 200 16372
+[17/May/2018 17:59:36] "GET /select_semester/?semester=1 HTTP/1.1" 200 3707
+[17/May/2018 17:59:47] "GET /subject/585/ HTTP/1.1" 200 5470
+[17/May/2018 17:59:47] "GET /subject/585/ HTTP/1.1" 200 5470
+[17/May/2018 18:00:12] "GET / HTTP/1.1" 302 0
+[17/May/2018 18:00:13] "GET /login/?next=/ HTTP/1.1" 200 5247
+[17/May/2018 18:00:14] "GET /static/css/style.css HTTP/1.1" 200 4970
+Not Found: /favicon.ico
+[17/May/2018 18:00:17] "GET /favicon.ico HTTP/1.1" 404 4649
+[17/May/2018 18:00:24] "POST /login/?next=/ HTTP/1.1" 200 5265
+[17/May/2018 18:00:31] "POST /login/?next=/ HTTP/1.1" 200 5279
+[17/May/2018 18:01:02] "GET / HTTP/1.1" 200 16372
+[17/May/2018 18:01:02] "GET /select_semester/?semester=1 HTTP/1.1" 200 3707
+[17/May/2018 18:01:05] "GET /select_semester/?semester=2 HTTP/1.1" 200 2
+[17/May/2018 18:01:12] "GET /select_semester/?semester=1 HTTP/1.1" 200 3707
+[17/May/2018 18:02:21] "GET /subject/586/ HTTP/1.1" 200 5485
+[17/May/2018 18:02:21] "GET /subject/586/ HTTP/1.1" 200 5485
+[17/May/2018 18:04:24] "GET / HTTP/1.1" 302 0
+[17/May/2018 18:04:24] "GET /login/?next=/ HTTP/1.1" 200 5247
+[17/May/2018 18:04:24] "GET /static/css/style.css HTTP/1.1" 200 4970
+Not Found: /favicon.ico
+[17/May/2018 18:04:25] "GET /favicon.ico HTTP/1.1" 404 4649
+[17/May/2018 18:04:46] "POST /login/?next=/ HTTP/1.1" 302 0
+[17/May/2018 18:04:46] "GET / HTTP/1.1" 200 16372
+[17/May/2018 18:04:46] "GET /static/js/timetable.js HTTP/1.1" 200 20869
+[17/May/2018 18:04:46] "GET /select_semester/?semester=1 HTTP/1.1" 200 6747
+[17/May/2018 18:05:41] "POST /add_timetable/ HTTP/1.1" 200 3822
+[17/May/2018 18:05:54] "POST /copy_timetable/ HTTP/1.1" 200 7529
+[17/May/2018 18:05:59] "GET /search_subject/?semester=1&category=1 HTTP/1.1" 200 18072
+[17/May/2018 18:06:07] "POST /delete_timetable/ HTTP/1.1" 200 7414
+[17/May/2018 18:06:12] "POST /delete_subject_from_timetable/ HTTP/1.1" 200 6844
+[17/May/2018 18:06:34] "GET /search_subject/?semester=1&q=%EC%88%98%ED%95%99 HTTP/1.1" 200 6158
+[17/May/2018 18:06:39] "POST /add_subject_to_timetable/ HTTP/1.1" 200 7408
+[17/May/2018 18:08:07] "GET /subject/586/ HTTP/1.1" 200 5485
+[17/May/2018 18:17:41] "GET / HTTP/1.1" 302 0
+[17/May/2018 18:17:41] "GET /login/?next=/ HTTP/1.1" 200 5247
+[17/May/2018 18:17:42] "GET /static/css/style.css HTTP/1.1" 200 4970
+[17/May/2018 20:05:28] "GET / HTTP/1.1" 302 0
+[17/May/2018 20:05:28] "GET /login/?next=/ HTTP/1.1" 200 5247
+[17/May/2018 20:05:29] "GET /static/css/style.css HTTP/1.1" 200 4970
+Not Found: /favicon.ico
+[17/May/2018 20:05:31] "GET /favicon.ico HTTP/1.1" 404 4649
+[17/May/2018 20:05:48] "POST /login/?next=/ HTTP/1.1" 200 5262
+[17/May/2018 20:05:51] "GET / HTTP/1.1" 200 16372
+[17/May/2018 20:05:52] "GET /static/css/style.css HTTP/1.1" 200 4970
+[17/May/2018 20:05:52] "GET /static/js/timetable.js HTTP/1.1" 200 20869
+[17/May/2018 20:05:53] "POST /login/?next=/ HTTP/1.1" 302 0
+[17/May/2018 20:05:53] "GET / HTTP/1.1" 200 16372
+[17/May/2018 20:05:53] "GET /static/js/timetable.js HTTP/1.1" 200 20869
+[17/May/2018 20:05:53] "GET /select_semester/?semester=1 HTTP/1.1" 200 3656
+Not Found: /favicon.ico
+[17/May/2018 20:05:54] "GET /favicon.ico HTTP/1.1" 404 4649
+[17/May/2018 20:05:54] "GET /select_semester/?semester=1 HTTP/1.1" 200 113
+[17/May/2018 20:06:33] "GET / HTTP/1.1" 302 0
+[17/May/2018 20:06:33] "GET /login/?next=/ HTTP/1.1" 200 5247
+[17/May/2018 20:06:33] "GET /static/css/style.css HTTP/1.1" 200 4970
+Not Found: /favicon.ico
+[17/May/2018 20:06:35] "GET /favicon.ico HTTP/1.1" 404 4649
+[17/May/2018 20:06:54] "GET /static/css/style.css HTTP/1.1" 200 4970
+[17/May/2018 20:06:54] "GET /static/js/timetable.js HTTP/1.1" 200 20869
+[17/May/2018 20:06:55] "GET /select_semester/?semester=1 HTTP/1.1" 200 7141
+[17/May/2018 20:07:08] "POST /login/?next=/ HTTP/1.1" 302 0
+[17/May/2018 20:07:09] "GET / HTTP/1.1" 200 16372
+[17/May/2018 20:07:09] "GET /static/js/timetable.js HTTP/1.1" 200 20869
+[17/May/2018 20:07:09] "GET /select_semester/?semester=1 HTTP/1.1" 200 113
+[17/May/2018 20:08:13] "GET /search_subject/?semester=1&department=14 HTTP/1.1" 200 31654
+[17/May/2018 20:08:20] "POST /add_subject_to_timetable/ HTTP/1.1" 200 1038
+[17/May/2018 20:41:44] "GET /subject/576/ HTTP/1.1" 200 5488
+[17/May/2018 22:15:52] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+[17/May/2018 22:15:52] "  /*à     Cookie: mstshash=Administr" 400 -
+[17/May/2018 22:59:59] "GET / HTTP/1.1" 302 0
+[17/May/2018 23:21:03] "GET /static/js/timetable.js HTTP/1.1" 200 20869
+[17/May/2018 23:21:03] "GET /static/css/style.css HTTP/1.1" 200 4970
+[17/May/2018 23:21:03] "GET / HTTP/1.1" 200 16372
+[17/May/2018 23:21:03] "GET /select_semester/?semester=1 HTTP/1.1" 200 3025
+[17/May/2018 23:59:27] "GET / HTTP/1.1" 302 0
+[17/May/2018 23:59:27] "GET /login/?next=/ HTTP/1.1" 200 5247
+[17/May/2018 23:59:47] "GET / HTTP/1.1" 302 0
+[17/May/2018 23:59:47] "GET /login/?next=/ HTTP/1.1" 200 5247
+[17/May/2018 23:59:47] "GET /static/css/style.css HTTP/1.1" 200 4970
+Not Found: /favicon.ico
+[17/May/2018 23:59:49] "GET /favicon.ico HTTP/1.1" 404 4649
+[17/May/2018 23:59:56] "POST /login/?next=/ HTTP/1.1" 200 5264
+[17/May/2018 23:59:59] "POST /login/?next=/ HTTP/1.1" 200 5264
+[18/May/2018 00:00:01] "POST /login/?next=/ HTTP/1.1" 200 5264
+[18/May/2018 00:00:08] "GET /signup/ HTTP/1.1" 200 6965
+[18/May/2018 00:00:25] "POST /signup/ HTTP/1.1" 200 7133
+[18/May/2018 00:00:45] "POST /signup/ HTTP/1.1" 200 7133
+[18/May/2018 14:02:31] "GET /static/css/style.css HTTP/1.1" 304 0
+[18/May/2018 14:02:31] "GET /static/js/timetable.js HTTP/1.1" 304 0
+[18/May/2018 14:02:31] "GET /select_semester/?semester=1 HTTP/1.1" 200 7141
+[18/May/2018 14:02:31] "GET / HTTP/1.1" 200 16372
+[18/May/2018 14:03:48] "GET /select_semester/?semester=1 HTTP/1.1" 200 7141
+[18/May/2018 15:39:31] "GET / HTTP/1.1" 200 16372
+[18/May/2018 15:39:31] "GET /static/css/style.css HTTP/1.1" 200 4970
+[18/May/2018 15:39:31] "GET /static/js/timetable.js HTTP/1.1" 200 20869
+[18/May/2018 15:39:32] "GET /select_semester/?semester=1 HTTP/1.1" 200 3025
+Not Found: /favicon.ico
+[18/May/2018 15:39:32] "GET /favicon.ico HTTP/1.1" 404 4649
+[18/May/2018 17:26:59] "GET / HTTP/1.1" 302 0
+[18/May/2018 17:26:59] "GET /login/?next=/ HTTP/1.1" 200 5247
+[18/May/2018 17:26:59] "GET /static/css/style.css HTTP/1.1" 200 4970
+Not Found: /favicon.ico
+[18/May/2018 17:27:01] "GET /favicon.ico HTTP/1.1" 404 4649
+[18/May/2018 18:29:07] "GET / HTTP/1.1" 200 16372
+[18/May/2018 18:29:08] "GET /static/css/style.css HTTP/1.1" 200 4970
+[18/May/2018 18:29:08] "GET /static/js/timetable.js HTTP/1.1" 200 20869
+Not Found: /favicon.ico
+[18/May/2018 18:29:08] "GET /favicon.ico HTTP/1.1" 404 4649
+[18/May/2018 18:29:08] "GET /select_semester/?semester=1 HTTP/1.1" 200 4951
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/lbs1163/lemons/myvenv/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 140, in handle
+    self.raw_requestline = self.rfile.readline(65537)
+  File "/usr/lib/python3.5/socket.py", line 575, in readinto
+    return self._sock.recv_into(b)
+ConnectionResetError: [Errno 104] Connection reset by peer
+[18/May/2018 21:50:26] "GET / HTTP/1.1" 302 0
+[18/May/2018 21:50:26] "GET /login/?next=/ HTTP/1.1" 200 5247
+[18/May/2018 21:50:26] "GET /static/css/style.css HTTP/1.1" 200 4970
+Not Found: /favicon.ico
+[18/May/2018 21:50:27] "GET /favicon.ico HTTP/1.1" 404 4649
+[18/May/2018 21:50:39] "POST /login/?next=/ HTTP/1.1" 302 0
+[18/May/2018 21:50:39] "GET / HTTP/1.1" 200 16372
+[18/May/2018 21:50:39] "GET /static/js/timetable.js HTTP/1.1" 200 20869
+[18/May/2018 21:50:40] "GET /select_semester/?semester=1 HTTP/1.1" 200 2068
+[19/May/2018 01:31:55] "GET /static/js/timetable.js HTTP/1.1" 304 0
+[19/May/2018 01:31:55] "GET /static/css/style.css HTTP/1.1" 304 0
+[19/May/2018 01:31:57] "GET /select_semester/?semester=1 HTTP/1.1" 200 7141
+[19/May/2018 09:40:02] "GET /static/css/style.css HTTP/1.1" 304 0
+[19/May/2018 09:40:02] "GET /static/js/timetable.js HTTP/1.1" 304 0
+[19/May/2018 09:40:02] "GET /select_semester/?semester=1 HTTP/1.1" 200 3025
+[19/May/2018 12:53:03] "GET / HTTP/1.1" 302 0
+[19/May/2018 12:53:03] "GET /login/?next=/ HTTP/1.1" 200 5247
+[19/May/2018 12:53:03] "GET /static/css/style.css HTTP/1.1" 200 4970
+Not Found: /favicon.ico
+[19/May/2018 12:53:04] "GET /favicon.ico HTTP/1.1" 404 4649
+[19/May/2018 12:53:08] "POST /login/?next=/ HTTP/1.1" 302 0
+Forbidden (CSRF token missing or incorrect.): /login/
+[19/May/2018 12:53:40] "POST /login/?next=/ HTTP/1.1" 403 2502
+[19/May/2018 12:53:43] "GET /login/?next=/ HTTP/1.1" 302 0
+[19/May/2018 12:53:43] "GET / HTTP/1.1" 200 16372
+[19/May/2018 12:53:43] "GET /static/js/timetable.js HTTP/1.1" 200 20869
+[19/May/2018 12:53:43] "GET /select_semester/?semester=1 HTTP/1.1" 200 7141
+[19/May/2018 12:53:47] "GET /subject/585/ HTTP/1.1" 200 5470
+[19/May/2018 12:58:26] "GET / HTTP/1.1" 200 16372
+[19/May/2018 12:58:26] "GET /select_semester/?semester=1 HTTP/1.1" 200 7141
+[19/May/2018 15:58:59] "GET / HTTP/1.1" 200 16372
+[19/May/2018 15:59:00] "GET /static/js/timetable.js HTTP/1.1" 200 20869
+[19/May/2018 15:59:00] "GET /static/css/style.css HTTP/1.1" 200 4970
+Not Found: /favicon.ico
+[19/May/2018 15:59:01] "GET /favicon.ico HTTP/1.1" 404 4649
+[19/May/2018 15:59:01] "GET /select_semester/?semester=1 HTTP/1.1" 200 3025
+Not Found: /favicon.ico
+[19/May/2018 17:32:42] "GET /favicon.ico HTTP/1.1" 404 4649
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/lbs1163/lemons/myvenv/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 140, in handle
+    self.raw_requestline = self.rfile.readline(65537)
+  File "/usr/lib/python3.5/socket.py", line 575, in readinto
+    return self._sock.recv_into(b)
+ConnectionResetError: [Errno 104] Connection reset by peer
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 16, 2018 - 22:10:52
+Django version 1.11.12, using settings 'lemons.settings'
+Starting development server at http://0:8889/
+Quit the server with CONTROL-C.
+----------------------------------------
+Exception happened during processing of request from ('141.223.213.229', 4263)
+----------------------------------------
+Exception happened during processing of request from ('141.223.213.229', 4233)
+----------------------------------------
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('46.182.25.42', 60000)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('92.53.90.165', 60000)
+----------------------------------------
+[19/May/2018 19:41:17] "GET / HTTP/1.1" 200 16613
+[19/May/2018 19:41:17] "GET /static/css/style.css HTTP/1.1" 200 5227
+[19/May/2018 19:41:17] "GET /static/js/timetable.js HTTP/1.1" 200 25919
+Not Found: /favicon.ico
+[19/May/2018 19:41:18] "GET /favicon.ico HTTP/1.1" 404 4649
+[19/May/2018 19:41:18] "GET /select_semester/?semester=1 HTTP/1.1" 200 7141
+[19/May/2018 19:41:44] "GET /subject/585/ HTTP/1.1" 200 5347
+[19/May/2018 19:41:44] "GET /static/css/style.css HTTP/1.1" 304 0
+[19/May/2018 19:41:58] "GET /search_subject/?semester=1&start_time=tue%2010%3A30&end_time=tue%2012%3A30 HTTP/1.1" 200 34207
+[19/May/2018 19:42:00] "POST /add_subject_to_timetable/ HTTP/1.1" 200 129
+[19/May/2018 19:42:04] "POST /add_subject_to_timetable/ HTTP/1.1" 200 129
+[19/May/2018 19:42:07] "POST /add_subject_to_timetable/ HTTP/1.1" 200 129
+[19/May/2018 19:43:40] "GET /search_subject/?semester=1&q=%EC%8B%9D%EB%AC%BC HTTP/1.1" 200 4704
+[19/May/2018 19:43:48] "POST /add_subject_to_timetable/ HTTP/1.1" 200 129
+[19/May/2018 19:43:52] "POST /add_subject_to_timetable/ HTTP/1.1" 200 7784
+[19/May/2018 19:44:02] "GET /subject/324/ HTTP/1.1" 200 5242
+[19/May/2018 19:44:02] "GET /static/css/style.css HTTP/1.1" 304 0
+[19/May/2018 19:45:06] "GET / HTTP/1.1" 302 0
+[19/May/2018 19:45:06] "GET /login/?next=/ HTTP/1.1" 200 5247
+[19/May/2018 19:45:06] "GET / HTTP/1.1" 302 0
+[19/May/2018 19:45:06] "GET /login/?next=/ HTTP/1.1" 200 5247
+[19/May/2018 19:45:11] "GET / HTTP/1.1" 302 0
+[19/May/2018 19:45:11] "GET /login/?next=/ HTTP/1.1" 200 5247
+[19/May/2018 19:45:12] "GET /static/css/style.css HTTP/1.1" 200 5227
+Not Found: /favicon.ico
+[19/May/2018 19:45:14] "GET /favicon.ico HTTP/1.1" 404 4649
+[19/May/2018 19:45:15] "GET / HTTP/1.1" 200 16613
+[19/May/2018 19:45:15] "GET /static/css/style.css HTTP/1.1" 200 5227
+[19/May/2018 19:45:15] "GET /static/js/timetable.js HTTP/1.1" 200 25919
+[19/May/2018 19:45:15] "GET / HTTP/1.1" 302 0
+[19/May/2018 19:45:16] "GET /login/?next=/ HTTP/1.1" 200 5247
+[19/May/2018 19:45:16] "GET /select_semester/?semester=1 HTTP/1.1" 200 6747
+Not Found: /favicon.ico
+[19/May/2018 19:45:16] "GET /favicon.ico HTTP/1.1" 404 4649
+Internal Server Error: /search_subject/
+Traceback (most recent call last):
+  File "/home/lbs1163/lemons/myvenv/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/lbs1163/lemons/myvenv/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/lbs1163/lemons/myvenv/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lbs1163/lemons/myvenv/lib/python3.5/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/lbs1163/lemons/core/views.py", line 180, in search_subject
+    periods = Period.objects.filter(thr=True)
+  File "/home/lbs1163/lemons/myvenv/lib/python3.5/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/lbs1163/lemons/myvenv/lib/python3.5/site-packages/django/db/models/query.py", line 784, in filter
+    return self._filter_or_exclude(False, *args, **kwargs)
+  File "/home/lbs1163/lemons/myvenv/lib/python3.5/site-packages/django/db/models/query.py", line 802, in _filter_or_exclude
+    clone.query.add_q(Q(*args, **kwargs))
+  File "/home/lbs1163/lemons/myvenv/lib/python3.5/site-packages/django/db/models/sql/query.py", line 1250, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/lbs1163/lemons/myvenv/lib/python3.5/site-packages/django/db/models/sql/query.py", line 1276, in _add_q
+    allow_joins=allow_joins, split_subq=split_subq,
+  File "/home/lbs1163/lemons/myvenv/lib/python3.5/site-packages/django/db/models/sql/query.py", line 1154, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "/home/lbs1163/lemons/myvenv/lib/python3.5/site-packages/django/db/models/sql/query.py", line 1034, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "/home/lbs1163/lemons/myvenv/lib/python3.5/site-packages/django/db/models/sql/query.py", line 1352, in names_to_path
+    "Choices are: %s" % (name, ", ".join(available)))
+django.core.exceptions.FieldError: Cannot resolve keyword 'thr' into field. Choices are: end, fri, id, mon, place, start, subject, subject_id, thu, tue, wed
+[19/May/2018 19:45:28] "GET /search_subject/?semester=1&start_time=thu%2013%3A30&end_time=thu%2020%3A00 HTTP/1.1" 500 17350
+[19/May/2018 19:45:29] "GET / HTTP/1.1" 200 16613
+[19/May/2018 19:45:30] "GET /select_semester/?semester=1 HTTP/1.1" 200 6747
+[19/May/2018 19:45:36] "GET /subject/586/ HTTP/1.1" 200 5253
+[19/May/2018 19:45:59] "GET /static/css/style.css HTTP/1.1" 304 0
+[19/May/2018 19:46:57] "GET / HTTP/1.1" 200 16613
+[19/May/2018 19:46:57] "GET /static/js/timetable.js HTTP/1.1" 304 0
+[19/May/2018 19:46:57] "GET /static/css/style.css HTTP/1.1" 304 0
+[19/May/2018 19:46:57] "GET /select_semester/?semester=1 HTTP/1.1" 200 6747
+[19/May/2018 19:46:59] "GET /subject/585/ HTTP/1.1" 200 5347
+[19/May/2018 19:47:16] "GET /search_subject/?semester=1&q=%EB%AF%B8%EC%A0%81%EB%B6%84%ED%95%99 HTTP/1.1" 200 4104
+[19/May/2018 19:47:19] "GET /subject/111/ HTTP/1.1" 200 5278
+[19/May/2018 19:47:22] "POST /add_subject_to_timetable/ HTTP/1.1" 200 159
+[19/May/2018 19:47:25] "POST /add_subject_to_timetable/ HTTP/1.1" 200 7431
+[19/May/2018 19:47:26] "GET / HTTP/1.1" 302 0
+[19/May/2018 19:47:26] "GET /login/?next=/ HTTP/1.1" 200 5247
+[19/May/2018 19:47:26] "GET /static/css/style.css HTTP/1.1" 200 5227
+Not Found: /favicon.ico
+[19/May/2018 19:47:27] "GET /favicon.ico HTTP/1.1" 404 4649
+[19/May/2018 19:47:28] "GET /subject/113/ HTTP/1.1" 200 5274
+[19/May/2018 19:47:41] "GET /static/css/style.css HTTP/1.1" 304 0
+[19/May/2018 19:47:58] "GET / HTTP/1.1" 302 0
+[19/May/2018 19:47:58] "GET /login/?next=/ HTTP/1.1" 200 5247
+[19/May/2018 19:47:58] "GET /static/css/style.css HTTP/1.1" 200 5227
+Not Found: /favicon.ico
+[19/May/2018 19:48:00] "GET /favicon.ico HTTP/1.1" 404 4649
+[19/May/2018 19:49:43] "GET /subject/113/ HTTP/1.1" 200 5274
+[19/May/2018 19:49:43] "GET /static/css/style.css HTTP/1.1" 304 0
+[19/May/2018 19:49:49] "GET /subject/585/ HTTP/1.1" 200 5347
+[19/May/2018 19:53:11] "GET /static/css/style.css HTTP/1.1" 200 5227
+[19/May/2018 19:53:11] "GET /static/js/timetable.js HTTP/1.1" 200 25919
+[19/May/2018 19:53:13] "GET /select_semester/?semester=1 HTTP/1.1" 200 7784
+[19/May/2018 19:53:15] "GET / HTTP/1.1" 200 16613
+[19/May/2018 19:53:15] "GET /select_semester/?semester=1 HTTP/1.1" 200 7784
+[19/May/2018 19:55:11] "GET / HTTP/1.1" 302 0
+[19/May/2018 19:55:11] "GET /login/?next=/ HTTP/1.1" 200 5247
+[19/May/2018 19:55:11] "GET /static/css/style.css HTTP/1.1" 200 5227
+[19/May/2018 19:55:44] "GET / HTTP/1.1" 302 0
+[19/May/2018 19:55:44] "GET /login/?next=/ HTTP/1.1" 200 5247
+[19/May/2018 19:55:44] "GET /static/css/style.css HTTP/1.1" 200 5227
+[19/May/2018 19:55:46] "GET /login/ HTTP/1.1" 200 5247
+[19/May/2018 19:55:46] "GET /static/css/style.css HTTP/1.1" 200 5227
+[19/May/2018 19:55:49] "GET /signup/ HTTP/1.1" 200 6965
+[19/May/2018 19:55:49] "GET /static/css/style.css HTTP/1.1" 200 5227
+[19/May/2018 19:56:21] "POST /signup/ HTTP/1.1" 200 4356
+[19/May/2018 19:56:21] "GET /static/css/style.css HTTP/1.1" 200 5227
+[19/May/2018 19:56:44] "GET /login/ HTTP/1.1" 200 5247
+[19/May/2018 19:56:44] "GET /static/css/style.css HTTP/1.1" 200 5227
+[19/May/2018 19:56:50] "POST /login/ HTTP/1.1" 200 5265
+[19/May/2018 19:56:50] "GET /static/css/style.css HTTP/1.1" 200 5227
+[19/May/2018 19:56:57] "POST /login/ HTTP/1.1" 200 5265
+[19/May/2018 19:56:57] "GET /static/css/style.css HTTP/1.1" 200 5227
+[19/May/2018 19:57:19] "GET /activate/MjM/4wb-5d0c3be2bf5f4802cfaa/ HTTP/1.1" 200 4226
+[19/May/2018 19:57:19] "GET /static/css/style.css HTTP/1.1" 200 5227
+[19/May/2018 19:57:27] "GET / HTTP/1.1" 200 16613
+[19/May/2018 19:57:27] "GET /static/css/style.css HTTP/1.1" 200 5227
+[19/May/2018 19:57:27] "GET /static/js/timetable.js HTTP/1.1" 200 25919
+[19/May/2018 19:57:28] "GET /select_semester/?semester=1 HTTP/1.1" 200 2
+[19/May/2018 19:57:45] "POST /add_timetable/ HTTP/1.1" 200 116
+[19/May/2018 19:58:40] "GET /search_subject/?semester=1&category=6&department=14&four_hundred=on HTTP/1.1" 200 1272
+[19/May/2018 19:58:58] "GET /search_subject/?semester=1&category=6&department=14&four_hundred=on&start_time=tue%2012%3A00&end_time=tue%2020%3A00 HTTP/1.1" 200 2
+[19/May/2018 19:59:15] "GET /select_semester/?semester=2 HTTP/1.1" 200 2
+[19/May/2018 19:59:16] "GET /select_semester/?semester=1 HTTP/1.1" 200 116
+[19/May/2018 19:59:46] "GET /logout/ HTTP/1.1" 200 4279
+[19/May/2018 19:59:46] "GET /static/css/style.css HTTP/1.1" 200 5227
+[19/May/2018 20:03:09] "GET / HTTP/1.1" 302 0
+[19/May/2018 20:03:09] "GET /login/?next=/ HTTP/1.1" 200 5247
+[19/May/2018 20:03:09] "GET /static/css/style.css HTTP/1.1" 200 5227
+[19/May/2018 20:03:10] "GET /admin HTTP/1.1" 301 0
+[19/May/2018 20:03:10] "GET /admin/ HTTP/1.1" 200 6417
+Not Found: /favicon.ico
+[19/May/2018 20:03:10] "GET /favicon.ico HTTP/1.1" 404 4649
+[19/May/2018 20:03:10] "GET /static/admin/css/dashboard.css HTTP/1.1" 200 412
+[19/May/2018 20:03:10] "GET /static/admin/css/base.css HTTP/1.1" 200 16066
+[19/May/2018 20:03:10] "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+[19/May/2018 20:03:11] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+[19/May/2018 20:03:11] "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+[19/May/2018 20:03:11] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+[19/May/2018 20:03:11] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 82564
+[19/May/2018 20:03:11] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 81348
+[19/May/2018 20:03:11] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 80304
+[19/May/2018 20:03:14] "GET /admin/auth/user/ HTTP/1.1" 200 16028
+[19/May/2018 20:03:14] "GET /static/admin/css/changelists.css HTTP/1.1" 200 6170
+[19/May/2018 20:03:14] "GET /static/admin/js/core.js HTTP/1.1" 200 7976
+[19/May/2018 20:03:14] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 6591
+[19/May/2018 20:03:14] "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 363
+[19/May/2018 20:03:14] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[19/May/2018 20:03:14] "GET /static/admin/js/actions.js HTTP/1.1" 200 6501
+[19/May/2018 20:03:14] "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1538
+[19/May/2018 20:03:14] "GET /static/admin/js/urlify.js HTTP/1.1" 200 8186
+[19/May/2018 20:03:14] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 258648
+[19/May/2018 20:03:14] "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+[19/May/2018 20:03:14] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[19/May/2018 20:03:14] "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+[19/May/2018 20:03:14] "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+[19/May/2018 20:03:14] "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+[19/May/2018 20:03:14] "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+[19/May/2018 20:03:15] "GET /signup/ HTTP/1.1" 200 6965
+[19/May/2018 20:03:19] "GET /admin/auth/user/10/change/ HTTP/1.1" 200 14864
+[19/May/2018 20:03:31] "GET /static/admin/css/forms.css HTTP/1.1" 200 8173
+[19/May/2018 20:03:31] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[19/May/2018 20:03:31] "GET /static/admin/js/SelectBox.js HTTP/1.1" 200 5755
+[19/May/2018 20:03:31] "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 12389
+[19/May/2018 20:03:31] "GET /static/admin/js/calendar.js HTTP/1.1" 200 7790
+[19/May/2018 20:03:31] "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 20529
+[19/May/2018 20:03:31] "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 495
+[19/May/2018 20:03:31] "GET /static/admin/js/change_form.js HTTP/1.1" 200 712
+[19/May/2018 20:03:31] "GET /static/admin/css/widgets.css HTTP/1.1" 200 10340
+[19/May/2018 20:03:31] "GET /static/admin/img/icon-unknown.svg HTTP/1.1" 200 655
+[19/May/2018 20:03:31] "GET /static/admin/img/icon-unknown-alt.svg HTTP/1.1" 200 655
+[19/May/2018 20:03:31] "GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291
+[19/May/2018 20:03:31] "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+[19/May/2018 20:03:31] "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+[19/May/2018 20:03:33] "POST /signup/ HTTP/1.1" 200 4356
+[19/May/2018 20:03:36] "GET /admin/auth/user/10/password/ HTTP/1.1" 200 3032
+[19/May/2018 20:03:37] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[19/May/2018 20:03:53] "POST /admin/auth/user/10/password/ HTTP/1.1" 302 0
+[19/May/2018 20:03:53] "GET /admin/auth/user/10/change/ HTTP/1.1" 200 14986
+[19/May/2018 20:03:53] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[19/May/2018 20:04:16] "GET /activate/MjQ/4wb-3d7522c47c9c3defb574/ HTTP/1.1" 200 4226
+[19/May/2018 20:04:16] "GET /activate/MjQ/4wb-3d7522c47c9c3defb574/ HTTP/1.1" 200 4337
+[19/May/2018 20:04:19] "GET / HTTP/1.1" 302 0
+[19/May/2018 20:04:19] "GET /login/?next=/ HTTP/1.1" 200 5247
+[19/May/2018 20:04:19] "GET /static/css/style.css HTTP/1.1" 200 5227
+Not Found: /favicon.ico
+[19/May/2018 20:04:20] "GET /favicon.ico HTTP/1.1" 404 4649
+Forbidden (CSRF token missing or incorrect.): /signup/
+[19/May/2018 20:04:21] "POST /signup/ HTTP/1.1" 403 2502
+[19/May/2018 20:04:24] "GET / HTTP/1.1" 200 16613
+[19/May/2018 20:04:24] "GET /static/js/timetable.js HTTP/1.1" 200 25919
+[19/May/2018 20:04:24] "GET /select_semester/?semester=1 HTTP/1.1" 200 2
+[19/May/2018 20:04:25] "POST /login/?next=/ HTTP/1.1" 302 0
+[19/May/2018 20:04:25] "GET / HTTP/1.1" 200 16613
+[19/May/2018 20:04:25] "GET /static/js/timetable.js HTTP/1.1" 200 25919
+[19/May/2018 20:04:25] "GET /select_semester/?semester=1 HTTP/1.1" 200 1130
+[19/May/2018 20:04:56] "GET /select_semester/?semester=2 HTTP/1.1" 200 2
+[19/May/2018 20:04:57] "GET /select_semester/?semester=1 HTTP/1.1" 200 1130
+[19/May/2018 20:06:09] "GET /search_subject/?semester=1&start_time=mon%209%3A30&end_time=mon%2012%3A00 HTTP/1.1" 200 34259
+[19/May/2018 20:08:34] "GET / HTTP/1.1" 200 16613
+[19/May/2018 20:08:34] "GET /static/css/style.css HTTP/1.1" 304 0
+[19/May/2018 20:08:34] "GET /static/js/timetable.js HTTP/1.1" 304 0
+[19/May/2018 20:08:35] "GET /select_semester/?semester=1 HTTP/1.1" 200 1130
+[19/May/2018 20:08:48] "GET /search_subject/?semester=1&start_time=tue%2014%3A00&end_time=tue%2016%3A00 HTTP/1.1" 200 30903
+[19/May/2018 20:09:41] "GET /subject/10/ HTTP/1.1" 200 5199
+[19/May/2018 20:09:46] "GET /subject/10/ HTTP/1.1" 200 5199
+[19/May/2018 20:15:41] "GET /subject/729/ HTTP/1.1" 200 5259
+[19/May/2018 20:15:41] "GET /static/css/style.css HTTP/1.1" 304 0
+[19/May/2018 20:15:49] "POST /add_subject_to_timetable/ HTTP/1.1" 200 1888
+[19/May/2018 20:15:55] "GET /subject/829/ HTTP/1.1" 200 5317
+[19/May/2018 20:15:58] "POST /delete_subject_from_timetable/ HTTP/1.1" 200 1130
+[19/May/2018 20:16:05] "GET /select_semester/?semester=2 HTTP/1.1" 200 2
+[19/May/2018 20:16:06] "GET /select_semester/?semester=3 HTTP/1.1" 200 2
+[19/May/2018 20:16:06] "GET /select_semester/?semester=4 HTTP/1.1" 200 2
+[19/May/2018 20:16:07] "GET /select_semester/?semester=3 HTTP/1.1" 200 2
+[19/May/2018 20:16:07] "GET /select_semester/?semester=2 HTTP/1.1" 200 2
+[19/May/2018 20:16:08] "GET /select_semester/?semester=1 HTTP/1.1" 200 1130
+[19/May/2018 20:17:07] "GET /search_subject/?semester=1&category=1&one_hundred=on&three_hundred=on&start_time=tue%2011%3A00&end_time=tue%2013%3A30 HTTP/1.1" 200 2
+[19/May/2018 20:17:14] "GET /search_subject/?semester=1&one_hundred=on&three_hundred=on&start_time=tue%2011%3A00&end_time=tue%2013%3A30 HTTP/1.1" 200 9423
+[19/May/2018 20:17:39] "GET /search_subject/?semester=1&one_hundred=on&three_hundred=on&start_time=tue%2011%3A00&end_time=tue%2013%3A30 HTTP/1.1" 200 9423
+[19/May/2018 20:17:43] "GET /search_subject/?semester=1&one_hundred=on&three_hundred=on&start_time=tue%2011%3A00&end_time=tue%2013%3A30 HTTP/1.1" 200 9423
+[19/May/2018 20:23:46] "GET /search_subject/?semester=1&department=14 HTTP/1.1" 200 31654
+[19/May/2018 20:24:06] "GET / HTTP/1.1" 302 0
+[19/May/2018 20:24:06] "GET /login/?next=/ HTTP/1.1" 200 5247
+[19/May/2018 20:24:06] "GET /static/css/style.css HTTP/1.1" 200 5227
+[19/May/2018 20:24:08] "GET /search_subject/?semester=1&category=5&one_hundred=on HTTP/1.1" 200 23365
+Not Found: /favicon.ico
+[19/May/2018 20:24:11] "GET /favicon.ico HTTP/1.1" 404 4649
+[19/May/2018 20:24:45] "GET /search_subject/?semester=1&category=5&department=14&one_hundred=on&start_time=wed%209%3A30&end_time=wed%2022%3A00 HTTP/1.1" 200 3708
+[19/May/2018 20:24:53] "GET /search_subject/?semester=1&category=5&department=14&start_time=wed%209%3A30&end_time=wed%2022%3A00 HTTP/1.1" 200 3708
+[19/May/2018 20:25:02] "GET /search_subject/?semester=1&department=14&start_time=wed%209%3A30&end_time=wed%2022%3A00 HTTP/1.1" 200 11157
+[19/May/2018 20:25:16] "POST /add_subject_to_timetable/ HTTP/1.1" 200 1780
+[19/May/2018 20:25:21] "POST /delete_subject_from_timetable/ HTTP/1.1" 200 1130
+[19/May/2018 20:26:20] "GET / HTTP/1.1" 302 0
+[19/May/2018 20:26:20] "GET /login/?next=/ HTTP/1.1" 200 5247
+[19/May/2018 20:26:20] "GET /static/css/style.css HTTP/1.1" 200 5227
+[19/May/2018 20:27:20] "GET / HTTP/1.1" 200 16613
+[19/May/2018 20:27:21] "GET /static/css/style.css HTTP/1.1" 304 0
+[19/May/2018 20:27:21] "GET /static/js/timetable.js HTTP/1.1" 304 0
+Not Found: /favicon.ico
+[19/May/2018 20:27:22] "GET /favicon.ico HTTP/1.1" 404 4649
+[19/May/2018 20:27:22] "GET /select_semester/?semester=1 HTTP/1.1" 200 7784
+[19/May/2018 20:27:29] "GET /admin HTTP/1.1" 301 0
+[19/May/2018 20:27:29] "GET /admin/ HTTP/1.1" 200 6702
+[19/May/2018 20:27:29] "GET /static/admin/css/base.css HTTP/1.1" 200 16066
+[19/May/2018 20:27:29] "GET /static/admin/css/dashboard.css HTTP/1.1" 200 412
+[19/May/2018 20:27:29] "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+[19/May/2018 20:27:29] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+[19/May/2018 20:27:29] "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+[19/May/2018 20:27:29] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+[19/May/2018 20:27:29] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 81348
+[19/May/2018 20:27:29] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 80304
+[19/May/2018 20:27:29] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 82564
+[19/May/2018 20:27:32] "GET /admin/auth/user/ HTTP/1.1" 200 16461
+[19/May/2018 20:27:32] "GET /static/admin/css/changelists.css HTTP/1.1" 200 6170
+[19/May/2018 20:27:32] "GET /static/admin/js/core.js HTTP/1.1" 200 7976
+[19/May/2018 20:27:32] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[19/May/2018 20:27:32] "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 363
+[19/May/2018 20:27:32] "GET /static/admin/js/actions.js HTTP/1.1" 200 6501
+[19/May/2018 20:27:32] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 6591
+[19/May/2018 20:27:32] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 258648
+[19/May/2018 20:27:32] "GET /static/admin/js/urlify.js HTTP/1.1" 200 8186
+[19/May/2018 20:27:32] "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1538
+[19/May/2018 20:27:32] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[19/May/2018 20:27:32] "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+[19/May/2018 20:27:32] "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+[19/May/2018 20:27:32] "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+[19/May/2018 20:27:32] "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+[19/May/2018 20:27:32] "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+[19/May/2018 20:27:37] "GET /admin/auth/user/?is_active__exact=0 HTTP/1.1" 200 8897
+[19/May/2018 20:27:37] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[19/May/2018 20:27:41] "GET /admin/auth/user/?is_active__exact=1 HTTP/1.1" 200 15521
+[19/May/2018 20:27:41] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[19/May/2018 20:27:45] "GET /admin/ HTTP/1.1" 200 6702
+[19/May/2018 20:27:47] "GET /admin/core/timetable/ HTTP/1.1" 200 9998
+[19/May/2018 20:27:48] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[19/May/2018 20:27:53] "GET / HTTP/1.1" 302 0
+[19/May/2018 20:27:54] "GET /login/?next=/ HTTP/1.1" 200 5247
+[19/May/2018 20:27:54] "GET /static/css/style.css HTTP/1.1" 200 5227
+[19/May/2018 20:28:10] "POST /login/?next=/ HTTP/1.1" 200 5264
+[19/May/2018 20:28:17] "POST /login/?next=/ HTTP/1.1" 200 5264
+[19/May/2018 20:28:32] "POST /login/?next=/ HTTP/1.1" 200 5264
+[19/May/2018 20:28:34] "GET / HTTP/1.1" 302 0
+[19/May/2018 20:28:34] "GET /login/?next=/ HTTP/1.1" 200 5247
+[19/May/2018 20:28:35] "GET / HTTP/1.1" 302 0
+[19/May/2018 20:28:35] "GET /login/?next=/ HTTP/1.1" 200 5247
+[19/May/2018 20:28:37] "GET /login/ HTTP/1.1" 200 5247
+[19/May/2018 20:28:40] "GET /signup/ HTTP/1.1" 200 6965
+[19/May/2018 20:29:13] "POST /signup/ HTTP/1.1" 200 4356
+[19/May/2018 20:30:01] "GET /activate/MjU/4wb-fd81ee312cfc13198f4c/ HTTP/1.1" 200 4226
+[19/May/2018 20:30:01] "GET /static/css/style.css HTTP/1.1" 200 5227
+[19/May/2018 20:30:10] "GET / HTTP/1.1" 200 16613
+[19/May/2018 20:30:10] "GET /static/js/timetable.js HTTP/1.1" 200 25919
+[19/May/2018 20:30:10] "GET /select_semester/?semester=1 HTTP/1.1" 200 2
+[19/May/2018 20:30:12] "GET /select_semester/?semester=2 HTTP/1.1" 200 2
+[19/May/2018 20:30:14] "GET /select_semester/?semester=3 HTTP/1.1" 200 2
+[19/May/2018 20:30:15] "GET /select_semester/?semester=2 HTTP/1.1" 200 2
+[19/May/2018 20:30:15] "GET /select_semester/?semester=1 HTTP/1.1" 200 2
+[19/May/2018 20:30:38] "POST /add_timetable/ HTTP/1.1" 200 115
+[19/May/2018 20:30:58] "GET /search_subject/?semester=1&category=3&department=6 HTTP/1.1" 200 2
+[19/May/2018 20:31:09] "GET /search_subject/?semester=1&department=6 HTTP/1.1" 200 39770
+[19/May/2018 20:31:17] "POST /add_subject_to_timetable/ HTTP/1.1" 200 795
+[19/May/2018 20:31:22] "POST /add_subject_to_timetable/ HTTP/1.1" 200 1592
+[19/May/2018 20:31:59] "GET /search_subject/?semester=1&department=6&q=%EA%B3%A0%EA%B8%89%EC%98%81%EC%96%B4 HTTP/1.1" 200 2
+[19/May/2018 20:32:09] "GET /search_subject/?semester=1&q=%EA%B3%A0%EA%B8%89%EC%98%81%EC%96%B4 HTTP/1.1" 200 6042
+[19/May/2018 20:32:19] "GET /subject/51/ HTTP/1.1" 200 5232
+[19/May/2018 20:32:28] "GET /subject/52/ HTTP/1.1" 200 5233
+[19/May/2018 20:32:35] "GET /subject/53/ HTTP/1.1" 200 5231
+[19/May/2018 20:32:39] "POST /add_subject_to_timetable/ HTTP/1.1" 200 2203
+[19/May/2018 20:32:58] "GET /search_subject/?semester=1&q=%EB%B2%95%EB%A5%A0%EC%9D%98 HTTP/1.1" 200 582
+[19/May/2018 20:33:02] "POST /add_subject_to_timetable/ HTTP/1.1" 200 2785
+[19/May/2018 20:33:26] "GET /search_subject/?semester=1&q=%EC%83%9D%EB%AC%BC%EC%A0%95 HTTP/1.1" 200 1984
+[19/May/2018 20:33:28] "POST /add_subject_to_timetable/ HTTP/1.1" 200 3410
+[19/May/2018 20:34:03] "GET / HTTP/1.1" 302 0
+[19/May/2018 20:34:03] "GET /login/?next=/ HTTP/1.1" 200 5247
+[19/May/2018 20:34:03] "GET /static/css/style.css HTTP/1.1" 200 5227
+Not Found: /favicon.ico
+[19/May/2018 20:34:05] "GET /favicon.ico HTTP/1.1" 404 4649
+[19/May/2018 20:34:14] "POST /login/?next=/ HTTP/1.1" 200 5266
+[19/May/2018 20:34:18] "GET /search_subject/?semester=1&department=29 HTTP/1.1" 200 5063
+[19/May/2018 20:34:20] "POST /login/?next=/ HTTP/1.1" 200 5266
+[19/May/2018 20:34:23] "POST /add_subject_to_timetable/ HTTP/1.1" 200 4098
+[19/May/2018 20:48:10] "GET / HTTP/1.1" 200 16613
+Not Found: /favicon.ico
+[19/May/2018 20:48:11] "GET /favicon.ico HTTP/1.1" 404 4649
+[19/May/2018 20:48:11] "GET /select_semester/?semester=1 HTTP/1.1" 200 3025
+[19/May/2018 20:49:30] "GET / HTTP/1.1" 302 0
+[19/May/2018 20:49:30] "GET /login/?next=/ HTTP/1.1" 200 5247
+[19/May/2018 20:50:41] "GET /admin/auth/user/ HTTP/1.1" 200 16894
+[19/May/2018 20:50:42] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[19/May/2018 20:50:48] "GET /admin/auth/user/?is_active__exact=0 HTTP/1.1" 200 8897
+[19/May/2018 20:50:48] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[19/May/2018 20:51:02] "GET /admin/auth/user/?is_active__exact=1 HTTP/1.1" 200 15995
+[19/May/2018 20:51:02] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[19/May/2018 21:15:23] "GET / HTTP/1.1" 302 0
+[19/May/2018 21:15:23] "GET /login/?next=/ HTTP/1.1" 200 5247
+[19/May/2018 21:15:23] "GET /static/css/style.css HTTP/1.1" 200 5227
+Not Found: /favicon.ico
+[19/May/2018 21:15:25] "GET /favicon.ico HTTP/1.1" 404 4649
+[19/May/2018 21:24:27] "GET / HTTP/1.1" 200 16613
+Not Found: /favicon.ico
+[19/May/2018 21:24:27] "GET /favicon.ico HTTP/1.1" 404 4649
+[19/May/2018 21:24:28] "GET /select_semester/?semester=1 HTTP/1.1" 200 3025
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/lbs1163/lemons/myvenv/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 140, in handle
+    self.raw_requestline = self.rfile.readline(65537)
+  File "/usr/lib/python3.5/socket.py", line 575, in readinto
+    return self._sock.recv_into(b)
+ConnectionResetError: [Errno 104] Connection reset by peer
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/lbs1163/lemons/myvenv/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 140, in handle
+    self.raw_requestline = self.rfile.readline(65537)
+  File "/usr/lib/python3.5/socket.py", line 575, in readinto
+    return self._sock.recv_into(b)
+ConnectionResetError: [Errno 104] Connection reset by peer
+[19/May/2018 21:55:03] "GET / HTTP/1.1" 302 0
+[19/May/2018 21:55:03] "GET /login/?next=/ HTTP/1.1" 200 5247
+[19/May/2018 22:57:25] "GET /admin/auth/user/?is_active__exact=1 HTTP/1.1" 200 15995
+[19/May/2018 22:57:25] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[19/May/2018 23:01:54] "GET / HTTP/1.1" 302 0
+[20/May/2018 00:01:34] "GET / HTTP/1.1" 200 16613
+Not Found: /favicon.ico
+[20/May/2018 00:01:34] "GET /favicon.ico HTTP/1.1" 404 4649
+[20/May/2018 00:01:35] "GET /select_semester/?semester=1 HTTP/1.1" 200 3025
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/lbs1163/lemons/myvenv/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 140, in handle
+    self.raw_requestline = self.rfile.readline(65537)
+  File "/usr/lib/python3.5/socket.py", line 575, in readinto
+    return self._sock.recv_into(b)
+ConnectionResetError: [Errno 104] Connection reset by peer
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/socketserver.py", line 625, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.5/socketserver.py", line 354, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python3.5/socketserver.py", line 681, in __init__
+    self.handle()
+  File "/home/lbs1163/lemons/myvenv/lib/python3.5/site-packages/django/core/servers/basehttp.py", line 140, in handle
+    self.raw_requestline = self.rfile.readline(65537)
+  File "/usr/lib/python3.5/socket.py", line 575, in readinto
+    return self._sock.recv_into(b)
+ConnectionResetError: [Errno 104] Connection reset by peer
+[20/May/2018 01:10:11] "GET / HTTP/1.1" 302 0
+[20/May/2018 02:18:41] "GET / HTTP/1.1" 302 0
+[20/May/2018 02:18:41] "GET /login/?next=/ HTTP/1.1" 200 5247
+[20/May/2018 02:18:41] "GET /static/css/style.css HTTP/1.1" 200 5227
+Not Found: /favicon.ico
+[20/May/2018 02:18:43] "GET /favicon.ico HTTP/1.1" 404 4649
+[20/May/2018 02:18:57] "POST /login/?next=/ HTTP/1.1" 200 5265
+[20/May/2018 02:19:03] "GET /signup/ HTTP/1.1" 200 6965
+[20/May/2018 02:19:48] "POST /signup/ HTTP/1.1" 200 7135
+[20/May/2018 02:19:48] "POST /signup/ HTTP/1.1" 200 4356
+[20/May/2018 02:19:56] "GET /signup/ HTTP/1.1" 200 6965
+[20/May/2018 02:19:58] "GET /login/?next=/ HTTP/1.1" 200 5247
+[20/May/2018 02:19:59] "GET /login/?next=/ HTTP/1.1" 200 5247
+[20/May/2018 02:20:08] "POST /login/?next=/ HTTP/1.1" 200 5265
+[20/May/2018 02:20:14] "POST /login/?next=/ HTTP/1.1" 200 5265
+[20/May/2018 02:20:29] "POST /login/?next=/ HTTP/1.1" 200 5266
+[20/May/2018 02:20:35] "POST /login/?next=/ HTTP/1.1" 200 5266
+[20/May/2018 02:27:00] "GET / HTTP/1.1" 302 0
+[20/May/2018 02:27:00] "GET /login/?next=/ HTTP/1.1" 200 5247
+[20/May/2018 02:27:01] "GET /static/css/style.css HTTP/1.1" 200 5227
+Not Found: /favicon.ico
+[20/May/2018 02:27:03] "GET /favicon.ico HTTP/1.1" 404 4649
+[20/May/2018 02:36:53] "GET / HTTP/1.1" 302 0
+[20/May/2018 02:56:40] "GET / HTTP/1.1" 302 0
+[20/May/2018 02:56:40] "GET /login/?next=/ HTTP/1.1" 200 5247
+[20/May/2018 02:56:40] "GET /static/css/style.css HTTP/1.1" 200 5227
+Not Found: /favicon.ico
+[20/May/2018 02:56:42] "GET /favicon.ico HTTP/1.1" 404 4649
+[20/May/2018 02:57:02] "POST /login/?next=/ HTTP/1.1" 200 5266
+[20/May/2018 02:57:15] "POST /login/?next=/ HTTP/1.1" 200 5266
+[20/May/2018 02:57:19] "GET /signup/ HTTP/1.1" 200 6965
+[20/May/2018 10:58:04] "GET / HTTP/1.1" 302 0
+[20/May/2018 12:49:23] "GET / HTTP/1.1" 302 0
+[20/May/2018 16:08:41] "GET / HTTP/1.1" 302 0
+[20/May/2018 16:08:41] "GET /login/?next=/ HTTP/1.1" 200 5247
+[20/May/2018 18:38:24] "GET / HTTP/1.1" 302 0
+[20/May/2018 19:22:51] "GET / HTTP/1.1" 302 0
+[20/May/2018 19:49:57] "GET / HTTP/1.1" 200 16613
+[20/May/2018 19:49:57] "GET /static/css/style.css HTTP/1.1" 200 5227
+[20/May/2018 19:49:57] "GET /static/js/timetable.js HTTP/1.1" 200 25919
+[20/May/2018 19:49:58] "GET /select_semester/?semester=1 HTTP/1.1" 200 3025
+Not Found: /favicon.ico
+[20/May/2018 19:49:58] "GET /favicon.ico HTTP/1.1" 404 4649
+[20/May/2018 19:53:04] "POST /delete_subject_from_timetable/ HTTP/1.1" 200 2464
+[20/May/2018 19:53:31] "GET /search_subject/?semester=1&q=%EA%B3%A0%EA%B8%89%EC%98%81%EC%96%B4 HTTP/1.1" 200 6042
+[20/May/2018 19:53:44] "POST /add_subject_to_timetable/ HTTP/1.1" 200 3069
+Not Found: /favicon.ico
+[20/May/2018 19:53:44] "GET /favicon.ico HTTP/1.1" 404 4649
+Not Found: /favicon.ico
+[20/May/2018 19:53:45] "GET /favicon.ico HTTP/1.1" 404 4649
+[20/May/2018 20:01:06] "GET /search_subject/?semester=1&q=%EC%B6%95%EC%A0%9C HTTP/1.1" 200 632
+Not Found: /favicon.ico
+[20/May/2018 20:01:16] "GET /favicon.ico HTTP/1.1" 404 4649
+[20/May/2018 20:01:16] "POST /add_subject_to_timetable/ HTTP/1.1" 200 3701
+Not Found: /favicon.ico
+[20/May/2018 20:01:17] "GET /favicon.ico HTTP/1.1" 404 4649
+[20/May/2018 21:05:54] "GET / HTTP/1.1" 302 0
+[20/May/2018 23:55:09] "GET / HTTP/1.1" 302 0
+[20/May/2018 23:55:09] "GET /login/?next=/ HTTP/1.1" 200 5247
+[21/May/2018 09:03:52] "GET / HTTP/1.1" 302 0
+[21/May/2018 09:03:52] "GET /login/?next=/ HTTP/1.1" 200 5247
+[21/May/2018 10:16:28] "GET /signup/ HTTP/1.1" 200 6859
+[21/May/2018 10:16:28] "GET /static/css/style.css HTTP/1.1" 200 5227
+[21/May/2018 10:16:34] "GET / HTTP/1.1" 200 16613
+[21/May/2018 10:16:34] "GET /static/js/timetable.js HTTP/1.1" 200 25919
+[21/May/2018 10:16:34] "GET /select_semester/?semester=1 HTTP/1.1" 200 7431
+[21/May/2018 10:18:10] "POST /delete_subject_from_timetable/ HTTP/1.1" 200 6747
+[21/May/2018 10:19:58] "GET /search_subject/?semester=1&department=2 HTTP/1.1" 200 66258
+[21/May/2018 10:36:20] "GET / HTTP/1.1" 302 0
+[21/May/2018 10:36:20] "GET /login/?next=/ HTTP/1.1" 200 5247
+[21/May/2018 11:22:20] "GET / HTTP/1.1" 200 16613
+[21/May/2018 11:22:20] "GET /static/css/style.css HTTP/1.1" 200 5227
+[21/May/2018 11:22:20] "GET /static/js/timetable.js HTTP/1.1" 200 25919
+[21/May/2018 11:23:30] "GET / HTTP/1.1" 200 16613
+Not Found: /favicon.ico
+[21/May/2018 11:23:31] "GET /favicon.ico HTTP/1.1" 404 4649
+[21/May/2018 11:23:31] "GET /select_semester/?semester=1 HTTP/1.1" 200 7784
+[21/May/2018 11:23:39] "GET /search_subject/?semester=1&one_credit=on HTTP/1.1" 200 89950
+[21/May/2018 11:25:12] "GET / HTTP/1.1" 200 16613
+[21/May/2018 11:25:12] "GET /select_semester/?semester=1 HTTP/1.1" 200 7784
+[21/May/2018 11:25:25] "GET /search_subject/?semester=1&category=3&one_credit=on HTTP/1.1" 200 2
+[21/May/2018 11:25:35] "GET /search_subject/?semester=1&category=7&one_credit=on HTTP/1.1" 200 22797
+[21/May/2018 11:25:43] "GET /search_subject/?semester=1&category=1&one_credit=on HTTP/1.1" 200 588
+[21/May/2018 11:26:04] "GET / HTTP/1.1" 302 0
+[21/May/2018 11:26:04] "GET /login/?next=/ HTTP/1.1" 200 5247
+[21/May/2018 11:26:04] "GET /static/css/style.css HTTP/1.1" 200 5227
+Not Found: /favicon.ico
+[21/May/2018 11:26:05] "GET /favicon.ico HTTP/1.1" 404 4649
+[21/May/2018 11:26:06] "GET /search_subject/?semester=1&category=6&one_credit=on HTTP/1.1" 200 5987
+[21/May/2018 11:26:07] "GET /signup/ HTTP/1.1" 200 6965
+[21/May/2018 11:26:25] "GET /search_subject/?semester=1&category=7&one_credit=on HTTP/1.1" 200 22797
+[21/May/2018 11:26:25] "POST /signup/ HTTP/1.1" 200 4356
+[21/May/2018 11:26:38] "GET /activate/Mjc/4wd-dfa98cf804a9c44d071b/ HTTP/1.1" 200 4226
+[21/May/2018 11:26:44] "GET / HTTP/1.1" 200 16613
+[21/May/2018 11:26:44] "GET /static/js/timetable.js HTTP/1.1" 200 25919
+[21/May/2018 11:26:44] "GET /select_semester/?semester=1 HTTP/1.1" 200 2
+[21/May/2018 11:26:56] "POST /add_timetable/ HTTP/1.1" 200 114
+[21/May/2018 11:27:25] "GET /search_subject/?semester=1&category=6&department=14&four_hundred=on&higher_hundred=on HTTP/1.1" 200 1272
+[21/May/2018 11:27:34] "GET /search_subject/?semester=1&category=6&department=14&four_hundred=on&higher_hundred=on HTTP/1.1" 200 1272
+[21/May/2018 11:27:41] "GET /search_subject/?semester=1&department=14&four_hundred=on&higher_hundred=on HTTP/1.1" 200 20096
+[21/May/2018 11:28:20] "GET /subject/592/ HTTP/1.1" 200 5250
+[21/May/2018 11:28:41] "POST /add_subject_to_timetable/ HTTP/1.1" 200 775
+[21/May/2018 11:29:57] "GET /search_subject/?semester=1&department=14&four_hundred=on&higher_hundred=on&start_time=tue%2010%3A30&end_time=tue%2019%3A30 HTTP/1.1" 200 3504
+[21/May/2018 11:32:03] "GET /subject/592/ HTTP/1.1" 200 5250
+[21/May/2018 11:49:10] "GET / HTTP/1.1" 302 0
+[21/May/2018 11:49:10] "GET /login/?next=/ HTTP/1.1" 200 5247
+[21/May/2018 11:49:10] "GET /static/css/style.css HTTP/1.1" 200 5227
+Not Found: /favicon.ico
+[21/May/2018 11:49:12] "GET /favicon.ico HTTP/1.1" 404 4649
+[21/May/2018 11:49:26] "POST /login/?next=/ HTTP/1.1" 200 5263
+[21/May/2018 11:49:37] "POST /login/?next=/ HTTP/1.1" 200 5263
+[21/May/2018 11:49:57] "POST /login/?next=/ HTTP/1.1" 200 5263
+[21/May/2018 11:50:10] "POST /login/?next=/ HTTP/1.1" 200 5277
+[21/May/2018 11:50:29] "GET / HTTP/1.1" 200 16613
+[21/May/2018 11:50:30] "GET /select_semester/?semester=1 HTTP/1.1" 200 775
+[21/May/2018 11:50:31] "GET /logout/ HTTP/1.1" 200 4279
+[21/May/2018 11:50:33] "GET /login/ HTTP/1.1" 200 5247
+[21/May/2018 11:50:38] "POST /login/ HTTP/1.1" 200 5263
+[21/May/2018 11:50:47] "POST /login/ HTTP/1.1" 200 5263
+[21/May/2018 11:50:51] "POST /login/ HTTP/1.1" 200 5263
+[21/May/2018 11:50:54] "POST /login/ HTTP/1.1" 200 5263
+[21/May/2018 11:50:59] "POST /login/ HTTP/1.1" 200 5277
+[21/May/2018 11:51:03] "POST /login/ HTTP/1.1" 200 5263
+[21/May/2018 11:51:25] "POST /login/ HTTP/1.1" 200 5263
+[21/May/2018 11:52:15] "GET / HTTP/1.1" 200 16613
+Not Found: /favicon.ico
+[21/May/2018 11:52:15] "GET /favicon.ico HTTP/1.1" 404 4649
+[21/May/2018 11:52:15] "GET /select_semester/?semester=1 HTTP/1.1" 200 7784
+[21/May/2018 11:52:17] "GET /admin HTTP/1.1" 301 0
+[21/May/2018 11:52:17] "GET /admin/ HTTP/1.1" 200 6702
+[21/May/2018 11:52:17] "GET /static/admin/css/dashboard.css HTTP/1.1" 200 412
+[21/May/2018 11:52:17] "GET /static/admin/css/base.css HTTP/1.1" 200 16066
+[21/May/2018 11:52:17] "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+[21/May/2018 11:52:18] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+[21/May/2018 11:52:18] "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+[21/May/2018 11:52:18] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+[21/May/2018 11:52:18] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 81348
+[21/May/2018 11:52:18] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 82564
+[21/May/2018 11:52:18] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 80304
+[21/May/2018 11:52:20] "GET /admin/auth/user/ HTTP/1.1" 200 17766
+[21/May/2018 11:52:20] "GET /static/admin/css/changelists.css HTTP/1.1" 200 6170
+[21/May/2018 11:52:20] "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 363
+[21/May/2018 11:52:20] "GET /static/admin/js/core.js HTTP/1.1" 200 7976
+[21/May/2018 11:52:20] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 6591
+[21/May/2018 11:52:20] "GET /static/admin/js/actions.js HTTP/1.1" 200 6501
+[21/May/2018 11:52:20] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[21/May/2018 11:52:20] "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1538
+[21/May/2018 11:52:20] "GET /static/admin/js/urlify.js HTTP/1.1" 200 8186
+[21/May/2018 11:52:20] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 258648
+[21/May/2018 11:52:20] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 128820
+[21/May/2018 11:52:20] "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+[21/May/2018 11:52:20] "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+[21/May/2018 11:52:20] "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+[21/May/2018 11:52:20] "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+[21/May/2018 11:52:20] "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+[21/May/2018 11:52:25] "GET /admin/auth/user/27/change/ HTTP/1.1" 200 14861
+[21/May/2018 11:52:25] "GET /static/admin/css/forms.css HTTP/1.1" 200 8173
+[21/May/2018 11:52:25] "GET /static/admin/js/SelectBox.js HTTP/1.1" 200 5755
+[21/May/2018 11:52:25] "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 12389
+[21/May/2018 11:52:25] "GET /static/admin/js/calendar.js HTTP/1.1" 200 7790
+[21/May/2018 11:52:25] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[21/May/2018 11:52:25] "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 20529
+[21/May/2018 11:52:25] "GET /static/admin/js/change_form.js HTTP/1.1" 200 712
+[21/May/2018 11:52:25] "GET /static/admin/css/widgets.css HTTP/1.1" 200 10340
+[21/May/2018 11:52:25] "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 495
+[21/May/2018 11:52:25] "GET /static/admin/img/icon-unknown.svg HTTP/1.1" 200 655
+[21/May/2018 11:52:25] "GET /static/admin/img/icon-unknown-alt.svg HTTP/1.1" 200 655
+[21/May/2018 11:52:25] "GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291
+[21/May/2018 11:52:25] "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+[21/May/2018 11:52:25] "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+[21/May/2018 11:52:29] "GET /admin/auth/user/27/password/ HTTP/1.1" 200 3027
+[21/May/2018 11:52:29] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[21/May/2018 11:52:34] "POST /admin/auth/user/27/password/ HTTP/1.1" 302 0
+[21/May/2018 11:52:34] "GET /admin/auth/user/27/change/ HTTP/1.1" 200 14983
+[21/May/2018 11:52:35] "GET /admin/jsi18n/ HTTP/1.1" 200 3189
+[21/May/2018 11:52:48] "GET / HTTP/1.1" 302 0
+[21/May/2018 11:52:48] "GET /login/?next=/ HTTP/1.1" 200 5247
+[21/May/2018 11:52:55] "POST /login/?next=/ HTTP/1.1" 200 5263
+[21/May/2018 11:53:09] "POST /login/?next=/ HTTP/1.1" 302 0
+[21/May/2018 11:53:10] "GET / HTTP/1.1" 200 16613
+[21/May/2018 11:53:10] "GET /static/js/timetable.js HTTP/1.1" 200 25919
+[21/May/2018 11:53:11] "GET /select_semester/?semester=1 HTTP/1.1" 200 775
