@@ -179,6 +179,9 @@ function drawTimetables(data) {
 
         var daybox_div = $('<div class="daybox"></div>');
         timetable_div.append(daybox_div);
+        var row_div = $('<div class="row" id="noperiod"></div>');
+        timetable_div.append(row_div);
+        row_div.append('<p class="center-align">시간표에 없는 과목</p>');
 
         var days = ['mon', 'tue', 'wed', 'thu', 'fri'];
 
@@ -215,6 +218,25 @@ function drawTimetables(data) {
                         period_div.append('<a class="subject-detail" target="_blank" href="/subject/' + subjects[l].pk + '/"><i class="material-icons">search</i></a>');
                     }
                 }
+
+                if ((j==0)&&(periods.length == 0)){
+                    var col_div = $('<div class = "col s3"></div>');
+                    row_div.append(col_div);
+
+                    var card_div = $('<div class = "card '
+                            + color_dict[subjects[l].pk] + ' lighten-4" '
+                            + 'subject="' + subjects[l].pk
+                            + '"></div>');
+                    col_div.append(card_div);
+
+                    var noperiod_div = $('<div class = "card-content"></div>');
+                    card_div.append(noperiod_div);
+
+                    noperiod_div.append('<p class="name">' + subjects[l].name + '</p>');
+                    noperiod_div.append('<p class="professor">' + subjects[l].professor + '</p>');
+                    noperiod_div.append('<a class="subject-delete" href="javascript:void(0)"><i class="material-icons">close</i></a>');
+                    noperiod_div.append('<a class="subject-detail" target="_blank" href="/subject/' + subjects[l].pk + '/"><i class="material-icons">search</i></a>');
+                }
             }
 
             var hours = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23];
@@ -232,12 +254,19 @@ function drawTimetables(data) {
         }
     }
 
-    $(".subject-delete").bind("click", function(e) {
+    $(".period .subject-delete").bind("click", function(e) {
         var subject = $(this).parent().attr('subject');
         var timetable = $("#timetable ul.tabs .tab a.active").attr("timetable");
 
         deleteSubjectFromTimetable(timetable, subject);
     });
+
+    $(".card .subject-delete").bind("click", function(e) {
+        var subject = $(this).parent().parent().attr('subject');
+        var timetable = $("#timetable ul.tabs .tab a.active").attr("timetable");
+
+        deleteSubjectFromTimetable(timetable, subject);
+    })
 
     $(".time-range-selector").bind("click touchstart", timeRangeSelectorEventHandler);
 
@@ -664,8 +693,6 @@ function searchButtonEventHandler(e) {
 function timerangeButtonEventHandler(e) {
     e.preventDefault();
     $("#search").modal('close');
-    var ypos = $(".timetable.active .daybox").offset().top;
-    window.scrollTo(0, ypos);
 
     $("header").addClass("invisible");
     $("#semesters").addClass("invisible");
@@ -674,6 +701,9 @@ function timerangeButtonEventHandler(e) {
     $(".fixed-action-btn").addClass("invisible");
     $("footer").addClass("invisible");
     $("body").addClass("body-selecting");
+
+    var ypos = $(".timetable.active .days").offset().top;
+    window.scrollTo(0, ypos);
 
     document.body.addEventListener("dragstart", dragStartEventHandler);
     document.body.addEventListener("drag", dragEventHandler);
@@ -702,6 +732,15 @@ function timeRangeSelectorEventHandler(e) {
     }
     if (end_minute == 0) {
         end_minute = "00";
+    }
+    if (reversed) {
+        var temp;
+        temp = start_hour;
+        start_hour = end_hour;
+        end_hour = temp;
+        temp = start_minute;
+        start_minute = end_minute;
+        end_minute = temp;
     }
     $('#search input#time').val(day + " " + start_hour + ":" + start_minute + " ~ " + end_hour + ":" + end_minute);
 
@@ -732,6 +771,7 @@ var start_hour;
 var start_minute;
 var end_hour;
 var end_minute;
+var reversed = false;
 var range_div;
 var x;
 var y;
@@ -759,7 +799,7 @@ function touchEndEventHandler(e) {
 function dragStartEventHandler(e) {
     var img = new Image();
     img.style.display = "none";
-    if (e.dataTransfer) {
+    if (e.dataTransfer && e.dataTransfer.setDragImage) {
         e.dataTransfer.setDragImage(img, 0, 0);
     }
 
@@ -810,21 +850,32 @@ function dragEventHandler(e) {
     end_minute = ((time | 0) % 2) * 30;
 
     if (end_hour < start_hour || end_hour == start_hour && end_minute < start_minute) {
-        end_hour = start_hour;
-        end_minute = start_minute;
+        reversed = true;
+    } else {
+        reversed = false;
     }
 
-    if (end_minute == 30) {
-        end_hour = end_hour + 1;
-        end_minute = 0;
-    } else if (end_minute == 0) {
-        end_minute = end_minute + 30;
+    if (!reversed) {
+        if (end_minute == 30) {
+            end_hour = end_hour + 1;
+            end_minute = 0;
+        } else if (end_minute == 0) {
+            end_minute = end_minute + 30;
+        }
     }
 
     var delta = (end_hour * 60 + end_minute) - (start_hour * 60 + start_minute);
+    if (delta < 0) {
+        delta = -delta;
+    }
 
     var height = (delta * 3 / 30) + "vh";
-    var top = (((start_hour - 8) * 60 + start_minute) * 3 / 30) + "vh";
+    var top;
+    if (reversed) {
+        top = (((end_hour - 8) * 60 + end_minute) * 3 / 30) + "vh";
+    } else {
+        top = (((start_hour - 8) * 60 + start_minute) * 3 / 30) + "vh";
+    }
 
     range_div.removeClass("disabled");
     range_div.css("height", height);
@@ -845,21 +896,32 @@ function dragEndEventHandler(e) {
     end_minute = ((time | 0) % 2) * 30;
 
     if (end_hour < start_hour || end_hour == start_hour && end_minute < start_minute) {
-        end_hour = start_hour;
-        end_minute = start_minute;
+        reversed = true;
+    } else {
+        reversed = false;
     }
 
-    if (end_minute == 30) {
-        end_hour = end_hour + 1;
-        end_minute = 0;
-    } else if (end_minute == 0) {
-        end_minute = end_minute + 30;
+    if (!reversed) {
+        if (end_minute == 30) {
+            end_hour = end_hour + 1;
+            end_minute = 0;
+        } else if (end_minute == 0) {
+            end_minute = end_minute + 30;
+        }
     }
 
     var delta = (end_hour * 60 + end_minute) - (start_hour * 60 + start_minute);
+    if (delta < 0) {
+        delta = -delta;
+    }
 
     var height = (delta * 3 / 30) + "vh";
-    var top = (((start_hour - 8) * 60 + start_minute) * 3 / 30) + "vh";
+    var top;
+    if (reversed) {
+        top = (((end_hour - 8) * 60 + end_minute) * 3 / 30) + "vh";
+    } else {
+        top = (((start_hour - 8) * 60 + start_minute) * 3 / 30) + "vh";
+    }
 
     range_div.css("height", height);
     range_div.css("top", top);
