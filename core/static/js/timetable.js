@@ -44,7 +44,28 @@ function drawSearchedSubjects(subjects) {
         var item_div = $('<li class="collection-item avatar" subject="' + subjects[i].pk + '"></li>');
         collection_div.append(item_div);
         item_div.append('<span class="title">' + subjects[i].name + '</span>');
-        item_div.append('<p>' + subjects[i].professor + '<br>' + subjects[i].class_number + '분반</p>');
+
+        var str = "";
+        for (var j = 0; j < subjects[i].period.length; j++) {
+            var day;
+            if (subjects[i].period[j].mon) {
+                day = "월";
+            } else if (subjects[i].period[j].tue) {
+                day = "화";
+            } else if (subjects[i].period[j].wed) {
+                day = "수";
+            } else if (subjects[i].period[j].thu) {
+                day = "목";
+            } else if (subjects[i].period[j].fri) {
+                day = "금";
+            }
+            str += '<br>' + day + " " + subjects[i].period[j].start.slice(0, 5) + " ~ " + subjects[i].period[j].end.slice(0, 5);
+        }
+
+        item_div.append('<p>' + subjects[i].professor
+            + '<br>' + subjects[i].class_number + '분반'
+            + '<br>' + subjects[i].credit
+            + str + '</p>');
         item_div.append('<a href="#" class="subject-add secondary-content"><i class="material-icons">add</i></a>');
         item_div.append('<a href="/subject/' + subjects[i].pk + '/" target="_blank" class="subject-detail secondary-content"><i class="material-icons">search</i></a>');
     }
@@ -480,21 +501,45 @@ function hundredcheckboxchangeHandler(e){
         }
         //나머지가 체크되어있지 않을 때 전체를 체크해제 한 경우 해제되지 않음
         else{
-            if ((!$('#hundreds input[name="one_hundred"]').is(":checked"))&&(!$('#hundreds input[name="two_hundred"]').is(":checked"))&&(!$('#hundreds input[name="three_hundred"]').is(":checked"))&&(!$('#hundreds input[name="four_hundred"]').is(":checked"))&&(!$('#hundreds input[name="higher_hundred"]').is(":checked"))){
+            if ((!$('#hundreds input[name="one_hundred"]').is(":checked"))
+                && (!$('#hundreds input[name="two_hundred"]').is(":checked"))
+                && (!$('#hundreds input[name="three_hundred"]').is(":checked"))
+                && (!$('#hundreds input[name="four_hundred"]').is(":checked"))
+                && (!$('#hundreds input[name="higher_hundred"]').is(":checked"))){
+
                 $('#hundreds input[name="all_hundred"]').prop("checked", "checked");
             }
         }
     }
     else{ //나머지를 클릭했을때
-        //하나라도 체크하면 '전체' 체크해제
-        if($('#hundreds input[name="one_hundred"]').is(":checked")||$('#hundreds input[name="two_hundred"]').is(":checked")||$('#hundreds input[name="three_hundred"]').is(":checked")||$('#hundreds input[name="four_hundred"]').is(":checked")||$('#hundreds input[name="higher_hundred"]').is(":checked")){
-            $('#hundreds input[name="all_hundred"]').prop("checked", false);
-        }
-        //모두 체크해제할 시
-        else{
+        // 모두 체크하면 '전체' 체크로 바꿈
+        if ($('#hundreds input[name="one_hundred"]').is(":checked")
+            && $('#hundreds input[name="two_hundred"]').is(":checked")
+            && $('#hundreds input[name="three_hundred"]').is(":checked")
+            && $('#hundreds input[name="four_hundred"]').is(":checked")
+            && $('#hundreds input[name="higher_hundred"]').is(":checked")) {
+
             $('#hundreds input[name="all_hundred"]').prop("checked", "checked");
+            $('#hundreds input[name="one_hundred"]').prop("checked", false);
+            $('#hundreds input[name="two_hundred"]').prop("checked", false);
+            $('#hundreds input[name="three_hundred"]').prop("checked", false);
+            $('#hundreds input[name="four_hundred"]').prop("checked", false);
+            $('#hundreds input[name="higher_hundred"]').prop("checked", false);
+            return;
         }
-        
+
+        //하나라도 체크하면 '전체' 체크해제
+        if ($('#hundreds input[name="one_hundred"]').is(":checked")
+            || $('#hundreds input[name="two_hundred"]').is(":checked")
+            || $('#hundreds input[name="three_hundred"]').is(":checked")
+            || $('#hundreds input[name="four_hundred"]').is(":checked")
+            || $('#hundreds input[name="higher_hundred"]').is(":checked")){
+            $('#hundreds input[name="all_hundred"]').prop("checked", false);
+            return;
+        }
+
+        //모두 체크해제할 시
+        $('#hundreds input[name="all_hundred"]').prop("checked", "checked");
     }    
 }
 
@@ -510,14 +555,40 @@ function creditcheckboxchangeHandler(e){
         }
         //나머지가 체크되어있지 않을 때 전체를 체크해제 한 경우 해제되지 않음
         else{
-            if ((!$('#credits input[name="one_credit"]').is(":checked"))&&(!$('#credits input[name="two_credit"]').is(":checked"))&&(!$('#credits input[name="three_credit"]').is(":checked"))&&(!$('#credits input[name="four_credit"]').is(":checked"))&&(!$('#credits input[name="higher_credit"]').is(":checked"))){
+            if ((!$('#credits input[name="one_credit"]').is(":checked"))
+                && (!$('#credits input[name="two_credit"]').is(":checked"))
+                && (!$('#credits input[name="three_credit"]').is(":checked"))
+                && (!$('#credits input[name="four_credit"]').is(":checked"))
+                && (!$('#credits input[name="higher_credit"]').is(":checked"))){
+
                 $('#credits input[name="all_credit"]').prop("checked", "checked");
             }
         }
     }
     else{ //나머지를 클릭했을때
+        // 모두 체크하면 '전체' 체크로 바꿈
+        if ($('#credits input[name="one_credit"]').is(":checked")
+            && $('#credits input[name="two_credit"]').is(":checked")
+            && $('#credits input[name="three_credit"]').is(":checked")
+            && $('#credits input[name="four_credit"]').is(":checked")
+            && $('#credits input[name="higher_credit"]').is(":checked")) {
+
+            $('#credits input[name="all_credit"]').prop("checked", "checked");
+            $('#credits input[name="one_credit"]').prop("checked", false);
+            $('#credits input[name="two_credit"]').prop("checked", false);
+            $('#credits input[name="three_credit"]').prop("checked", false);
+            $('#credits input[name="four_credit"]').prop("checked", false);
+            $('#credits input[name="higher_credit"]').prop("checked", false);
+            return;
+        }
+
         //하나라도 체크하면 '전체' 체크해제
-        if($('#credits input[name="one_credit"]').is(":checked")||$('#credits input[name="two_credit"]').is(":checked")||$('#credits input[name="three_credit"]').is(":checked")||$('#credits input[name="four_credit"]').is(":checked")||$('#credits input[name="higher_credit"]').is(":checked")){
+        if($('#credits input[name="one_credit"]').is(":checked")
+            || $('#credits input[name="two_credit"]').is(":checked")
+            || $('#credits input[name="three_credit"]').is(":checked")
+            || $('#credits input[name="four_credit"]').is(":checked")
+            || $('#credits input[name="higher_credit"]').is(":checked")){
+
             $('#credits input[name="all_credit"]').prop("checked", false);
         }
         //모두 체크해제할 시
