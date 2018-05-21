@@ -181,6 +181,7 @@ function drawTimetables(data) {
         timetable_div.append(daybox_div);
         var row_div = $('<div class="row" id="noperiod"></div>');
         timetable_div.append(row_div);
+        row_div.append('<p class="center-align">시간표에 없는 과목</p>');
 
         var days = ['mon', 'tue', 'wed', 'thu', 'fri'];
 
@@ -219,14 +220,13 @@ function drawTimetables(data) {
                 }
 
                 if ((j==0)&&(periods.length == 0)){
-                    console.log("no period!")
                     var col_div = $('<div class = "col s3"></div>');
                     row_div.append(col_div);
 
                     var card_div = $('<div class = "card '
                             + color_dict[subjects[l].pk] + ' lighten-4" '
                             + 'subject="' + subjects[l].pk
-                            + '""></div>');
+                            + '"></div>');
                     col_div.append(card_div);
 
                     var noperiod_div = $('<div class = "card-content"></div>');
@@ -254,12 +254,19 @@ function drawTimetables(data) {
         }
     }
 
-    $(".subject-delete").bind("click", function(e) {
+    $(".period .subject-delete").bind("click", function(e) {
         var subject = $(this).parent().attr('subject');
         var timetable = $("#timetable ul.tabs .tab a.active").attr("timetable");
 
         deleteSubjectFromTimetable(timetable, subject);
     });
+
+    $(".card .subject-delete").bind("click", function(e) {
+        var subject = $(this).parent().parent().attr('subject');
+        var timetable = $("#timetable ul.tabs .tab a.active").attr("timetable");
+
+        deleteSubjectFromTimetable(timetable, subject);
+    })
 
     $(".time-range-selector").bind("click touchstart", timeRangeSelectorEventHandler);
 
