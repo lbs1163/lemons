@@ -179,6 +179,8 @@ function drawTimetables(data) {
 
         var daybox_div = $('<div class="daybox"></div>');
         timetable_div.append(daybox_div);
+        var row_div = $('<div class="row" id="noperiod"></div>');
+        timetable_div.append(row_div);
 
         var days = ['mon', 'tue', 'wed', 'thu', 'fri'];
 
@@ -214,6 +216,26 @@ function drawTimetables(data) {
                         period_div.append('<a class="subject-delete" href="javascript:void(0)"><i class="material-icons">close</i></a>');
                         period_div.append('<a class="subject-detail" target="_blank" href="/subject/' + subjects[l].pk + '/"><i class="material-icons">search</i></a>');
                     }
+                }
+
+                if ((j==0)&&(periods.length == 0)){
+                    console.log("no period!")
+                    var col_div = $('<div class = "col s3"></div>');
+                    row_div.append(col_div);
+
+                    var card_div = $('<div class = "card '
+                            + color_dict[subjects[l].pk] + ' lighten-4" '
+                            + 'subject="' + subjects[l].pk
+                            + '""></div>');
+                    col_div.append(card_div);
+
+                    var noperiod_div = $('<div class = "card-content"></div>');
+                    card_div.append(noperiod_div);
+
+                    noperiod_div.append('<p class="name">' + subjects[l].name + '</p>');
+                    noperiod_div.append('<p class="professor">' + subjects[l].professor + '</p>');
+                    noperiod_div.append('<a class="subject-delete" href="javascript:void(0)"><i class="material-icons">close</i></a>');
+                    noperiod_div.append('<a class="subject-detail" target="_blank" href="/subject/' + subjects[l].pk + '/"><i class="material-icons">search</i></a>');
                 }
             }
 
