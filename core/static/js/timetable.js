@@ -760,7 +760,7 @@ function touchEndEventHandler(e) {
 function dragStartEventHandler(e) {
     var img = new Image();
     img.style.display = "none";
-    if (e.dataTransfer) {
+    if (e.dataTransfer && e.dataTransfer.setDragImage) {
         e.dataTransfer.setDragImage(img, 0, 0);
     }
 
