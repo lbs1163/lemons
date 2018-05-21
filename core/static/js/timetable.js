@@ -239,7 +239,7 @@ function drawTimetables(data) {
         deleteSubjectFromTimetable(timetable, subject);
     });
 
-    $(".time-range-selector").bind("click", timeRangeSelectorEventHandler);
+    $(".time-range-selector").bind("click touchstart", timeRangeSelectorEventHandler);
 
     redrawTimetable();
     $('.tabs').tabs();
@@ -671,6 +671,8 @@ function timerangeButtonEventHandler(e) {
     document.addEventListener("drag", dragEventHandler);
     document.addEventListener("dragend", dragEndEventHandler);
 
+    $(".timetable").addClass("no-scroll");
+
     document.addEventListener("touchstart", touchStartEventHandler);
     document.addEventListener("touchmove", touchEventHandler);
     document.addEventListener("touchend", touchEndEventHandler);
@@ -682,6 +684,9 @@ function timerangeDeleteButtonEventHandler(e) {
 }
 
 function timeRangeSelectorEventHandler(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    
     $("#search").modal('open');
     if (start_minute == 0) {
         start_minute = "00";
@@ -697,6 +702,8 @@ function timeRangeSelectorEventHandler(e) {
     document.removeEventListener("drag", dragEventHandler);
     document.removeEventListener("dragend", dragEndEventHandler);
 
+    $(".timetable").removeClass("no-scroll");
+
     document.removeEventListener("touchstart", touchStartEventHandler);
     document.removeEventListener("touchmove", touchEventHandler);
     document.removeEventListener("touchend", touchEndEventHandler);
@@ -708,26 +715,35 @@ var start_minute;
 var end_hour;
 var end_minute;
 var range_div;
+var x;
+var y;
 
 function touchStartEventHandler(e) {
-    e.preventDefault();
+    e.pageX = e.touches[0].pageX;
+    e.pageY = e.touches[0].pageY;
     dragStartEventHandler(e);
 }
 
 function touchEventHandler(e) {
-    e.preventDefault();
+    e.pageX = e.touches[0].pageX;
+    e.pageY = e.touches[0].pageY;
+    x = e.touches[0].pageX;
+    y = e.touches[0].pageY;
     dragEventHandler(e);
 }
 
 function touchEndEventHandler(e) {
-    e.preventDefault();
+    e.pageX = x;
+    e.pageY = y;
     dragEndEventHandler(e);
 }
 
 function dragStartEventHandler(e) {
     var img = new Image();
     img.style.display = "none";
-    e.dataTransfer.setDragImage(img, 0, 0);
+    if (e.dataTransfer) {
+        e.dataTransfer.setDragImage(img, 0, 0);
+    }
 
     if ($('.timetable.active .day[day="fri"]').offset().left <= e.pageX) {
         day = "fri";

@@ -233,7 +233,7 @@ main {
 }
 
 @media screen and (max-width: 600px) {
-	.period, .period .subject-delete .material-icons, .period .subject-detail .material-icons {
+	.time-range-selector p, .period, .period .subject-delete .material-icons, .period .subject-detail .material-icons {
 		font-size: 10px;
 	}
 
@@ -255,7 +255,7 @@ main {
 }
 
 @media screen and (min-width: 600px) {
-	.period, .period .subject-delete .material-icons, .period .subject-detail .material-icons {
+	.time-range-selector p, .period, .period .subject-delete .material-icons, .period .subject-detail .material-icons {
 		font-size: 12px;
 	}
 
@@ -276,7 +276,7 @@ main {
 }
 
 @media screen and (min-width: 992px) {
-	.period, .period .subject-delete .material-icons, .period .subject-detail .material-icons {
+	.time-range-selector p, .period, .period .subject-delete .material-icons, .period .subject-detail .material-icons {
 		font-size: 14px;
 	}
 
@@ -286,7 +286,7 @@ main {
 }
 
 @media screen and (min-width: 1200px) {
-	.period, .period .subject-delete .material-icons, .period .subject-detail .material-icons {
+	.time-range-selector p, .period, .period .subject-delete .material-icons, .period .subject-detail .material-icons {
 		font-size: 14px;
 	}
 
@@ -351,4 +351,8 @@ main {
 
 #subject-detail .btn {
 	margin-top: 20px;
+}
+
+.no-scroll {
+	touch-action: none;
 }
