@@ -69,7 +69,18 @@ class Activate(View):
 def timetable(request):
     semesters = Semester.objects.all().order_by('-name')
     departments = Department.objects.all().order_by('pk')
-    categories = Category.objects.all().order_by('category')
+    categories = [
+        Category.objects.get(category=u"전공필수"),
+        Category.objects.get(category=u"전공선택"),
+        Category.objects.get(category=u"교양필수"),
+        Category.objects.get(category=u"교양선택"),
+        Category.objects.get(category=u"기초필수"),
+        Category.objects.get(category=u"기초선택"),
+        Category.objects.get(category=u"실천필수"),
+        Category.objects.get(category=u"실천선택"),
+        Category.objects.get(category=u"연구과목"),
+        Category.objects.get(category=u"자유선택"),
+    ]
     return render(request, "core/index.html",
         {'semesters': semesters,
         'departments': departments,
