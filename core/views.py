@@ -257,3 +257,6 @@ def subject_detail(request, subjectPK):
     period = Period.objects.filter(subject = subject)
 
     return render(request, 'core/subject_detail.html', {'subject': subject, 'period': period})
+
+def aboutus(request):
+    return render(request, 'core/aboutus.html', {})

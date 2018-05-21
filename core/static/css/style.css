@@ -232,11 +232,11 @@ main {
 	color: black;
 }
 
-.card .card-content {
+.timetable .card .card-content {
 	padding: 5px;
 }
 
-.card .subject-delete, .card .subject-detail {
+.timetable .card .subject-delete, .timetable .card .subject-detail {
 	color: black;
 }
 
@@ -250,7 +250,7 @@ main {
 }
 
 @media screen and (max-width: 600px) {
-	.card p, .card i.material-icons, .time-range-selector p, .period, .period .subject-delete .material-icons, .period .subject-detail .material-icons {
+	.timetable .card p, .timetable .card i.material-icons, .time-range-selector p, .period, .period .subject-delete .material-icons, .period .subject-detail .material-icons {
 		font-size: 10px;
 	}
 
@@ -272,7 +272,7 @@ main {
 }
 
 @media screen and (min-width: 600px) {
-	.card p, .card i.material-icons, .time-range-selector p, .period, .period .subject-delete .material-icons, .period .subject-detail .material-icons {
+	.timetable .card p, .timetable .card i.material-icons, .time-range-selector p, .period, .period .subject-delete .material-icons, .period .subject-detail .material-icons {
 		font-size: 12px;
 	}
 
@@ -293,7 +293,7 @@ main {
 }
 
 @media screen and (min-width: 992px) {
-	.card p, .card i.material-icons, .time-range-selector p, .period, .period .subject-delete .material-icons, .period .subject-detail .material-icons {
+	.timetable .card p, .timetable .card i.material-icons, .time-range-selector p, .period, .period .subject-delete .material-icons, .period .subject-detail .material-icons {
 		font-size: 14px;
 	}
 
@@ -303,7 +303,7 @@ main {
 }
 
 @media screen and (min-width: 1200px) {
-	.card p, .card i.material-icons, .time-range-selector p, .period, .period .subject-delete .material-icons, .period .subject-detail .material-icons {
+	.timetable .card p, .timetable .card i.material-icons, .time-range-selector p, .period, .period .subject-delete .material-icons, .period .subject-detail .material-icons {
 		font-size: 14px;
 	}
 
@@ -382,4 +382,8 @@ main {
 	min-height: 80vh;
 	height: 80vh !important;
 	overflow-y: hidden;
+}
+
+.card .card-title {
+	text-shadow: 1px 1px 1px black;
 }
