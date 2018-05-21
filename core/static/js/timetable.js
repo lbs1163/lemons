@@ -670,6 +670,10 @@ function timerangeButtonEventHandler(e) {
     document.addEventListener("dragstart", dragStartEventHandler);
     document.addEventListener("drag", dragEventHandler);
     document.addEventListener("dragend", dragEndEventHandler);
+
+    document.addEventListener("touchstart", dragStartEventHandler);
+    document.addEventListener("touchmove", dragEventHandler);
+    document.addEventListener("touchend", dragEndEventHandler);
 }
 
 function timerangeDeleteButtonEventHandler(e) {
