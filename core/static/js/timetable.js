@@ -48,19 +48,19 @@ function drawSearchedSubjects(subjects) {
 
         var str = "";
         for (var j = 0; j < subjects[i].period.length; j++) {
-            var day;
+            var day = "";
             if (subjects[i].period[j].mon) {
-                day = "월";
-            } else if (subjects[i].period[j].tue) {
-                day = "화";
-            } else if (subjects[i].period[j].wed) {
-                day = "수";
-            } else if (subjects[i].period[j].thu) {
-                day = "목";
-            } else if (subjects[i].period[j].fri) {
-                day = "금";
+                day += "월, ";
+            } if (subjects[i].period[j].tue) {
+                day += "화, ";
+            } if (subjects[i].period[j].wed) {
+                day += "수, ";
+            } if (subjects[i].period[j].thu) {
+                day += "목, ";
+            } if (subjects[i].period[j].fri) {
+                day += "금, ";
             }
-            str += '<br>' + day + " " + subjects[i].period[j].start.slice(0, 5) + " ~ " + subjects[i].period[j].end.slice(0, 5);
+            str += '<br>' + day.substring(0, day.length-2) + " " + subjects[i].period[j].start.slice(0, 5) + " ~ " + subjects[i].period[j].end.slice(0, 5);
         }
 
         item_div.append('<p>' + subjects[i].professor
