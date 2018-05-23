@@ -229,19 +229,29 @@ def add_subject_to_timetable(request):
         for j in i.period_set.all():
             for k in add_subject.period_set.all():
                 if(j.mon == True and k.mon == True):
-                    if(k.start == j.start or k.end == j.end):
+                    if(k.start >= j.end or k.end <= j.start):
+                        pass
+                    else:
                         return JsonResponse({'error': '다른 과목과 겹칩니다! 겹치는 과목 : ' + i.name})
                 if(j.tue == True and k.tue == True):
-                    if(k.start == j.start or k.end == j.end):
+                    if(k.start >= j.end or k.end <= j.start):
+                        pass
+                    else:
                         return JsonResponse({'error': '다른 과목과 겹칩니다! 겹치는 과목 : ' + i.name})
                 if(j.wed == True and k.wed == True):
-                    if(k.start == j.start or k.end == j.end):
+                    if(k.start >= j.end or k.end <= j.start):
+                        pass
+                    else:
                         return JsonResponse({'error': '다른 과목과 겹칩니다! 겹치는 과목 : ' + i.name})
                 if(j.thu == True and k.thu == True):
-                    if(k.start == j.start or k.end == j.end):
+                    if(k.start >= j.end or k.end <= j.start):
+                        pass
+                    else:
                         return JsonResponse({'error': '다른 과목과 겹칩니다! 겹치는 과목 : ' + i.name})
                 if(j.fri == True and k.fri == True):
-                    if(k.start == j.start or k.end == j.end):
+                    if(k.start >= j.end or k.end <= j.start):
+                        pass
+                    else:
                         return JsonResponse({'error': '다른 과목과 겹칩니다! 겹치는 과목 : ' + i.name})
     table.subjects.add(add_subject)
     table.save()
