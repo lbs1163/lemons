@@ -1,11 +1,13 @@
+{% load static %}
+
 <footer class="page-footer grey">
     <div class="container">
         <div class="row">
-            <div class="col l6 s12">
+            <div class="col l6 xl6 s12">
                 <h5 class="white-text">About Lemons</h5>
                 <p class="grey-text text-lighten-4">Lemons는 POSTECHIAN들을 위한 시간표 서비스입니다. 편리한 검색 기능을 이용하여 과목들을 시간표에 추가하고, 여러개의 시간표를 만들어 여러가지 수강 계획을 세워보세요.</p>
             </div>
-            <div class="col l4 offset-l2 s12">
+            <div class="col l3 xl2 s6">
                 <h5><a class="white-text" href="/aboutus/">만든 사람들</a></h5>
                 <ul>
                     <li><a class="grey-text text-lighten-3" href="/aboutus/#lbs">임범수</a></li>
@@ -17,6 +19,10 @@
                     <li><a class="grey-text text-lighten-3" href="/aboutus/#ksj">김승진</a></li>
                     <li><a class="grey-text text-lighten-3" href="/aboutus/#lje">이정은</a></li>
                 </ul>
+            </div>
+            <div class="col l3 xl4 s6">
+                <h5 class="white-text">Sponsored by</h5>
+                <img class="responsive-img" src="{% static 'images/naverd2.png' %}">
             </div>
         </div>
     </div>
