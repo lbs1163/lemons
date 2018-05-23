@@ -271,3 +271,6 @@ def subject_detail(request, subjectPK):
 
 def aboutus(request):
     return render(request, 'core/aboutus.html', {})
+
+def howtouse(request):
+    return render(request, 'core/howtouse.html', {})

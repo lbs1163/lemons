@@ -1,0 +1,68 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<h2 class="center-align">사용법</h2>
+<div id="explain" class="container center-align">
+    <div id="explain-menu" class="row flex">
+        <div class="col s6 offset-s3 m4 l3 offset-l1">
+            <img class="responsive-img" src="{% static 'images/menu.png' %}">
+        </div>
+        <div class="explain col s12 m8 l7">
+            <h3>메뉴</h3>
+            <p>레몬스 시간표의 메뉴는 시간표를 보고 있을 때 항상 우측 하단에 존재합니다. 메뉴를 통해 시간표를 추가, 삭제, 복사하고 과목을 검색하고 시간표를 이미지로 저장해보세요!</p>
+        </div>
+    </div>
+    <div id="explain-multiple-timetables" class="row flex">
+        <div class="col s6 offset-s3 m4 push-m8 l3 push-l8">
+            <img class="responsive-img" src="{% static 'images/multiple_timetables.png' %}">
+        </div>
+        <div class="explain col s12 m8 pull-m4 l7 pull-l4">
+            <h3>학기/시간표 선택</h3>
+            <p>레몬스에서는 여러분이 원하는 만큼 시간표를 만들 수 있답니다. 화면 상단의 학기 양 옆에 있는 화살표로 학기를 선택하고, 그 아래에 있는 탭을 통해서 시간표를 선택하세요!</p>
+        </div>
+    </div>
+    <div id="explain-search1" class="row flex">
+        <div class="col s6 offset-s3 m4 l3 offset-l1">
+            <img class="responsive-img" src="{% static 'images/search1.png' %}">
+        </div>
+        <div class="explain col s12 m8 l7">
+            <h3>과목 검색</h3>
+            <p>메뉴에서 과목 검색을 선택하면 다양한 조건으로 검색할 수 있습니다. 과목의 학년, 학과, 이수구분, 학점 등 다양한 조건을 통해 원하는 과목을 검색해보세요!</p>
+        </div>
+    </div>
+    <div id="explain-search2" class="row flex">
+        <div class="col s6 offset-s3 m4 push-m8 l3 push-l8">
+            <img class="responsive-img" src="{% static 'images/search2.png' %}">
+        </div>
+        <div class="explain col s12 m8 pull-m4 l7 pull-l4">
+            <h3>시간대 검색</h3>
+            <p>시간대 검색 기능을 이용해보세요! 검색 창에서 시간표 검색 버튼을 누른 뒤 나오는 시간표에서 원하는 시간대를 드래그한 뒤, 시간대 영역을 클릭하면 선택됩니다.</p>
+        </div>
+    </div>
+    <div id="explain-search3" class="row flex">
+        <div class="col s6 offset-s3 m4 l3 offset-l1">
+            <img class="responsive-img" src="{% static 'images/search3.png' %}">
+        </div>
+        <div class="explain col s12 m8 l7">
+            <h3>시간표 과목 추가</h3>
+            <p>과목을 검색한 뒤에는 과목 오른쪽에 있는 + 버튼을 통해 시간표에 과목을 추가하세요! 추가한 뒤에는 시간표에 표시되며, 시간표 상의 과목에 있는 x 버튼을 통해 삭제할 수 있어요.</p>
+        </div>
+    </div>
+    <div id="explain-subject" class="row flex">
+        <div class="col s6 offset-s3 m4 push-m8 l3 push-l8">
+            <img class="responsive-img" src="{% static 'images/subject.png' %}">
+        </div>
+        <div class="explain col s12 m8 pull-m4 l7 pull-l4">
+            <h3>과목 상세 보기</h3>
+            <p>검색 결과, 시간표 등 과목에 있는 돋보기 버튼을 눌러 과목의 상세 정보를 확인해보세요! 만일 잘못된 정보가 있는 것 같다면 <a href="https://fb.com/poapper">포애퍼 페이스북</a>을 통해 제보 바랍니다 :)</p>
+        </div>
+    </div>
+    <a class="btn btn-large waves-effect waves-light" href="/">레몬스 사용하러 가기</a>
+    <br>
+    <br>
+    <br>
+    <br>
+</div>
+{% endblock %}

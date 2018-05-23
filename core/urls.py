@@ -28,4 +28,5 @@ urlpatterns = [
 	url(r'^delete_subject_from_timetable/$', views.delete_subject_from_timetable, name='delete_subject_from_timetable'),
 	url(r'^subject/(?P<subjectPK>[0-9]+)/$', views.subject_detail, name='subject_detail'),
 	url(r'^aboutus/$', views.aboutus, name='aboutus'),
+	url(r'^howtouse/$', views.howtouse, name='howtouse'),
 ]

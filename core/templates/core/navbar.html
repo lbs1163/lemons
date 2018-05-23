@@ -4,6 +4,7 @@
             <a href="/" class="brand-logo"><i class="material-icons">calendar_today</i>Lemons</a>
             <a href="#" data-target="mainnav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
+                <li><a href="/howtouse/">사용법</a></li>
                 <li><a href="/aboutus/">만든 사람들</a></li>
                 {% if user.is_authenticated %}
                 <li><a href="/logout/">로그아웃</a></li>
@@ -16,6 +17,7 @@
     </nav>
 
     <ul class="sidenav" id="mainnav">
+        <li><a href="/howtouse/">사용법</a></li>
         <li><a href="/aboutus/">만든 사람들</a></li>
         {% if user.is_authenticated %}
         <li><a href="/logout/">로그아웃</a></li>
