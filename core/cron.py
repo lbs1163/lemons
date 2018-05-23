@@ -123,7 +123,10 @@ def scrap_from_lms(year_semester, limit = True):
                 plan_a = info_tree.xpath('//a/attribute::href')[0]
                 
                 ## EXAMPLE: 1-0-1
-                credit = clear_string(info_tr[8].xpath('td')[3].text)
+                try:
+                    credit = clear_string(info_tr[8].xpath('td')[3].text)
+                except:
+                    continue
                 ## EXAMPLE: CSED101
                 code = clear_string(info_tr[4].xpath('td')[1].text)
 
