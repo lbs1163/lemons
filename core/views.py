@@ -188,7 +188,7 @@ def search_subject(request):
         elif dayoftheweek == "wed" :
             periods = Period.objects.filter(wed=True)
         elif dayoftheweek == "thu" :
-            periods = Period.objects.filter(thr=True)
+            periods = Period.objects.filter(thu=True)
         elif dayoftheweek == "fri" :
             periods = Period.objects.filter(fri=True)
         periods = periods.filter(Q(start__gte=stime)&Q(end__lte=etime))
