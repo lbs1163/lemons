@@ -281,3 +281,9 @@ def subject_detail(request, subjectPK):
 
 def aboutus(request):
     return render(request, 'core/aboutus.html', {})
+<<<<<<< HEAD
+=======
+
+def howtouse(request):
+    return render(request, 'core/howtouse.html', {})
+>>>>>>> b707ea335b4cbadb8f8f04cd1e17f1f5714446b2
