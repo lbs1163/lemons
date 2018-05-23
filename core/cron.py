@@ -201,7 +201,7 @@ def scrap_from_lms(year_semester, limit = True):
                         ## EXAMPLE: 10:45
                         end_time_raw = time.split('~')[1]
                         if end_time_raw[0:2] == '24':
-                            end_time_raw = '00' + end_time_raw[2:5]
+                            end_time_raw = '23:59'
                         end_time.append(end_time_raw)
 
                         ## EXAMPLE: ['월', '수']
@@ -275,7 +275,6 @@ def scrap_from_lms(year_semester, limit = True):
                     for period_object_number in range(len(Period_objects)):
                         Period_object = Period_objects[period_object_number]
                         Period_object.place = place[period_object_number]
-
                         Period_object.start = start_time[period_object_number]
                         Period_object.end = end_time[period_object_number]
 

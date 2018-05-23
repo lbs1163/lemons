@@ -64,7 +64,8 @@ function drawSearchedSubjects(subjects) {
         }
 
         item_div.append('<p>' + subjects[i].professor
-            + '<br>' + subjects[i].class_number + '분반'
+            + ' / ' + subjects[i].code
+            + ' / ' + subjects[i].class_number + '분반'
             + '<br>' + subjects[i].credit
             + str + '</p>');
         item_div.append('<a href="#" class="subject-add secondary-content"><i class="material-icons">add</i></a>');
