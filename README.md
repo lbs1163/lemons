@@ -6,6 +6,7 @@
 * anpandapoapper
 * jelee999
 * kimsj0302
+* choisium
 
 ## Development Environment
 ### Basic
